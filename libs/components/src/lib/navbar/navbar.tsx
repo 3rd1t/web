@@ -42,7 +42,7 @@ export const Navbar = (props: NavbarProps) => {
           </svg>
         </button>
       </div>
-      <section className="hidden w-auto md:block" >
+      <section className="hidden w-auto md:block">
         <ul className="flex items-center space-x-10" data-testid="desktopNavbar">
           <li>
             <NavbarLink label="Product"></NavbarLink>
@@ -61,7 +61,7 @@ export const Navbar = (props: NavbarProps) => {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
-          data-testid="mobileNavbar"
+            data-testid="mobileNavbar"
             initial="collapsed"
             animate="open"
             exit="collapsed"

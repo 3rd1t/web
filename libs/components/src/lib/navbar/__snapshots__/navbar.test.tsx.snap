@@ -20,6 +20,7 @@ exports[` Navbar renders correctly 1`] = `
     <button
       aria-label="home"
       className="p-2 text-gray-400 hover:text-gray-900 focus:outline-none"
+      data-testid="toggle"
       onClick={[Function]}
     >
       <svg
@@ -42,6 +43,7 @@ exports[` Navbar renders correctly 1`] = `
   >
     <ul
       className="flex items-center space-x-10"
+      data-testid="desktopNavbar"
     >
       <li>
         <a

@@ -8,7 +8,7 @@ module.exports = {
       url: [
         "http://localhost:4200/"
       ],
-      startServerCommand:"yarn nx run research:serve",
+      staticDistDir:"dist/apps/research/exported",
     },
     upload: {
       target: "temporary-public-storage",

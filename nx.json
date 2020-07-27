@@ -10,7 +10,6 @@
       "devDependencies": "*"
     },
     "tsconfig.json": "*",
-    "tslint.json": "*",
     "nx.json": "*"
   },
   "tasksRunnerOptions": {
@@ -18,9 +17,9 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "YzhmZjNjYmQtY2VhOC00NWVjLWJjYzgtOWYyYTkwNDhkZGFhfHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "cacheableOperations": ["build", "test", "lint", "e2e", "export"],
         "canTrackAnalytics": false,
-        "showUsageWarnings": true
+        "showUsageWarnings": false
       }
     }
   },

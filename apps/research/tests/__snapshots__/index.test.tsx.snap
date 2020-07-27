@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` Index renders correctly 1`] = `
+exports[`Index renders correctly 1`] = `
 <div
   className="min-h-screen"
 >

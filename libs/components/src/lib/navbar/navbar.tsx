@@ -31,6 +31,7 @@ export const Navbar = (props: NavbarProps) => {
           onClick={toggleMenu}
           className="p-2 text-gray-400 hover:text-gray-900 focus:outline-none"
           aria-label="home"
+          data-testid="toggle"
         >
           <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             {open ? (
@@ -42,7 +43,7 @@ export const Navbar = (props: NavbarProps) => {
         </button>
       </div>
       <section className="hidden w-auto md:block">
-        <ul className="flex items-center space-x-10">
+        <ul className="flex items-center space-x-10" data-testid="desktopNavbar">
           <li>
             <NavbarLink label="Product"></NavbarLink>
           </li>
@@ -60,6 +61,7 @@ export const Navbar = (props: NavbarProps) => {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            data-testid="mobileNavbar"
             initial="collapsed"
             animate="open"
             exit="collapsed"

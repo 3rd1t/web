@@ -28,10 +28,6 @@ export const HeroSection = (props: HeroSectionProps) => {
     return "bg-" + props.color + "-" + weight
   }
 
-  const toBorder = (weight: number): string => {
-    return "border-" + props.color + "-" + weight
-  }
-
   const commonButtonClasses =
     "border border-transparent rounded-md md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none"
 

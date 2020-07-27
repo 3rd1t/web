@@ -9,7 +9,7 @@ export interface CodeSnippetProps {
 
 export const CodeSnippet = (props: CodeSnippetProps) => {
   return (
-    <SyntaxHighlighter language={props.language} style={style} className="font-mono">
+    <SyntaxHighlighter data-testid="syntaxHighlighter" language={props.language} style={style} className="font-mono">
       {props.children}
     </SyntaxHighlighter>
   )

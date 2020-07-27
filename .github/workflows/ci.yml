@@ -57,6 +57,8 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
+      - name: Install cypress
+        run: yarn cypress install
       - name: Build css
         run: yarn build:css
       - name: Run Integration test

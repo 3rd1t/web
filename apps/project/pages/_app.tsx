@@ -5,17 +5,12 @@ import "../../../css/tailwind.css"
 import { Navbar, Footer } from "@perfolio/components"
 
 const app = ({ Component, pageProps }: AppProps) => {
-  const logo = (
-    <div className="text-xl font-semibold">
-      <span className="text-gray-800">PERFOLIO</span>
-      <span className="text-research-600">RESEARCH</span>
-    </div>
-  )
+  const logo = <span className="text-xl font-semibold text-carbon-900 hover:text-gray-800">PERFOLIO</span>
 
   return (
     <html lang="en">
       <Head>
-        <title>Perfolio Research</title>
+        <title>Perfolio</title>
         <meta lang="en"></meta>
         <meta name="description" content="goes here" />
       </Head>
@@ -25,7 +20,7 @@ const app = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </div>
       </div>
-      <Footer color="research" primaryText="text-white" secondaryText="text-research-100"></Footer>
+      <Footer color="carbon" primaryText="text-white" secondaryText="text-gray-100"></Footer>
     </html>
   )
 }

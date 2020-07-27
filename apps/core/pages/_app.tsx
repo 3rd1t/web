@@ -23,7 +23,7 @@ const app = ({ Component, pageProps }: AppProps) => {
           <Component {...pageProps} />
         </div>
       </div>
-      <Footer bgColor="bg-red-700" primaryText="text-white" secondaryText="text-red-100"></Footer>
+      <Footer color="red" primaryText="text-white" secondaryText="text-red-100"></Footer>
     </html>
   )
 }

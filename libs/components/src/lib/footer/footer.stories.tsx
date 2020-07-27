@@ -9,9 +9,9 @@ export default {
 
 export const primary = () => {
   const props: FooterProps = {
-    bgColor: text("bgColor", "bg-primary-700"),
+    bgColor: text("bgColor", "bg-research-700"),
     primaryText: text("primaryText", "text-white"),
-    secondaryText: text("secondaryText", "text-primary-100"),
+    secondaryText: text("secondaryText", "text-research-100"),
   }
   return <Footer bgColor={props.bgColor} primaryText={props.primaryText} secondaryText={props.secondaryText} />
 }

@@ -5,10 +5,8 @@ module.exports = {
     // },
     collect: {
       numberOfRuns: 5,
-      url: [
-        "http://localhost:4200/"
-      ],
-      staticDistDir:"dist/apps/research/exported",
+      url: ["http://localhost:4200/"],
+      staticDistDir: "dist/apps/research/exported",
     },
     upload: {
       target: "temporary-public-storage",

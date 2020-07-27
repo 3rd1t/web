@@ -1,87 +1,34 @@
 import React from "react"
+import { HeroSection, Code } from "@perfolio/components"
 
-import "./index.css"
+/* eslint-disable-next-line */
+interface IndexProps {}
 
-import { ReactComponent as NxLogo } from "../public/nx-logo-white.svg"
-
-export const Index = () => {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./${fileName}.${style} file.
-   */
+const Index = (props: IndexProps) => {
   return (
-    <div className="app">
-      <header className="flex">
-        <NxLogo alt="" width="75" height="50" />
-        <h1>Welcome to project!</h1>
-      </header>
-      <main>
-        <h2>Resources &amp; Tools</h2>
-        <p>Thank you for using and showing some ♥ for Nx.</p>
-        <div className="flex github-star-container">
-          <a href="https://github.com/nrwl/nx" target="_blank" rel="noopener noreferrer">
-            {" "}
-            If you like Nx, please give it a star:
-            <div className="github-star-badge">
-              <img src="/star.svg" className="material-icons" alt="" />
-              Star
-            </div>
-          </a>
-        </div>
-        <p>Here are some links to help you get started.</p>
-        <ul className="resources">
-          <li className="col-span-2">
-            <a className="resource flex" href="https://connect.nrwl.io/app/courses/nx-workspaces/intro">
-              Nx video course
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a className="resource flex" href="https://nx.dev/react/getting-started/what-is-nx">
-              Nx video tutorial
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a className="resource flex" href="https://nx.dev/react/tutorial/01-create-application">
-              Interactive tutorial
-            </a>
-          </li>
-          <li className="col-span-2">
-            <a className="resource flex" href="https://connect.nrwl.io/">
-              <img height="36" alt="Nrwl Connect" src="https://connect.nrwl.io/assets/img/CONNECT_ColorIcon.png" />
-              <span className="gutter-left">Nrwl Connect</span>
-            </a>
-          </li>
-        </ul>
-        <h2>Next Steps</h2>
-        <p>Here are some things you can do with Nx.</p>
-        <details open>
-          <summary>Add UI library</summary>
-          <pre>{`# Generate UI lib
-nx g @nrwl/react:lib ui
-
-# Add a component
-nx g @nrwl/react:component xyz --project ui`}</pre>
-        </details>
-        <details>
-          <summary>View dependency graph</summary>
-          <pre>{`nx dep-graph`}</pre>
-        </details>
-        <details>
-          <summary>Run affected commands</summary>
-          <pre>{`# see what's been affected by changes
-nx affected:dep-graph
-
-# run tests for current changes
-nx affected:test
-
-# run e2e tests for current changes
-nx affected:e2e
-`}</pre>
-        </details>
-      </main>
+    <div className="min-h-screen">
+      <div className="flex flex-col items-start px-4 mt-10 space-y-8 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 xl:flex-row xl:space-y-0 xl:space-x-8">
+        <HeroSection
+          color="gray"
+          headline={
+            <>
+              <span className="text-gray-900">Portfolio analytics </span>
+              <br className="xl:hidden"></br>
+              insights for everyone
+            </>
+          }
+          paragraph="Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes."
+          primaryButton={{
+            label: "Get started",
+            href: "#",
+          }}
+          secondaryButton={{
+            label: "Log in",
+            href: "#",
+          }}
+        ></HeroSection>
+      </div>
     </div>
   )
 }
-
 export default Index

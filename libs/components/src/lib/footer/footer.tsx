@@ -2,14 +2,26 @@ import React from "react"
 import { FooterLink } from "../footer-link/footer-link"
 /* eslint-disable-next-line */
 export interface FooterProps {
-  bgColor: string
+  color: string
   primaryText: string
   secondaryText: string
 }
 
 export const Footer = (props: FooterProps) => {
+  const toText = (weight: number): string => {
+    return "text-" + props.color + "-" + weight
+  }
+
+  const toBg = (weight: number): string => {
+    return "bg-" + props.color + "-" + weight
+  }
+
+  const toBorder = (weight: number): string => {
+    return "border-" + props.color + "-" + weight
+  }
+
   return (
-    <footer className={`w-full ${props.bgColor}`}>
+    <footer className={`w-full ${toBg(900)}`}>
       <div className="max-w-6xl mx-auto">
         <div className={`flex flex-wrap justify-between p-10  ${props.secondaryText}`}>
           <div className="space-y-2">
@@ -45,7 +57,7 @@ export const Footer = (props: FooterProps) => {
         </div>
       </div>
 
-      <div className="pt-2 border-t border-gray-100">
+      <div className="pt-2 border-t border-carbon-700">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center px-10 py-2 text-sm md:flex-row">
             <span className={`${props.primaryText}`}>© Copyright {new Date().getFullYear()}. All Rights Reserved.</span>

@@ -31,13 +31,15 @@ jobs:
           node-version: "${{ matrix.node }}"
       - uses: actions/cache@v2
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
       - name: build
         run: yarn build
-  test:
+  unit-test:
     strategy:
       matrix:
         node: ["14", "12"]
@@ -56,23 +58,27 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn test
+        run: yarn test --skip-nx-cache
   codacy-coverage-reporter:
-    needs: test
+    needs: unit-test
     runs-on: ubuntu-latest
     name: codacy-coverage-reporter
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@master
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports:  ${{github.workspace}}/coverage/apps/core/lcov.info:lcov,${{github.workspace}}/coverage/apps/research/lcov.info:lcov,${{github.workspace}}/coverage/libs/components/lcov.info:lcov
-  e2e:
+        run: |
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) final
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  e2e-test:
     strategy:
       matrix:
         package: ["core-e2e", "research-e2e", "project-e2e"]
-    name: "${{ matrix.package }}"
+    name: e2e test @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -82,7 +88,9 @@ jobs:
           node-version: "14"
       - uses: actions/cache@v2    
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
@@ -90,13 +98,19 @@ jobs:
         run: yarn cypress install
       - name: Build css
         run: yarn build:css
+        env:
+          NODE_ENV: production 
       - name: Run Integration test
         run: yarn nx run "${{ matrix.package }}":e2e
   lighthouse:
     strategy:
       matrix:
         package: ["core", "research", "project"]
-    name: lighthouse @"${{ matrix.package }}"
+      max-parallel: 3
+    needs:
+      - build
+      - e2e-test
+    name: lighthouse @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -106,17 +120,22 @@ jobs:
           node-version: "14"
       - uses: actions/cache@v2    
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
       - name: Build css
         run: yarn build:css
+        env:
+          NODE_ENV: production  
       - name: build
         run: yarn nx run ${{ matrix.package }}:build
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
-        run: lhci autorun --collect.staticDistDir=dist/apps/${{matrix.package}}/exported
+        run: yarn lhci autorun
         env:
+          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

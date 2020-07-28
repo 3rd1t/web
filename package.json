@@ -5,7 +5,7 @@
   "scripts": {
     "nx": "nx",
     "start": "yarn build:css && nx serve",
-    "build": "NODE_ENV=production yarn build:css && nx build",
+    "build": "NODE_ENV=production yarn build:css && nx run-many --target=build --all",
     "test": "nx run-many --target=test --all",
     "fmt": "nx workspace-lint && nx lint && nx format:write",
     "e2e": "yarn build:css && nx run-many --target=e2e --all",

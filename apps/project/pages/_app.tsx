@@ -12,8 +12,10 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta lang="en"></meta>
         <meta name="description" content="goes here" />
       </Head>
-      <div className="bg-gray-100">
-        <div className="">
+      <body className="bg-gray-100">
+        <div className="relative">
+          <div className="fixed inset-x-0 top-0">
+
           <Navbar
             logo={<Logo></Logo>}
             links={[
@@ -38,11 +40,12 @@ const app = ({ Component, pageProps }: AppProps) => {
                 internal: false,
               },
             ]}
-          ></Navbar>
+            ></Navbar>
+            </div>
 
           <Component {...pageProps} />
         </div>
-      </div>
+      </body>
       <Footer color="carbon" primaryText="text-white" secondaryText="text-gray-100"></Footer>
     </html>
   )

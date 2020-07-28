@@ -85,7 +85,7 @@ exports[` Footer renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="pt-2 border-t border-gray-100"
+    className="pt-2 border-t border-carbon-700"
   >
     <div
       className="max-w-6xl mx-auto"

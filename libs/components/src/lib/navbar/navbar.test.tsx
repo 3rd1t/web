@@ -7,14 +7,68 @@ afterEach(cleanup)
 
 describe(" Navbar", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Navbar logo={<span>I am a logo</span>} />).toJSON()
+    const tree = renderer
+      .create(
+        <Navbar
+          logo={<span>I am a logo</span>}
+          links={[
+            {
+              label: "Product",
+              href: "#product",
+              internal: true,
+            },
+            {
+              label: "Features",
+              href: "#features",
+              internal: true,
+            },
+            {
+              label: "Team",
+              href: "#team",
+              internal: true,
+            },
+            {
+              label: "Documentation",
+              href: "#",
+              internal: false,
+            },
+          ]}
+        />,
+      )
+      .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   describe("on mobile", () => {
     describe("when the user clicks on the hamburger icon", () => {
       it("opens the navbar menu", async () => {
-        const { queryByTestId } = render(<Navbar logo={<span>Logo</span>} />)
+        const { queryByTestId } = render(
+          <Navbar
+            logo={<span>Logo</span>}
+            links={[
+              {
+                label: "Product",
+                href: "#product",
+                internal: true,
+              },
+              {
+                label: "Features",
+                href: "#features",
+                internal: true,
+              },
+              {
+                label: "Team",
+                href: "#team",
+                internal: true,
+              },
+              {
+                label: "Documentation",
+                href: "#",
+                internal: false,
+              },
+            ]}
+          />,
+        )
 
         expect(queryByTestId("mobileNavbar")).toBeNull()
 

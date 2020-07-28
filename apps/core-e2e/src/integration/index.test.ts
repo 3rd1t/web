@@ -4,8 +4,7 @@ describe("core", () => {
   beforeEach(() => cy.visit("/"))
 
   it("should display welcome message", () => {
-    cy.contains("Why was this")
-    cy.contains("great again?")
+    cy.contains("Hello World")
   })
 
   describe("when a user clicks on the netlify badge", () => {

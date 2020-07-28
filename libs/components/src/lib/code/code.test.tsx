@@ -29,7 +29,6 @@ describe("Code", () => {
         expect(selectButtons[0].innerHTML).toEqual("javascript")
         expect(selectButtons[1].innerHTML).toEqual("python")
 
-
         expect(queryByTestId("syntaxHighlighter").innerHTML.includes("ARBITRARY_TOKEN_IN_JAVASCRIPT")).toBe(true)
         expect(queryByTestId("syntaxHighlighter").innerHTML.includes("ARBITRARY_TOKEN_IN_PYTHON")).toBe(false)
 

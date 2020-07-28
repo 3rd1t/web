@@ -36,10 +36,7 @@ export const Code = (props: CodeProps) => {
           )
         })}
       </motion.nav>
-      <motion.div
-        layout
-        className="px-4 overflow-x-visible overflow-y-hidden bg-gray-900 rounded-b"
-      >
+      <motion.div layout className="px-4 overflow-x-visible overflow-y-hidden bg-gray-900 rounded-b">
         <CodeSnippet key={selectedLanguage} language={selectedLanguage}>
           {getSnippet(selectedLanguage)}
         </CodeSnippet>

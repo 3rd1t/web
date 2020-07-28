@@ -70,8 +70,8 @@ jobs:
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
   e2e-test:
     strategy:
       matrix:

@@ -15,6 +15,7 @@
   "tasksRunnerOptions": {
     "default": {
       "options": {
+        "runner": "@nrwl/workspace/src/tasks-runner/tasks-runner-v2",
         "cacheableOperations": ["build", "test", "lint", "e2e", "export"]
       }
     }

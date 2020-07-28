@@ -109,7 +109,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install && npm install -g @lhci/cli
+        run: yarn install
       - name: Build css
         run: yarn build:css
       - name: build
@@ -117,6 +117,6 @@ jobs:
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
-        run: lhci --config=${{github.workspace}}/lighthouse/${{matrix.package}}.js autorun
+        run: lhci autorun --collect.staticDistDir=dist/apps/${{matrix.package}}/exported
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

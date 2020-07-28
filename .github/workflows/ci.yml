@@ -56,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn test
+        run: yarn test --skip-nx-cache
   codacy-coverage-reporter:
     needs: unit-test
     runs-on: ubuntu-latest

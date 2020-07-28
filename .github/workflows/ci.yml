@@ -67,13 +67,13 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports:  ${{github.workspace}}/coverage/apps/core/lcov.info:lcov,${{github.workspace}}/coverage/apps/research/lcov.info:lcov,${{github.workspace}}/coverage/libs/components/lcov.info:lcov
+          coverage-reports:  ${{github.workspace}}/coverage/apps/core/lcov.info,${{github.workspace}}/coverage/apps/research/lcov.info,${{github.workspace}}/coverage/libs/components/lcov.info
   e2e-test:
     strategy:
       matrix:
         package: ["core-e2e", "research-e2e", "project-e2e"]
     needs: unit-test
-    name: "${{ matrix.package }}"
+    name: e2e test @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

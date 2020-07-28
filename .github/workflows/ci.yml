@@ -110,10 +110,12 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install && npm install -g @lhci/cli
+      - name: Build css
+        run: yarn build:css
       - name: build
-        run: yarn build
+        run: yarn nx run ${{ matrix.package }}:build
       - name: export
-        run: yarn nx run-many --target=export --all
+        run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
         run: lhci --config=${{github.workspace}}/lighthouse/${{matrix.package}}.js autorun
         env:

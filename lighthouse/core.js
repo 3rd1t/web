@@ -1,10 +1,5 @@
 const base = require("./base")
 
-module.exports = {
-  ...base,
-  ci: {
-    collect: {
-      staticDistDir: "dist/apps/core/exported",
-    },
-  },
-}
+base.ci.collect.staticDistDir = "dist/apps/core/exported"
+
+module.exports = base

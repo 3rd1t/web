@@ -96,7 +96,7 @@ jobs:
     strategy:
       matrix:
         package: ["core", "research", "project"]
-    name: "${{ matrix.package }}"
+    name: lighthouse @"${{ matrix.package }}"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

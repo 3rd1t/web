@@ -75,6 +75,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: coverage
+          path: ${{github.workspace}}/coverage
       - name: Run codacy-coverage-reporter
         run: |
           ls -al

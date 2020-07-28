@@ -58,19 +58,30 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn test --skip-nx-cache
+        run: yarn test --skip-nx-cache --codeCoverage
+      - name: Upload coverage result 
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: ${{github.workspace}}/coverage
+  
   codacy-coverage-reporter:
     needs: unit-test
     runs-on: ubuntu-latest
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@v2
+      - name: Download coverage
+        uses: actions/download-artifact@v2
+        with:
+          name: coverage
+          path: ${{github.workspace}}/coverage
       - name: Run codacy-coverage-reporter
         run: |
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
@@ -106,10 +117,6 @@ jobs:
     strategy:
       matrix:
         package: ["core", "research", "project"]
-      max-parallel: 3
-    needs:
-      - build
-      - e2e-test
     name: lighthouse @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:

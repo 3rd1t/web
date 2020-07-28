@@ -10,20 +10,15 @@ exports[` Index renders correctly 1`] = `
     <h2
       className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 xl:text-5xl sm:leading-none md:text-5xl"
     >
-      Why was this
-      <br />
-      <span
-        className="text-red-600"
-      >
-         
-        great again?
-      </span>
+      <p>
+        Hello World
+      </p>
     </h2>
-    <p
-      className="text-gray-700 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
+    <div
+      className="text-gray-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
     >
       very important text goes here
-    </p>
+    </div>
     <div
       className="space-y-4 md:space-x-4 md:space-y-0"
     >
@@ -34,7 +29,7 @@ exports[` Index renders correctly 1`] = `
           className="rounded-md shadow"
         >
           <a
-            className="border border-transparent rounded-md md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-red-600 hover:bg-red-400 hover:text-red-100"
+            className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-red-900 hover:bg-red-800 hover:text-red-100"
             href="#"
           >
             Primary
@@ -44,7 +39,7 @@ exports[` Index renders correctly 1`] = `
           className="mt-3 sm:mt-0 sm:ml-3"
         >
           <a
-            className="border border-transparent rounded-md md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-red-700 bg-red-100 hover:text-red-600 hover:bg-white"
+            className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-red-700 bg-red-100 hover:text-red-600 hover:bg-white"
             href="Secondary"
           >
             Secondary

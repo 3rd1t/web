@@ -4,10 +4,7 @@ const Index = () => {
   return (
     <HeroSection
       color="red"
-      headline={{
-        regular: "Why was this",
-        highlight: "great again?",
-      }}
+      headline={<p>Hello World</p>}
       paragraph="very important text goes here"
       primaryButton={{
         label: "Primary",

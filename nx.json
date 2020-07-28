@@ -40,6 +40,13 @@
     "core-e2e": {
       "tags": [],
       "implicitDependencies": ["core"]
+    },
+    "project": {
+      "tags": []
+    },
+    "project-e2e": {
+      "tags": [],
+      "implicitDependencies": ["project"]
     }
   }
 }

@@ -56,6 +56,17 @@ jobs:
         run: yarn install
       - name: test
         run: yarn test
+  codacy-coverage-reporter:
+    needs: test
+    runs-on: ubuntu-latest
+    name: codacy-coverage-reporter
+    steps:
+      - uses: actions/checkout@master
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@master
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports:  ${{github.workspace}}/coverage/apps/core/lcov.info:lcov,${{github.workspace}}/coverage/apps/research/lcov.info:lcov,${{github.workspace}}/coverage/libs/components/lcov.info:lcov
   e2e:
     strategy:
       matrix:

@@ -13,7 +13,6 @@
     </a>
     <a href="https://www.codacy.com/gh/perfolio/web?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=perfolio/web&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/1366d5ebb8a144e4a4c4a60e239077f8"/></a>
     <a href="https://www.codacy.com/gh/perfolio/web?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=perfolio/web&amp;utm_campaign=Badge_Coverage"><img src="https://app.codacy.com/project/badge/Coverage/1366d5ebb8a144e4a4c4a60e239077f8"/></a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fperfolio%2Fweb?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fperfolio%2Fweb.svg?type=shield"/></a>
     <a><img src="https://github.com/perfolio/web/workflows/Testing/badge.svg"/></a>
 
 </div>

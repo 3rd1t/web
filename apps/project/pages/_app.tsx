@@ -2,11 +2,9 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 import React from "react"
 import "../../../css/tailwind.css"
-import { Navbar, Footer } from "@perfolio/components"
+import { Navbar, Footer, Logo } from "@perfolio/components"
 
 const app = ({ Component, pageProps }: AppProps) => {
-  const logo = <span className="text-xl font-semibold text-carbon-900 hover:text-gray-800">PERFOLIO</span>
-
   return (
     <html lang="en">
       <Head>
@@ -15,8 +13,32 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="goes here" />
       </Head>
       <div className="bg-gray-100">
-        <div className="container mx-auto">
-          <Navbar logo={logo}></Navbar>
+        <div className="">
+          <Navbar
+            logo={<Logo></Logo>}
+            links={[
+              {
+                label: "Product",
+                href: "#product",
+                internal: true
+              },
+              {
+                label: "Features",
+                href: "#features",
+                internal: true
+              }, {
+                label: "Team",
+                href: "#team",
+                internal: true
+              },
+              {
+                label: "Documentation",
+                href: "#",
+                internal: false
+              },
+            ]}
+          ></Navbar>
+
           <Component {...pageProps} />
         </div>
       </div>

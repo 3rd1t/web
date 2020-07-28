@@ -2,7 +2,9 @@ describe("research", () => {
   beforeEach(() => cy.visit("/"))
 
   it("should display header message", () => {
-    cy.contains("Enhance your research with")
-    cy.contains("factor returns")
+    cy.contains("Get the right factor returns from our API")
   })
+  describe("when a user clicks on the netlify badge", () => {
+    it("should open the netlify page in a new tab", () => {})
+  })  
 })

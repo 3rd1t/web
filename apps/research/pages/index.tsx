@@ -17,9 +17,7 @@ const Index = (props: IndexProps) => {
           color="research"
           headline={
             <>
-              <span className="text-research-600">Portfolio analytics </span>
-              <br className="xl:hidden"></br>
-              insights for everyone
+            Get the right factor returns from our API
             </>
           }
           paragraph="Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes."

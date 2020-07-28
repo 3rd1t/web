@@ -72,7 +72,6 @@ jobs:
     strategy:
       matrix:
         package: ["core-e2e", "research-e2e", "project-e2e"]
-    needs: unit-test
     name: e2e test @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
@@ -100,7 +99,6 @@ jobs:
     needs:
       - build
       - e2e-test
-      - unit-test
     name: lighthouse @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:

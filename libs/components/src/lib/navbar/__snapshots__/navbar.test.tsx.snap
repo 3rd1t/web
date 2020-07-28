@@ -17,6 +17,7 @@ exports[` Navbar renders correctly 1`] = `
   <button
     aria-label="home"
     className="p-2 text-gray-400 hover:text-gray-900 focus:outline-none md:hidden"
+    data-testid="toggle"
     onClick={[Function]}
   >
     <svg

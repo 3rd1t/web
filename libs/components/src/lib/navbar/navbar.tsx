@@ -18,23 +18,26 @@ export const Navbar = (props: NavbarProps) => {
     closed: { visible: false },
   }
 
-
-
-
   const navbarLinkStyle = "text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-  const links = props.links.map(l => {
+  const links = props.links.map((l) => {
     if (l.internal) {
-      return <li key={l.label}><Link href={l.href}><a className={navbarLinkStyle}>{l.label}</a></Link></li>
+      return (
+        <li key={l.label}>
+          <Link href={l.href}>
+            <a className={navbarLinkStyle}>{l.label}</a>
+          </Link>
+        </li>
+      )
     } else {
-      return <li key={l.label}><a href={l.href} className={navbarLinkStyle}>{l.label}</a></li>
+      return (
+        <li key={l.label}>
+          <a href={l.href} className={navbarLinkStyle}>
+            {l.label}
+          </a>
+        </li>
+      )
     }
   })
-
-
-
-
-
-
 
   const toggleMenu = () => {
     setOpen(!open)
@@ -53,27 +56,27 @@ export const Navbar = (props: NavbarProps) => {
         onClick={toggleMenu}
         className="p-2 text-gray-400 hover:text-gray-900 focus:outline-none md:hidden"
         aria-label="home"
+        data-testid="toggle"
       >
         <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
           {open ? (
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-            )}
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+          )}
         </svg>
       </button>
 
       {/* Desktop links */}
       <div className="hidden w-auto md:block">
-        <ul className="flex items-center space-x-10">
-          {links}
-        </ul>
+        <ul className="flex items-center space-x-10">{links}</ul>
       </div>
 
       {/* Mobile links */}
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            data-testid="mobileNavbar"
             initial="collapsed"
             animate="open"
             exit="collapsed"

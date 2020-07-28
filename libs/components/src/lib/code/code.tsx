@@ -23,6 +23,7 @@ export const Code = (props: CodeProps) => {
         {props.code.map((c) => {
           return (
             <motion.button
+              data-testid="selectLanguage"
               layout
               key={c.language}
               onClick={() => setSelectedlanguage(c.language)}

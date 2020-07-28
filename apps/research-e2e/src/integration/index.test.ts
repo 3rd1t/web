@@ -6,5 +6,5 @@ describe("research", () => {
   })
   describe("when a user clicks on the netlify badge", () => {
     it("should open the netlify page in a new tab", () => {})
-  })  
+  })
 })

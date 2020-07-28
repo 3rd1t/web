@@ -5,14 +5,18 @@ updates:
     target-branch: "dev"
     schedule:
       interval: "daily"
+    assignee: chronark
 
   - package-ecosystem: "docker"
     directory: "/"
     target-branch: "dev"
     schedule:
       interval: "weekly"
+    assignee: chronark
 
   - package-ecosystem: "github-actions"
     directory: "/"
+    target-branch: "dev"
     schedule:
       interval: "daily"
+    assignee: chronark

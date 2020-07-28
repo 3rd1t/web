@@ -14,23 +14,23 @@ const app = ({ Component, pageProps }: AppProps) => {
       </Head>
       <div className="bg-gray-100">
         <div className="container mx-auto">
-        <Navbar
+          <Navbar
             logo={<Logo color="text-research-600" domain="research"></Logo>}
             links={[
               {
                 label: "Product",
                 href: "#product",
-                internal: true
+                internal: true,
               },
               {
                 label: "Features",
                 href: "#features",
-                internal: true
+                internal: true,
               },
               {
                 label: "Documentation",
                 href: "#",
-                internal: false
+                internal: false,
               },
             ]}
           ></Navbar>

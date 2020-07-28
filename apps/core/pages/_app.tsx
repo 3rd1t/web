@@ -20,29 +20,30 @@ const app = ({ Component, pageProps }: AppProps) => {
       <div className="h-screen bg-gray-100">
         <div className="container mx-auto">
           <Navbar
-           logo={<Logo domain="core" color="text-red-600"></Logo>}
-           links={[
-             {
-               label: "Product",
-               href: "#product",
-               internal: true
-             },
-             {
-               label: "Features",
-               href: "#features",
-               internal: true
-             }, {
-               label: "Team",
-               href: "#team",
-               internal: true
-             },
-             {
-               label: "Documentation",
-               href: "#",
-               internal: false
-             },
-           ]}
-         ></Navbar>
+            logo={<Logo domain="core" color="text-red-600"></Logo>}
+            links={[
+              {
+                label: "Product",
+                href: "#product",
+                internal: true,
+              },
+              {
+                label: "Features",
+                href: "#features",
+                internal: true,
+              },
+              {
+                label: "Team",
+                href: "#team",
+                internal: true,
+              },
+              {
+                label: "Documentation",
+                href: "#",
+                internal: false,
+              },
+            ]}
+          ></Navbar>
           <Component {...pageProps} />
         </div>
       </div>

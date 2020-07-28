@@ -62,12 +62,16 @@ jobs:
     runs-on: ubuntu-latest
     name: codacy-coverage-reporter
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@master
+        run: |
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info --partial
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info --partial
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info --partial
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info --partial
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports:  ${{github.workspace}}/coverage/apps/core/lcov.info,${{github.workspace}}/coverage/apps/research/lcov.info,${{github.workspace}}/coverage/libs/components/lcov.info
   e2e-test:
     strategy:
       matrix:

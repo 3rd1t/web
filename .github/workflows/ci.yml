@@ -65,10 +65,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run codacy-coverage-reporter
         run: |
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info --partial
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info --partial
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info --partial
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info --partial
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
@@ -124,7 +124,7 @@ jobs:
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
-        run: yarn lhci autorun
+        run: ls -al && yarn lhci autorun
         env:
-          LHCI_CONFIG: ${{github.workspace}}/lighthouse/${{matrix.package}}.js
+          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

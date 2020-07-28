@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` Index renders correctly 1`] = `
+exports[`Index renders correctly 1`] = `
 <div
   className="min-h-screen"
 >
@@ -16,20 +16,18 @@ exports[` Index renders correctly 1`] = `
         <h2
           className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 xl:text-5xl sm:leading-none md:text-5xl"
         >
-          Enhance your research with
-          <br />
+          Get the right factor returns from our 
           <span
-            className="text-primary-600"
+            className="text-research-600"
           >
-             
-            factor returns
+            research-friendly API
           </span>
         </h2>
-        <p
-          className="text-gray-700 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
+        <div
+          className="text-gray-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
         >
           Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes.
-        </p>
+        </div>
         <div
           className="space-y-4 md:space-x-4 md:space-y-0"
         >
@@ -40,7 +38,7 @@ exports[` Index renders correctly 1`] = `
               className="rounded-md shadow"
             >
               <a
-                className="border border-transparent rounded-md md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-primary-600 hover:bg-primary-400 hover:text-primary-100"
+                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-research-900 hover:bg-research-800 hover:text-research-100"
                 href="#"
               >
                 Get started
@@ -50,7 +48,7 @@ exports[` Index renders correctly 1`] = `
               className="mt-3 sm:mt-0 sm:ml-3"
             >
               <a
-                className="border border-transparent rounded-md md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-primary-700 bg-primary-100 hover:text-primary-600 hover:bg-white"
+                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-research-700 bg-research-100 hover:text-research-600 hover:bg-white"
                 href="Log in"
               >
                 Log in
@@ -73,6 +71,7 @@ exports[` Index renders correctly 1`] = `
         >
           <button
             className="py-3 mr-8 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none hover:text-gray-900 text-gray-900 "
+            data-testid="selectLanguage"
             onClick={[Function]}
             style={Object {}}
           >
@@ -80,6 +79,7 @@ exports[` Index renders correctly 1`] = `
           </button>
           <button
             className="py-3 mr-8 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none hover:text-gray-900 text-gray-600"
+            data-testid="selectLanguage"
             onClick={[Function]}
             style={Object {}}
           >
@@ -92,6 +92,7 @@ exports[` Index renders correctly 1`] = `
         >
           <pre
             className="font-mono"
+            data-testid="syntaxHighlighter"
             style={
               Object {
                 "MozHyphens": "none",

@@ -3,6 +3,7 @@
 exports[` CodeSnippet renders correctly 1`] = `
 <pre
   className="font-mono"
+  data-testid="syntaxHighlighter"
   style={
     Object {
       "MozHyphens": "none",

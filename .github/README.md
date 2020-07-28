@@ -1,7 +1,10 @@
 <div align="center">
     <h1 style="padding-bottom:20px;">
-        PERFOLIO / RESEARCH
+        PERFOLIO / WEB
     </h1>
+    <p>
+        A monorepo for all web applications.    
+    </p>
     <a 
         href="https://github.com/chronark/swapchain/blob/master/LICENSE">
         <img 

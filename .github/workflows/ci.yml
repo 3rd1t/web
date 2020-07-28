@@ -20,7 +20,26 @@ jobs:
         run: yarn install
       - name: Lint
         run: yarn fmt
-  test:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "${{ matrix.node }}"
+      - uses: actions/cache@v2
+        with:
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: yarn install
+      - name: build
+        run: yarn build
+  unit-test:
     strategy:
       matrix:
         node: ["14", "12"]
@@ -38,12 +57,39 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
-      - run: yarn test
-  e2e:
+      - name: test
+        run: yarn test --skip-nx-cache --codeCoverage
+      - name: Upload coverage result 
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: ${{github.workspace}}/coverage
+  
+  codacy-coverage-reporter:
+    needs: unit-test
+    runs-on: ubuntu-latest
+    name: codacy-coverage-reporter
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download coverage
+        uses: actions/download-artifact@v2
+        with:
+          name: coverage
+          path: ${{github.workspace}}/coverage
+      - name: Run codacy-coverage-reporter
+        run: |
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) final
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+  e2e-test:
     strategy:
       matrix:
-        package: ["core-e2e", "research-e2e"]
-    name: "${{ matrix.package }}"
+        package: ["core-e2e", "research-e2e", "project-e2e"]
+    name: e2e test @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -53,7 +99,9 @@ jobs:
           node-version: "14"
       - uses: actions/cache@v2    
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: yarn install
@@ -61,9 +109,15 @@ jobs:
         run: yarn cypress install
       - name: Build css
         run: yarn build:css
+        env:
+          NODE_ENV: production 
       - name: Run Integration test
         run: yarn nx run "${{ matrix.package }}":e2e
   lighthouse:
+    strategy:
+      matrix:
+        package: ["core", "research", "project"]
+    name: lighthouse @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -73,17 +127,22 @@ jobs:
           node-version: "14"
       - uses: actions/cache@v2    
         with:
-          path: '**/node_modules'
+          path: |
+            '**/node_modules'
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn install && npm install -g @lhci/cli
-      - name: build
-        run: yarn build
-      - name: export
-        run: yarn nx run-many --target=export --all
-      - name: run lighthouse
-        run: |
-          lhci --config=${{github.workspace}}/lighthouse/core.js autorun
-          lhci --config=${{github.workspace}}/lighthouse/research.js autorun
+        run: yarn install
+      - name: Build css
+        run: yarn build:css
         env:
+          NODE_ENV: production  
+      - name: build
+        run: yarn nx run ${{ matrix.package }}:build
+      - name: export
+        run: yarn nx run ${{ matrix.package }}:export
+      - name: run lighthouse
+        run: yarn lhci autorun
+        env:
+          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

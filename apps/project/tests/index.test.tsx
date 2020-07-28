@@ -1,10 +1,10 @@
 import React from "react"
 import renderer from "react-test-renderer"
-import NavbarLink from "./navbar-link"
+import Index from "../pages/index"
 
-describe(" NavbarLink", () => {
+describe(" Index", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<NavbarLink label="Product" />).toJSON()
+    const tree = renderer.create(<Index />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

@@ -11,6 +11,7 @@ exports[`Code renders correctly 1`] = `
   >
     <button
       className="py-3 mr-8 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none hover:text-gray-900 text-gray-900 "
+      data-testid="selectLanguage"
       onClick={[Function]}
       style={Object {}}
     >
@@ -23,6 +24,7 @@ exports[`Code renders correctly 1`] = `
   >
     <pre
       className="font-mono"
+      data-testid="syntaxHighlighter"
       style={
         Object {
           "MozHyphens": "none",

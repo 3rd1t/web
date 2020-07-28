@@ -27,7 +27,10 @@ export const Footer = (props: FooterProps) => {
           <div className="space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}> Projects</span>
             <FooterLink hoverColor={props.primaryText} href="https://perfol.io">
-              Core
+              Home
+            </FooterLink>
+            <FooterLink hoverColor={props.primaryText} href="https://analytics.perfol.io">
+              Analytics
             </FooterLink>
             <FooterLink hoverColor={props.primaryText} href="https://research.perfol.io">
               Research

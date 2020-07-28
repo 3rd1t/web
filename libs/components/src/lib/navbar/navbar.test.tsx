@@ -1,7 +1,8 @@
 import React from "react"
-import { cleanup, fireEvent, render, waitForElement } from "@testing-library/react"
+import { cleanup, fireEvent, render } from "@testing-library/react"
 import renderer from "react-test-renderer"
 import Navbar from "./navbar"
+
 
 afterEach(cleanup)
 

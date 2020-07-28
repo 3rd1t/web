@@ -124,6 +124,5 @@ jobs:
       - name: run lighthouse
         run: yarn lhci autorun
         env:
-          LHCI_CONFIG: ${{github.workspace}}/.lighthouserc.js
-          LHCI_COLLECT__STATIC_DIST_DIR: ${{github.workspace}}/dist/apps/${{matrix.package}}/exported
+          LHCI_CONFIG: ${{github.workspace}}/lighthouse/${{matrix.package}}.js
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

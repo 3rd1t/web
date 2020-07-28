@@ -121,6 +121,8 @@ jobs:
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
-        run: yarn lhci autorun --config=${{github.workspace}}/.lighthouserc.js --collect.staticDistDir=${{github.workspace}}/dist/apps/${{matrix.package}}/exported
+        run: yarn lhci autorun
         env:
+          LHCI_CONFIG: ${{github.workspace}}/.lighthouserc.js
+          LHCI_COLLECT_STATIC_DIST_DIR: ${{github.workspace}}/dist/apps/${{matrix.package}}/exported
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

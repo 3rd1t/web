@@ -79,10 +79,10 @@ jobs:
       - name: Run codacy-coverage-reporter
         run: |
           ls -al
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/project/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/apps/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -l Javascript -r ${{github.workspace}}/coverage/libs/components/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

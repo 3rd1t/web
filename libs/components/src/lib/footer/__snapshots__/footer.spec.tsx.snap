@@ -22,7 +22,13 @@ exports[` Footer renders correctly 1`] = `
           className="block focus:outline-none hover:text-white"
           href="https://perfol.io"
         >
-          Core
+          Home
+        </a>
+        <a
+          className="block focus:outline-none hover:text-white"
+          href="https://analytics.perfol.io"
+        >
+          Analytics
         </a>
         <a
           className="block focus:outline-none hover:text-white"

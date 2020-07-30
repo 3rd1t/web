@@ -10569,10 +10569,10 @@ lighthouse@6.0.0:
     yargs "3.32.0"
     yargs-parser "^18.1.3"
 
-lightweight-charts@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/lightweight-charts/-/lightweight-charts-3.1.3.tgz#47301ff6f5ff028ffafdf8ecc558a88da8a042c2"
-  integrity sha512-+uxTgVJzQRoWsgZk0jrl/+Yojf6K6AngTHP6kn1QxraWSDaQvghpKZV7BuoYmizcfm26ZFKihoyfddFYGOYLsg==
+lightweight-charts@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/lightweight-charts/-/lightweight-charts-3.1.5.tgz#d8b9c413dcfe55da1ca6520afb8014359800a90c"
+  integrity sha512-8EnvrOVJIjnQka7Eqag5noH+Wl4n9viYbLDajM/dWPS3jJIig83AMK49lOO9DNW9l72N8PaQKx9ztYNVT3BiMA==
   dependencies:
     fancy-canvas "0.2.2"
 

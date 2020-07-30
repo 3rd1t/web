@@ -7,7 +7,7 @@ interface IndexProps { }
 
 const Index = (props: IndexProps) => {
   const check = (
-    <svg className="h-6" fill="currentColor" viewBox="0 0 20 20">
+    <svg stroke="currentColor" fill="currentColor" viewBox="0 0 20 20">
       <path
         fillRule="evenodd"
         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -16,26 +16,25 @@ const Index = (props: IndexProps) => {
     </svg>
   )
 
-  const feature = (icon: React.ReactNode, name: string) => (
-    <li className="w-full p-2 sm:w-1/2">
-      <div className="relative flex items-center h-full m-2 bg-gray-100 border border-gray-500 rounded">
-        <div className="relative flex items-center justify-center p-4">
-          <div className="absolute inset-y-0 left-0 p-1 ml-2 text-gray-100 bg-gray-900 rounded-full">
-            {icon}
-          </div>
-        </div>
-        <div className="flex justify-center w-full">
-
-          <span className="mx-4 my-2 text-lg font-medium leading-6 text-gray-900">{name}</span>
-        </div>
+  const feature = (icon: React.ReactNode, name: string, description: string, isLast?: boolean) => (
+    <div className="relative flex pb-12 lg:items-center lg:w-1/4 lg:flex-col">
+      <div className={`absolute inset-0 flex items-center justify-center sm:w-12 w-10 md:w-12 h-full ${isLast ? "hidden" : "lg:hidden"}`}>
+        <div className="w-1 h-full bg-gray-200 pointer-events-none"></div>
       </div>
-    </li >
+      <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-10 h-10 p-1 text-gray-900 bg-gray-100 border-4 border-gray-900 rounded-full lg:bg-gray-900 lg:text-gray-100 lg:border-0 border-3 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:rounded">
+        {icon}
+      </div>
+      <div className="flex-grow pl-4 lg:pl-0 lg:mt-8">
+        <h2 className="mb-1 text-lg font-medium leading-6 text-gray-900">{name}</h2>
+        <p className="text-base leading-6 text-gray-600">{description}</p>
+      </div>
+    </div>
   )
 
   return (
     <>
-      <section className="min-h-screen">
-        <div className="flex flex-col items-start px-4 pt-4 space-y-8 sm:pt-16 sm:px-6 md:pt-20 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
+      <section className="relative min-h-screen" id="index">
+        <div className="flex flex-col items-start px-4 pt-20 space-y-8 sm:pt-24 sm:px-6 md:pt-28 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             color="gray"
             headline={<h1>Portfolio analytics insights for everyone</h1>}
@@ -54,31 +53,75 @@ const Index = (props: IndexProps) => {
             }}
           ></HeroSection>
         </div>
-      </section>
-      <section className="flex flex-col justify-center min-h-screen px-4 mx-auto bg-white sm:px-6 lg:px-8">
-        <div>
-          <div className="md:text-center">
-            <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-              Insights we offer</h3>
-            <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 md:mx-auto">
-              Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
-          </div>
-          <div className="container py-10 mx-auto">
-            <ul className="flex flex-wrap -mx-2 lg:w-4/5 sm:mx-auto sm:mb-2">
-              {feature(check, "Independent")}
-              {feature(check, "Fair pricing - start for free!")}
-              {feature(check, "High data quality")}
-              {feature(check, "Sophisticated analytics method")}
-            </ul>
+        <div className="absolute inset-x-0 bottom-0 flex justify-center">
+          <div className="w-20 h-20 p-4 transform rotate-45 bg-gray-500 ">
+            <div className="flex items-center justify-center transform -rotate-45">
+
+              <a href="#features">Arrow down TODO:</a>
+            </div>
           </div>
         </div>
       </section>
-      <section className="flex flex-col justify-center px-4 py-20 mx-auto bg-gray-100 sm:px-6 lg:px-8">
+      <section id="features" className="flex flex-col justify-center px-4 pt-20 mx-auto bg-white sm:px-6 lg:px-8">
+        <div className="md:text-center">
+          <h3 className="mt-8 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+            Insights we offer</h3>
+          <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 md:mx-auto">
+            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.</p>
+        </div>
+        <div className="flex flex-col px-5 py-24 mx-auto lg:flex-row lg:space-x-8">
+          {feature(check, "Independent", "Morbi ultricies molestie lacinia. Vivamus sagittis congue eleifend. Phasellus congue porttitor risus, a imperdiet enim tristique vel. Praesent libero dolor. ")}
+          {feature(check, "Fair pricing - start for free!", "Nam imperdiet metus quis sapien egestas sagittis. Cras venenatis, orci non tempus porttitor, quam lorem sodales mauris, in fermentum purus. ")}
+          {feature(check, "High data quality", "Nullam dapibus turpis lorem, at porta risus hendrerit nec. Maecenas eu ornare felis. Praesent fringilla libero magna, in tempus dui. ")}
+          {feature(check, "Sophisticated analytics methods - simply illustrated", "Morbi at mauris et dolor rutrum molestie. In venenatis dictum tellus ut varius. Cras sed ante tincidunt, condimentum lacus eu.", true)}
+
+
+        </div>
+      </section>
+      <section className="flex flex-col justify-center px-4 py-20 mx-auto bg-gray-100 sm:px-6 lg:px-8"
+        id="team">
+        <div className="flex justify-center">
+          <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">Our Team</h2>
+        </div>
+        <div className="flex flex-col px-5 py-16 mx-auto">
+          <div className="mx-auto lg:w-4/6">
+            <div className="overflow-hidden rounded-sm">
+              <img alt="team photo" className="object-cover w-full" src="./team.jpg"></img>
+            </div>
+            <div className="flex flex-col mt-10 sm:flex-row">
+              <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-full">
+                  <svg
+                    className="p-3 text-gray-100 stroke-current"
+                    viewBox="0 0 194 148"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
+                      strokeWidth="25"
+                    />
+                  </svg>
+                </div>
+                <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
+                  <h2 className="text-lg font-medium leading-6 text-gray-900">Perfolio</h2>
+                  <p className="text-base leading-6 text-left text-gray-600 sm:text-center">We are all super impressed by the performance of our product owners from amos and would like to thank them for everything they have taught us.</p>
+                </div>
+              </div>
+              <div className="pt-4 mt-4 border-t border-gray-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0">
+                <p className="text-lg leading-6 text-center text-gray-600 sm:text-left">Mauris porta, turpis eu rhoncus accumsan, neque tortor feugiat purus, vel egestas tellus magna nec leo. Pellentesque ultrices posuere consequat. Quisque mollis erat eget aliquam mollis. Aenean convallis aliquet augue venenatis posuere. Donec pretium ante nunc, eu tempus diam dictum quis. Etiam nunc magna, tincidunt et porttitor at, volutpat rutrum felis. Nullam condimentum consectetur urna non pharetra. Vivamus enim massa, porttitor a lobortis dignissim, iaculis id arcu. Aliquam feugiat nisl sed blandit pulvinar. Sed bibendum rhoncus erat, et feugiat dolor ullamcorper non. Sed interdum et justo non aliquet. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <section id="subscribe" className="flex flex-col justify-center px-4 py-20 mx-auto bg-white sm:px-6 lg:px-8">
         <div className="container flex flex-col justify-around mx-auto lg:flex-row">
           <div>
             <h2 className="text-2xl font-semibold leading-8 text-gray-900 font-display sm:text-3xl sm:leading-9">Curious for more?</h2>
             <p className="max-w-2xl mt-2 text-base leading-6">
-              <span className="text-gray-500">Follow us on our roadmap and on </span><a target="blank" href="https://github.com/perfolio">github</a>.</p>
+              <span className="text-gray-600">Follow us on our roadmap and on </span><a target="blank" href="https://github.com/perfolio">github</a>.</p>
           </div>
           <form className="mt-6" >
             <div className="sm:flex">

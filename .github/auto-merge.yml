@@ -1,6 +1,8 @@
-minApprovals:
-  OWNER: 1
-
+rules:
+- minApprovals:
+    OWNER: 1
+- requiredLabels:
+    - merge
 updateBranch: true
 deleteBranchAfterMerge: true
 mergeMethod: merge

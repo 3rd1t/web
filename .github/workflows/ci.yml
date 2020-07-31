@@ -4,7 +4,7 @@ on: push
 
 jobs:
   install:
-    name: Install node modules
+    name: Install
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,21 +12,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: actions/cache@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
-      - name: Upload node_modules
-        uses: actions/upload-artifact@v2
-        with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
 
   lint:
-    needs:
-      - install
+    needs: install
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -35,11 +36,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Lint
@@ -54,11 +61,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "${{ matrix.node }}"
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: build
@@ -82,11 +95,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "${{ matrix.node }}"
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: test
@@ -130,11 +149,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Install cypress
@@ -163,11 +188,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - name: Download node_modules
-        uses: actions/download-artifact@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          name: node_modules
-          path: ${{github.workspace}}/node_modules
+          path: ~/.yarn/berry/cache
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Build css

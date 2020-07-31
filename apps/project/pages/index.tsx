@@ -40,7 +40,7 @@ const Index = (props: IndexProps) => {
         <div className="flex flex-col items-start px-4 pt-20 space-y-8 sm:pt-24 sm:px-6 md:pt-28 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             color="carbon"
-            headline={<h1>Portfolio analytics insights for everyone</h1>}
+            headline="Portfolio analytics insights for everyone"
             paragraph={
               <p className="flex flex-col xl:flex-row">
                 Giving you access to the latest investment portfolio analytics methods in science.

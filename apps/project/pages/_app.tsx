@@ -12,13 +12,18 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="goes here" />
       </Head>
       <div className="bg-gray-100">
-        <div className="inset-x-0 top-0 z-20 bg-gray-100 md:fixed">
+        <div className="inset-x-0 top-0 z-20 bg-gray-100">
           <Navbar
             logo={<Logo></Logo>}
             links={[
               {
+                label: "Home",
+                href: "/",
+                internal: true,
+              },
+              {
                 label: "Product",
-                href: "#index",
+                href: "#product",
                 internal: true,
               },
               {
@@ -41,7 +46,7 @@ const app = ({ Component, pageProps }: AppProps) => {
         </div>
         <Component {...pageProps} />
       </div>
-      <Footer color="carbon" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+      <Footer bg="bg-carbon-900" primaryText="text-white" secondaryText="text-gray-100"></Footer>
     </div>
   )
 }

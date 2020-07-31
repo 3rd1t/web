@@ -3,7 +3,7 @@ import React from "react"
 /* eslint-disable-next-line */
 export interface HeroSectionProps {
   color: string
-  headline: React.ReactNode
+  headline: string
   paragraph: React.ReactNode
   primaryButton: {
     label: string

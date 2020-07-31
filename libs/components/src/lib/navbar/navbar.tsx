@@ -13,11 +13,6 @@ export interface NavbarProps {
 export const Navbar = (props: NavbarProps) => {
   const [open, setOpen] = useState(false)
 
-  const variants = {
-    open: { visible: true },
-    closed: { visible: false },
-  }
-
   const navbarLinkStyle = "text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
   const links = props.links.map((l) => {
     if (l.internal) {

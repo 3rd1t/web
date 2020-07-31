@@ -4,7 +4,7 @@ const Index = () => {
   return (
     <HeroSection
       color="red"
-      headline={<p>Hello World</p>}
+      headline="Hello World"
       paragraph="very important text goes here"
       primaryButton={{
         label: "Primary",

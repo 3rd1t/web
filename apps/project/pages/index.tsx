@@ -2,7 +2,7 @@ import React from "react"
 import { HeroSection, Section } from "@perfolio/components"
 import { motion } from "framer-motion"
 /* eslint-disable-next-line */
-interface IndexProps {}
+interface IndexProps { }
 
 const Index = (props: IndexProps) => {
   const check = (
@@ -20,7 +20,7 @@ const Index = (props: IndexProps) => {
       <div
         className={`absolute inset-0 flex items-center justify-center sm:w-12 w-10 md:w-12 h-full ${
           isLast ? "hidden" : "lg:hidden"
-        }`}
+          }`}
       >
         <div className="w-1 h-full pointer-events-none bg-carbon-200"></div>
       </div>
@@ -37,10 +37,10 @@ const Index = (props: IndexProps) => {
   return (
     <>
       <Section bg="bg-gray-100" className="relative min-h-screen" id="index">
-        <div className="flex flex-col items-start px-4 pt-20 space-y-8 sm:pt-24 sm:px-6 md:pt-28 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
+        <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 sm:px-6 md:pt-28 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             color="carbon"
-            headline={<h1>Portfolio analytics insights for everyone</h1>}
+            headline="Portfolio analytics insights for everyone"
             paragraph={
               <p className="flex flex-col xl:flex-row">
                 Giving you access to the latest investment portfolio analytics methods in science.
@@ -59,10 +59,13 @@ const Index = (props: IndexProps) => {
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{
+            delay: 5,
+            y: { type: "spring", damping: 6, stiffness: 60 },
+          }}
           className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
         >
-          <div className="inline-flex w-20 h-20 p-4 text-gray-100 duration-500 transform rotate-45 shadow-xl group bg-carbon-900 hover:scale-105 hover:-translate-y-4">
+          <div className="inline-flex w-10 h-10 p-2 text-gray-100 duration-500 transform rotate-45 shadow-xl lg:p-4 md:h-12 md:w-12 lg:h-16 lg:w-16 group bg-carbon-900 hover:scale-105 hover:-translate-y-4">
             <div className="flex items-center justify-center transform -rotate-45">
               <a href="#features">
                 <svg fill="currentColor" viewBox="0 0 20 20">

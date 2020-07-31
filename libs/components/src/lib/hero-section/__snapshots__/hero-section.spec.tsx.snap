@@ -10,9 +10,7 @@ exports[` HeroSection renders correctly 1`] = `
     <h2
       className="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 xl:text-5xl sm:leading-none md:text-5xl"
     >
-      <span>
-        Headline
-      </span>
+      Headline
     </h2>
     <div
       className="text-gray-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"

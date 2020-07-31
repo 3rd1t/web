@@ -1,15 +1,15 @@
 module.exports = {
-  name: 'project',
-  preset: '../../jest.config.js',
+  name: "project",
+  preset: "../../jest.config.js",
   globals: {
-    'ts-jest': {
-      tsConfig: '<rootDir>/tsconfig.spec.json',
+    "ts-jest": {
+      tsConfig: "<rootDir>/tsconfig.test.json",
     },
   },
   transform: {
-    '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nrwl/react/plugins/jest',
-    '^.+\\.[tj]sx?$': 'ts-jest',
+    "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "@nrwl/react/plugins/jest",
+    "^.+\\.[tj]sx?$": "ts-jest",
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../coverage/apps/project',
-};
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
+  coverageDirectory: "../../coverage/apps/project",
+}

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section without domain renders correctly 1`] = `
+<section
+  className="bg-white"
+  id="hello"
+>
+  <div
+    className="container py-8 mx-auto md:py-12 lg:py-16 xl:py-20"
+  >
+    <div>
+      <span>
+        Hello World
+      </span>
+    </div>
+  </div>
+</section>
+`;

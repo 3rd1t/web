@@ -41,7 +41,7 @@ const app = ({ Component, pageProps }: AppProps) => {
         </div>
         <Component {...pageProps} />
       </div>
-      <Footer color="carbon" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+      <Footer bg="bg-carbon-900" primaryText="text-white" secondaryText="text-gray-100"></Footer>
     </div>
   )
 }

@@ -2,7 +2,7 @@
 
 exports[` Footer renders correctly 1`] = `
 <footer
-  className="bg-gray-900"
+  className="bg-carbon-900"
 >
   <div
     className="container mx-auto"

@@ -2,26 +2,14 @@ import React from "react"
 import { FooterLink } from "../footer-link/footer-link"
 /* eslint-disable-next-line */
 export interface FooterProps {
-  color: string
+  bg: string
   primaryText: string
   secondaryText: string
 }
 
 export const Footer = (props: FooterProps) => {
-  const toText = (weight: number): string => {
-    return "text-" + props.color + "-" + weight
-  }
-
-  const toBg = (weight: number): string => {
-    return "bg-" + props.color + "-" + weight
-  }
-
-  const toBorder = (weight: number): string => {
-    return "border-" + props.color + "-" + weight
-  }
-
   return (
-    <footer className={toBg(900)}>
+    <footer className={props.bg}>
       <div className="container mx-auto">
         <div className={`flex flex-wrap justify-between p-10  ${props.secondaryText}`}>
           <div className="space-y-2">

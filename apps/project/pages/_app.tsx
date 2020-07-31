@@ -6,22 +6,19 @@ import { Navbar, Footer, Logo } from "@perfolio/components"
 
 const app = ({ Component, pageProps }: AppProps) => {
   return (
-    <html lang="en">
+    <div>
       <Head>
         <title>Perfolio</title>
-        <meta lang="en"></meta>
         <meta name="description" content="goes here" />
       </Head>
-      <body className="bg-gray-100">
-        <div className="relative">
-          <div className="fixed inset-x-0 top-0">
-
+      <div className="bg-gray-100">
+        <div className="inset-x-0 top-0 z-20 bg-gray-100 md:fixed">
           <Navbar
             logo={<Logo></Logo>}
             links={[
               {
                 label: "Product",
-                href: "#product",
+                href: "#index",
                 internal: true,
               },
               {
@@ -40,14 +37,12 @@ const app = ({ Component, pageProps }: AppProps) => {
                 internal: false,
               },
             ]}
-            ></Navbar>
-            </div>
-
-          <Component {...pageProps} />
+          ></Navbar>
         </div>
-      </body>
+        <Component {...pageProps} />
+      </div>
       <Footer color="carbon" primaryText="text-white" secondaryText="text-gray-100"></Footer>
-    </html>
+    </div>
   )
 }
 export default app

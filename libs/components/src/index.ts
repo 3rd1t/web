@@ -1,3 +1,4 @@
+export * from "./lib/section/section"
 export * from "./lib/logo/logo"
 export * from "./lib/chart/chart"
 export * from "./lib/code-snippet/code-snippet"

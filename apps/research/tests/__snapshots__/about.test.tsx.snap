@@ -10,11 +10,11 @@ exports[` About renders correctly 1`] = `
     <div
       className="flex flex-col justify-center w-full text-center"
     >
-      <h1
+      <h2
         className="text-2xl tracking-widest text-gray-900"
       >
         OUR TEAM
-      </h1>
+      </h2>
     </div>
     <div
       className="flex flex-wrap justify-center mt-20 -m-4 sm:justify-start"

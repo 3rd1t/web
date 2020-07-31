@@ -38,7 +38,7 @@ exports[`Index renders correctly 1`] = `
               className="rounded-md shadow"
             >
               <a
-                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-research-900 hover:bg-research-800 hover:text-research-100"
+                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none transition duration-200 text-white bg-research-900 hover:bg-research-800"
                 href="#"
               >
                 Get started
@@ -48,7 +48,7 @@ exports[`Index renders correctly 1`] = `
               className="mt-3 sm:mt-0 sm:ml-3"
             >
               <a
-                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-research-700 bg-research-100 hover:text-research-600 hover:bg-white"
+                className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none transition text-research-600 hover:text-research-900 duration-200"
                 href="Log in"
               >
                 Log in

@@ -21,8 +21,8 @@ export const Footer = (props: FooterProps) => {
   }
 
   return (
-    <footer className={`w-full ${toBg(900)}`}>
-      <div className="max-w-6xl mx-auto">
+    <footer className={toBg(900)}>
+      <div className="container mx-auto">
         <div className={`flex flex-wrap justify-between p-10  ${props.secondaryText}`}>
           <div className="space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}> Projects</span>

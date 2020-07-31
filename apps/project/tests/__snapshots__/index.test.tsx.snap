@@ -47,7 +47,7 @@ Array [
                     className="rounded-md shadow"
                   >
                     <a
-                      className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-white bg-carbon-900 hover:bg-carbon-800 hover:text-carbon-100"
+                      className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none transition duration-200 text-white bg-carbon-900 hover:bg-carbon-800"
                       href="#"
                     >
                       Get started
@@ -57,7 +57,7 @@ Array [
                     className="mt-3 sm:mt-0 sm:ml-3"
                   >
                     <a
-                      className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none text-carbon-700 bg-carbon-100 hover:text-carbon-600 hover:bg-white"
+                      className="border border-transparent rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out focus:outline-none transition text-carbon-600 hover:text-carbon-900 duration-200"
                       href="Log in"
                     >
                       Log in

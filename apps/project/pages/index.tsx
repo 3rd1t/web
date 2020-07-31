@@ -112,9 +112,9 @@ const Index = (props: IndexProps) => {
         </div>
       </Section>
       <Section className="flex flex-col justify-center" id="team">
-          <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-carbon-900 sm:text-4xl sm:leading-10">
-            Our Team
-          </h2>
+        <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-carbon-900 sm:text-4xl sm:leading-10">
+          Our Team
+        </h2>
         <div className="flex flex-col px-5 py-16 mx-auto">
           <div className="mx-auto lg:w-4/6">
             <div className="overflow-hidden rounded-sm">

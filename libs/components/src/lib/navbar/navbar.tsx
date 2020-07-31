@@ -81,16 +81,13 @@ export const Navbar = (props: NavbarProps) => {
             animate="open"
             exit="collapsed"
             variants={{
-              open: { opacity: 1, height: "auto", y:0 },
-              collapsed: { opacity: 0, height: 0, y:-100 },
+              open: { opacity: 1, height: "auto", y: 0 },
+              collapsed: { opacity: 0, height: 0, y: -100 },
             }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             className="w-screen -ml-4"
           >
-          
-            <ul className="flex flex-col w-screen px-4 pt-4 mt-4 space-y-4 border-b border-gray-400">
-              {links}
-            </ul>
+            <ul className="flex flex-col w-screen px-4 pt-4 mt-4 space-y-4 border-b border-gray-400">{links}</ul>
           </motion.div>
         )}
       </AnimatePresence>

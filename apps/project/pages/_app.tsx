@@ -17,8 +17,13 @@ const app = ({ Component, pageProps }: AppProps) => {
             logo={<Logo></Logo>}
             links={[
               {
+                label: "Home",
+                href: "/",
+                internal: true,
+              },
+              {
                 label: "Product",
-                href: "#index",
+                href: "#product",
                 internal: true,
               },
               {

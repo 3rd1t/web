@@ -3,7 +3,31 @@ name: Testing
 on: push
 
 jobs:
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: yarn install
+
   lint:
+    needs: install
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -12,15 +36,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: actions/cache@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Lint
         run: yarn fmt
   build:
+    needs: install
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -28,18 +60,30 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: "${{ matrix.node }}"
-      - uses: actions/cache@v2
+          node-version: "14"
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: |
-            '**/node_modules'
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: build
         run: yarn build
+      - name: Upload dist
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ${{github.workspace}}/dist
+
   unit-test:
+    needs: install
     strategy:
       matrix:
         node: ["14", "12"]
@@ -51,20 +95,27 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "${{ matrix.node }}"
-      - uses: actions/cache@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: test
         run: yarn test --skip-nx-cache --codeCoverage
-      - name: Upload coverage result 
+      - name: Upload coverage result
         uses: actions/upload-artifact@v2
         with:
           name: coverage
           path: ${{github.workspace}}/coverage
-  
+
   codacy-coverage-reporter:
     needs: unit-test
     runs-on: ubuntu-latest
@@ -86,6 +137,7 @@ jobs:
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
   e2e-test:
+    needs: build
     strategy:
       matrix:
         package: ["core-e2e", "research-e2e", "project-e2e"]
@@ -97,12 +149,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: actions/cache@v2    
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: |
-            '**/node_modules'
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Install cypress
@@ -110,10 +167,16 @@ jobs:
       - name: Build css
         run: yarn build:css
         env:
-          NODE_ENV: production 
+          NODE_ENV: production
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: ${{github.workspace}}/dist
       - name: Run Integration test
         run: yarn nx run "${{ matrix.package }}":e2e
   lighthouse:
+    needs: build
     strategy:
       matrix:
         package: ["core", "research", "project"]
@@ -125,20 +188,28 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: actions/cache@v2    
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: |
-            '**/node_modules'
-            ${{ github.workspace }}/.next/cache
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{github.workspace}}/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
       - name: Build css
         run: yarn build:css
         env:
-          NODE_ENV: production  
-      - name: build
-        run: yarn nx run ${{ matrix.package }}:build
+          NODE_ENV: production
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: ${{github.workspace}}/dist
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse

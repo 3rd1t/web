@@ -41,7 +41,7 @@ export const HeroSection = (props: HeroSectionProps) => {
             <div className="rounded-md shadow">
               <a
                 href={props.primaryButton.href}
-                className={`${commonButtonClasses} text-white ${toBg(900)} hover:${toBg(800)} hover:${toText(100)}`}
+                className={`${commonButtonClasses} transition duration-200 text-white ${toBg(900)} hover:${toBg(800)}`}
               >
                 {props.primaryButton.label}
               </a>
@@ -49,7 +49,7 @@ export const HeroSection = (props: HeroSectionProps) => {
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <a
                 href={props.secondaryButton.label}
-                className={`${commonButtonClasses} ${toText(700)} ${toBg(100)} hover:${toText(600)} hover:bg-white`}
+                className={`${commonButtonClasses} transition ${toText(600)} hover:${toText(900)} duration-200`}
               >
                 {props.secondaryButton.label}
               </a>

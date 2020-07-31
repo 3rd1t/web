@@ -2,10 +2,10 @@
 
 exports[` Footer renders correctly 1`] = `
 <footer
-  className="w-full bg-gray-900"
+  className="bg-gray-900"
 >
   <div
-    className="max-w-6xl mx-auto"
+    className="container mx-auto"
   >
     <div
       className="flex flex-wrap justify-between p-10  text-gray-200"

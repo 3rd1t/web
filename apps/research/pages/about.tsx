@@ -9,7 +9,7 @@ export const About = (props: AboutProps) => {
     <section className="text-gray-700">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col justify-center w-full text-center">
-          <h1 className="text-2xl tracking-widest text-gray-900">OUR TEAM</h1>
+          <h2 className="text-2xl tracking-widest text-gray-900">OUR TEAM</h2>
           {/* <p className="mx-auto text-base leading-relaxed lg:w-2/3">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p> */}
         </div>
         <div className="flex flex-wrap justify-center mt-20 -m-4 sm:justify-start">

@@ -31,10 +31,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - run: git fetch --no-tags --prune --depth=5 origin master
-        
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
@@ -45,7 +41,7 @@ jobs:
       - name: Workspace Lint
         run: yarn nx workspace-lint
       - name: Lint
-        run: yarn affected:lint --base=origin/master
+        run: yarn affected:lint
       - name: Format
         run: yarn format:check
   build:

@@ -41,7 +41,7 @@ jobs:
       - name: Workspace Lint
         run: yarn nx workspace-lint
       - name: Lint
-        run: yarn affected:lint
+        run: yarn affected:lint --base=origin/master
       - name: Format
         run: yarn format:check
   build:

@@ -198,12 +198,6 @@
           "options": {
             "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./packages/tailwindcss/dist/tailwind.css"
           }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint"
-          }
         }
       }
     }

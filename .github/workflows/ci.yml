@@ -49,8 +49,12 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
+      - name: Workspace Lint
+        run: yarn nx workspace-lint
       - name: Lint
-        run: yarn fmt
+        run: yarn affected:lint
+      - name: Format
+        run: yarn format:check
   build:
     needs: install
     name: Build
@@ -75,7 +79,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn build
+        run: yarn affected:build --with-deps
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:
@@ -109,7 +113,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn test --skip-nx-cache --codeCoverage
+        run: yarn affected:test --codeCoverage
       - name: Upload coverage result
         uses: actions/upload-artifact@v2
         with:
@@ -129,10 +133,9 @@ jobs:
           path: ${{github.workspace}}/coverage
       - name: Run codacy-coverage-reporter
         run: |
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/apps/project/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/apps/core/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/apps/research/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/libs/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/components/lcov.info
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

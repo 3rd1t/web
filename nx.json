@@ -1,5 +1,5 @@
 {
-  "npmScope": "core",
+  "npmScope": "perfolio",
   "affected": {
     "defaultBase": "master"
   },
@@ -9,7 +9,7 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "tsconfig.json": "*",
+    "tsconfig.base.json": "*",
     "nx.json": "*"
   },
   "tasksRunnerOptions": {
@@ -17,6 +17,15 @@
       "options": {
         "runner": "@nrwl/workspace/src/tasks-runner/tasks-runner-v2",
         "cacheableOperations": ["build", "test", "lint", "e2e", "export"]
+      }
+    },
+    "cloud": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "accessToken": "OWZmYzE2YTItNjcwYi00MTQyLTk2ZDctOGIxMGNlNGRhMTRjfHJlYWQtd3JpdGU=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "canTrackAnalytics": false,
+        "showUsageWarnings": false
       }
     }
   },
@@ -28,9 +37,6 @@
       "tags": [],
       "implicitDependencies": ["research"]
     },
-    "components": {
-      "tags": []
-    },
     "core": {
       "tags": []
     },
@@ -38,12 +44,15 @@
       "tags": [],
       "implicitDependencies": ["core"]
     },
-    "project": {
+    "components": {
       "tags": []
     },
-    "project-e2e": {
-      "tags": [],
-      "implicitDependencies": ["project"]
+    "tailwindcss": {
+      "tags": []
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
   }
 }

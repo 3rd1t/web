@@ -52,7 +52,7 @@ jobs:
       - name: Workspace Lint
         run: yarn nx workspace-lint
       - name: Lint
-        run: yarn affected:lint
+        run: yarn affected:lint --base={{GITHUB_REF}} --head={{GITHUB_SHA}}
       - name: Format
         run: yarn format:check
   build:

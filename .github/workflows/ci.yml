@@ -141,10 +141,7 @@ jobs:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
   e2e-test:
     needs: build
-    strategy:
-      matrix:
-        package: ["core-e2e", "research-e2e", "project-e2e"]
-    name: e2e test @${{ matrix.package }}
+    name: e2e test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -167,17 +164,13 @@ jobs:
         run: yarn install
       - name: Install cypress
         run: yarn cypress install
-      - name: Build css
-        run: yarn build:css
-        env:
-          NODE_ENV: production
       - name: Download dist
         uses: actions/download-artifact@v2
         with:
           name: dist
           path: ${{github.workspace}}/dist
       - name: Run Integration test
-        run: yarn nx run "${{ matrix.package }}":e2e
+        run: yarn affected:e2e
   lighthouse:
     needs: build
     strategy:
@@ -204,10 +197,6 @@ jobs:
             ${{ runner.os }}-
       - name: Install dependencies
         run: yarn install
-      - name: Build css
-        run: yarn build:css
-        env:
-          NODE_ENV: production
       - name: Download dist
         uses: actions/download-artifact@v2
         with:

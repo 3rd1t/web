@@ -51,7 +51,7 @@ jobs:
       - name: Lint
         run: yarn affected:lint --base=origin/master
       - name: Format
-        run: yarn format:check
+        run: yarn format:check --base=origin/master
   build:
     needs: install
     name: Build
@@ -70,7 +70,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn affected:build --with-deps
+        run: yarn affected:build --with-deps --base=origin/master
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:
@@ -98,7 +98,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn affected:test --codeCoverage
+        run: yarn affected:test --codeCoverage --base=origin/master
       - name: Upload coverage result
         uses: actions/upload-artifact@v2
         with:
@@ -149,7 +149,7 @@ jobs:
           name: dist
           path: ${{github.workspace}}/dist
       - name: Run Integration test
-        run: yarn affected:e2e
+        run: yarn affected:e2e --base=origin/master
   lighthouse:
     needs: build
     strategy:

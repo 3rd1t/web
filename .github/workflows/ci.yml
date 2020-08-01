@@ -38,7 +38,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - run: git fetch --no-tags --prune --depth=5 origin master
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
@@ -166,7 +165,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        package: ["core", "research", "project"]
+        package: ["core", "research"]
     name: lighthouse @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:

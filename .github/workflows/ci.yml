@@ -88,7 +88,6 @@ jobs:
 
  
   e2e-test:
-    needs: build
     name: e2e test
     runs-on: ubuntu-latest
     steps:
@@ -109,11 +108,6 @@ jobs:
         run: yarn install
       - name: Install cypress
         run: yarn cypress install
-      - name: Download dist
-        uses: actions/download-artifact@v2
-        with:
-          name: dist
-          path: ${{github.workspace}}/dist
       - name: Run Integration test
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache

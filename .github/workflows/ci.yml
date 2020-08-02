@@ -106,6 +106,7 @@ jobs:
       - name: Run Integration test
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
+          yarn affected:build
           yarn affected:e2e
   lighthouse:
     strategy:

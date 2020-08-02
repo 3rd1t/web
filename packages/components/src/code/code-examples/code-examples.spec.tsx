@@ -1,7 +1,7 @@
 import React from "react"
 import renderer from "react-test-renderer"
 import CodeExample from "./code-examples"
-import { cleanup, fireEvent, render, waitForElement } from "@testing-library/react"
+import { fireEvent, render } from "@testing-library/react"
 
 describe("CodeExample", () => {
   const component = <CodeExample code={[{ language: "javascript", snippet: "const x = 1;" }]} />
@@ -14,7 +14,7 @@ describe("CodeExample", () => {
   describe("with multiple languages", () => {
     describe("when the user clicks on a language button", () => {
       it("switches to the respective snippet", () => {
-        const { queryByText, getAllByTestId, queryByTestId } = render(
+        const { getAllByTestId, queryByTestId } = render(
           <CodeExample
             code={[
               {

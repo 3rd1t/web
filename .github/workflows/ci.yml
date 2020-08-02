@@ -53,13 +53,8 @@ jobs:
         run: yarn install
       - name: build
         run: |
-          NODE_ENV=production yarn nx build tailwindcss
+          NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
           yarn affected:build --with-deps
-      - name: Upload dist
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
-          path: ${{github.workspace}}/dist
 
   unit-test:
     strategy:
@@ -88,7 +83,6 @@ jobs:
 
  
   e2e-test:
-    needs: build
     name: e2e test
     runs-on: ubuntu-latest
     steps:
@@ -109,15 +103,10 @@ jobs:
         run: yarn install
       - name: Install cypress
         run: yarn cypress install
-      - name: Download dist
-        uses: actions/download-artifact@v2
-        with:
-          name: dist
-          path: ${{github.workspace}}/dist
-      - name: Build css
-        run: yarn nx build tailwindcss
       - name: Run Integration test
-        run: yarn affected:e2e
+        run: |
+          NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
+          yarn affected:e2e
   lighthouse:
     strategy:
       matrix:

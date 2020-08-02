@@ -140,7 +140,7 @@ jobs:
       - name: export
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
-          yarn run ${{matrix.package}}:export --with-deps
+          yarn nx run ${{matrix.package}}:export --with-deps
       - name: run lighthouse
         run: yarn lhci autorun
         env:

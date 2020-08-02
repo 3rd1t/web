@@ -104,7 +104,7 @@ jobs:
       - name: Install cypress
         run: yarn cypress install
       - name: build tailwindcss
-        run: yarn nx run tailwindcss:build
+        run: yarn nx run tailwindcss:build --skip-nx-cache
         env:
           NODE_ENV: production
       - name: Run Integration test

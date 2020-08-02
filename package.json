@@ -44,6 +44,7 @@
     "framer-motion": "^2.3.0",
     "husky": "^4.2.5",
     "jest": "25.2.3",
+    "lightweight-charts": "^3.1.5",
     "lint-staged": "^10.2.11",
     "next": "9.3.3",
     "prettier": "2.0.4",

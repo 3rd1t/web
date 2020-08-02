@@ -10,7 +10,7 @@ export const Line = (props: LineProps) => {
 
   useEffect(() => {
     if (!series) {
-      /* skip-eslint-next-line */
+      /* eslint-disable-next-line */
       const { createChart } = require("lightweight-charts")
       const chart = createChart(myref.current)
       const s = chart.addAreaSeries({

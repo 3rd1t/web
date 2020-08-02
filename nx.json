@@ -1,7 +1,7 @@
 {
   "npmScope": "perfolio",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "origin/master"
   },
   "implicitDependencies": {
     "workspace.json": "*",

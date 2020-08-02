@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@lhci/cli": "^0.4.3",
     "@nrwl/eslint-plugin-nx": "10.0.7",
     "@nrwl/next": "^10.0.7",
     "@nrwl/node": "^10.0.7",

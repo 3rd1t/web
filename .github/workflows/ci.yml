@@ -55,11 +55,6 @@ jobs:
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
           yarn affected:build --with-deps
-      - name: Upload dist
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist
-          path: ${{github.workspace}}/dist
 
   unit-test:
     strategy:
@@ -88,13 +83,13 @@ jobs:
 
  
   e2e-test:
-    name: e2e test
+    strategy:
+      matrix:
+        package: ["core-e2e", "research-e2e"]
+    name: e2e test @${{ matrix.package }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
       - name: Setup node
         uses: actions/setup-node@v1
         with:
@@ -108,10 +103,18 @@ jobs:
         run: yarn install
       - name: Install cypress
         run: yarn cypress install
+      - name: build tailwindcss
+        run: yarn nx run tailwindcss:build
+        env:
+          NODE_ENV: production
+      - name: Download dist
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: ${{github.workspace}}/dist
       - name: Run Integration test
-        run: |
-          NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
-          yarn e2e
+        run: yarn nx run "${{ matrix.package }}":e2e
+
   lighthouse:
     strategy:
       matrix:

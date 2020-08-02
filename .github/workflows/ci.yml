@@ -143,10 +143,10 @@ jobs:
         with:
           name: dist
           path: ${{github.workspace}}/dist
-      - name: Build css
-        run: NODE_ENV=production yarn nx build tailwindcss
       - name: export
-        run: yarn nx run ${{ matrix.package }}:export
+        run: |
+          NODE_ENV=production yarn nx build tailwindcss
+          yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse
         run: yarn lhci autorun
         env:

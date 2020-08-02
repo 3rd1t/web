@@ -7,26 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  install:
-    name: Install
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-        
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install dependencies
-        run: yarn install
-
   lint:
-    needs: install
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -52,7 +33,6 @@ jobs:
       - name: Format
         run: yarn format:check
   build:
-    needs: install
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -80,7 +60,6 @@ jobs:
           path: ${{github.workspace}}/dist
 
   unit-test:
-    needs: install
     strategy:
       matrix:
         node: ["14", "12"]

@@ -88,6 +88,7 @@ jobs:
 
  
   e2e-test:
+    needs: build
     name: e2e test
     runs-on: ubuntu-latest
     steps:
@@ -116,7 +117,7 @@ jobs:
       - name: Run Integration test
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
-          yarn affected:e2e --skip-nx-cache
+          yarn affected:e2e
   lighthouse:
     strategy:
       matrix:

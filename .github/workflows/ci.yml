@@ -159,6 +159,8 @@ jobs:
         with:
           name: dist
           path: ${{github.workspace}}/dist
+      - name: Build css
+        run: yarn nx build tailwindcss
       - name: Run Integration test
         run: yarn affected:e2e --base=origin/master
   lighthouse:
@@ -186,6 +188,8 @@ jobs:
         with:
           name: dist
           path: ${{github.workspace}}/dist
+      - name: Build css
+        run: NODE_ENV=production yarn nx build tailwindcss
       - name: export
         run: yarn nx run ${{ matrix.package }}:export
       - name: run lighthouse

@@ -60,10 +60,7 @@ jobs:
           path: ${{github.workspace}}/dist
 
   unit-test:
-    strategy:
-      matrix:
-        node: ["14", "12"]
-    name: unit test @ node ${{ matrix.node }}
+    name: unit test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -73,7 +70,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: "${{ matrix.node }}"
+          node-version: "14"
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'

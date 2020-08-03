@@ -26,7 +26,7 @@ jobs:
       - name: Workspace Lint
         run: yarn nx workspace-lint
       - name: Lint
-        run: yarn affected:lint
+        run: yarn lint
       - name: Format
         run: yarn format:check
 

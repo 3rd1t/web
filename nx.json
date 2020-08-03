@@ -31,7 +31,8 @@
   },
   "projects": {
     "research": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["tailwindcss"]
     },
     "research-e2e": {
       "tags": [],

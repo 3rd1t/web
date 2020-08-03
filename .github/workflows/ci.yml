@@ -112,6 +112,7 @@ jobs:
         run: |
           NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
           yarn nx run core-e2e:e2e
+          yarn nx run research-e2e:e2e
   lighthouse:
     strategy:
       matrix:

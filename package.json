@@ -68,7 +68,7 @@
     "react-syntax-highlighter": "^13.2.1",
     "react-test-renderer": "^16.13.1",
     "react": "16.13.1",
-    "tailwindcss": "^1.6.0",
+    "tailwindcss": "^1.6.2",
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "typescript": "~3.9.3"

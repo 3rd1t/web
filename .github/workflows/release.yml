@@ -35,7 +35,7 @@ jobs:
       matrix:
         package: ["core", "research"]
         node: ["12", "14", "latest"]
-    name: release-{{matrix-package}}@node-{{matrix.node}}
+    name: release-${{matrix-package}}@node-${{matrix.node}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

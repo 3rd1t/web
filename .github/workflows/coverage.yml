@@ -30,6 +30,7 @@ jobs:
           shopt -s globstar
           for i in ./coverage/**/lcov.info; do
               path=$i
+              echo path
               bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r path
           done
 

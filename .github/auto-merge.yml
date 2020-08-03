@@ -1,6 +1,6 @@
 updateBranch: true
 deleteBranchAfterMerge: true
-reportStatus: false
+reportStatus: true
 
 maxRequestedChanges:
   NONE: 0

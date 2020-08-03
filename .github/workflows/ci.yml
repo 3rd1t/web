@@ -52,8 +52,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: |
-          yarn affected:build --with-deps
+        run: yarn affected:build --with-deps
       - name: Upload dist
         uses: actions/upload-artifact@v2
         with:

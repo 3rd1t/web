@@ -16,8 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@perfolio/components": ["packages/components/src/index.ts"],
-      "@perfolio/tailwindcss": ["packages/tailwindcss/dist/tailwind.css"]
+      "@perfolio/components": ["packages/components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -23,7 +23,7 @@ jobs:
         run: yarn install
 
       - name: test
-        run: yarn test --codeCoverage
+        run: yarn test --codeCoverage --skip-nx-cache
 
       - name: Run codacy-coverage-reporter
         run: |

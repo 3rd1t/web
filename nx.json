@@ -38,7 +38,8 @@
       "implicitDependencies": ["research"]
     },
     "core": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["tailwindcss"]
     },
     "core-e2e": {
       "tags": [],

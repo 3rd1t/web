@@ -1,0 +1,75 @@
+name: Release
+
+on:
+  pull_request:
+    branches: [ release* ]
+
+
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+      - name: Workspace Lint
+        run: yarn nx workspace-lint
+      - name: Lint
+        run: yarn affected:lint
+      - name: Format
+        run: yarn format:check
+
+  test:
+    strategy:
+      matrix:
+        package: ["core", "research"]
+        node: ["12", "14", "latest"]
+    name: release-{{matrix-package}}@node-{{matrix.node}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "{{matrix.node}}"
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: build
+        run: yarn nx run ${{matrix.package}}:build:production --with-deps
+
+      - name: unit-test
+        run: yarn nx run {{matrix.package}}:test --with-deps
+
+      - name: e2e-test
+        run: yarn nx run {{matrix.package}}-e2e:e2e
+
+      - name: lighthouse
+        run: yarn lhci autorun
+        env:
+          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+
+
+
+
+
+
+

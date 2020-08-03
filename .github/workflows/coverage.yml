@@ -1,3 +1,5 @@
+name: Report coverage
+
 on:
   push:
     branches: [ master, main ]
@@ -21,13 +23,16 @@ jobs:
         run: yarn install
 
       - name: test
-        run: yarn test --codeCoverage
+        run: yarn test --codeCoverage --skip-nx-cache
 
       - name: Run codacy-coverage-reporter
         run: |
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/core/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/research/lcov.info
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/components/lcov.info
+          shopt -s globstar
+          for i in ./coverage/**/lcov.info; do
+              path=$i
+              bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${path:2}
+          done
+
           bash <(curl -Ls https://coverage.codacy.com/get.sh) final
         env:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

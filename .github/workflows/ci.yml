@@ -131,8 +131,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: |
-          yarn nx run ${{matrix.package}}:build:production --with-deps
+        run: yarn nx run ${{matrix.package}}:export --with-deps
       - name: run lighthouse
         run: yarn lhci autorun
         env:

@@ -2,6 +2,7 @@ updateBranch: true
 deleteBranchAfterMerge: true
 reportStatus: true
 
+blockingTitleRegex: '\bWIP\b'
 maxRequestedChanges:
   NONE: 0
 blockingLabels:

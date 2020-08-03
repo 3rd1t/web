@@ -50,7 +50,7 @@
     "@types/react": "16.9.38",
     "@typescript-eslint/eslint-plugin": "2.19.2",
     "@typescript-eslint/parser": "2.19.2",
-    "babel-jest": "25.1.0",
+    "babel-jest": "26.2.2",
     "cypress": "^4.1.0",
     "document-register-element": "1.13.1",
     "dotenv": "6.2.0",

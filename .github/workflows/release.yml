@@ -58,7 +58,7 @@ jobs:
         run: yarn nx run {{matrix.package}}:test --with-deps
 
       - name: e2e-test
-        run: yarn nx run {{matrix.package}}-e2e:e2e
+        run: yarn nx run {{matrix.package}}-e2e:e2e --with-deps
 
       - name: lighthouse
         run: yarn lhci autorun

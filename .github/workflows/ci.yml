@@ -107,10 +107,8 @@ jobs:
       - name: Install cypress
         run: yarn cypress install
       - name: Run Integration test
-        run: |
-          NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
-          yarn nx run core-e2e:e2e
-          yarn nx run research-e2e:e2e
+        run: yarn affected:e2e --with-deps
+
   lighthouse:
     strategy:
       matrix:

@@ -40,8 +40,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/research/tsconfig.json", "packages/research/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/research/**/*"]
+            "tsConfig": [
+              "packages/research/tsconfig.json",
+              "packages/research/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!packages/research/**/*"
+            ]
           }
         },
         "test": {
@@ -76,8 +82,13 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/research-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!packages/research-e2e/**/*"]
+            "tsConfig": [
+              "packages/research-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!packages/research-e2e/**/*"
+            ]
           }
         }
       }
@@ -121,8 +132,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/core/tsconfig.json", "packages/core/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/core/**/*"]
+            "tsConfig": [
+              "packages/core/tsconfig.json",
+              "packages/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!packages/core/**/*"
+            ]
           }
         },
         "test": {
@@ -157,8 +174,13 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/core-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!packages/core-e2e/**/*"]
+            "tsConfig": [
+              "packages/core-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!packages/core-e2e/**/*"
+            ]
           }
         }
       }
@@ -173,8 +195,14 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/components/tsconfig.lib.json", "packages/components/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/components/**/*"]
+            "tsConfig": [
+              "packages/components/tsconfig.lib.json",
+              "packages/components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!packages/components/**/*"
+            ]
           }
         },
         "test": {
@@ -201,6 +229,13 @@
         },
         "export": {
           "comment": "This is duplicated so the apps export command can build tailwind by using --with-deps",
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+          }
+        },
+        "e2e": {
+          "comment": "This is duplicated so the apps e2e command can build tailwind by using --with-deps",
           "builder": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"

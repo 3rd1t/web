@@ -1,0 +1,33 @@
+on:
+  push:
+    branches: [ master, main ]
+
+
+jobs:
+  collect-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: test
+        run: yarn test --codeCoverage
+
+      - name: Run codacy-coverage-reporter
+        run: |
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/core/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/research/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${{github.workspace}}/coverage/packages/components/lcov.info
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) final
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}

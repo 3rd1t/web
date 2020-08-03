@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` Snippet renders correctly 1`] = `
+<pre
+  className="font-mono"
+  data-testid="syntaxHighlighter"
+  style={
+    Object {
+      "MozHyphens": "none",
+      "MozTabSize": "4",
+      "OTabSize": "4",
+      "WebkitHyphens": "none",
+      "color": "#CBD5E0",
+      "direction": "ltr",
+      "fontSize": "14px",
+      "hyphens": "none",
+      "lineHeight": "1.375",
+      "margin": ".5em 0",
+      "msHyphens": "none",
+      "overflow": "auto",
+      "padding": "1em",
+      "tabSize": "4",
+      "textAlign": "left",
+      "whiteSpace": "pre",
+      "wordBreak": "normal",
+      "wordSpacing": "normal",
+    }
+  }
+>
+  <code
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "color": "#CBD5E0",
+        "direction": "ltr",
+        "fontSize": "14px",
+        "hyphens": "none",
+        "lineHeight": "1.375",
+        "msHyphens": "none",
+        "tabSize": "4",
+        "textAlign": "left",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  >
+    "const x = 1;"
+  </code>
+</pre>
+`;

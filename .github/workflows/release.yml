@@ -29,13 +29,13 @@ jobs:
         run: yarn install
 
       - name: build
-        run: yarn nx run ${{matrix.package}}:build:production --with-deps
+        run: yarn nx run ${{matrix.package}}:build:production --with-deps --skip-nx-cache
 
       - name: unit-test
-        run: yarn nx run ${{matrix.package}}:test --with-deps
+        run: yarn nx run ${{matrix.package}}:test --with-deps --skip-nx-cache
 
       - name: e2e-test
-        run: yarn nx run ${{matrix.package}}-e2e:e2e --with-deps
+        run: yarn nx run ${{matrix.package}}-e2e:e2e --with-deps --skip-nx-cache
 
       - name: lighthouse
         run: yarn lhci autorun

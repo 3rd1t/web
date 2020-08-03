@@ -7,29 +7,6 @@ on:
 
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install dependencies
-        run: yarn install
-      - name: Workspace Lint
-        run: yarn nx workspace-lint
-      - name: Lint
-        run: yarn lint
-      - name: Format
-        run: yarn format:check
-
   test:
     strategy:
       matrix:

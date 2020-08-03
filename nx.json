@@ -25,9 +25,7 @@
         "accessToken": "OWZmYzE2YTItNjcwYi00MTQyLTk2ZDctOGIxMGNlNGRhMTRjfHJlYWQtd3JpdGU=",
         "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
-        "showUsageWarnings": true,
-        "parallel": true,
-        "maxParallel": 4
+        "showUsageWarnings": true
       }
     }
   },

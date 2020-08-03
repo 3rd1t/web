@@ -107,7 +107,7 @@ jobs:
       - name: Install cypress
         run: yarn cypress install
       - name: Run Integration test
-        run: yarn affected:e2e --with-deps
+        run: yarn affected:e2e --with-deps --skip-nx-cache
 
   lighthouse:
     strategy:

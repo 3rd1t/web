@@ -25,7 +25,9 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
-        run: yarn install
+        run: |
+          yarn install
+          yarn cypress install
 
       - name: build
         run: yarn nx run ${{matrix.package}}:export --with-deps --skip-nx-cache
@@ -34,9 +36,7 @@ jobs:
         run: yarn nx run ${{matrix.package}}:test --with-deps --skip-nx-cache
 
       - name: e2e-test
-        run: |
-          yarn cypress install
-          yarn nx run-many --target=e2e --with-deps --all --skip-nx-cache --headless
+        run: yarn nx run ${{matrix.package}}-e2e:e2e --skip-nx-cache --headless
 
       - name: lighthouse
         run: yarn lhci autorun

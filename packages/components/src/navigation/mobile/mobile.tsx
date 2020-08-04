@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 /* eslint-disable-next-line */
 export interface MobileProps {
+  logo: React.ReactChild
   links: {
     label: string
     href: string
@@ -47,30 +48,32 @@ export const Mobile = (props: MobileProps) => {
                 collapsed: { opacity: 0, height: 0, y: "100%" },
               }}
               transition={{ duration: 0.6 }}
-              className="fixed inset-x-0 bottom-0 z-50 mx-2 bg-white rounded-t-lg shadow-lg"
+              className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-lg shadow-lg"
             >
-              <div className="p-2">
-                <div className="absolute top-0 right-0 m-4 text-gray-900">
-                  <button
+              <div className="mb-10">
+                <div className="flex items-center justify-between m-4 text-gray-900">
+                  {props.logo}
+                  <motion.button
+                  whileTap={{ scale: 0.9 }}
                     onClick={() => setOpen(false)}
-                    className="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
+                    className="p-2 hover:text-gray-700 focus:outline-none"
                     aria-label="home"
                     data-testid="toggle"
                   >
                     <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                  </button>
+                  </motion.button>
                 </div>
-                <ul className="p-4 mx-auto space-y-8 text-center">
+                <ul className="p-4 space-y-8 text-center">
                   {props.links.map((link) => {
                     return (
                       <motion.li
                         whileTap={{ scale: 0.9 }}
-                        className="text-gray-700 transition duration-150 ease-in-out"
+                        className=""
                       >
                         <Link href={link.href}>
-                          <a className="text-lg font-medium ">{link.label}</a>
+                          <a className="font-semibold text-carbon-900">{link.label}</a>
                         </Link>
                       </motion.li>
                     )

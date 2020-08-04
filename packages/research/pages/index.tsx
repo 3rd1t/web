@@ -1,5 +1,6 @@
-import React from "react"
-import { HeroSection, CodeExamples } from "@perfolio/components"
+import React, { useState } from "react"
+import { HeroSection, CodeExamples, Section, ScrollTip } from "@perfolio/components"
+import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 
 interface IndexProps {
@@ -10,28 +11,51 @@ interface IndexProps {
 }
 
 const Index = (props: IndexProps) => {
+
+  const [codeIsFullscreen, setCodeIsFullscreen] = useState(false)
+
   return (
-    <div className="min-h-screen">
-      <div className="flex flex-col items-start px-4 mt-10 space-y-8 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 xl:flex-row xl:space-y-0 xl:space-x-8">
-        <HeroSection
-          headline="Get the right factor returns from our research-friendly API"
-          paragraph="Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes."
-          primaryButton={{
-            label: "Get started",
-            href: "#",
-            className: "bg-research-500 text-white hover:bg-research-700",
-          }}
-          secondaryButton={{
-            label: "Log in",
-            href: "#",
-            className: "text-blue-900 hover:text-blue-700",
-          }}
-        ></HeroSection>
-        <div className="mx-auto">
-          <CodeExamples code={props.codeExamples}></CodeExamples>
-        </div>
-      </div>
-    </div>
+    <>
+      <Section bg="bg-gray-100 " className="relative h-screen" id="index">
+        <AnimateSharedLayout>
+
+          <motion.div layout className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
+
+            <motion.div layout>
+
+              <HeroSection
+                headline="Get the right factor returns from our research-friendly API"
+                paragraph={
+                  <p className="flex flex-col xl:flex-row">
+                    We offer Kenneth French’s factor returns data via convenient REST API. No csv imports and data cleaning needed. Just go ahead with your analysis.
+              </p>
+                }
+                primaryButton={{
+                  label: "Get started",
+                  href: "#",
+                  className: "text-white bg-research-600 hover:bg-research-800",
+                }}
+                secondaryButton={{
+                  label: "Log in",
+                  href: "#",
+                  className: "text-research-900 hover:text-research-700",
+                }}
+              ></HeroSection>
+            </motion.div>
+            <motion.div
+              layout>
+              <CodeExamples code={props.codeExamples}></CodeExamples>
+            </motion.div>
+          </motion.div>
+
+
+          <div className="absolute inset-x-0 bottom-0 flex justify-center mb-40">
+            <ScrollTip href="#features" className="text-gray-100 bg-research-600"></ScrollTip>
+          </div>
+
+        </AnimateSharedLayout>
+      </Section>
+    </>
   )
 }
 

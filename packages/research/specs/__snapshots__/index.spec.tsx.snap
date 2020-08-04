@@ -1,135 +1,188 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` Index renders correctly 1`] = `
-<div
-  className="min-h-screen"
+<section
+  className="bg-gray-100 "
+  id="index"
 >
   <div
-    className="flex flex-col items-start px-4 mt-10 space-y-8 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 xl:flex-row xl:space-y-0 xl:space-x-8"
+    className="relative h-screen"
   >
     <div
-      className="flex flex-col items-center w-full"
+      className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
     >
       <div
-        className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left"
+        className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8"
+        style={Object {}}
       >
-        <h2
-          className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl"
-        >
-          Get the right factor returns from our research-friendly API
-        </h2>
         <div
-          className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
-        >
-          Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes.
-        </div>
-        <div
-          className="space-y-4 md:space-x-4 md:space-y-0"
+          style={Object {}}
         >
           <div
-            className="sm:flex sm:justify-center lg:justify-start"
+            className="flex flex-col items-center w-full"
           >
             <div
-              className="rounded-md shadow"
+              className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left"
             >
-              <a
-                className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none bg-research-500 text-white hover:bg-research-700"
-                href="#"
+              <h2
+                className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl"
               >
-                Get started
-              </a>
+                Get the right factor returns from our research-friendly API
+              </h2>
+              <div
+                className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
+              >
+                <p
+                  className="flex flex-col xl:flex-row"
+                >
+                  We offer Kenneth French’s factor returns data via convenient REST API. No csv imports and data cleaning needed. Just go ahead with your analysis.
+                </p>
+              </div>
+              <div
+                className="space-y-4 md:space-x-4 md:space-y-0"
+              >
+                <div
+                  className="sm:flex sm:justify-center lg:justify-start"
+                >
+                  <div
+                    className="rounded-md shadow"
+                  >
+                    <a
+                      className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-white bg-research-600 hover:bg-research-800"
+                      href="#"
+                    >
+                      Get started
+                    </a>
+                  </div>
+                  <div
+                    className="mt-3 sm:mt-0 sm:ml-3"
+                  >
+                    <a
+                      className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-research-900 hover:text-research-700"
+                      href="Log in"
+                    >
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+        <div
+          style={Object {}}
+        >
+          <div
+            className="shadow-lg"
+            style={Object {}}
+          >
+            <nav
+              className="flex items-center justify-start px-4 space-x-4 border border-gray-500 rounded-t"
+              style={Object {}}
+            >
+              <button
+                className="py-3 mr-8 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none hover:text-gray-900 text-gray-900 "
+                data-testid="selectLanguage"
+                onClick={[Function]}
+                style={Object {}}
+              >
+                r
+              </button>
+            </nav>
             <div
-              className="mt-3 sm:mt-0 sm:ml-3"
+              className="px-4 overflow-x-visible overflow-y-hidden bg-gray-900 rounded-b"
+              style={Object {}}
+            >
+              <pre
+                className="font-mono"
+                data-testid="syntaxHighlighter"
+                style={
+                  Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "color": "#CBD5E0",
+                    "direction": "ltr",
+                    "fontSize": "14px",
+                    "hyphens": "none",
+                    "lineHeight": "1.375",
+                    "margin": ".5em 0",
+                    "msHyphens": "none",
+                    "overflow": "auto",
+                    "padding": "1em",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                  }
+                }
+              >
+                <code
+                  style={
+                    Object {
+                      "MozHyphens": "none",
+                      "MozTabSize": "4",
+                      "OTabSize": "4",
+                      "WebkitHyphens": "none",
+                      "color": "#CBD5E0",
+                      "direction": "ltr",
+                      "fontSize": "14px",
+                      "hyphens": "none",
+                      "lineHeight": "1.375",
+                      "msHyphens": "none",
+                      "tabSize": "4",
+                      "textAlign": "left",
+                      "whiteSpace": "pre",
+                      "wordBreak": "normal",
+                      "wordSpacing": "normal",
+                    }
+                  }
+                >
+                  r &lt;- 1
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
+      >
+        <div
+          style={
+            Object {
+              "opacity": 0,
+              "transform": "translateY(100px) translateZ(0)",
+            }
+          }
+        >
+          <div
+            className="inline-flex w-10 h-10 p-2 transform rotate-45 shadow-xl lg:p-4 md:h-12 md:w-12 lg:h-16 lg:w-16 hover:scale-110 ease-in-out duration-200 text-gray-100 bg-research-600"
+          >
+            <div
+              className="flex items-center justify-center transform -rotate-45"
             >
               <a
-                className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-blue-900 hover:text-blue-700"
-                href="Log in"
+                href="#features"
               >
-                Log in
+                <svg
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    clipRule="evenodd"
+                    d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                    fillRule="evenodd"
+                  />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div
-      className="mx-auto"
-    >
-      <div
-        className="shadow-lg"
-        style={Object {}}
-      >
-        <nav
-          className="flex items-center justify-start px-4 space-x-4 border border-gray-500 rounded-t"
-          style={Object {}}
-        >
-          <button
-            className="py-3 mr-8 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none hover:text-gray-900 text-gray-900 "
-            data-testid="selectLanguage"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            r
-          </button>
-        </nav>
-        <div
-          className="px-4 overflow-x-visible overflow-y-hidden bg-gray-900 rounded-b"
-          style={Object {}}
-        >
-          <pre
-            className="font-mono"
-            data-testid="syntaxHighlighter"
-            style={
-              Object {
-                "MozHyphens": "none",
-                "MozTabSize": "4",
-                "OTabSize": "4",
-                "WebkitHyphens": "none",
-                "color": "#CBD5E0",
-                "direction": "ltr",
-                "fontSize": "14px",
-                "hyphens": "none",
-                "lineHeight": "1.375",
-                "margin": ".5em 0",
-                "msHyphens": "none",
-                "overflow": "auto",
-                "padding": "1em",
-                "tabSize": "4",
-                "textAlign": "left",
-                "whiteSpace": "pre",
-                "wordBreak": "normal",
-                "wordSpacing": "normal",
-              }
-            }
-          >
-            <code
-              style={
-                Object {
-                  "MozHyphens": "none",
-                  "MozTabSize": "4",
-                  "OTabSize": "4",
-                  "WebkitHyphens": "none",
-                  "color": "#CBD5E0",
-                  "direction": "ltr",
-                  "fontSize": "14px",
-                  "hyphens": "none",
-                  "lineHeight": "1.375",
-                  "msHyphens": "none",
-                  "tabSize": "4",
-                  "textAlign": "left",
-                  "whiteSpace": "pre",
-                  "wordBreak": "normal",
-                  "wordSpacing": "normal",
-                }
-              }
-            >
-              r &lt;- 1
-            </code>
-          </pre>
-        </div>
-      </div>
-    </div>
   </div>
-</div>
+</section>
 `;

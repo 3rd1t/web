@@ -7,6 +7,11 @@ export interface FooterProps {
 }
 
 export const Footer = (props: FooterProps) => {
+
+  // TODO: Find a better way to get the border color.
+  const tmp = props.bg.split("-")
+  const borderColor = "border-" + tmp[1] + "-" + (Number(tmp[2]) - 200).toString()
+
   const footerLink = (label: string, href: string): React.ReactNode => (
     <a href={href} className={`block focus:outline-none ${props.secondaryText} hover:${props.primaryText}`}>
       {label}
@@ -39,7 +44,7 @@ export const Footer = (props: FooterProps) => {
         </div>
       </div>
 
-      <div className="pt-2 border-t border-carbon-700">
+      <div className={`pt-2 border-t ${borderColor}`}>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center px-10 py-2 text-sm md:flex-row">
             <span className={`${props.primaryText}`}>© Copyright {new Date().getFullYear()}. All Rights Reserved.</span>

@@ -5,10 +5,10 @@ exports[`Section without domain renders correctly 1`] = `
   className="bg-white"
   id="hello"
 >
-  <div
-    className="container py-8 mx-auto md:py-12 lg:py-16 xl:py-20"
-  >
-    <div>
+  <div>
+    <div
+      className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
+    >
       <span>
         Hello World
       </span>

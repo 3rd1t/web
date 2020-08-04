@@ -17,13 +17,8 @@ const app = ({ Component, pageProps }: AppProps) => {
             logo={<Logo></Logo>}
             links={[
               {
-                label: "Home",
-                href: "/",
-                internal: true,
-              },
-              {
                 label: "Product",
-                href: "#product",
+                href: "/",
                 internal: true,
               },
               {
@@ -38,8 +33,8 @@ const app = ({ Component, pageProps }: AppProps) => {
               },
               {
                 label: "Documentation",
-                href: "#",
-                internal: false,
+                href: "/docs",
+                internal: true,
               },
             ]}
           ></Navbar>

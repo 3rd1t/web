@@ -36,8 +36,8 @@ const Index = (props: IndexProps) => {
 
   return (
     <>
-      <Section bg="bg-gray-100" className="relative min-h-screen" id="index">
-        <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 sm:px-6 md:pt-28 lg:pt-32 lg:px-8 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
+      <Section bg="bg-gray-100 " className="relative h-screen" id="index">
+        <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline="Portfolio analytics insights for everyone"
             paragraph={
@@ -81,7 +81,7 @@ const Index = (props: IndexProps) => {
           </div>
         </motion.div>
       </Section>
-      <Section bg="bg-white" id="features" className="flex flex-col justify-center px-4 mx-auto sm:px-6 lg:px-8">
+      <Section bg="bg-white" id="features" className="flex flex-col justify-center">
         <div className="md:text-center">
           <h3 className="text-3xl font-bold leading-8 tracking-tight text-carbon-900 sm:text-4xl sm:leading-10">
             Insights we offer
@@ -162,7 +162,7 @@ const Index = (props: IndexProps) => {
           </div>
         </div>
       </Section>
-      <Section bg="bg-white" id="subscribe" className="flex flex-col justify-center px-4 sm:px-6 lg:px-8">
+      <Section bg="bg-white" id="subscribe" className="flex flex-col justify-center">
         <div className="container flex flex-col justify-around mx-auto lg:flex-row">
           <div>
             <h2 className="text-2xl font-semibold leading-8 text-carbon-900 font-display sm:text-3xl sm:leading-9">

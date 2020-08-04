@@ -34,7 +34,7 @@ jobs:
         run: yarn nx run ${{matrix.package}}:test --with-deps --skip-nx-cache
 
       - name: e2e-test
-        run: yarn nx e2e ${{matrix.package}}-e2e --with-deps --skip-nx-cache --headless
+        run: yarn nx run-many --target=e2e --with-deps --all --skip-nx-cache --headless
 
       - name: lighthouse
         run: yarn lhci autorun

@@ -19,22 +19,18 @@ const app = ({ Component, pageProps }: AppProps) => {
               {
                 label: "Product",
                 href: "/",
-                internal: true,
               },
               {
                 label: "Features",
                 href: "#features",
-                internal: true,
               },
               {
                 label: "Team",
                 href: "#team",
-                internal: true,
               },
               {
                 label: "Documentation",
                 href: "/docs",
-                internal: true,
               },
             ]}
           ></Navbar>

@@ -15,66 +15,23 @@ describe(" Navbar", () => {
             {
               label: "Product",
               href: "#product",
-              internal: true,
             },
             {
               label: "Features",
               href: "#features",
-              internal: true,
             },
             {
               label: "Team",
               href: "#team",
-              internal: true,
             },
             {
               label: "Documentation",
               href: "#",
-              internal: false,
             },
           ]}
         />,
       )
       .toJSON()
     expect(tree).toMatchSnapshot()
-  })
-
-  describe("on mobile", () => {
-    describe("when the user clicks on the hamburger icon", () => {
-      it("opens the navbar menu", async () => {
-        const { queryByTestId } = render(
-          <Navbar
-            logo={<span>Logo</span>}
-            links={[
-              {
-                label: "Product",
-                href: "#product",
-                internal: true,
-              },
-              {
-                label: "Features",
-                href: "#features",
-                internal: true,
-              },
-              {
-                label: "Team",
-                href: "#team",
-                internal: true,
-              },
-              {
-                label: "Documentation",
-                href: "#",
-                internal: false,
-              },
-            ]}
-          />,
-        )
-
-        expect(queryByTestId("mobileNavbar")).toBeNull()
-
-        fireEvent.click(queryByTestId("toggle"))
-        expect(queryByTestId("mobileNavbar")).toBeTruthy()
-      })
-    })
   })
 })

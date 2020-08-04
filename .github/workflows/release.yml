@@ -34,18 +34,11 @@ jobs:
         run: yarn nx run ${{matrix.package}}:test --with-deps --skip-nx-cache
 
       - name: e2e-test
-        run: yarn nx run ${{matrix.package}}-e2e:e2e --with-deps --skip-nx-cache
+        run: yarn nx e2e ${{matrix.package}}-e2e --with-deps --skip-nx-cache
 
       - name: lighthouse
         run: yarn lhci autorun
         env:
           LHCI_CONFIG: lighthouse/${{matrix.package}}.js
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-
-
-
-
-
-
-
 

@@ -48,9 +48,9 @@ export const Mobile = (props: MobileProps) => {
                 collapsed: { opacity: 0, height: 0, y: "100%" },
               }}
               transition={{ duration: 0.6 }}
-              className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-lg shadow-lg"
+              className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t shadow-lg"
             >
-              <div className="mb-10">
+              <div>
                 <div className="flex items-center justify-between m-4 text-gray-900">
                   {props.logo}
                   <motion.button
@@ -65,7 +65,7 @@ export const Mobile = (props: MobileProps) => {
                     </svg>
                   </motion.button>
                 </div>
-                <ul className="p-4 space-y-8 text-center">
+                <ul className="px-4 py-8 space-y-8 text-center border-t border-carbon-300">
                   {props.links.map((link) => {
                     return (
                       <motion.li

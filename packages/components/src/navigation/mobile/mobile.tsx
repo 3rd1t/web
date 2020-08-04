@@ -54,7 +54,7 @@ export const Mobile = (props: MobileProps) => {
                 <div className="flex items-center justify-between m-4 text-gray-900">
                   {props.logo}
                   <motion.button
-                  whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 0.9 }}
                     onClick={() => setOpen(false)}
                     className="p-2 hover:text-gray-700 focus:outline-none"
                     aria-label="home"
@@ -68,10 +68,7 @@ export const Mobile = (props: MobileProps) => {
                 <ul className="px-4 py-8 space-y-8 text-center border-t border-carbon-300">
                   {props.links.map((link) => {
                     return (
-                      <motion.li
-                        whileTap={{ scale: 0.9 }}
-                        className=""
-                      >
+                      <motion.li whileTap={{ scale: 0.9 }} className="">
                         <Link href={link.href}>
                           <a className="font-semibold text-carbon-900">{link.label}</a>
                         </Link>

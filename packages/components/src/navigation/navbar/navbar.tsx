@@ -25,7 +25,14 @@ export const Navbar = (props: NavbarProps) => {
       </div>
 
       <div className="block md:hidden">
-        <Mobile logo={<Link href="/"><a>{props.logo}</a></Link>} links={props.links}></Mobile>
+        <Mobile
+          logo={
+            <Link href="/">
+              <a>{props.logo}</a>
+            </Link>
+          }
+          links={props.links}
+        ></Mobile>
       </div>
     </nav>
   )

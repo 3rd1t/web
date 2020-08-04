@@ -5,7 +5,7 @@ import Mobile from "./mobile"
 
 describe(" Mobile", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Mobile links={[{ label: "Hello", href: "/world" }]} />)
+  const { baseElement } = render(<Mobile logo={<span>Logo</span>} links={[{ label: "Hello", href: "/world" }]} />)
     expect(baseElement).toBeTruthy()
   })
 })

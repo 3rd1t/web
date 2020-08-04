@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  test:
+  release:
     strategy:
       matrix:
         package: ["core", "research"]
@@ -28,7 +28,7 @@ jobs:
         run: yarn install
 
       - name: build
-        run: yarn nx run ${{matrix.package}}:build:production --with-deps --skip-nx-cache
+        run: yarn nx run ${{matrix.package}}:export --with-deps --skip-nx-cache
 
       - name: unit-test
         run: yarn nx run ${{matrix.package}}:test --with-deps --skip-nx-cache

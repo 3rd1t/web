@@ -106,7 +106,7 @@ jobs:
       - name: Run Integration test
         run: |
           yarn nx run tailwindcss:build --skip-nx-cache
-          yarn affected:e2e --with-deps --skip-nx-cache
+          yarn affected:e2e --with-deps --skip-nx-cache --headless
 
   lighthouse:
     strategy:

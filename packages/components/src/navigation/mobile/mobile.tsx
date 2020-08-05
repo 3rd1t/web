@@ -33,7 +33,7 @@ export const Mobile = (props: MobileProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 z-10 bg-carbon-900"
+              className="absolute inset-0 z-10 h-screen bg-carbon-900"
               onTap={() => {
                 setOpen(false)
               }}

@@ -12,13 +12,13 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="goes here" />
       </Head>
       <div className="bg-gray-100">
-        <div className="container mx-auto">
+        <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">
           <Navbar
-            logo={<Logo color="text-research-600" domain="research"></Logo>}
+            logo={<Logo color="text-research-500" domain="research"></Logo>}
             links={[
               {
                 label: "Product",
-                href: "#product",
+                href: "/",
               },
               {
                 label: "Features",
@@ -26,14 +26,14 @@ const app = ({ Component, pageProps }: AppProps) => {
               },
               {
                 label: "Documentation",
-                href: "#",
+                href: "/docs",
               },
             ]}
           ></Navbar>
         </div>
         <Component {...pageProps} />
       </div>
-      <Footer bg="bg-research-900" primaryText="text-white" secondaryText="text-research-100"></Footer>
+      <Footer bg="bg-research-700" primaryText="text-white" secondaryText="text-gray-100"></Footer>
     </div>
   )
 }

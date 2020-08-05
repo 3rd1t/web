@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@perfolio/components": ["packages/components/src/index.ts"]
+      "@perfolio/components": ["packages/components/src/index.ts"],
+      "@perfolio/charts": ["packages/charts/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

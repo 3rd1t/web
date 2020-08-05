@@ -1,5 +1,4 @@
 export * from "./lib/scroll-tip/scroll-tip"
-export * from "./charts/line/line"
 export * from "./code/code-examples/code-examples"
 export * from "./code/snippet/snippet"
 export * from "./layout/footer/footer"

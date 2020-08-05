@@ -7,7 +7,6 @@ export interface FooterProps {
 }
 
 export const Footer = (props: FooterProps) => {
-
   // TODO: Find a better way to get the border color.
   const tmp = props.bg.split("-")
   const borderColor = "border-" + tmp[1] + "-" + (Number(tmp[2]) - 200).toString()

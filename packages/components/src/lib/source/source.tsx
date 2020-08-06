@@ -12,7 +12,7 @@ export interface SourceProps {
 
 export const Source = ({ author, date, headline, description, citation, link }: SourceProps) => {
   const primaryKey = ("citation_" + author + "_" + date).replace(" ", "")
-  
+
   const [isOpen, setOpen] = useState(false)
   const [copied, setCopied] = useState(false)
   const copy = () => {

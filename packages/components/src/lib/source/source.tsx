@@ -4,16 +4,16 @@ import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 export interface SourceProps {
   author: string
   date: string
-  headline: string
-  description: string
+  title: string
+  abstract: string
   citation: string
   link: string
 }
 
-export const Source = ({ author, date, headline, description, citation, link }: SourceProps) => {
+export const Source = ({ author, date, title, abstract, citation, link }: SourceProps) => {
   const primaryKey = ("citation_" + author + "_" + date).replace(" ", "")
 
-  const [isOpen, setOpen] = useState(false)
+  const [isCitationOpen, setCitationOpen] = useState(false)
   const [copied, setCopied] = useState(false)
   const copy = () => {
     const textArea = document.getElementById(primaryKey) as HTMLTextAreaElement
@@ -27,25 +27,25 @@ export const Source = ({ author, date, headline, description, citation, link }: 
   return (
     <div>
       <div className="flex flex-wrap py-8 md:flex-no-wrap">
-        <div className="flex flex-col flex-shrink-0 mb-6 md:w-64 md:mb-0">
+        <div className="flex flex-col flex-shrink-0 pr-2 mb-6 md:w-64 md:mb-0">
           <span className="font-medium tracking-widest text-gray-900">{author}</span>
           <span className="mt-1 text-sm text-gray-600">{date}</span>
         </div>
         <div className="space-y-4 md:flex-grow">
-          <h2 className="text-2xl text-gray-900">{headline}</h2>
-          <p className="text-gray-700">{description}</p>
+          <h2 className="text-2xl text-gray-900">{title}</h2>
+          <p className="text-gray-700">{abstract}</p>
           <div className="flex items-center space-x-4">
             <a href={link} target="blank" className={buttonStyle}>
               Go to source
             </a>
-            <button onClick={() => setOpen(!isOpen)} className={buttonStyle}>
+            <button onClick={() => setCitationOpen(!isCitationOpen)} className={buttonStyle}>
               Citation
             </button>
           </div>
         </div>
       </div>
       <AnimatePresence>
-        {isOpen && (
+        {isCitationOpen && (
           <AnimateSharedLayout>
             <motion.div
               layout

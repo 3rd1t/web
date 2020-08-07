@@ -1,18 +1,17 @@
 import React, { useState } from "react"
-import { HeroSection, CodeExamples, Section, ScrollTip, Source } from "@perfolio/components"
+import { HeroSection, CodeExamples, Section, ScrollTip, Source, SectionTitle, SourceProps } from "@perfolio/components"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
-
+import matter from "gray-matter"
 interface IndexProps {
   codeExamples: {
     language: string
     snippet: string
   }[]
+  sources: SourceProps[]
 }
 
 const Index = (props: IndexProps) => {
-  const [codeIsFullscreen, setCodeIsFullscreen] = useState(false)
-
   const feature = (title: string, points: string[]) => (
     <motion.div
       whileHover={{ scale: 1.1 }}
@@ -63,13 +62,13 @@ const Index = (props: IndexProps) => {
                   </p>
                 }
                 primaryButton={{
-                  label: "Get started",
-                  href: "#",
+                  label: "Start now",
+                  href: "#features",
                   className: "text-white bg-research-600 hover:bg-research-800",
                 }}
                 secondaryButton={{
-                  label: "Log in",
-                  href: "#",
+                  label: "Contact us",
+                  href: "mailto:info@perfol.io",
                   className: "text-research-900 hover:text-research-700",
                 }}
               ></HeroSection>
@@ -85,12 +84,10 @@ const Index = (props: IndexProps) => {
         </AnimateSharedLayout>
       </Section>
       <Section id="features" bg="bg-white">
-        <div className="lg:text-center">
-          <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-            Kenneth French’s factor returns the way you want
-          </h3>
-          <p className="mt-3 text-lg text-gray-700">Conversion to your home currency included.</p>
-        </div>
+        <SectionTitle
+          title="Kenneth French’s factor returns the way you want"
+          subtitle="Conversion to your home currency included."
+        ></SectionTitle>
         <div className="flex justify-center mt-20 space-x-4">
           {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"])}
           {feature("CSV", ["Use directly in Excel", "Why the fuck", "would you want this?"])}
@@ -98,52 +95,25 @@ const Index = (props: IndexProps) => {
         </div>
       </Section>
       <Section id="charts" bg="bg-gray-100">
-        <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 lg:text-center sm:text-4xl sm:leading-10">
-          Charts
-        </h3>
+        <SectionTitle title="Charts"></SectionTitle>
         <div className="flex justify-center mt-16">
           <img src="https://via.placeholder.com/700x300"></img>
         </div>
       </Section>
       <Section id="sources" bg="bg-white">
-        <div className=" lg:text-center">
-          <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-            Sources
-          </h3>
-          <p className="mt-3 text-lg text-gray-700">
-            We apply the latest finance research findings. Please give the authors and us some credit and cite
-            correctly.
-          </p>
-        </div>
+        <SectionTitle
+          title="Sources"
+          subtitle="We apply the latest finance research findings. Please give the authors and us some credit and cite correctly."
+        ></SectionTitle>
         <div className="px-4 mt-20 divide-y divide-gray-400">
-          {[
-            {
-              author: "Kenneth R. French",
-              date: "06.08.2020",
-              headline: "Kenneth French's Data library",
-              description: "We have permission to distribute his library blabla, maybe something like this?",
-              citation:
-                "Hübel, Benjamin and Scholz, Hendrik and Webersinke, Nicolas, Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings (September 30, 2019). Available at SSRN: https://ssrn.com/abstract=3528309 ",
-              link: "http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
-            },
-            {
-              author: "Nicolas Webersinke",
-              date: "06.08.2020",
-              headline: "Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings",
-              description:
-                "Index providers increasingly offer sustainable stock indices based on ESG (Environmental, Social, and Governance) ratings of firms. The performance of such indices with ESG tilts is driven by the impact of the applied weighting methodology and by the ESG firm ratings. In this paper, we focus on the S&P 500 ESG Factor Weighted Index, which outperforms the conventional S&P 500 index in terms of raw returns. Based on a simulation analysis, we find the ESG ratings to contribute little to the index return. Rather, the used weighting methodology mainly causes this outperformance which is connected to exposures to the well-established size, investment and momentum factors. Interestingly, the S&P 500 Equal Weighted Index shows comparable exposures to these factors. The weighting methodologies of both indices result in a relative high weighting of smaller stocks with similar return characteristics. Thus, our key finding is that the weighting methodologies of sustainable indices can be a main return driver, which has to be taken into account by investors evaluating the risk and return profile of stock indices with ESG tilts. ",
-              citation:
-                "Hübel, Benjamin and Scholz, Hendrik and Webersinke, Nicolas, Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings (September 30, 2019). Available at SSRN: https://ssrn.com/abstract=3528309 ",
-              link: "http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
-            },
-          ].map((s, index) => {
+          {props.sources.map((s, index) => {
             return (
               <Source
                 key={index}
                 author={s.author}
                 date={s.date}
-                headline={s.headline}
-                description={s.description}
+                title={s.title}
+                abstract={s.abstract}
                 citation={s.citation}
                 link={s.link}
               ></Source>
@@ -156,6 +126,22 @@ const Index = (props: IndexProps) => {
 }
 
 export const getStaticProps = async () => {
+  // Sources
+  const sourcePath = `${process.cwd()}/packages/research/public/sources/`
+  const sourceFiles = fs.readdirSync(sourcePath, "utf-8")
+  const sources = sourceFiles.map((filename) => {
+    const meta = matter(fs.readFileSync(sourcePath + filename).toString())
+
+    return {
+      author: meta.data.author,
+      date: meta.data.date,
+      title: meta.data.title,
+      abstract: meta.content,
+      citation: meta.data.citation,
+      link: meta.data.source,
+    }
+  })
+
   return {
     props: {
       codeExamples: [
@@ -174,6 +160,7 @@ export const getStaticProps = async () => {
           ),
         },
       ],
+      sources,
     },
   }
 }

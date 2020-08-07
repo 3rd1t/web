@@ -13,12 +13,11 @@ interface IndexProps {
 
 const Index = (props: IndexProps) => {
   const feature = (title: string, points: string[]) => (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      className="w-1/4 -space-y-2 overflow-hidden bg-white border rounded-md hover:shadow-xl hover:border-2 border-research-500"
-    >
-      <h1 className="p-4 text-5xl font-black text-center text-carbon-900">{title}</h1>
-      <div className="p-4 bg-gray-100">
+    <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500">
+      <h1 className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900">
+        {title}
+      </h1>
+      <div className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start">
         <ul className="mt-6 space-y-3 text-gray-800">
           {points.map((point, key) => {
             return (
@@ -39,7 +38,6 @@ const Index = (props: IndexProps) => {
         <button className="w-full px-4 py-2 mt-6 text-sm font-semibold text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800">
           Get started
         </button>
-        {/* <p className="mt-3 text-xs text-gray-500">Literally you probably haven't heard of them jean shorts.</p> */}
       </div>
     </motion.div>
   )
@@ -50,7 +48,7 @@ const Index = (props: IndexProps) => {
         <AnimateSharedLayout>
           <motion.div
             layout
-            className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8"
+            className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 lg:flex-row lg:space-y-0 lg:space-x-8"
           >
             <motion.div layout>
               <HeroSection
@@ -73,14 +71,10 @@ const Index = (props: IndexProps) => {
                 }}
               ></HeroSection>
             </motion.div>
-            <motion.div layout>
+            <motion.div layout className="hidden lg:block">
               <CodeExamples code={props.codeExamples}></CodeExamples>
             </motion.div>
           </motion.div>
-
-          <div className="absolute inset-x-0 bottom-0 flex justify-center mb-40">
-            <ScrollTip href="#features" className="text-gray-100 bg-research-600"></ScrollTip>
-          </div>
         </AnimateSharedLayout>
       </Section>
       <Section id="features" bg="bg-white">
@@ -88,7 +82,7 @@ const Index = (props: IndexProps) => {
           title="Kenneth French’s factor returns the way you want"
           subtitle="Conversion to your home currency included."
         ></SectionTitle>
-        <div className="flex justify-center mt-20 space-x-4">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
           {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"])}
           {feature("CSV", ["Use directly in Excel", "Why the fuck", "would you want this?"])}
           {feature("Charts", ["Analyse directly in your browser", "Who doesn't like charts", "what else?"])}
@@ -119,6 +113,24 @@ const Index = (props: IndexProps) => {
               ></Source>
             )
           })}
+        </div>
+      </Section>
+      <Section className="bg-gray-100">
+        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+          <div>
+            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+              <span>Ready to get started? </span>
+              <br className="xl:hidden"></br>
+              <span>Start with a</span>
+              <span className="text-research-500"> free plan</span>
+            </h2>
+            <p className="mt-2 text-gray-700">
+              Explore our charts or create an account to unlock the full potential of our API.
+            </p>
+          </div>
+          <button className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
+            Sign up
+          </button>
         </div>
       </Section>
     </>

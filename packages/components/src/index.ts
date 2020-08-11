@@ -1,3 +1,4 @@
+export * from "./layout/section/title/section-title"
 export * from "./lib/scroll-tip/scroll-tip"
 export * from "./code/code-examples/code-examples"
 export * from "./code/snippet/snippet"

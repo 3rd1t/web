@@ -21,22 +21,22 @@ export const Footer = (props: FooterProps) => {
     <footer className={props.bg}>
       <div className="container mx-auto">
         <div className={`flex flex-wrap justify-between p-10  ${props.secondaryText}`}>
-          <div className="space-y-2">
+          <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Projects</span>
             {footerLink("Home", "https://perfol.io")}
             {footerLink("Analytics", "https://analytics.perfol.io")}
             {footerLink("Research", "https://research.perfol.io")}
           </div>
-          <div className="space-y-2">
+          <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Resources</span>
             {footerLink("Documentation", "/#")}
             {footerLink("Tutorials", "/#")}
           </div>
-          <div className="space-y-2">
+          <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Contact us</span>
             {footerLink("contact@perfol.io", "mailto:info@perfol.io")}
           </div>
-          <div className="space-y-2">
+          <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Source</span>
             {footerLink("github.com", "https://github.com/perfolio")}
           </div>

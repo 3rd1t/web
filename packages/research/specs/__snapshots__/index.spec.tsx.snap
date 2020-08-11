@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` Index renders correctly 1`] = `
+exports[` Index with code snippets renders correctly 1`] = `
 Array [
   <section
     className="bg-gray-100 "
@@ -10,10 +10,10 @@ Array [
       className="h-screen"
     >
       <div
-        className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
+        className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
       >
         <div
-          className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8"
+          className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 lg:flex-row lg:space-y-0 lg:space-x-8"
           style={Object {}}
         >
           <div
@@ -50,9 +50,9 @@ Array [
                     >
                       <a
                         className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-white bg-research-600 hover:bg-research-800"
-                        href="#"
+                        href="#features"
                       >
-                        Get started
+                        Start now
                       </a>
                     </div>
                     <div
@@ -60,9 +60,9 @@ Array [
                     >
                       <a
                         className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-research-900 hover:text-research-700"
-                        href="Log in"
+                        href="Contact us"
                       >
-                        Log in
+                        Contact us
                       </a>
                     </div>
                   </div>
@@ -71,6 +71,7 @@ Array [
             </div>
           </div>
           <div
+            className="hidden lg:block"
             style={Object {}}
           >
             <div
@@ -148,41 +149,6 @@ Array [
             </div>
           </div>
         </div>
-        <div
-          className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
-        >
-          <div
-            style={
-              Object {
-                "opacity": 0,
-                "transform": "translateY(100px) translateZ(0)",
-              }
-            }
-          >
-            <div
-              className="inline-flex w-10 h-10 p-2 transform rotate-45 shadow-xl lg:p-4 md:h-12 md:w-12 lg:h-16 lg:w-16 hover:scale-110 ease-in-out duration-200 text-gray-100 bg-research-600"
-            >
-              <div
-                className="flex items-center justify-center transform -rotate-45"
-              >
-                <a
-                  href="#features"
-                >
-                  <svg
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      clipRule="evenodd"
-                      d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>,
@@ -192,10 +158,10 @@ Array [
   >
     <div>
       <div
-        className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
+        className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
       >
         <div
-          className="lg:text-center"
+          className=" lg:text-center"
         >
           <h3
             className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
@@ -209,19 +175,19 @@ Array [
           </p>
         </div>
         <div
-          className="flex justify-center mt-20 space-x-4"
+          className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row"
         >
           <div
-            className="w-1/4 -space-y-2 overflow-hidden bg-white border rounded-md hover:shadow-xl hover:border-2 border-research-500"
+            className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500"
             style={Object {}}
           >
             <h1
-              className="p-4 text-5xl font-black text-center text-carbon-900"
+              className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900"
             >
               REST API
             </h1>
             <div
-              className="p-4 bg-gray-100"
+              className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start"
             >
               <ul
                 className="mt-6 space-y-3 text-gray-800"
@@ -289,16 +255,16 @@ Array [
             </div>
           </div>
           <div
-            className="w-1/4 -space-y-2 overflow-hidden bg-white border rounded-md hover:shadow-xl hover:border-2 border-research-500"
+            className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500"
             style={Object {}}
           >
             <h1
-              className="p-4 text-5xl font-black text-center text-carbon-900"
+              className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900"
             >
               CSV
             </h1>
             <div
-              className="p-4 bg-gray-100"
+              className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start"
             >
               <ul
                 className="mt-6 space-y-3 text-gray-800"
@@ -366,16 +332,16 @@ Array [
             </div>
           </div>
           <div
-            className="w-1/4 -space-y-2 overflow-hidden bg-white border rounded-md hover:shadow-xl hover:border-2 border-research-500"
+            className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500"
             style={Object {}}
           >
             <h1
-              className="p-4 text-5xl font-black text-center text-carbon-900"
+              className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900"
             >
               Charts
             </h1>
             <div
-              className="p-4 bg-gray-100"
+              className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start"
             >
               <ul
                 className="mt-6 space-y-3 text-gray-800"
@@ -452,13 +418,20 @@ Array [
   >
     <div>
       <div
-        className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
+        className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
       >
-        <h3
-          className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 lg:text-center sm:text-4xl sm:leading-10"
+        <div
+          className=" lg:text-center"
         >
-          Charts
-        </h3>
+          <h3
+            className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+          >
+            Charts
+          </h3>
+          <p
+            className="mt-3 text-lg text-gray-700"
+          />
+        </div>
         <div
           className="flex justify-center mt-16"
         >
@@ -475,7 +448,7 @@ Array [
   >
     <div>
       <div
-        className="container py-10 mx-auto md:py-12 lg:py-16 xl:py-20"
+        className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
       >
         <div
           className=" lg:text-center"
@@ -493,109 +466,50 @@ Array [
         </div>
         <div
           className="px-4 mt-20 divide-y divide-gray-400"
+        />
+      </div>
+    </div>
+  </section>,
+  <section>
+    <div
+      className="bg-gray-100"
+    >
+      <div
+        className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
+      >
+        <div
+          className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0"
         >
           <div>
-            <div
-              className="flex flex-wrap py-8 md:flex-no-wrap"
+            <h2
+              className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
             >
-              <div
-                className="flex flex-col flex-shrink-0 mb-6 md:w-64 md:mb-0"
+              <span>
+                Ready to get started? 
+              </span>
+              <br
+                className="xl:hidden"
+              />
+              <span>
+                Start with a
+              </span>
+              <span
+                className="text-research-500"
               >
-                <span
-                  className="font-medium tracking-widest text-gray-900"
-                >
-                  Kenneth R. French
-                </span>
-                <span
-                  className="mt-1 text-sm text-gray-600"
-                >
-                  06.08.2020
-                </span>
-              </div>
-              <div
-                className="space-y-4 md:flex-grow"
-              >
-                <h2
-                  className="text-2xl text-gray-900"
-                >
-                  Kenneth French's Data library
-                </h2>
-                <p
-                  className="text-gray-700"
-                >
-                  We have permission to distribute his library blabla, maybe something like this?
-                </p>
-                <div
-                  className="flex items-center space-x-4"
-                >
-                  <a
-                    className="text-xs text-gray-900 focus:outline-none hover:text-research-600"
-                    href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
-                    target="blank"
-                  >
-                    Go to source
-                  </a>
-                  <button
-                    className="text-xs text-gray-900 focus:outline-none hover:text-research-600"
-                    onClick={[Function]}
-                  >
-                    Citation
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div
-              className="flex flex-wrap py-8 md:flex-no-wrap"
+                 free plan
+              </span>
+            </h2>
+            <p
+              className="mt-2 text-gray-700"
             >
-              <div
-                className="flex flex-col flex-shrink-0 mb-6 md:w-64 md:mb-0"
-              >
-                <span
-                  className="font-medium tracking-widest text-gray-900"
-                >
-                  Nicolas Webersinke
-                </span>
-                <span
-                  className="mt-1 text-sm text-gray-600"
-                >
-                  06.08.2020
-                </span>
-              </div>
-              <div
-                className="space-y-4 md:flex-grow"
-              >
-                <h2
-                  className="text-2xl text-gray-900"
-                >
-                  Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings
-                </h2>
-                <p
-                  className="text-gray-700"
-                >
-                  Index providers increasingly offer sustainable stock indices based on ESG (Environmental, Social, and Governance) ratings of firms. The performance of such indices with ESG tilts is driven by the impact of the applied weighting methodology and by the ESG firm ratings. In this paper, we focus on the S&P 500 ESG Factor Weighted Index, which outperforms the conventional S&P 500 index in terms of raw returns. Based on a simulation analysis, we find the ESG ratings to contribute little to the index return. Rather, the used weighting methodology mainly causes this outperformance which is connected to exposures to the well-established size, investment and momentum factors. Interestingly, the S&P 500 Equal Weighted Index shows comparable exposures to these factors. The weighting methodologies of both indices result in a relative high weighting of smaller stocks with similar return characteristics. Thus, our key finding is that the weighting methodologies of sustainable indices can be a main return driver, which has to be taken into account by investors evaluating the risk and return profile of stock indices with ESG tilts. 
-                </p>
-                <div
-                  className="flex items-center space-x-4"
-                >
-                  <a
-                    className="text-xs text-gray-900 focus:outline-none hover:text-research-600"
-                    href="http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
-                    target="blank"
-                  >
-                    Go to source
-                  </a>
-                  <button
-                    className="text-xs text-gray-900 focus:outline-none hover:text-research-600"
-                    onClick={[Function]}
-                  >
-                    Citation
-                  </button>
-                </div>
-              </div>
-            </div>
+              Explore our charts or create an account to unlock the full potential of our API.
+            </p>
           </div>
+          <button
+            className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600"
+          >
+            Sign up
+          </button>
         </div>
       </div>
     </div>

@@ -2590,10 +2590,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.44":
-  version "16.9.44"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.44.tgz#da84b179c031aef67dc92c33bd3401f1da2fa3bc"
-  integrity sha512-BtLoJrXdW8DVZauKP+bY4Kmiq7ubcJq+H/aCpRfvPF7RAT3RwR73Sg8szdc2YasbAlWBDrQ6Q+AFM0KwtQY+WQ==
+"@types/react@*", "@types/react@^16.9.46":
+  version "16.9.46"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.46.tgz#f0326cd7adceda74148baa9bff6e918632f5069e"
+  integrity sha512-dbHzO3aAq1lB3jRQuNpuZ/mnu+CdD3H0WVaaBQA8LTT3S33xhVBUj232T8M3tAhSWJs/D/UqORYUlJNl/8VQZg==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -5660,10 +5660,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-document-register-element@1.14.3:
-  version "1.14.3"
-  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.3.tgz#3335d4578df6a1536a34595b91cca36dd5db61d7"
-  integrity sha512-SbJTzoQXLTcYxnpdDNRZXu/gwsGSShemXpvj6Pa6ujRwJFpJ41siil4tk4y+cQXnqylS6mc2Rtxp/PkMzfkqyQ==
+document-register-element@1.14.5:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.14.5.tgz#489d913a6c9e797a187633fc9768328fa0682fad"
+  integrity sha512-baSvC95X5oaVaZ7e2y9pw7Jww16VrkcNqGacb1HYwG1oHV7gc3X+je1HMj6sytjGgrmPSMHIyR+oNF+7/qwsNA==
   dependencies:
     lightercollective "^0.3.0"
 
@@ -10599,10 +10599,10 @@ nwsapi@^2.2.0:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
 
-nx@^10.0.8:
-  version "10.0.8"
-  resolved "https://registry.yarnpkg.com/nx/-/nx-10.0.8.tgz#885ea66c09eb274b9fade7417017898531c9d7e3"
-  integrity sha512-RYF5xl7pyR/dFUl2/EDmC6Bz/rpc4jATJwJ8ik4zZGuiuN/i8qVVS4eHUXbdDA/xkQyUyDy0n5zKXXZI2WEVDA==
+nx@^10.0.10:
+  version "10.0.10"
+  resolved "https://registry.yarnpkg.com/nx/-/nx-10.0.10.tgz#064a85422a7e28149418765a2641d9c34ba6ef81"
+  integrity sha512-23sepe9gSSxB8VGEW0+ztjtB6NAkUK+ADdKv+J2sOrVbq5bBxwCQ/2UNUx8+Kq/5oWXjLg5S0aaVJHgwDOczYw==
   dependencies:
     "@nrwl/cli" "*"
 
@@ -12094,10 +12094,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier@2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.4.tgz#2d1bae173e355996ee355ec9830a7a1ee05457ef"
-  integrity sha512-SVJIQ51spzFDvh4fIbCLvciiDMCrRhlN3mbZvv/+ycjvmF5E73bKdGfU8QDLNmjYJf+lsGnDBC4UUnvTe5OO0w==
+prettier@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
+  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
 
 pretty-bytes@^5.3.0:
   version "5.3.0"
@@ -12119,7 +12119,14 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-prismjs@^1.20.0, prismjs@~1.20.0:
+prismjs@^1.21.0:
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.21.0.tgz#36c086ec36b45319ec4218ee164c110f9fc015a3"
+  integrity sha512-uGdSIu1nk3kej2iZsLyDoJ7e9bnPzIgY0naW/HdknGj61zScaprVEVGHrPoXqI+M9sP0NDnTK2jpkvmldpuqDw==
+  optionalDependencies:
+    clipboard "^2.0.0"
+
+prismjs@~1.20.0:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
   integrity sha512-AEDjSrVNkynnw6A+B1DsFkd6AVdTnp+/WoUixFRULlCLZVRZlVQMVWio/16jv7G1FscUxQxOQhWwApgbnxr6kQ==
@@ -12431,15 +12438,15 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-syntax-highlighter@^13.2.1:
-  version "13.2.1"
-  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-13.2.1.tgz#3d5a3b655cd85ce06b9508e0365d01ef9b8560bb"
-  integrity sha512-O/AF/ll4I3Dp+2WuKbnF5yKG4b1BUncqcpTW6MIBDJPr2eGKqlNGS3Nv+lyCFtAIHx8N+/ktti8qH14Q5VjjcA==
+react-syntax-highlighter@^13.3.1:
+  version "13.3.1"
+  resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-13.3.1.tgz#80cf556902859238628b1b9c2d6e28d5d396adb8"
+  integrity sha512-GfIduBKlc7oebsEU4dpJPo04kVTEhSxe9F9hGWrzYVgGssJ06Kmf74LVOPp6pzj0Tj5pr5en8SKI8H2al4XeRA==
   dependencies:
     "@babel/runtime" "^7.3.1"
     highlight.js "^10.1.1"
     lowlight "^1.14.0"
-    prismjs "^1.20.0"
+    prismjs "^1.21.0"
     refractor "^3.0.0"
 
 react-test-renderer@^16.13.1:

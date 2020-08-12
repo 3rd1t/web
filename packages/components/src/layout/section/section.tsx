@@ -13,8 +13,8 @@ export const Section = (props: SectionProps) => {
 
   return (
     <section className={bg} id={id}>
-      <div className="container py-8 mx-auto md:py-12 lg:py-16 xl:py-20">
-        <div className={className}>{children}</div>
+      <div className={className}>
+        <div className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0">{children}</div>
       </div>
     </section>
   )

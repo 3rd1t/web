@@ -16,13 +16,13 @@
     "local": {
       "options": {
         "runner": "@nrwl/workspace/src/tasks-runner/tasks-runner-v2",
-        "cacheableOperations": ["build", "test", "lint", "e2e", "export"]
+        "cacheableOperations": ["build", "test", "lint", "e2e"]
       }
     },
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "OWZmYzE2YTItNjcwYi00MTQyLTk2ZDctOGIxMGNlNGRhMTRjfHJlYWQtd3JpdGU=",
+        "accessToken": "Y2M3YWMwZDItN2ZlZi00YzgwLWJkZjEtZWZkNTU4NTVkZWM2fHJlYWQtd3JpdGU=",
         "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -50,6 +50,9 @@
       "tags": []
     },
     "tailwindcss": {
+      "tags": []
+    },
+    "charts": {
       "tags": []
     }
   },

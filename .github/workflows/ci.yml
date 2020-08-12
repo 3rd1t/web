@@ -60,10 +60,7 @@ jobs:
           path: ${{github.workspace}}/dist
 
   unit-test:
-    strategy:
-      matrix:
-        node: ["14", "12"]
-    name: unit test @ node ${{ matrix.node }}
+    name: unit test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -73,7 +70,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: "${{ matrix.node }}"
+          node-version: "14"
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
@@ -108,9 +105,9 @@ jobs:
         run: yarn cypress install
       - name: Run Integration test
         run: |
-          NODE_ENV=production yarn nx build tailwindcss --skip-nx-cache
-          yarn nx run core-e2e:e2e
-          yarn nx run research-e2e:e2e
+          yarn nx run tailwindcss:build --skip-nx-cache
+          yarn affected:e2e --with-deps --skip-nx-cache --headless
+
   lighthouse:
     strategy:
       matrix:

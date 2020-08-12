@@ -1,11 +1,11 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import Components from "./components"
+import ScrollTip from "./scroll-tip"
 
-describe(" Components", () => {
+describe(" ScrollTip", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Components />)
+    const { baseElement } = render(<ScrollTip className="bg-gray-900" href="#" />)
     expect(baseElement).toBeTruthy()
   })
 })

@@ -5,7 +5,6 @@ include-labels:
   - "Major Version"
   - "Minor Version"
   - "Patch Version"
-  - "dependencies"
 
 categories:
   - title: "Features"
@@ -20,8 +19,6 @@ categories:
   - title: "Documentation"
     labels:
       - "documentation"
-  - title: "Dependency updates"
-    label: "dependencies"
 change-template: "- $TITLE @$AUTHOR (#$NUMBER)"
 version-resolver:
   major:

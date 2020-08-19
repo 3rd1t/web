@@ -585,6 +585,8 @@ Array [
           </div>
           <form
             className="mt-6"
+            data-netlify="true"
+            method="POST"
           >
             <div
               className="sm:flex"
@@ -596,6 +598,7 @@ Array [
               />
               <button
                 className="relative block w-full px-6 py-3 mt-4 text-base font-semibold leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600"
+                type="submit"
               >
                 Subscribe
               </button>

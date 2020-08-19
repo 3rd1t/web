@@ -230,9 +230,11 @@ const Index = (props: IndexProps) => {
               .
             </p>
           </div>
-          <form className="mt-6" method="POST" data-netlify="true">
+          <form name="email-subs" className="mt-6" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="email-subs" />
             <div className="sm:flex">
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="block w-full px-4 py-3 text-base leading-6 bg-white border rounded shadow-none placeholder-carbon-600 border-carbon-300 sm:max-w-xs focus:outline-none focus:border-carbon-700"

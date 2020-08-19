@@ -587,12 +587,19 @@ Array [
             className="mt-6"
             data-netlify="true"
             method="POST"
+            name="email-subs"
           >
+            <input
+              name="form-name"
+              type="hidden"
+              value="email-subs"
+            />
             <div
               className="sm:flex"
             >
               <input
                 className="block w-full px-4 py-3 text-base leading-6 bg-white border rounded shadow-none placeholder-carbon-600 border-carbon-300 sm:max-w-xs focus:outline-none focus:border-carbon-700"
+                name="email"
                 placeholder="Enter your email"
                 type="email"
               />

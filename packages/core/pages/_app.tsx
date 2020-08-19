@@ -9,7 +9,7 @@ const app = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <title>Perfolio</title>
-        <meta name="description" content="goes here" />
+        <meta name="description" content="An application for portfolio analysis, using factor returns that enable users to assess and compare the performance of their stock or fund investments" />
       </Head>
       <div className="bg-gray-100">
         <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">

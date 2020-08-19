@@ -9,7 +9,7 @@ const app = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <title>Perfolio Research</title>
-        <meta name="description" content="goes here" />
+        <meta name="description" content="A research platform offering Kenneth French's factor returns data via a REST API, liberating finance scientists from csv imports and data cleaning" />
       </Head>
       <div className="bg-gray-100">
         <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">

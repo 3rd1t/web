@@ -1,3 +1,5 @@
+export * from "./lib/feature/feature"
+export * from "./lib/profile/profile"
 export * from "./layout/section/title/section-title"
 export * from "./lib/scroll-tip/scroll-tip"
 export * from "./code/code-examples/code-examples"

@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroSection, Section } from "@perfolio/components"
+import { HeroSection, Section, Profile, Feature } from "@perfolio/components"
 import { motion } from "framer-motion"
 /* eslint-disable-next-line */
 interface IndexProps {}
@@ -97,29 +97,6 @@ const features = [
 ]
 
 const Index = (props: IndexProps) => {
-  const check = (
-    <svg stroke="currentColor" fill="currentColor" viewBox="0 0 20 20">
-      <path
-        fillRule="evenodd"
-        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-        clipRule="evenodd"
-      ></path>
-    </svg>
-  )
-
-  const feature = (icon: React.ReactNode, name: string, description: string) => (
-    <li key={name} className="flex items-start p-3 space-x-1 md:space-x-4 md:w-1/2 xl:w-1/3">
-      <div className="z-10 inline-flex items-start justify-center text-gray-100 border-2 rounded bg-carbon-900 border-carbon-900">
-        <span className="w-10 h-10 p-2 lg:p-3 xl:p-4 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:h-16 lg:w-16">{icon}</span>
-      </div>
-
-      <div className="flex-grow pl-4 lg:pl-0 lg:px-6">
-        <h2 className="text-lg font-medium leading-6 text-carbon-900">{name}</h2>
-        <p className="text-base leading-6 text-carbon-600">{description}</p>
-      </div>
-    </li>
-  )
-
   return (
     <>
       <Section bg="bg-gray-100 " className="relative h-screen" id="index">
@@ -143,7 +120,7 @@ const Index = (props: IndexProps) => {
               className: "text-carbon-900 hover:text-carbon-700",
             }}
           ></HeroSection>
-          <img src="https://via.placeholder.com/1280x720"></img>
+          <img src="https://via.placeholder.com/1280x720" alt="placeholder"></img>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -181,7 +158,7 @@ const Index = (props: IndexProps) => {
         </div>
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features.map((f) => {
-            return feature(f.icon, f.title, f.description)
+            return <Feature icon={f.icon} title={f.title} description={f.description}></Feature>
           })}
         </ul>
       </Section>
@@ -190,39 +167,49 @@ const Index = (props: IndexProps) => {
           Our Team
         </h2>
         <div className="flex flex-col px-5 py-16 mx-auto">
-          <div className="mx-auto lg:w-4/6">
-            <div className="overflow-hidden rounded-sm">
+          {/* <div className="overflow-hidden rounded-sm">
               <img alt="portfolio team" className="object-cover w-full" src="./team.jpg"></img>
-            </div>
-            <div className="flex flex-col mt-10 sm:flex-row">
-              <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-carbon-900">
-                  <svg
-                    className="p-3 text-gray-100 stroke-current"
-                    viewBox="0 0 194 148"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
-                      strokeWidth="25"
-                    />
-                  </svg>
-                </div>
-                <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
-                  <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
-                  <p className="text-base leading-6 text-left text-carbon-600 sm:text-center">
-                    At Perfolio we believe that investment decisions should always be based on as much information as
-                    possible. It is our mission to provide our users with the most relevant and accurate financial
-                    information available.
-                  </p>
-                </div>
+            </div> */}
+          <div className="flex flex-col mt-10 sm:flex-row">
+            <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-carbon-900">
+                <svg
+                  className="p-3 text-gray-100 stroke-current"
+                  viewBox="0 0 194 148"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
+                    strokeWidth="25"
+                  />
+                </svg>
               </div>
-              <div className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0">
-                <p className="text-lg leading-6 text-center text-carbon-600 sm:text-left">
-                  Our mutual interest in programming, scientific research, and financial investments are the backbone of
-                  Perfolio.
+              <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
+                <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
+                <p className="text-base leading-6 text-left text-carbon-600 sm:text-center">
+                  At Perfolio we believe that investment decisions should always be based on as much information as
+                  possible. It is our mission to provide our users with the most relevant and accurate financial
+                  information available.
                 </p>
+              </div>
+            </div>
+            <div className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0">
+              <div className="flex justify-center space-x-8">
+                <Profile
+                  className="w-1/4"
+                  name="Nicolas Webersinke"
+                  title="Product lead"
+                  image="/img/nico.jpeg"
+                ></Profile>
+                <Profile
+                  className="w-1/4"
+                  name="Andreas Thomas"
+                  title="Your nambaz"
+                  image="/img/andreas.jpeg"
+                ></Profile>
+                <Profile className="w-1/4" name="Mads Jordt" title="OK, not OK" image="/img/mads.jpeg"></Profile>
+                <Profile className="w-1/4" name="Kevin Kohler" title="Was it sri?" image="/img/kevin.jpeg"></Profile>
               </div>
             </div>
           </div>

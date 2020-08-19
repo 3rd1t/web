@@ -203,14 +203,14 @@
           "comment": "This is duplicated so the apps export command can build tailwind by using --with-deps",
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+            "command": "NODE_ENV=production yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
           }
         },
         "e2e": {
           "comment": "This is duplicated so the apps e2e command can build tailwind by using --with-deps",
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+            "command": "NODE_ENV=production yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
           }
         }
       }

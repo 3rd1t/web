@@ -11,7 +11,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" style={{ scrollBehavior: "smooth" }}>
         <Head />
-        <body>
+        <body className={process.env.NODE_ENV === "production" ? "" : "debug-screens"}>
           <Main />
           <NextScript />
         </body>

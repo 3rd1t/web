@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroSection, Section, Profile, Feature } from "@perfolio/components"
+import { HeroSection, Section, Profile, Feature, ScrollTip } from "@perfolio/components"
 import { motion } from "framer-motion"
 /* eslint-disable-next-line */
 interface IndexProps {}
@@ -131,19 +131,7 @@ const Index = (props: IndexProps) => {
           }}
           className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
         >
-          <div className="inline-flex w-10 h-10 p-2 text-gray-100 duration-500 transform rotate-45 shadow-xl lg:p-4 md:h-12 md:w-12 lg:h-16 lg:w-16 group bg-carbon-900 hover:scale-105 hover:-translate-y-4">
-            <div className="flex items-center justify-center transform -rotate-45">
-              <a href="#features">
-                <svg fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
+          <ScrollTip href="#features"></ScrollTip>
         </motion.div>
       </Section>
       <Section bg="bg-white" id="features" className="flex flex-col justify-center">
@@ -174,7 +162,7 @@ const Index = (props: IndexProps) => {
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-carbon-900">
               <svg
-                className="p-3 text-gray-100 stroke-current md:p-4"
+                className="w-10 h-10 p-3 text-gray-100 stroke-current md:p-4"
                 viewBox="0 0 194 148"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

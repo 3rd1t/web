@@ -1,7 +1,13 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
   purge: ["../**/*.tsx"],
+  important: true,
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        system: defaultTheme.fontFamily.sans,
+      },
       colors: {
         carbon: {
           50: "#f3f3f3",
@@ -41,5 +47,8 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [require("tailwindcss-debug-screens")],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
 }

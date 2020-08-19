@@ -11,7 +11,8 @@ const app = ({ Component, pageProps }: AppProps) => {
         <title>Perfolio Research</title>
         <meta name="description" content="goes here" />
       </Head>
-      <div className="bg-gray-100">
+      {/* pt-16 must be the same height as the navbar itself */}
+      <div className="pt-16 bg-gray-100">
         <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">
           <Navbar
             logo={<Logo color="text-research-500" domain="research"></Logo>}

@@ -1,7 +1,8 @@
-import React, { useState } from "react"
-import { HeroSection, CodeExamples, Section, ScrollTip, Source, SectionTitle, SourceProps } from "@perfolio/components"
+import React from "react"
+import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps } from "@perfolio/components"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
+import Link from "next/link"
 import matter from "gray-matter"
 interface IndexProps {
   codeExamples: {
@@ -12,7 +13,7 @@ interface IndexProps {
 }
 
 const Index = (props: IndexProps) => {
-  const feature = (title: string, points: string[]) => (
+  const feature = (title: string, points: string[], href: string) => (
     <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500">
       <h1 className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900">
         {title}
@@ -35,9 +36,11 @@ const Index = (props: IndexProps) => {
           })}
         </ul>
 
-        <button className="w-full px-4 py-2 mt-6 text-sm font-semibold text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800">
-          Get started
-        </button>
+        <Link href={href}>
+          <a className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800">
+            Get started
+          </a>
+        </Link>
       </div>
     </motion.div>
   )
@@ -83,9 +86,9 @@ const Index = (props: IndexProps) => {
           subtitle="Conversion to your home currency included."
         ></SectionTitle>
         <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
-          {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"])}
-          {feature("CSV", ["Use directly in Excel", "Why the fuck", "would you want this?"])}
-          {feature("Charts", ["Analyse directly in your browser", "Who doesn't like charts", "what else?"])}
+          {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"], "/api")}
+          {feature("CSV", ["Use directly in Excel", "Why the fuck", "would you want this?"], "/csv")}
+          {feature("Charts", ["Analyse directly in your browser", "Who doesn't like charts", "what else?"], "/charts")}
         </div>
       </Section>
       <Section id="charts" bg="bg-gray-100">
@@ -128,9 +131,11 @@ const Index = (props: IndexProps) => {
               Explore our charts or create an account to unlock the full potential of our API.
             </p>
           </div>
-          <button className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
-            Sign up
-          </button>
+          <Link href="/signup">
+            <a className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
+              Sign up
+            </a>
+          </Link>
         </div>
       </Section>
     </>

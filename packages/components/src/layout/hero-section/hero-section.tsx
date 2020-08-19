@@ -41,7 +41,7 @@ export const HeroSection = (props: HeroSectionProps) => {
             </div>
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <a
-                href={props.secondaryButton.label}
+                href={props.secondaryButton.href}
                 className={[commonButtonClasses, props.secondaryButton.className].join(" ")}
               >
                 {props.secondaryButton.label}

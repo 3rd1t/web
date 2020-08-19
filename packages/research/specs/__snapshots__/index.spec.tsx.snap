@@ -60,7 +60,7 @@ Array [
                     >
                       <a
                         className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-research-900 hover:text-research-700"
-                        href="Contact us"
+                        href="mailto:info@perfol.io"
                       >
                         Contact us
                       </a>
@@ -248,11 +248,14 @@ Array [
                   </span>
                 </li>
               </ul>
-              <button
-                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+              <a
+                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+                href="/api"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 Get started
-              </button>
+              </a>
             </div>
           </div>
           <div
@@ -325,11 +328,14 @@ Array [
                   </span>
                 </li>
               </ul>
-              <button
-                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+              <a
+                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+                href="/csv"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 Get started
-              </button>
+              </a>
             </div>
           </div>
           <div
@@ -402,11 +408,14 @@ Array [
                   </span>
                 </li>
               </ul>
-              <button
-                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+              <a
+                className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800"
+                href="/charts"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
               >
                 Get started
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -506,11 +515,14 @@ Array [
               Explore our charts or create an account to unlock the full potential of our API.
             </p>
           </div>
-          <button
+          <a
             className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600"
+            href="/signup"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             Sign up
-          </button>
+          </a>
         </div>
       </div>
     </div>

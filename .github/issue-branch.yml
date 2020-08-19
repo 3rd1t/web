@@ -1,0 +1,9 @@
+mode: auto
+autoCloseIssue: true
+
+branches:
+  - label: enhancement
+    prefix: feature/
+  - label: bug
+    prefix: fix/
+  

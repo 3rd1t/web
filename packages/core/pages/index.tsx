@@ -147,7 +147,7 @@ const Index = (props: IndexProps) => {
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features.map((f, index) => {
             return (
-              <li key={index}>
+              <li key={index} className="p-3  md:w-1/2 xl:w-1/3">
                 <Feature icon={f.icon} title={f.title} description={f.description}></Feature>
               </li>
             )

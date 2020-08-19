@@ -12,7 +12,14 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta
           name="description"
           content="A research data platform offering Kenneth French's factor returns via a convenient REST API, conversion in several currencies included"
-        />
+        ></meta>
+        <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png"></link>
+        <link rel="manifest" href="/fav/site.webmanifest"></link>
+        <link rel="mask-icon" href="/fav/safari-pinned-tab.svg" color="#4580FE"></link>
+        <meta name="msapplication-TileColor" content="#4580FE"></meta>
+        <meta name="theme-color" content="#4580FE"></meta>
       </Head>
       {/* pt-16 must be the same height as the navbar itself */}
       <div className="pt-16 bg-gray-100">

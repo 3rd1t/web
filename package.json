@@ -78,7 +78,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn affected:test && yarn affected:build --parallel --with-deps && yarn affected:e2e --headless"
+      "pre-commit": "lint-staged && yarn affected:test --parallel && yarn affected:build --parallel --with-deps && yarn affected:e2e --headless"
     }
   },
   "lint-staged": {

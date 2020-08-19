@@ -4,6 +4,98 @@ import { motion } from "framer-motion"
 /* eslint-disable-next-line */
 interface IndexProps {}
 
+const features = [
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
+        />
+      </svg>
+    ),
+    title: "Independent",
+    description:
+      "We are not part of any bank or insurance company. We give you an unbiased view of your portfolio, not selling any investment products.",
+  },
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+    ),
+    title: "Complex made easy",
+    description:
+      "Everybody should have access to the latest analytics methods in science. Making these methods as simple and understandable as possible is part of our core business.",
+  },
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+        />
+      </svg>
+    ),
+    title: "All in one place",
+    description:
+      "Tired of visiting several websites to get an overview of your assets? Perfolio is the new home for your data.",
+  },
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+        />
+      </svg>
+    ),
+    title: "Highest data quality",
+    description:
+      "We cleanse and analyze data according to the highest standards. With our Premium Plan you get access to even better data quality.",
+  },
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+        />
+      </svg>
+    ),
+    title: "Privacy and Security",
+    description:
+      "We do not share your data with anyone else and store them only on servers within the EU. Privacy and security are our highest priority.",
+  },
+  {
+    icon: (
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+        />
+      </svg>
+    ),
+    title: "Fair pricing",
+    description: "Start for free and if you want more, get the plan that suits you best. No hidden fees.",
+  },
+]
+
 const Index = (props: IndexProps) => {
   const check = (
     <svg stroke="currentColor" fill="currentColor" viewBox="0 0 20 20">
@@ -15,23 +107,17 @@ const Index = (props: IndexProps) => {
     </svg>
   )
 
-  const feature = (icon: React.ReactNode, name: string, description: string, isLast?: boolean) => (
-    <div className="relative flex pb-12 lg:items-center lg:w-1/4 lg:flex-col">
-      <div
-        className={`absolute inset-0 flex items-center justify-center sm:w-12 w-10 md:w-12 h-full ${
-          isLast ? "hidden" : "lg:hidden"
-        }`}
-      >
-        <div className="w-1 h-full pointer-events-none bg-carbon-200"></div>
+  const feature = (icon: React.ReactNode, name: string, description: string) => (
+    <li key={name} className="flex items-start p-3 space-x-1 md:space-x-4 md:w-1/2 xl:w-1/3">
+      <div className="z-10 inline-flex items-start justify-center text-gray-100 border-2 rounded bg-carbon-900 border-carbon-900">
+        <span className="w-10 h-10 p-2 lg:p-3 xl:p-4 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:h-16 lg:w-16">{icon}</span>
       </div>
-      <div className="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-10 h-10 p-1 bg-gray-100 border-4 rounded-full text-carbon-900 border-carbon-900 lg:bg-carbon-900 lg:text-gray-100 lg:border-0 border-3 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:rounded">
-        {icon}
-      </div>
-      <div className="flex-grow pl-4 lg:pl-0 lg:mt-8">
-        <h2 className="mb-1 text-lg font-medium leading-6 text-carbon-900">{name}</h2>
+
+      <div className="flex-grow pl-4 lg:pl-0 lg:px-6">
+        <h2 className="text-lg font-medium leading-6 text-carbon-900">{name}</h2>
         <p className="text-base leading-6 text-carbon-600">{description}</p>
       </div>
-    </div>
+    </li>
   )
 
   return (
@@ -42,7 +128,8 @@ const Index = (props: IndexProps) => {
             headline="Portfolio analytics insights for everyone"
             paragraph={
               <p className="flex flex-col xl:flex-row">
-                Giving you access to the latest investment portfolio analytics methods in science.
+                Keeping track of all your assets and their performance is hard. Perfolio brings all information to one
+                place and gives you access to the latest analytics methods in science.
               </p>
             }
             primaryButton={{
@@ -56,6 +143,7 @@ const Index = (props: IndexProps) => {
               className: "text-carbon-900 hover:text-carbon-700",
             }}
           ></HeroSection>
+          <img src="https://via.placeholder.com/1280x720"></img>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -84,36 +172,18 @@ const Index = (props: IndexProps) => {
       <Section bg="bg-white" id="features" className="flex flex-col justify-center">
         <div className="md:text-center">
           <h3 className="text-3xl font-bold leading-8 tracking-tight text-carbon-900 sm:text-4xl sm:leading-10">
-            Insights we offer
+            Why Perfolio?
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
+            Keeping track of all your assets and their performance is hard. Perfolio brings all information to one place
+            and gives you access to the latest analytics methods in science.
           </p>
         </div>
-        <div className="flex flex-col px-5 mx-auto my-24 lg:flex-row lg:space-x-8">
-          {feature(
-            check,
-            "Independent",
-            "Morbi ultricies molestie lacinia. Vivamus sagittis congue eleifend. Phasellus congue porttitor risus, a imperdiet enim tristique vel. Praesent libero dolor. ",
-          )}
-          {feature(
-            check,
-            "Fair pricing - start for free!",
-            "Nam imperdiet metus quis sapien egestas sagittis. Cras venenatis, orci non tempus porttitor, quam lorem sodales mauris, in fermentum purus. ",
-          )}
-          {feature(
-            check,
-            "High data quality",
-            "Nullam dapibus turpis lorem, at porta risus hendrerit nec. Maecenas eu ornare felis. Praesent fringilla libero magna, in tempus dui. ",
-          )}
-          {feature(
-            check,
-            "Sophisticated analytics methods - simply illustrated",
-            "Morbi at mauris et dolor rutrum molestie. In venenatis dictum tellus ut varius. Cras sed ante tincidunt, condimentum lacus eu.",
-            true,
-          )}
-        </div>
+        <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
+          {features.map((f) => {
+            return feature(f.icon, f.title, f.description)
+          })}
+        </ul>
       </Section>
       <Section className="flex flex-col justify-center" id="team">
         <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-carbon-900 sm:text-4xl sm:leading-10">
@@ -142,20 +212,16 @@ const Index = (props: IndexProps) => {
                 <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
                   <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
                   <p className="text-base leading-6 text-left text-carbon-600 sm:text-center">
-                    We are all super impressed by the performance of our product owners from amos and would like to
-                    thank them for everything they have taught us.
+                    At Perfolio we believe that investment decisions should always be based on as much information as
+                    possible. It is our mission to provide our users with the most relevant and accurate financial
+                    information available.
                   </p>
                 </div>
               </div>
               <div className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0">
                 <p className="text-lg leading-6 text-center text-carbon-600 sm:text-left">
-                  Mauris porta, turpis eu rhoncus accumsan, neque tortor feugiat purus, vel egestas tellus magna nec
-                  leo. Pellentesque ultrices posuere consequat. Quisque mollis erat eget aliquam mollis. Aenean
-                  convallis aliquet augue venenatis posuere. Donec pretium ante nunc, eu tempus diam dictum quis. Etiam
-                  nunc magna, tincidunt et porttitor at, volutpat rutrum felis. Nullam condimentum consectetur urna non
-                  pharetra. Vivamus enim massa, porttitor a lobortis dignissim, iaculis id arcu. Aliquam feugiat nisl
-                  sed blandit pulvinar. Sed bibendum rhoncus erat, et feugiat dolor ullamcorper non. Sed interdum et
-                  justo non aliquet.{" "}
+                  Our mutual interest in programming, scientific research, and financial investments are the backbone of
+                  Perfolio.
                 </p>
               </div>
             </div>

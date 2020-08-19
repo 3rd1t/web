@@ -2,7 +2,7 @@
 author: "Kenneth R. French"
 date: "06.08.2020"
 title: "Kenneth French's Data Library"
-source: "<http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html>"
+source: "http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
 citation: "Copyright 2020 Kenneth R. French"
 ---
 

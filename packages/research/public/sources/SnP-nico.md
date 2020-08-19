@@ -2,7 +2,7 @@
 author: "Hübel, Benjamin and Scholz, Hendrik and Webersinke, Nicolas"
 date: "06.08.2020"
 title: "Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings"
-source: "<http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html>"
+source: "http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html"
 citation: "Hübel, Benjamin and Scholz, Hendrik and Webersinke, Nicolas, Performance of S&P 500 ESG Indices: The Impact of Weighting Methodologies and ESG Ratings (September 30, 2019). Available at SSRN:<https://ssrn.com/abstract=3528309>"
 ---
 

@@ -66,6 +66,7 @@ Array [
             </div>
           </div>
           <img
+            alt="placeholder"
             src="https://via.placeholder.com/1280x720"
           />
         </div>
@@ -381,61 +382,139 @@ Array [
           className="flex flex-col px-5 py-16 mx-auto"
         >
           <div
-            className="mx-auto lg:w-4/6"
+            className="flex flex-col mt-10 sm:flex-row"
           >
             <div
-              className="overflow-hidden rounded-sm"
-            >
-              <img
-                alt="portfolio team"
-                className="object-cover w-full"
-                src="./team.jpg"
-              />
-            </div>
-            <div
-              className="flex flex-col mt-10 sm:flex-row"
+              className="text-center sm:w-1/3 sm:pr-8 sm:py-8"
             >
               <div
-                className="text-center sm:w-1/3 sm:pr-8 sm:py-8"
+                className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-carbon-900"
               >
-                <div
-                  className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-carbon-900"
+                <svg
+                  className="p-3 text-gray-100 stroke-current"
+                  fill="none"
+                  viewBox="0 0 194 148"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    className="p-3 text-gray-100 stroke-current"
-                    fill="none"
-                    viewBox="0 0 194 148"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
-                      strokeWidth="25"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="flex flex-col items-center justify-center mt-4 space-y-2 text-center"
-                >
-                  <h2
-                    className="text-lg font-medium leading-6 text-carbon-900"
-                  >
-                    Perfolio
-                  </h2>
-                  <p
-                    className="text-base leading-6 text-left text-carbon-600 sm:text-center"
-                  >
-                    At Perfolio we believe that investment decisions should always be based on as much information as possible. It is our mission to provide our users with the most relevant and accurate financial information available.
-                  </p>
-                </div>
+                  <path
+                    d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
+                    strokeWidth="25"
+                  />
+                </svg>
               </div>
               <div
-                className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0"
+                className="flex flex-col items-center justify-center mt-4 space-y-2 text-center"
               >
-                <p
-                  className="text-lg leading-6 text-center text-carbon-600 sm:text-left"
+                <h2
+                  className="text-lg font-medium leading-6 text-carbon-900"
                 >
-                  Our mutual interest in programming, scientific research, and financial investments are the backbone of Perfolio.
+                  Perfolio
+                </h2>
+                <p
+                  className="text-base leading-6 text-left text-carbon-600 sm:text-center"
+                >
+                  At Perfolio we believe that investment decisions should always be based on as much information as possible. It is our mission to provide our users with the most relevant and accurate financial information available.
                 </p>
+              </div>
+            </div>
+            <div
+              className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0"
+            >
+              <div
+                className="flex justify-center space-x-8"
+              >
+                <div
+                  className="w-1/4"
+                >
+                  <div
+                    className="flex flex-col items-center justify-center text-sm "
+                  >
+                    <img
+                      alt="Nicolas Webersinke"
+                      className="rounded-full"
+                      src="/img/nico.jpeg"
+                    />
+                    <span
+                      className="mt-4 font-semibold text-gray-900"
+                    >
+                      Nicolas Webersinke
+                    </span>
+                    <span
+                      className="text-gray-600"
+                    >
+                      Product lead
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="w-1/4"
+                >
+                  <div
+                    className="flex flex-col items-center justify-center text-sm "
+                  >
+                    <img
+                      alt="Andreas Thomas"
+                      className="rounded-full"
+                      src="/img/andreas.jpeg"
+                    />
+                    <span
+                      className="mt-4 font-semibold text-gray-900"
+                    >
+                      Andreas Thomas
+                    </span>
+                    <span
+                      className="text-gray-600"
+                    >
+                      Your nambaz
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="w-1/4"
+                >
+                  <div
+                    className="flex flex-col items-center justify-center text-sm "
+                  >
+                    <img
+                      alt="Mads Jordt"
+                      className="rounded-full"
+                      src="/img/mads.jpeg"
+                    />
+                    <span
+                      className="mt-4 font-semibold text-gray-900"
+                    >
+                      Mads Jordt
+                    </span>
+                    <span
+                      className="text-gray-600"
+                    >
+                      OK, not OK
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className="w-1/4"
+                >
+                  <div
+                    className="flex flex-col items-center justify-center text-sm "
+                  >
+                    <img
+                      alt="Kevin Kohler"
+                      className="rounded-full"
+                      src="/img/kevin.jpeg"
+                    />
+                    <span
+                      className="mt-4 font-semibold text-gray-900"
+                    >
+                      Kevin Kohler
+                    </span>
+                    <span
+                      className="text-gray-600"
+                    >
+                      Was it sri?
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ export interface FeatureProps {
 
 export const Feature = ({ title, description, icon }: FeatureProps) => {
   return (
-    <li key={title} className="flex items-start p-3 space-x-1 md:space-x-4 md:w-1/2 xl:w-1/3">
+    <div className="flex items-start p-3 space-x-1 md:space-x-4 md:w-1/2 xl:w-1/3">
       <div className="z-10 inline-flex items-start justify-center text-gray-100 border-2 rounded bg-carbon-900 border-carbon-900">
         <span className="w-10 h-10 p-2 lg:p-3 xl:p-4 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:h-16 lg:w-16">{icon}</span>
       </div>
@@ -18,7 +18,7 @@ export const Feature = ({ title, description, icon }: FeatureProps) => {
         <h2 className="text-lg font-medium leading-6 text-carbon-900">{title}</h2>
         <p className="text-base leading-6 text-carbon-600">{description}</p>
       </div>
-    </li>
+    </div>
   )
 }
 

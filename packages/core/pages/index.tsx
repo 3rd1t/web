@@ -157,8 +157,12 @@ const Index = (props: IndexProps) => {
           </p>
         </div>
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
-          {features.map((f) => {
-            return <Feature icon={f.icon} title={f.title} description={f.description}></Feature>
+          {features.map((f, index) => {
+            return (
+              <li key={index}>
+                <Feature icon={f.icon} title={f.title} description={f.description}></Feature>
+              </li>
+            )
           })}
         </ul>
       </Section>
@@ -166,52 +170,61 @@ const Index = (props: IndexProps) => {
         <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-carbon-900 sm:text-4xl sm:leading-10">
           Our Team
         </h2>
-        <div className="flex flex-col px-5 py-16 mx-auto">
-          {/* <div className="overflow-hidden rounded-sm">
-              <img alt="portfolio team" className="object-cover w-full" src="./team.jpg"></img>
-            </div> */}
-          <div className="flex flex-col mt-10 sm:flex-row">
-            <div className="text-center sm:w-1/3 sm:pr-8 sm:py-8">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-carbon-900">
-                <svg
-                  className="p-3 text-gray-100 stroke-current"
-                  viewBox="0 0 194 148"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
-                    strokeWidth="25"
-                  />
-                </svg>
-              </div>
-              <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
-                <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
-                <p className="text-base leading-6 text-left text-carbon-600 sm:text-center">
-                  At Perfolio we believe that investment decisions should always be based on as much information as
-                  possible. It is our mission to provide our users with the most relevant and accurate financial
-                  information available.
-                </p>
-              </div>
+        <div className="flex flex-col items-center mt-10 md:flex-row">
+          <div className="text-center md:w-1/3 md:pr-8 md:py-8">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-carbon-900">
+              <svg
+                className="p-3 text-gray-100 stroke-current md:p-4"
+                viewBox="0 0 194 148"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
+                  strokeWidth="25"
+                />
+              </svg>
             </div>
-            <div className="pt-4 mt-4 border-t border-carbon-300 sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l sm:border-t-0 sm:mt-0">
-              <div className="flex justify-center space-x-8">
-                <Profile
-                  className="w-1/4"
-                  name="Nicolas Webersinke"
-                  title="Product lead"
-                  image="/img/nico.jpeg"
-                ></Profile>
-                <Profile
-                  className="w-1/4"
-                  name="Andreas Thomas"
-                  title="Your nambaz"
-                  image="/img/andreas.jpeg"
-                ></Profile>
-                <Profile className="w-1/4" name="Mads Jordt" title="OK, not OK" image="/img/mads.jpeg"></Profile>
-                <Profile className="w-1/4" name="Kevin Kohler" title="Was it sri?" image="/img/kevin.jpeg"></Profile>
-              </div>
+            <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
+              <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
+              <p className="text-base leading-6 text-left md:text text-carbon-600 md:text-center">
+                At Perfolio we believe that investment decisions should always be based on as much information as
+                possible. It is our mission to provide our users with the most relevant and accurate financial
+                information available.
+              </p>
             </div>
+          </div>
+          <div className="pt-4 mt-4 border-t border-carbon-300 md:w-2/3 md:pl-8 md:py-8 md:border-l md:border-t-0 md:mt-0">
+            <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
+              <Profile
+                className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
+                name="Nicolas Webersinke"
+                title="Product"
+                image="/img/nico.jpeg"
+              ></Profile>
+              <Profile
+                className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
+                name="Andreas Thomas"
+                title="Tech"
+                image="/img/andreas.jpeg"
+              ></Profile>
+              <Profile
+                className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
+                name="Mads Jordt"
+                title="Sales"
+                image="/img/mads.jpeg"
+              ></Profile>
+              <Profile
+                className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
+                name="Kevin Kohler"
+                title="Marketing"
+                image="/img/kevin.jpeg"
+              ></Profile>
+            </div>
+            <p className="mt-8 text-center text-carbon-600">
+              Our mutual interest in programming, scientific research, and financial investments are the backbone of
+              Perfolio.
+            </p>
           </div>
         </div>
       </Section>

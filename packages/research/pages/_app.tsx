@@ -9,7 +9,10 @@ const app = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <title>Perfolio Research</title>
-        <meta name="description" content="goes here" />
+        <meta
+          name="description"
+          content="A research data platform offering Kenneth French's factor returns via a convenient REST API, conversion in several currencies included"
+        />
       </Head>
       {/* pt-16 must be the same height as the navbar itself */}
       <div className="pt-16 bg-gray-100">

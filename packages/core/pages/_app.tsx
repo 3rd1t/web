@@ -9,7 +9,10 @@ const app = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <title>Perfolio</title>
-        <meta name="description" content="goes here" />
+        <meta
+          name="description"
+          content="An application for investment portfolio analytics, aggregating, analyzing and measuring performance of holdings such as stocks, bonds or real estate"
+        />
       </Head>
       {/* pt-16 must be the same height as the navbar itself */}
       <div className="pt-16 bg-gray-100">

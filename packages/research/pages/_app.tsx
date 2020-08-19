@@ -14,7 +14,8 @@ const app = ({ Component, pageProps }: AppProps) => {
           content="A research data platform offering Kenneth French's factor returns via a convenient REST API, conversion in several currencies included"
         />
       </Head>
-      <div className="bg-gray-100">
+      {/* pt-16 must be the same height as the navbar itself */}
+      <div className="pt-16 bg-gray-100">
         <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">
           <Navbar
             logo={<Logo color="text-research-500" domain="research"></Logo>}

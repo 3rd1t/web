@@ -14,7 +14,8 @@ const app = ({ Component, pageProps }: AppProps) => {
           content="An application for investment portfolio analytics, aggregating, analyzing and measuring performance of holdings such as stocks, bonds or real estate"
         />
       </Head>
-      <div className="bg-gray-100">
+      {/* pt-16 must be the same height as the navbar itself */}
+      <div className="pt-16 bg-gray-100">
         <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">
           <Navbar
             logo={<Logo></Logo>}

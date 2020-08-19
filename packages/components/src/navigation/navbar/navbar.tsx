@@ -14,7 +14,7 @@ export const Navbar = (props: NavbarProps) => {
   return (
     <nav
       role="navigation"
-      className="container flex flex-wrap items-center justify-between p-4 mx-auto md:flex-no-wrap"
+      className="container flex flex-wrap items-center justify-between h-16 px-4 mx-auto md:flex-no-wrap"
     >
       <Link href="/">
         <a>{props.logo}</a>

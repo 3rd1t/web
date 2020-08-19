@@ -28,6 +28,7 @@ exports[` Snippet renders correctly 1`] = `
   }
 >
   <code
+    className="language-text"
     style={
       Object {
         "MozHyphens": "none",

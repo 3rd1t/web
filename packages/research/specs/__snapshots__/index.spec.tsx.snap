@@ -122,6 +122,7 @@ Array [
                   }
                 >
                   <code
+                    className="language-r"
                     style={
                       Object {
                         "MozHyphens": "none",

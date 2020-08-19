@@ -49,6 +49,7 @@ exports[`CodeExample renders correctly 1`] = `
       }
     >
       <code
+        className="language-javascript"
         style={
           Object {
             "MozHyphens": "none",

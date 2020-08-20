@@ -1,8 +1,8 @@
-name: Release
+name: Deploy
 
 on:
   push:
-    branches: [ mater ]
+    branches: [ master, main ]
 jobs:
   testing:
     strategy:

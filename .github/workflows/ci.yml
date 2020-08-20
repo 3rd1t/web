@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn run-many --target=build --all --with-deps
+        run: yarn nx run-many --target=build --all --with-deps
 
   unit-test:
     name: unit test
@@ -95,7 +95,7 @@ jobs:
       - name: Run Integration test
         run: |
           yarn nx build tailwindcss
-          yarn run-many --target=e2e --all --headless
+          yarn nx run-many --target=e2e --all --headless
 
   lighthouse:
     strategy:

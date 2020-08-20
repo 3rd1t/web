@@ -24,12 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-      - name: Workspace Lint
-        run: yarn nx workspace-lint
       - name: Lint
-        run: yarn affected:lint
-      - name: Format
-        run: yarn format:check
+        run: yarn fmt
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -50,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn affected:build --with-deps
+        run: yarn run-many --target=build --all --with-deps
 
   unit-test:
     name: unit test
@@ -72,7 +68,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn affected:test 
+        run: yarn test
 
  
   e2e-test:
@@ -98,8 +94,8 @@ jobs:
         run: yarn cypress install
       - name: Run Integration test
         run: |
-          yarn nx run tailwindcss:build --skip-nx-cache
-          yarn affected:e2e --with-deps --skip-nx-cache --headless
+          yarn nx build tailwindcss
+          yarn run-many --target=e2e --all --headless
 
   lighthouse:
     strategy:

@@ -51,6 +51,13 @@
             "tsConfig": "packages/research/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/research/exported",
+            "siteId": "abfda65d-dcb7-4d66-90d2-352b9ea50dc1"
+          }
         }
       }
     },
@@ -131,6 +138,13 @@
             "jestConfig": "packages/core/jest.config.js",
             "tsConfig": "packages/core/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/core/exported",
+            "siteId": "c081d45f-4137-4570-bb1e-0f1a1645db11"
           }
         }
       }

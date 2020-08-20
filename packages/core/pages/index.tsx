@@ -48,7 +48,7 @@ const features = [
     ),
     title: "All in one place",
     description:
-      "Tired of visiting several websites to get an overview of your assets? Perfolio is the new home for your data.",
+      "Tired of visiting several websites and apps to get an overview of your assets? Perfolio is the new home for your data.",
   },
   {
     icon: (
@@ -63,7 +63,7 @@ const features = [
     ),
     title: "Highest data quality",
     description:
-      "We cleanse and analyze data according to the highest standards. With our Premium Plan you get access to even better data quality.",
+      "We cleanse and analyze data according to the highest standards. With our Premium plan you get access to even better data quality.",
   },
   {
     icon: (
@@ -92,7 +92,7 @@ const features = [
       </svg>
     ),
     title: "Fair pricing",
-    description: "Start for free and if you want more, get the plan that suits you best. No hidden fees.",
+    description: "Start for free! If you want more, get the plan that suits you best. No hidden fees.",
   },
 ]
 
@@ -130,10 +130,7 @@ const Index = (props: IndexProps) => {
           <h3 className="text-3xl font-bold leading-8 tracking-tight text-carbon-900 sm:text-4xl sm:leading-10">
             Why Perfolio?
           </h3>
-          <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">
-            Keeping track of all your assets and their performance is hard. Perfolio brings all information to one place
-            and gives you access to the latest analytics methods in science.
-          </p>
+          <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">Make decisions based on data.</p>
         </div>
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features.map((f, index) => {
@@ -167,8 +164,8 @@ const Index = (props: IndexProps) => {
             <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
               <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
               <p className="text-base leading-6 text-left md:text text-carbon-600 md:text-center">
-                At Perfolio we believe that investment decisions should always be based on as much information as
-                possible. It is our mission to provide our users with the most relevant and accurate financial
+                At Perfolio, we believe that investment decisions should always be based on as much well-founded
+                information as possible. It is our mission to provide our users the most relevant and accurate financial
                 information available.
               </p>
             </div>
@@ -201,8 +198,9 @@ const Index = (props: IndexProps) => {
               ></Profile>
             </div>
             <p className="mt-8 text-center text-carbon-600">
-              Our mutual interest in programming, scientific research, and financial investments are the backbone of
-              Perfolio.
+              We are a motivated team of enthusiastic techies who are passionate about capital market topics. Bringing
+              together different backgrounds and skills, we want to revolutionize the way investors track their assets
+              and measure the success of their investment strategy. We are always happy to chat - drop us a message!
             </p>
           </div>
         </div>

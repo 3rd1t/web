@@ -47,7 +47,7 @@ const Index = (props: IndexProps) => {
 
   return (
     <>
-      <Section bg="bg-gray-100 " className="h-screen" id="index">
+      <Section bg="bg-gray-100 " className="min-h-screen" id="index">
         <AnimateSharedLayout>
           <motion.div
             layout

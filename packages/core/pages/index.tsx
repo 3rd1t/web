@@ -1,6 +1,5 @@
 import React from "react"
-import { HeroSection, Section, Profile, Feature, ScrollTip } from "@perfolio/components"
-import { motion } from "framer-motion"
+import { HeroSection, Section, Profile, Feature } from "@perfolio/components"
 /* eslint-disable-next-line */
 interface IndexProps {}
 
@@ -99,7 +98,7 @@ const features = [
 const Index = (props: IndexProps) => {
   return (
     <>
-      <Section bg="bg-gray-100 " className="relative h-screen" id="index">
+      <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">
         <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline="Portfolio analytics insights for everyone"
@@ -120,19 +119,10 @@ const Index = (props: IndexProps) => {
               className: "text-carbon-900 hover:text-carbon-700",
             }}
           ></HeroSection>
-          <img src="https://via.placeholder.com/1280x720" alt="placeholder"></img>
+          <div className="hidden lg:block">
+            <img src="https://via.placeholder.com/1280x720" alt="placeholder"></img>
+          </div>
         </div>
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 5,
-            y: { type: "spring", damping: 6, stiffness: 60 },
-          }}
-          className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
-        >
-          <ScrollTip href="#features"></ScrollTip>
-        </motion.div>
       </Section>
       <Section bg="bg-white" id="features" className="flex flex-col justify-center">
         <div className="md:text-center">

@@ -7,7 +7,7 @@ Array [
     id="index"
   >
     <div
-      className="relative h-screen"
+      className="relative min-h-screen"
     >
       <div
         className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
@@ -65,53 +65,13 @@ Array [
               </div>
             </div>
           </div>
-          <img
-            alt="placeholder"
-            src="https://via.placeholder.com/1280x720"
-          />
-        </div>
-        <div
-          className="absolute inset-x-0 bottom-0 flex justify-center mb-40"
-          style={
-            Object {
-              "opacity": 0,
-              "transform": "translateY(100px) translateZ(0)",
-            }
-          }
-        >
           <div
-            style={
-              Object {
-                "opacity": 0,
-                "transform": "translateY(100px) translateZ(0)",
-              }
-            }
+            className="hidden lg:block"
           >
-            <div
-              className="inline-flex p-2 transform rotate-45 shadow-xl lg:p-4 bg-carbon-900 hover:scale-110 ease-in-out duration-200 undefined"
-            >
-              <div
-                className="flex items-center justify-center transform -rotate-45"
-              >
-                <a
-                  href="#features"
-                >
-                  <svg
-                    className="w-6 h-6 text-carbon-50"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            <img
+              alt="placeholder"
+              src="https://via.placeholder.com/1280x720"
+            />
           </div>
         </div>
       </div>

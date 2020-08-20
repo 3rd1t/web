@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: build css
-        run: NODE_ENV=produdction yarn nx build tailwindcss
+      - name: build
+        run: NODE_ENV=produdction yarn nx build ${{matrix.package}} --with-deps
 
       - name: deploy
         run: yarn nx deploy ${{matrix.package}}

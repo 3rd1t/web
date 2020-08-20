@@ -4,6 +4,7 @@ import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
 import matter from "gray-matter"
+import Wrapper from "../components/wrapper/wrapper"
 interface IndexProps {
   codeExamples: {
     language: string
@@ -46,7 +47,7 @@ const Index = (props: IndexProps) => {
   )
 
   return (
-    <>
+    <Wrapper>
       <Section bg="bg-gray-100 " className="min-h-screen" id="index">
         <AnimateSharedLayout>
           <motion.div
@@ -138,7 +139,7 @@ const Index = (props: IndexProps) => {
           </Link>
         </div>
       </Section>
-    </>
+    </Wrapper>
   )
 }
 

@@ -1,5 +1,6 @@
 import React from "react"
 import { HeroSection, Section, Profile, Feature } from "@perfolio/components"
+import Wrapper from "../components/wrapper/wrapper"
 /* eslint-disable-next-line */
 interface IndexProps {}
 
@@ -97,7 +98,7 @@ const features = [
 
 const Index = (props: IndexProps) => {
   return (
-    <>
+    <Wrapper>
       <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">
         <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
@@ -220,7 +221,7 @@ const Index = (props: IndexProps) => {
               .
             </p>
           </div>
-          <form name="email-subs" className="mt-6" method="POST" data-netlify="true">
+          <form name="email-subs" className="mt-6" method="POST" data-netlify="true" action="/subscribe/success">
             <input type="hidden" name="form-name" value="email-subs" />
             <div className="sm:flex">
               <input
@@ -239,7 +240,7 @@ const Index = (props: IndexProps) => {
           </form>
         </div>
       </Section>
-    </>
+    </Wrapper>
   )
 }
 export default Index

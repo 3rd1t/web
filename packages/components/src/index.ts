@@ -1,3 +1,4 @@
+export * from "./lib/nav-wrapper/nav-wrapper"
 export * from "./lib/feature/feature"
 export * from "./lib/profile/profile"
 export * from "./layout/section/title/section-title"

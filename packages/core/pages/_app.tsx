@@ -2,7 +2,6 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 import React from "react"
 import "dist/packages/tailwindcss/tailwind.css"
-import { Navbar, Footer, Logo } from "@perfolio/components"
 
 const app = ({ Component, pageProps }: AppProps) => {
   return (
@@ -22,34 +21,7 @@ const app = ({ Component, pageProps }: AppProps) => {
         <meta name="msapplication-TileColor" content="#1A202C"></meta>
         <meta name="theme-color" content="#1A202C"></meta>
       </Head>
-      {/* pt-16 must be the same height as the navbar itself */}
-      <div className="pt-16 bg-gray-100">
-        <div className="fixed inset-x-0 top-0 z-20 bg-gray-100">
-          <Navbar
-            logo={<Logo></Logo>}
-            links={[
-              {
-                label: "Product",
-                href: "/",
-              },
-              {
-                label: "Features",
-                href: "#features",
-              },
-              {
-                label: "Team",
-                href: "#team",
-              },
-              {
-                label: "Documentation",
-                href: "/docs",
-              },
-            ]}
-          ></Navbar>
-        </div>
-        <Component {...pageProps} />
-      </div>
-      <Footer bg="bg-carbon-900" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+      <Component {...pageProps} />
     </div>
   )
 }

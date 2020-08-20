@@ -4,11 +4,11 @@ on:
   push:
     branches: [ master, main ]
 jobs:
-  testing:
+  deploy:
     strategy:
       matrix:
         package: ["core", "research"]
-    name: test-${{matrix.package}}
+    name: deploy-${{matrix.package}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,24 +22,11 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
-        run: |
-          yarn install
-          yarn cypress install
+        run: yarn install
 
       - name: build
         run: yarn nx export ${{matrix.package}} --with-deps
 
-      - name: unit-test
-        run: yarn nx test ${{matrix.package}} --with-deps
-
-      - name: e2e-test
-        run: yarn nx e2e ${{matrix.package}}-e2e --headless
-
-      - name: lighthouse
-        run: yarn lhci autorun
-        env:
-          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
       - name: deploy
         run: yarn nx deploy ${{matrix.package}}
         env:

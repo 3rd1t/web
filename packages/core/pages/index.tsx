@@ -162,7 +162,7 @@ const Index = (props: IndexProps) => {
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-carbon-900">
               <svg
-                className="w-10 h-10 p-3 text-gray-100 stroke-current md:p-4"
+                className="w-full p-3 text-gray-100 stroke-current md:p-4"
                 viewBox="0 0 194 148"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

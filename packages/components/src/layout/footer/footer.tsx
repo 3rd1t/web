@@ -30,7 +30,8 @@ export const Footer = (props: FooterProps) => {
           <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Resources</span>
             {footerLink("Documentation", "/#")}
-            {footerLink("Tutorials", "/#")}
+            {footerLink("Imprint", "/imprint")}
+            {footerLink("Privacy", "/privacy")}
           </div>
           <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Contact us</span>

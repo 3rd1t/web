@@ -53,9 +53,15 @@ exports[` Footer renders correctly 1`] = `
         </a>
         <a
           className="block focus:outline-none text-gray-200 hover:text-white"
-          href="/#"
+          href="/imprint"
         >
-          Tutorials
+          Imprint
+        </a>
+        <a
+          className="block focus:outline-none text-gray-200 hover:text-white"
+          href="/privacy"
+        >
+          Privacy
         </a>
       </div>
       <div

@@ -706,9 +706,15 @@ exports[` Index with code snippets renders correctly 1`] = `
           </a>
           <a
             className="block focus:outline-none text-gray-100 hover:text-white"
-            href="/#"
+            href="/imprint"
           >
-            Tutorials
+            Imprint
+          </a>
+          <a
+            className="block focus:outline-none text-gray-100 hover:text-white"
+            href="/privacy"
+          >
+            Privacy
           </a>
         </div>
         <div

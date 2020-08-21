@@ -27,7 +27,7 @@
   },
   "private": true,
   "dependencies": {
-    "@babel/core": "7.11.4",
+    "@babel/core": "^7.11.4",
     "@babel/preset-env": "7.11.0",
     "@babel/preset-react": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
@@ -35,7 +35,6 @@
     "@netlify-builder/deploy": "^3.1.0",
     "@nrwl/cypress": "10.0.13",
     "@nrwl/eslint-plugin-nx": "10.0.13",
-    "@nrwl/jest": "10.0.13",
     "@nrwl/next": "10.0.13",
     "@nrwl/node": "10.0.13",
     "@nrwl/nx-cloud": "latest",
@@ -43,6 +42,7 @@
     "@nrwl/storybook": "10.0.13",
     "@nrwl/web": "10.0.13",
     "@nrwl/workspace": "10.0.13",
+    "@tailwindcss/typography": "^0.2.0",
     "@testing-library/react": "10.4.8",
     "@types/jest": "26.0.10",
     "@types/node": "~14.6.0",
@@ -90,6 +90,5 @@
       "yarn affected:lint --uncommitted --fix=true",
       "yarn nx format:write --uncommitted"
     ]
-  },
-  "devDependencies": {}
+  }
 }

@@ -260,7 +260,7 @@ exports[` Index renders correctly 1`] = `
                     Independent
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     We are not part of any bank or insurance company. We give you an unbiased view of your portfolio, not selling any investment products.
                   </p>
@@ -302,7 +302,7 @@ exports[` Index renders correctly 1`] = `
                     Complex made easy
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     Everybody should have access to the latest analytics methods in science. Making these methods as simple and understandable as possible is part of our core business.
                   </p>
@@ -344,7 +344,7 @@ exports[` Index renders correctly 1`] = `
                     All in one place
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     Tired of visiting several websites and apps to get an overview of your assets? Perfolio is the new home for your data.
                   </p>
@@ -386,7 +386,7 @@ exports[` Index renders correctly 1`] = `
                     Highest data quality
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     We cleanse and analyze data according to the highest standards. With our Premium plan you get access to even better data quality.
                   </p>
@@ -428,7 +428,7 @@ exports[` Index renders correctly 1`] = `
                     Privacy and Security
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     We do not share your data with anyone else and store them only on servers within the EU. Privacy and security are our highest priority.
                   </p>
@@ -470,7 +470,7 @@ exports[` Index renders correctly 1`] = `
                     Fair pricing
                   </h2>
                   <p
-                    className="text-base leading-6 text-carbon-600"
+                    className="mt-1 text-base leading-6 text-carbon-600"
                   >
                     Start for free! If you want more, get the plan that suits you best. No hidden fees.
                   </p>

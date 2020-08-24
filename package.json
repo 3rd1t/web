@@ -43,7 +43,7 @@
     "@nrwl/web": "10.0.13",
     "@nrwl/workspace": "10.0.13",
     "@tailwindcss/typography": "^0.2.0",
-    "@testing-library/react": "10.4.8",
+    "@testing-library/react": "10.4.9",
     "@types/jest": "26.0.10",
     "@types/node": "~14.6.0",
     "@types/react": "^16.9.46",
@@ -76,7 +76,7 @@
     "tailwindcss": "^1.7.3",
     "tailwindcss-debug-screens": "^1.1.0",
     "ts-jest": "25.5.1",
-    "ts-node": "~8.10.2",
+    "ts-node": "~9.0.0",
     "typescript": "~3.9.3"
   },
   "husky": {

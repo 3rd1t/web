@@ -649,7 +649,7 @@ export const Privacy = () => {
           .
         </li>
       </ul>
-      <h2> id="m408">Umfragen und Befragungen</h2>
+      <h2 id="m408">Umfragen und Befragungen</h2>
 
       <p>
         Die von uns durchgeführten Umfragen und Befragungen (nachfolgend "Befragungen") werden anonym ausgewertet. Eine

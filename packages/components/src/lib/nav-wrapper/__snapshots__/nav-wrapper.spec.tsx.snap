@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavWrapper should render successfully 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        class="pt-16 bg-gray-100"
+      >
+        <div
+          class="fixed inset-x-0 top-0 z-20 bg-gray-100"
+        >
+          <nav />
+        </div>
+        <span>
+          h1
+        </span>
+      </div>
+      <footer />
+    </div>
+  </div>
+</body>
+`;

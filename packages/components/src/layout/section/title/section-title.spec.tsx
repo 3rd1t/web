@@ -7,13 +7,13 @@ describe(" SectionTitle", () => {
   describe("with subtitle", () => {
     it("should render successfully", () => {
       const { baseElement } = render(<SectionTitle title="TITLE" subtitle="SUBTITLE" />)
-      expect(baseElement).toBeTruthy()
+      expect(baseElement).toMatchSnapshot()
     })
   })
   describe("without subtitle", () => {
     it("should render successfully", () => {
       const { baseElement } = render(<SectionTitle title="TITLE" />)
-      expect(baseElement).toBeTruthy()
+      expect(baseElement).toMatchSnapshot()
     })
   })
 })

@@ -1,18 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Section without domain renders correctly 1`] = `
-<section
-  className="bg-white"
-  id="hello"
->
+<body>
   <div>
-    <div
-      className="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
+    <section
+      class="bg-white"
+      id="hello"
     >
-      <span>
-        Hello World
-      </span>
-    </div>
+      <div>
+        <div
+          class="container px-4 py-10 mx-auto md:py-12 lg:py-16 xl:py-20 xl:px-0"
+        >
+          <span>
+            Hello World
+          </span>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
+</body>
 `;

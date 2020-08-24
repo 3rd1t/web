@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` SectionTitle with subtitle should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      class=" lg:text-center"
+    >
+      <h3
+        class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+      >
+        TITLE
+      </h3>
+      <p
+        class="mt-3 text-lg text-gray-700"
+      >
+        SUBTITLE
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[` SectionTitle without subtitle should render successfully 1`] = `
+<body>
+  <div>
+    <div
+      class=" lg:text-center"
+    >
+      <h3
+        class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+      >
+        TITLE
+      </h3>
+      <p
+        class="mt-3 text-lg text-gray-700"
+      />
+    </div>
+  </div>
+</body>
+`;

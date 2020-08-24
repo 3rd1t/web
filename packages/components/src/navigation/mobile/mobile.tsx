@@ -16,11 +16,11 @@ export const Mobile = (props: MobileProps) => {
   return (
     <div>
       <motion.button
+        data-testid="toggle"
         whileTap={{ scale: 0.9 }}
         onClick={() => setOpen(true)}
         className="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
         aria-label="open menu"
-        data-testid="open menu"
       >
         <svg className="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -66,9 +66,9 @@ export const Mobile = (props: MobileProps) => {
                   </motion.button>
                 </div>
                 <ul className="px-4 py-8 space-y-8 text-center border-t border-carbon-300">
-                  {props.links.map((link) => {
+                  {props.links.map((link, index) => {
                     return (
-                      <motion.li whileTap={{ scale: 0.9 }} className="">
+                      <motion.li whileTap={{ scale: 0.9 }} key={index}>
                         <Link href={link.href}>
                           <a className="font-semibold text-carbon-900">{link.label}</a>
                         </Link>

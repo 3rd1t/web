@@ -64,7 +64,7 @@ exports[` Index renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#features"
+                  href="/#features"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
@@ -74,7 +74,7 @@ exports[` Index renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#team"
+                  href="/#team"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >

@@ -64,7 +64,7 @@ exports[` Index renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#features"
+                  href="/#features"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
@@ -74,7 +74,7 @@ exports[` Index renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#team"
+                  href="/#team"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
@@ -167,7 +167,7 @@ exports[` Index renders correctly 1`] = `
                     >
                       <a
                         className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-white bg-gray-900 hover:bg-carbon-800"
-                        href="#"
+                        href="/signup"
                       >
                         Get started
                       </a>
@@ -177,7 +177,7 @@ exports[` Index renders correctly 1`] = `
                     >
                       <a
                         className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none text-carbon-900 hover:text-carbon-700"
-                        href="#"
+                        href="/login"
                       >
                         Log in
                       </a>
@@ -733,12 +733,21 @@ exports[` Index renders correctly 1`] = `
           >
             Home
           </a>
-          <a
-            className="block focus:outline-none text-gray-100 hover:text-white"
-            href="https://analytics.perfol.io"
+          <div
+            className="flex items-center space-x-2"
           >
-            Analytics
-          </a>
+            <a
+              className="block focus:outline-none text-gray-100 hover:text-white"
+              href="https://analytics.perfol.io"
+            >
+              Analytics
+            </a>
+            <span
+              className="px-1 text-sm bg-purple-800 rounded-sm"
+            >
+              WIP
+            </span>
+          </div>
           <a
             className="block focus:outline-none text-gray-100 hover:text-white"
             href="https://research.perfol.io"
@@ -756,7 +765,7 @@ exports[` Index renders correctly 1`] = `
           </span>
           <a
             className="block focus:outline-none text-gray-100 hover:text-white"
-            href="/#"
+            href="/docs"
           >
             Documentation
           </a>

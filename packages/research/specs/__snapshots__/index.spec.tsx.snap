@@ -69,7 +69,7 @@ exports[` Index with code snippets renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#features"
+                  href="/#features"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
@@ -79,7 +79,7 @@ exports[` Index with code snippets renders correctly 1`] = `
               <li>
                 <a
                   className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                  href="#team"
+                  href="/#team"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
                 >
@@ -677,12 +677,21 @@ exports[` Index with code snippets renders correctly 1`] = `
           >
             Home
           </a>
-          <a
-            className="block focus:outline-none text-gray-100 hover:text-white"
-            href="https://analytics.perfol.io"
+          <div
+            className="flex items-center space-x-2"
           >
-            Analytics
-          </a>
+            <a
+              className="block focus:outline-none text-gray-100 hover:text-white"
+              href="https://analytics.perfol.io"
+            >
+              Analytics
+            </a>
+            <span
+              className="px-1 text-sm bg-purple-800 rounded-sm"
+            >
+              WIP
+            </span>
+          </div>
           <a
             className="block focus:outline-none text-gray-100 hover:text-white"
             href="https://research.perfol.io"
@@ -700,7 +709,7 @@ exports[` Index with code snippets renders correctly 1`] = `
           </span>
           <a
             className="block focus:outline-none text-gray-100 hover:text-white"
-            href="/#"
+            href="/docs"
           >
             Documentation
           </a>

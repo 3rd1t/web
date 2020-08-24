@@ -24,12 +24,21 @@ exports[` Footer renders correctly 1`] = `
         >
           Home
         </a>
-        <a
-          className="block focus:outline-none text-gray-200 hover:text-white"
-          href="https://analytics.perfol.io"
+        <div
+          className="flex items-center space-x-2"
         >
-          Analytics
-        </a>
+          <a
+            className="block focus:outline-none text-gray-200 hover:text-white"
+            href="https://analytics.perfol.io"
+          >
+            Analytics
+          </a>
+          <span
+            className="px-1 text-sm bg-purple-800 rounded-sm"
+          >
+            WIP
+          </span>
+        </div>
         <a
           className="block focus:outline-none text-gray-200 hover:text-white"
           href="https://research.perfol.io"
@@ -47,7 +56,7 @@ exports[` Footer renders correctly 1`] = `
         </span>
         <a
           className="block focus:outline-none text-gray-200 hover:text-white"
-          href="/#"
+          href="/docs"
         >
           Documentation
         </a>

@@ -24,12 +24,16 @@ export const Footer = (props: FooterProps) => {
           <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Projects</span>
             {footerLink("Home", "https://perfol.io")}
-            {footerLink("Analytics", "https://analytics.perfol.io")}
+            <div className="flex items-center space-x-2">
+              {footerLink("Analytics", "https://analytics.perfol.io")}
+              <span className="px-1 text-sm bg-purple-800 rounded-sm">WIP</span>
+            </div>
+
             {footerLink("Research", "https://research.perfol.io")}
           </div>
           <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${props.primaryText} uppercase`}>Resources</span>
-            {footerLink("Documentation", "/#")}
+            {footerLink("Documentation", "/docs")}
             {footerLink("Imprint", "/imprint")}
             {footerLink("Privacy", "/privacy")}
           </div>

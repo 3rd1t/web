@@ -67,7 +67,7 @@ exports[` Index with code snippets renders correctly 1`] = `
                   <li>
                     <a
                       class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                      href="/#features"
+                      href="#features"
                     >
                       Features
                     </a>
@@ -75,7 +75,7 @@ exports[` Index with code snippets renders correctly 1`] = `
                   <li>
                     <a
                       class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                      href="/#team"
+                      href="#team"
                     >
                       Team
                     </a>
@@ -370,7 +370,7 @@ exports[` Index with code snippets renders correctly 1`] = `
                           />
                         </svg>
                         <span>
-                          Why the fuck
+                          Straightforward information schema
                         </span>
                       </li>
                       <li
@@ -388,7 +388,7 @@ exports[` Index with code snippets renders correctly 1`] = `
                           />
                         </svg>
                         <span>
-                          would you want this?
+                          Easy to handle
                         </span>
                       </li>
                     </ul>
@@ -465,7 +465,7 @@ exports[` Index with code snippets renders correctly 1`] = `
                           />
                         </svg>
                         <span>
-                          what else?
+                          Visual reprerentation
                         </span>
                       </li>
                     </ul>

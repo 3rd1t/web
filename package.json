@@ -52,7 +52,7 @@
     "@typescript-eslint/eslint-plugin": "2.34.0",
     "@typescript-eslint/parser": "2.34.0",
     "@zeit/next-css": "1.0.1",
-    "babel-jest": "26.2.2",
+    "babel-jest": "26.3.0",
     "cypress": "^4.12.1",
     "document-register-element": "1.14.5",
     "dotenv": "8.2.0",

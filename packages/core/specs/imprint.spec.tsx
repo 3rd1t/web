@@ -1,11 +1,11 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import SubscriptionSuccess from "../pages/subscribe/success"
+import Imprint from "../pages/imprint"
 
-describe("SubscriptionSuccess", () => {
+describe("Imprint", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<SubscriptionSuccess />)
+    const { baseElement } = render(<Imprint />)
     expect(baseElement).toMatchSnapshot()
   })
 })

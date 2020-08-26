@@ -47,7 +47,7 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("tailwindcss-debug-screens")],
+  plugins: [require("tailwindcss-debug-screens"), require("@tailwindcss/typography")],
   future: {
     removeDeprecatedGapUtilities: true,
   },

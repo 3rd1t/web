@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@perfolio/components": ["packages/components/src/index.ts"],
-      "@perfolio/charts": ["packages/charts/src/index.ts"]
+      "@perfolio/charts": ["packages/charts/src/index.ts"],
+      "@perfolio/pages": ["packages/pages/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

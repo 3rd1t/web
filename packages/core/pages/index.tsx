@@ -111,17 +111,18 @@ const Index = (props: IndexProps) => {
             }
             primaryButton={{
               label: "Get started",
-              href: "#",
+              href: "/signup",
               className: "text-white bg-gray-900 hover:bg-carbon-800",
             }}
             secondaryButton={{
               label: "Log in",
-              href: "#",
+              href: "/login",
               className: "text-carbon-900 hover:text-carbon-700",
             }}
           ></HeroSection>
-          <div className="hidden lg:block">
-            <img src="https://via.placeholder.com/1280x720" alt="placeholder"></img>
+
+          <div className="hidden max-w-screen-sm shadow-xl lg:block">
+            <img src="/img/analytics_preview.jpg" alt="Analytics Preview"></img>
           </div>
         </div>
       </Section>

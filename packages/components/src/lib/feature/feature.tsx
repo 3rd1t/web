@@ -16,7 +16,7 @@ export const Feature = ({ title, description, icon }: FeatureProps) => {
 
       <div className="flex-grow pl-4 lg:pl-0 lg:px-6">
         <h2 className="text-lg font-medium leading-6 text-carbon-900">{title}</h2>
-        <p className="text-base leading-6 text-carbon-600">{description}</p>
+        <p className="mt-1 text-base leading-6 text-carbon-600">{description}</p>
       </div>
     </div>
   )

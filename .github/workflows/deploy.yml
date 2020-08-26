@@ -25,7 +25,7 @@ jobs:
         run: yarn install
 
       - name: build
-        run: yarn nx build ${{matrix.package}} --with-deps
+        run: yarn nx export ${{matrix.package}} --with-deps --skip-nx-cache
         env:
           NODE_ENV: production
 

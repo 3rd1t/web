@@ -1,50 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` HeroSection renders correctly 1`] = `
-<div
-  className="flex flex-col items-center w-full"
->
-  <div
-    className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left"
-  >
-    <h2
-      className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl"
-    >
-      Headline
-    </h2>
+<body>
+  <div>
     <div
-      className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
-    >
-      Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes.
-    </div>
-    <div
-      className="space-y-4 md:space-x-4 md:space-y-0"
+      class="flex flex-col items-center w-full"
     >
       <div
-        className="sm:flex sm:justify-center lg:justify-start"
+        class="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left"
       >
-        <div
-          className="rounded-md shadow"
+        <h2
+          class="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl"
         >
-          <a
-            className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none bg-gray-900"
-            href="#"
-          >
-            Get started
-          </a>
+          Headline
+        </h2>
+        <div
+          class="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0"
+        >
+          Factor investing is a strategy that chooses securities on attributes that are associated with higher returns. There are two main types of factors that have driven returns of stocks, bonds, and other factors: macroeconomic factors and style factors. The former captures broad risks across asset classes while the latter aims to explain returns and risks within asset classes.
         </div>
         <div
-          className="mt-3 sm:mt-0 sm:ml-3"
+          class="space-y-4 md:space-x-4 md:space-y-0"
         >
-          <a
-            className="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none bg-gray-100"
-            href="#"
+          <div
+            class="sm:flex sm:justify-center lg:justify-start"
           >
-            Learn more
-          </a>
+            <div
+              class="rounded-md shadow"
+            >
+              <a
+                class="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none bg-gray-900"
+                href="#"
+              >
+                Get started
+              </a>
+            </div>
+            <div
+              class="mt-3 sm:mt-0 sm:ml-3"
+            >
+              <a
+                class="rounded-sm md:py-4 md:text-lg md:px-10 flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-200 ease-in-out focus:outline-none bg-gray-100"
+                href="#"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</body>
 `;

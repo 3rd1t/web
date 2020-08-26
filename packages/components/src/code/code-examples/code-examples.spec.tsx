@@ -1,5 +1,4 @@
 import React from "react"
-import renderer from "react-test-renderer"
 import CodeExample from "./code-examples"
 import { fireEvent, render } from "@testing-library/react"
 
@@ -7,8 +6,8 @@ describe("CodeExample", () => {
   const component = <CodeExample code={[{ language: "javascript", snippet: "const x = 1;" }]} />
 
   it("renders correctly", () => {
-    const tree = renderer.create(component).toJSON()
-    expect(tree).toMatchSnapshot()
+    const { baseElement } = render(component)
+    expect(baseElement).toMatchSnapshot()
   })
 
   describe("with multiple languages", () => {

@@ -10,6 +10,6 @@ describe("NavWrapper", () => {
         <span>h1</span>
       </NavWrapper>,
     )
-    expect(baseElement).toBeTruthy()
+    expect(baseElement).toMatchSnapshot()
   })
 })

@@ -1,10 +1,9 @@
 import React from "react"
-import renderer from "react-test-renderer"
 import Index from "../pages/index"
+import { render } from "@testing-library/react"
 
 describe(" Index", () => {
   it("renders correctly", () => {
-    const tree = renderer.create(<Index />).toJSON()
-    expect(tree).toMatchSnapshot()
+    expect(render(<Index />)).toMatchSnapshot()
   })
 })

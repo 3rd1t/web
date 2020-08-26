@@ -1,97 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` Navbar renders correctly 1`] = `
-<nav
-  className="container flex flex-wrap items-center justify-between h-16 px-4 mx-auto md:flex-no-wrap"
-  role="navigation"
->
-  <a
-    href="/"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    <span>
-      I am a logo
-    </span>
-  </a>
-  <div
-    className="hidden md:block"
-  >
-    <div
-      className="w-auto"
+<body>
+  <div>
+    <nav
+      class="container flex flex-wrap items-center justify-between h-16 px-4 mx-auto md:flex-no-wrap"
+      role="navigation"
     >
-      <ul
-        className="flex items-center space-x-10"
+      <a
+        href="/"
       >
-        <li>
-          <a
-            className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-            href="/#product"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Product
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-            href="/#features"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Features
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-            href="/#team"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Team
-          </a>
-        </li>
-        <li>
-          <a
-            className="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-            href="/#"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-          >
-            Documentation
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    className="block md:hidden"
-  >
-    <div>
-      <button
-        aria-label="open menu"
-        className="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
-        data-testid="open menu"
-        onClick={[Function]}
-        style={Object {}}
+        <span>
+          I am a logo
+        </span>
+      </a>
+      <div
+        class="hidden md:block"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
+        <div
+          class="w-auto"
         >
-          <path
-            d="M4 6h16M4 12h16M4 18h16"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-          />
-        </svg>
-      </button>
-    </div>
+          <ul
+            class="flex items-center space-x-10"
+          >
+            <li>
+              <a
+                class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
+                href="/#product"
+              >
+                Product
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
+                href="/#features"
+              >
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
+                href="/#team"
+              >
+                Team
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
+                href="/#"
+              >
+                Documentation
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="block md:hidden"
+      >
+        <div>
+          <button
+            aria-label="open menu"
+            class="p-2 text-gray-700 hover:text-gray-900 focus:outline-none"
+            data-testid="toggle"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4 6h16M4 12h16M4 18h16"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
+</body>
 `;

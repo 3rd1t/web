@@ -21,6 +21,6 @@ describe("Feature", () => {
         description="Start for free and if you want more, get the plan that suits you best. No hidden fees."
       />,
     )
-    expect(baseElement).toBeTruthy()
+    expect(baseElement).toMatchSnapshot()
   })
 })

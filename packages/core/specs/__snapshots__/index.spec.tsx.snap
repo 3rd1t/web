@@ -64,7 +64,7 @@ Object {
                     <li>
                       <a
                         class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                        href="#features"
+                        href="/#features"
                       >
                         Features
                       </a>
@@ -72,7 +72,7 @@ Object {
                     <li>
                       <a
                         class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                        href="#team"
+                        href="/#team"
                       >
                         Team
                       </a>
@@ -901,7 +901,7 @@ Object {
                   <li>
                     <a
                       class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                      href="#features"
+                      href="/#features"
                     >
                       Features
                     </a>
@@ -909,7 +909,7 @@ Object {
                   <li>
                     <a
                       class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                      href="#team"
+                      href="/#team"
                     >
                       Team
                     </a>

@@ -19,10 +19,6 @@ export const Wrapper = ({ children }: WrapperProps) => {
           href: "#features",
         },
         {
-          label: "Team",
-          href: "#team",
-        },
-        {
           label: "Documentation",
           href: "/docs",
         },

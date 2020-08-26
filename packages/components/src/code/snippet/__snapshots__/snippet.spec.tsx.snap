@@ -9,7 +9,6 @@ exports[` Snippet renders correctly 1`] = `
       style="font-size: 14px; line-height: 1.375; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; tab-size: 4; hyphens: none; color: rgb(203, 213, 224); padding: 1em; margin: .5em 0px; overflow: auto;"
     >
       <code
-        class="language-text"
         style="font-size: 14px; line-height: 1.375; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; tab-size: 4; hyphens: none; color: rgb(203, 213, 224);"
       >
         "const x = 1;"

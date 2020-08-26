@@ -208,7 +208,6 @@ exports[` Index with code snippets renders correctly 1`] = `
                         style="font-size: 14px; line-height: 1.375; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; tab-size: 4; hyphens: none; color: rgb(203, 213, 224); padding: 1em; margin: .5em 0px; overflow: auto;"
                       >
                         <code
-                          class="language-r"
                           style="font-size: 14px; line-height: 1.375; direction: ltr; text-align: left; white-space: pre; word-spacing: normal; word-break: normal; tab-size: 4; hyphens: none; color: rgb(203, 213, 224);"
                         >
                           r &lt;- 1

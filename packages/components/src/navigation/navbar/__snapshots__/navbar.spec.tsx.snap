@@ -26,7 +26,7 @@ exports[` Navbar renders correctly 1`] = `
             <li>
               <a
                 class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                href="#product"
+                href="/#product"
               >
                 Product
               </a>
@@ -34,7 +34,7 @@ exports[` Navbar renders correctly 1`] = `
             <li>
               <a
                 class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                href="#features"
+                href="/#features"
               >
                 Features
               </a>
@@ -42,7 +42,7 @@ exports[` Navbar renders correctly 1`] = `
             <li>
               <a
                 class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                href="#team"
+                href="/#team"
               >
                 Team
               </a>
@@ -50,7 +50,7 @@ exports[` Navbar renders correctly 1`] = `
             <li>
               <a
                 class="text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
-                href="#"
+                href="/#"
               >
                 Documentation
               </a>

@@ -64,6 +64,12 @@ exports[` Footer renders correctly 1`] = `
             </a>
             <a
               class="block focus:outline-none text-gray-200 hover:text-white"
+              href="perfol.io/roadmap"
+            >
+              Documentation
+            </a>
+            <a
+              class="block focus:outline-none text-gray-200 hover:text-white"
               href="/imprint"
             >
               Imprint

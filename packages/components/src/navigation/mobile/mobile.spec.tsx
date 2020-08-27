@@ -8,7 +8,7 @@ afterEach(cleanup)
 describe(" Mobile", () => {
   it("should render successfully", () => {
     const { baseElement } = render(<Mobile logo={<span>Logo</span>} links={[{ label: "Hello", href: "/world" }]} />)
-    expect(baseElement).toMatchSnapshot()
+    expect(baseElement).toBeTruthy()
   })
 
   describe("on mobile", () => {

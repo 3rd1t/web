@@ -94,32 +94,9 @@ jobs:
         run: yarn cypress install
       - name: Run Integration test
         run: |
-          yarn nx build tailwindcss
+          yarn nx build css
           yarn nx run-many --target=e2e --all --headless
 
-  lighthouse:
-    strategy:
-      matrix:
-        package: ["core", "research"]
-    name: lighthouse @${{ matrix.package }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-      - name: Install dependencies
-        run: yarn install
-      - name: build
-        run: yarn nx run ${{matrix.package}}:export --with-deps
-      - name: run lighthouse
-        run: yarn lhci autorun
-        env:
-          LHCI_CONFIG: lighthouse/${{matrix.package}}.js
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  

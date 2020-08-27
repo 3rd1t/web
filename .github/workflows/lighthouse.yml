@@ -1,0 +1,36 @@
+name: Lighthouse
+
+on:
+  pull_request:
+    branches: [ master, main ]
+
+
+jobs:
+  lighthouse:
+    strategy:
+      matrix:
+        package: ["core", "research"]
+    name: lighthouse @${{matrix.package}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+      - name: build
+        run: yarn nx export ${{matrix.package}} --with-deps
+      - name: lighthouse
+        run: yarn lhci autorun --collect.staticDistDir=./dist/packages/${{matrix.package}}/exported
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: clean up
+        run: rm -rf ./.lighthouse

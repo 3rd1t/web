@@ -29,7 +29,7 @@ export const Source = ({ author, date, title, abstract, citation, link }: Source
       <div className="flex flex-wrap py-8 md:flex-no-wrap">
         <div className="flex flex-col flex-shrink-0 pr-2 mb-6 md:w-64 md:mb-0">
           <span className="font-medium tracking-widest text-gray-900">{author}</span>
-          <span className="mt-1 text-sm text-gray-600">{date}</span>
+          <span className="mt-1 text-sm text-gray-700">{date}</span>
         </div>
         <div className="space-y-4 md:flex-grow">
           <h2 className="text-2xl text-gray-900">{title}</h2>

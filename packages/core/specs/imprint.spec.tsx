@@ -6,6 +6,6 @@ import Imprint from "../pages/imprint"
 describe("Imprint", () => {
   it("should render successfully", () => {
     const { baseElement } = render(<Imprint />)
-    expect(baseElement).toMatchSnapshot()
+    expect(baseElement).toBeTruthy()
   })
 })

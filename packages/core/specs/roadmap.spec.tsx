@@ -6,6 +6,6 @@ import Roadmap from "../pages/roadmap"
 describe("Roadmap", () => {
   it("should render successfully", () => {
     const { baseElement } = render(<Roadmap />)
-    expect(baseElement).toMatchSnapshot()
+    expect(baseElement).toBeTruthy()
   })
 })

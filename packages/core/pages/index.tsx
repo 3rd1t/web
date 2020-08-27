@@ -224,12 +224,16 @@ const Index = (props: IndexProps) => {
             <input type="hidden" name="form-name" value="email-subs" />
             <div className="sm:flex">
               <input
+                id="email"
                 required
                 name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="block w-full px-4 py-3 text-base leading-6 bg-white border rounded shadow-none placeholder-carbon-600 border-carbon-300 sm:max-w-xs focus:outline-none focus:border-carbon-700"
               ></input>
+              <label className="sr-only" htmlFor="email">
+                Add your email.
+              </label>
               <button
                 type="submit"
                 className="relative block w-full px-6 py-3 mt-4 text-base font-semibold leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800"

@@ -58,6 +58,13 @@
             "outputPath": "dist/packages/research/exported",
             "siteId": "abfda65d-dcb7-4d66-90d2-352b9ea50dc1"
           }
+        },
+        "stage": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/research/exported",
+            "siteId": "8ef993a3-5ad8-482e-ae8e-28bb0d115130"
+          }
         }
       }
     },
@@ -146,6 +153,13 @@
             "outputPath": "dist/packages/core/exported",
             "siteId": "c081d45f-4137-4570-bb1e-0f1a1645db11"
           }
+        },
+        "stage": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/core/exported",
+            "siteId": "77cab3eb-0602-44fb-b921-6df4a10aef32"
+          }
         }
       }
     },
@@ -201,30 +215,30 @@
         }
       }
     },
-    "tailwindcss": {
-      "root": "packages/tailwindcss",
-      "sourceRoot": "packages/tailwindcss/src",
+    "css": {
+      "root": "packages/css",
+      "sourceRoot": "packages/css/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+            "command": "yarn tailwind build ./packages/css/src/tailwind.src.css -c ./packages/css/tailwind.config.js -o ./dist/packages/css/tailwind.css"
           }
         },
         "export": {
           "comment": "This is duplicated so the apps export command can build tailwind by using --with-deps",
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "NODE_ENV=production yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+            "command": "NODE_ENV=production yarn tailwind build ./packages/css/src/tailwind.src.css -c ./packages/css/tailwind.config.js -o ./dist/packages/css/tailwind.css"
           }
         },
         "e2e": {
           "comment": "This is duplicated so the apps e2e command can build tailwind by using --with-deps",
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "NODE_ENV=production yarn tailwind build ./packages/tailwindcss/src/tailwind.src.css -c ./packages/tailwindcss/tailwind.config.js -o ./dist/packages/tailwindcss/tailwind.css"
+            "command": "NODE_ENV=production yarn tailwind build ./packages/css/src/tailwind.src.css -c ./packages/css/tailwind.config.js -o ./dist/packages/css/tailwind.css"
           }
         }
       }

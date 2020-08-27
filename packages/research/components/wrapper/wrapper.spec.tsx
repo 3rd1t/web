@@ -11,6 +11,6 @@ describe("Wrapper", () => {
       </Wrapper>,
     )
 
-    expect(baseElement).toMatchSnapshot()
+    expect(baseElement).toBeTruthy()
   })
 })

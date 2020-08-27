@@ -89,13 +89,17 @@ const Index = (props: IndexProps) => {
         <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
           {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"], "/api")}
           {feature("CSV", ["Use directly in Excel", "Straightforward information schema", "Easy to handle"], "/csv")}
-          {feature("Charts", ["Analyse directly in your browser", "Who doesn't like charts", "Visual reprerentation"], "/charts")}
+          {feature(
+            "Charts",
+            ["Analyse directly in your browser", "Who doesn't like charts", "Visual reprerentation"],
+            "/charts",
+          )}
         </div>
       </Section>
       <Section id="charts" bg="bg-gray-100">
         <SectionTitle title="Charts"></SectionTitle>
         <div className="flex justify-center mt-16">
-          <img src="https://via.placeholder.com/700x300"></img>
+          <img src="https://via.placeholder.com/700x300" alt="Placeholder for a chart"></img>
         </div>
       </Section>
       <Section id="sources" bg="bg-white">

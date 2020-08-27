@@ -14,7 +14,7 @@ export const Profile = ({ image, name, title, className }: ProfileProps) => {
       <div className="flex flex-col items-center justify-center text-sm ">
         <img className="rounded-full" src={image} alt={name}></img>
         <span className="mt-4 font-semibold text-gray-900">{name}</span>
-        <span className="text-gray-600">{title}</span>
+        <span className="text-gray-700">{title}</span>
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ export const Roadmap = (props: RoadmapProps) => {
           <div className="w-full p-6 bg-white border border-gray-400 rounded shadow-lg lg:w-1/3 ">
             <div className="flex flex-col space-y-2">
               <h2 className="text-lg font-medium text-gray-900 title-font">Feedback</h2>
-              <p className="leading-relaxed text-gray-600">
+              <p className="leading-relaxed text-gray-700">
                 Please tell us if you are looking for specific features so we can implement them right away.
               </p>
               <form
@@ -29,25 +29,39 @@ export const Roadmap = (props: RoadmapProps) => {
                 className="flex flex-col space-y-4"
               >
                 <input
+                  id="name"
                   required
                   className="px-4 py-2 text-base border border-gray-400 rounded focus:outline-none focus:border-carbon-700"
                   placeholder="Name"
                   name="name"
                   type="text"
                 ></input>
+                <label className="sr-only" htmlFor="name">
+                  Your name
+                </label>
                 <input
+                  id="email"
                   required
                   className="px-4 py-2 text-base border border-gray-400 rounded focus:outline-none focus:border-carbon-700"
                   placeholder="Email"
                   name="email"
                   type="email"
                 ></input>
+                <label className="sr-only" htmlFor="email">
+                  Your email
+                </label>
+
                 <textarea
+                  id="message"
                   required
                   className="h-32 px-4 py-2 text-base border border-gray-400 rounded resize-none focus:outline-none focus:border-carbon-700"
                   placeholder="Message"
                   name="message"
                 ></textarea>
+                <label className="sr-only" htmlFor="message">
+                  Your message
+                </label>
+
                 <button className="px-6 py-2 text-lg text-white border-0 rounded-sm bg-carbon-900 focus:outline-none hover:bg-carbon-700">
                   Submit
                 </button>

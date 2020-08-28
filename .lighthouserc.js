@@ -9,5 +9,8 @@ module.exports = {
         "categories:seo": ["error", { minScore: 1 }],
       },
     },
+    upload: {
+      target: 'temporary-public-storage',
+    },
   },
 }

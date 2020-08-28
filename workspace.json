@@ -78,7 +78,9 @@
           "options": {
             "cypressConfig": "packages/research-e2e/cypress.json",
             "tsConfig": "packages/research-e2e/tsconfig.e2e.json",
-            "devServerTarget": "research:serve"
+            "devServerTarget": "research:serve",
+            "record": true,
+            "key": "da7f3d04-6166-4ebd-babb-0c81b94417f5"
           },
           "configurations": {
             "production": {
@@ -173,7 +175,9 @@
           "options": {
             "cypressConfig": "packages/core-e2e/cypress.json",
             "tsConfig": "packages/core-e2e/tsconfig.e2e.json",
-            "devServerTarget": "core:serve"
+            "devServerTarget": "core:serve",
+            "record": true,
+            "key": "0afbf37a-7c61-47a6-8bf9-1d866e152a4c"
           },
           "configurations": {
             "production": {
@@ -211,6 +215,36 @@
             "jestConfig": "packages/components/jest.config.js",
             "tsConfig": "packages/components/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "packages/components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/components",
+            "config": {
+              "configFolder": "packages/components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
@@ -287,6 +321,96 @@
             "jestConfig": "packages/pages/jest.config.js",
             "tsConfig": "packages/pages/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "packages/pages/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/pages",
+            "config": {
+              "configFolder": "packages/pages/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "pages-e2e": {
+      "root": "packages/pages-e2e",
+      "sourceRoot": "packages/pages-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/pages-e2e/cypress.json",
+            "tsConfig": "packages/pages-e2e/tsconfig.e2e.json",
+            "devServerTarget": "pages:storybook",
+            "record": true,
+            "key": "7e6f3515-7c06-4ef4-9e05-fd701a6ab1a1"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "pages:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/pages-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!packages/pages-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "components-e2e": {
+      "root": "packages/components-e2e",
+      "sourceRoot": "packages/components-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/components-e2e/cypress.json",
+            "tsConfig": "packages/components-e2e/tsconfig.e2e.json",
+            "devServerTarget": "components:storybook",
+            "record": true,
+            "key": "56e6c2c7-717c-457a-8594-63c1837e37a3"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "components:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/components-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!packages/components-e2e/**/*"]
           }
         }
       }

@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn nx run-many --target=build --all --with-deps
+        run: yarn nx affected:build --with-deps
 
   unit-test:
     name: unit test
@@ -68,7 +68,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn test
+        run: yarn affected:test
 
  
   e2e-test:
@@ -94,8 +94,8 @@ jobs:
         run: yarn cypress install
       - name: Run Integration test
         run: |
-          yarn nx build css
-          yarn nx run-many --target=e2e --all --headless
+          yarn nx export css
+          yarn nx affected:e2e --headless
 
 
 

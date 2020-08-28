@@ -1,3 +1,3 @@
-export * from "./pages/imprint"
-export * from "./pages/privacy"
-export * from "./pages/404"
+export * from "./lib/pages/imprint"
+export * from "./lib/pages/privacy"
+export * from "./lib/pages/404"

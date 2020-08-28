@@ -8,5 +8,6 @@
   "video": true,
   "videosFolder": "../../dist/cypress/packages/research-e2e/videos",
   "screenshotsFolder": "../../dist/cypress/packages/research-e2e/screenshots",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "projectId": "1adiz5"
 }

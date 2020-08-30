@@ -28,7 +28,7 @@ jobs:
       - name: build
         run: yarn nx export ${{matrix.package}} --with-deps
       - name: lighthouse
-        run: yarn lhci autorun --collect.staticDistDir=./dist/packages/${{matrix.package}}/exported
+        run: yarn lhci autorun --collect.staticDistDir=./dist/packages/${{matrix.package}}/exported --collect.maxAutodiscoverUrls=0
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 

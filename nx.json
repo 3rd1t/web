@@ -34,10 +34,6 @@
       "tags": [],
       "implicitDependencies": ["css"]
     },
-    "research-e2e": {
-      "tags": [],
-      "implicitDependencies": ["research"]
-    },
     "core": {
       "tags": [],
       "implicitDependencies": ["css"]
@@ -45,9 +41,6 @@
     "core-e2e": {
       "tags": [],
       "implicitDependencies": ["core"]
-    },
-    "components": {
-      "tags": []
     },
     "css": {
       "tags": []
@@ -62,9 +55,19 @@
       "tags": [],
       "implicitDependencies": ["pages"]
     },
-    "components-e2e": {
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-ui-e2e": {
       "tags": [],
-      "implicitDependencies": ["components"]
+      "implicitDependencies": ["shared-ui"]
+    },
+    "docs": {
+      "tags": [],
+      "implicitDependencies": ["css"]
+    },
+    "shared-types": {
+      "tags": []
     }
   },
   "workspaceLayout": {

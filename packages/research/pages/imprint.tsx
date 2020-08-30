@@ -1,6 +1,6 @@
 import React from "react"
 import { Imprint as Content } from "@perfolio/pages"
-import { Section } from "@perfolio/components"
+import { Section } from "@perfolio/shared/ui"
 import { Wrapper } from "../components/wrapper/wrapper"
 /* eslint-disable-next-line */
 export interface ImprintProps {}

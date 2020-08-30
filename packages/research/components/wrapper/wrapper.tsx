@@ -1,5 +1,5 @@
 import React from "react"
-import { NavWrapper, Navbar, Logo, Footer } from "@perfolio/components"
+import { NavWrapper, Navbar, Logo, Footer } from "@perfolio/shared/ui"
 
 export interface WrapperProps {
   children: React.ReactNode

@@ -1,5 +1,5 @@
 import React from "react"
-import { Section } from "@perfolio/components"
+import { Section } from "@perfolio/shared/ui"
 /* eslint-disable-next-line */
 export interface ImprintProps {}
 

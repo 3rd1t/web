@@ -16,9 +16,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@perfolio/components": ["packages/components/src/index.ts"],
       "@perfolio/charts": ["packages/charts/src/index.ts"],
-      "@perfolio/pages": ["packages/pages/src/index.ts"]
+      "@perfolio/pages": ["packages/pages/src/index.ts"],
+      "@perfolio/shared/ui": ["packages/shared/ui/src/index.ts"],
+      "@perfolio/shared/types": ["packages/shared/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

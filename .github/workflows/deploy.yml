@@ -7,7 +7,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        package: ["core", "research"]
+        package: ["core", "research", "docs"]
     name: deploy-${{matrix.package}}
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
         run: yarn install
 
       - name: build
-        run: yarn nx export ${{matrix.package}} --with-deps --skip-nx-cache
+        run: yarn nx export ${{matrix.package}} --with-deps
         env:
           NODE_ENV: production
 

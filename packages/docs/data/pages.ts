@@ -6,7 +6,7 @@ const data: Collection[] = [
     documents: [
       {
         name: "Introduction",
-        href: "/introduction",
+        href: "/",
       },
     ],
   },

@@ -9,7 +9,7 @@ jobs:
   lighthouse:
     strategy:
       matrix:
-        package: ["core", "research"]
+        package: ["core", "research", "docs"]
     name: lighthouse @${{matrix.package}}
     runs-on: ubuntu-latest
     steps:

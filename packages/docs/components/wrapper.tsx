@@ -9,7 +9,7 @@ export interface WrapperProps {
 export const Wrapper = ({ children }: WrapperProps) => {
   const navbar = (
     <Navbar
-      logo={<Logo domain="docs" color="text-docs-600" />}
+      logo={<Logo domain="docs" color="text-docs-700" />}
       links={[
         {
           label: "Source",

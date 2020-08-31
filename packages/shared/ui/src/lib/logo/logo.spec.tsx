@@ -5,7 +5,7 @@ import { render } from "@testing-library/react"
 describe("Logo", () => {
   describe("with domain", () => {
     it("renders correctly", () => {
-      const { baseElement } = render(<Logo color="text-blue-500" domain="domain" />)
+      const { baseElement } = render(<Logo color="text-docs-500" domain="domain" />)
       expect(baseElement).toBeTruthy()
     })
   })

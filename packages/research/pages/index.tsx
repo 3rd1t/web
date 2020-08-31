@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps } from "@perfolio/components"
+import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps } from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"

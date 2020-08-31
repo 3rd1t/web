@@ -2,7 +2,7 @@ import { AppProps } from "next/app"
 import Head from "next/head"
 import React from "react"
 import "dist/packages/css/tailwind.css"
-import { Navbar, Footer, Logo } from "@perfolio/components"
+import { Navbar, Footer, Logo } from "@perfolio/shared/ui"
 
 const app = ({ Component, pageProps }: AppProps) => {
   return (

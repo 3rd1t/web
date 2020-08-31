@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroSection, Section, Profile, Feature } from "@perfolio/components"
+import { HeroSection, Section, Profile, Feature } from "@perfolio/shared/ui"
 import Wrapper from "../components/wrapper/wrapper"
 /* eslint-disable-next-line */
 interface IndexProps {}

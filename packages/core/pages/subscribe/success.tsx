@@ -1,5 +1,5 @@
 import React from "react"
-import { Section } from "@perfolio/components"
+import { Section } from "@perfolio/shared/ui"
 import Link from "next/link"
 
 /* eslint-disable-next-line */

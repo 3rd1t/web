@@ -68,36 +68,7 @@
         }
       }
     },
-    "research-e2e": {
-      "root": "packages/research-e2e",
-      "sourceRoot": "packages/research-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "packages/research-e2e/cypress.json",
-            "tsConfig": "packages/research-e2e/tsconfig.e2e.json",
-            "devServerTarget": "research:serve",
-            "record": true,
-            "key": "da7f3d04-6166-4ebd-babb-0c81b94417f5"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "research:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/research-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!packages/research-e2e/**/*"]
-          }
-        }
-      }
-    },
+
     "core": {
       "root": "packages/core",
       "sourceRoot": "packages/core",
@@ -191,60 +162,6 @@
             "linter": "eslint",
             "tsConfig": ["packages/core-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!packages/core-e2e/**/*"]
-          }
-        }
-      }
-    },
-    "components": {
-      "root": "packages/components",
-      "sourceRoot": "packages/components/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/components/tsconfig.lib.json", "packages/components/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/components/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "packages/components/jest.config.js",
-            "tsConfig": "packages/components/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        },
-        "storybook": {
-          "builder": "@nrwl/storybook:storybook",
-          "options": {
-            "uiFramework": "@storybook/react",
-            "port": 4400,
-            "config": {
-              "configFolder": "packages/components/.storybook"
-            }
-          },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
-        },
-        "build-storybook": {
-          "builder": "@nrwl/storybook:build",
-          "options": {
-            "uiFramework": "@storybook/react",
-            "outputPath": "dist/storybook/components",
-            "config": {
-              "configFolder": "packages/components/.storybook"
-            }
-          },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
           }
         }
       }
@@ -385,23 +302,77 @@
         }
       }
     },
-    "components-e2e": {
-      "root": "packages/components-e2e",
-      "sourceRoot": "packages/components-e2e/src",
+    "shared-ui": {
+      "root": "packages/shared/ui",
+      "sourceRoot": "packages/shared/ui/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/shared/ui/tsconfig.lib.json", "packages/shared/ui/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/shared/ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/shared/ui/jest.config.js",
+            "tsConfig": "packages/shared/ui/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "packages/shared/ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/components",
+            "config": {
+              "configFolder": "packages/shared/ui/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "shared-ui-e2e": {
+      "root": "packages/shared/ui-e2e",
+      "sourceRoot": "packages/shared/ui-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "packages/components-e2e/cypress.json",
-            "tsConfig": "packages/components-e2e/tsconfig.e2e.json",
-            "devServerTarget": "components:storybook",
+            "cypressConfig": "packages/shared/ui-e2e/cypress.json",
+            "tsConfig": "packages/shared/ui-e2e/tsconfig.e2e.json",
+            "devServerTarget": "shared-ui:storybook",
             "record": true,
             "key": "56e6c2c7-717c-457a-8594-63c1837e37a3"
           },
           "configurations": {
             "ci": {
-              "devServerTarget": "components:storybook:ci"
+              "devServerTarget": "shared-ui:storybook:ci"
             }
           }
         },
@@ -409,8 +380,92 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/components-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!packages/components-e2e/**/*"]
+            "tsConfig": ["packages/shared/ui-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!packages/shared/ui-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "docs": {
+      "root": "packages/docs",
+      "sourceRoot": "packages/docs",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "packages/docs",
+            "outputPath": "dist/packages/docs"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "docs:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "docs:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "docs:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/docs/tsconfig.json", "packages/docs/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/docs/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/docs/jest.config.js",
+            "tsConfig": "packages/docs/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/docs/exported",
+            "siteId": "4a2b2b79-9c92-4ec6-b4e7-e3b8e32e4ea9"
+          }
+        }
+      }
+    },
+    "shared-types": {
+      "root": "packages/shared/types",
+      "sourceRoot": "packages/shared/types/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/shared/types/tsconfig.lib.json", "packages/shared/types/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/shared/types/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/shared/types/jest.config.js",
+            "tsConfig": "packages/shared/types/tsconfig.spec.json",
+            "passWithNoTests": true
           }
         }
       }

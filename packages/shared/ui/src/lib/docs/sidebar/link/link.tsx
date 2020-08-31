@@ -14,7 +14,7 @@ export const DocumentLink = ({ label, href }: DocumentLinkProps) => {
 
   return (
     <Link href={href}>
-      <a className={`my-1 text-sm hover:text-docs-700 ${active ? "text-docs-700 font-semibold" : "text-gray-600"}`}>
+      <a className={`my-1 text-sm hover:text-docs-700 ${active ? "text-docs-700 font-semibold" : "text-gray-700"}`}>
         {label}
       </a>
     </Link>

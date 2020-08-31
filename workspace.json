@@ -68,7 +68,6 @@
         }
       }
     },
-
     "core": {
       "root": "packages/core",
       "sourceRoot": "packages/core",
@@ -190,30 +189,6 @@
           "builder": "@nrwl/workspace:run-commands",
           "options": {
             "command": "NODE_ENV=production yarn tailwind build ./packages/css/src/tailwind.src.css -c ./packages/css/tailwind.config.js -o ./dist/packages/css/tailwind.css"
-          }
-        }
-      }
-    },
-    "charts": {
-      "root": "packages/charts",
-      "sourceRoot": "packages/charts/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/charts/tsconfig.lib.json", "packages/charts/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/charts/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "packages/charts/jest.config.js",
-            "tsConfig": "packages/charts/tsconfig.spec.json",
-            "passWithNoTests": true
           }
         }
       }
@@ -458,14 +433,6 @@
             "linter": "eslint",
             "tsConfig": ["packages/shared/types/tsconfig.lib.json", "packages/shared/types/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**", "!packages/shared/types/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "packages/shared/types/jest.config.js",
-            "tsConfig": "packages/shared/types/tsconfig.spec.json",
-            "passWithNoTests": true
           }
         }
       }

@@ -25,14 +25,7 @@ jobs:
       - name: test
         run: yarn test --codeCoverage --skip-nx-cache
 
-      - name: Run codacy-coverage-reporter
-        run: |
-          shopt -s globstar
-          for i in ./coverage/**/lcov.info; do
-              path=$i
-              bash <(curl -Ls https://coverage.codacy.com/get.sh) report --partial -r ${path:2}
-          done
-
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) final
+      - name: Run codecov coverage reporter
+        run: bash <(curl -s https://codecov.io/bash)
         env:
-          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

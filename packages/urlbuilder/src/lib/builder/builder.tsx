@@ -98,7 +98,7 @@ export const Builder = (props: BuilderProps) => {
 
           {fields.map((f, i) => (
             <div key={i} className="flex items-center">
-              {i > 0 ? <span className="font-thin"> /</span> : null}
+              {i > 0 ? <span className="font-thin text-gray-500">/</span> : null}
               {
                 <AutoSuggest
                   placeholder={f.name}

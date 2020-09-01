@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, ChangeEvent } from "react"
 import { motion } from "framer-motion"
 
-export enum Status {
+export enum State {
   IDLE,
   FOCUSED,
   VERIFY,
@@ -13,11 +13,11 @@ export interface AutoSuggestProps {
   placeholder: string
   value: string
   updateValue: any
-  status: Status
-  updateStatus: any
+  state: State
+  updateState: any
 }
 
-export const AutoSuggest = ({ updateStatus, status, updateValue, value, options, placeholder }: AutoSuggestProps) => {
+export const AutoSuggest = ({ updateState, state, updateValue, value, options, placeholder }: AutoSuggestProps) => {
   const ref = useRef(null)
   const [filteredOptions, setFilteredOptions] = useState(options)
   const [activeOption, setFocusOption] = useState(-1)
@@ -26,19 +26,19 @@ export const AutoSuggest = ({ updateStatus, status, updateValue, value, options,
     console.log({ value })
     const isValid = options.map((option) => option.toLowerCase()).includes(value.toLowerCase())
     console.log({ isValid })
-    updateStatus(isValid ? Status.DONE : Status.IDLE)
+    updateState(isValid ? State.DONE : State.IDLE)
   }
 
   useEffect(() => {
-    if (status === Status.VERIFY) {
+    if (state === State.VERIFY) {
       onBlur()
     }
-  }, [status])
+  }, [state])
 
   const getWidth = (): string => {
     const padding = 4
     const width = value.length > 0 ? value.length : 5
-    return ((status === Status.DONE ? width : width + padding) + 2).toString() + "ch"
+    return ((state === State.DONE ? width : width + padding) + 2).toString() + "ch"
   }
   /**
    *
@@ -53,7 +53,7 @@ export const AutoSuggest = ({ updateStatus, status, updateValue, value, options,
     // Enter key
     if (e.keyCode === 13 && activeOption >= 0 && activeOption < filteredOptions.length) {
       updateValue(filteredOptions[activeOption])
-      updateStatus(Status.VERIFY)
+      updateState(State.VERIFY)
     }
     //Up arrow
     else if (e.keyCode === 38) {
@@ -88,14 +88,14 @@ export const AutoSuggest = ({ updateStatus, status, updateValue, value, options,
           id="input"
           className="text-center appearance-none focus:outline-none"
           onKeyDown={onKeyDown}
-          onFocus={() => updateStatus(Status.FOCUSED)}
-          onBlur={() => updateStatus(Status.VERIFY)}
+          onFocus={() => updateState(State.FOCUSED)}
+          onBlur={() => updateState(State.VERIFY)}
           onSubmit={onSubmit}
           value={value}
           onChange={(e) => updateValue(e.currentTarget.value)}
           placeholder={placeholder}
         />
-        {status === Status.FOCUSED ? (
+        {state === State.FOCUSED ? (
           <ul className="absolute mt-10 bg-white border border-gray-300 rounded-sm shadow-lg">
             {filteredOptions.map((s, i) => (
               <li

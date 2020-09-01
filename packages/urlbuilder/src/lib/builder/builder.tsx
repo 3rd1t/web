@@ -1,12 +1,19 @@
 import React, { useState } from "react"
-import { AutoSuggest, Status } from "./auto-suggest/auto-suggest"
+import { AutoSuggest, State } from "./auto-suggest/auto-suggest"
 
 /* eslint-disable-next-line */
 export interface BuilderProps {}
 
 export const Builder = (props: BuilderProps) => {
-  const newState = (initial: string | Status) => {
-    const [state, setState] = useState(initial)
+  const initValue = () => {
+    const [state, setState] = useState("")
+    return {
+      state,
+      setState,
+    }
+  }
+  const initState = () => {
+    const [state, setState] = useState(State.IDLE)
     return {
       state,
       setState,
@@ -16,15 +23,15 @@ export const Builder = (props: BuilderProps) => {
   const fields = [
     {
       name: "factor",
-      value: newState(""),
-      status: newState(Status.IDLE),
+      value: initValue(),
+      status: initState(),
 
       options: ["3", "4", "5", "6"],
     },
     {
       name: "region",
-      value: newState(""),
-      status: newState(Status.IDLE),
+      value: initValue(),
+      status: initState(),
 
       options: [
         "USA",
@@ -39,8 +46,8 @@ export const Builder = (props: BuilderProps) => {
     },
     {
       name: "currency",
-      value: newState(""),
-      status: newState(Status.IDLE),
+      value: initValue(),
+      status: initState(),
 
       options: [
         "EUR",
@@ -65,8 +72,8 @@ export const Builder = (props: BuilderProps) => {
     },
     {
       name: "interval",
-      value: newState(""),
-      status: newState(Status.IDLE),
+      value: initValue(),
+      status: initState(),
 
       options: ["daily", "monthly", "annual"],
     },
@@ -74,7 +81,7 @@ export const Builder = (props: BuilderProps) => {
 
   const isValid = () => {
     const v = fields.every((field) => {
-      return field.status.state === Status.DONE
+      return field.status.state === State.DONE
     })
     console.log(v)
     return v
@@ -98,8 +105,8 @@ export const Builder = (props: BuilderProps) => {
                   value={f.value.state}
                   options={f.options}
                   updateValue={f.value.setState}
-                  status={f.status.state}
-                  updateStatus={f.status.setState}
+                  state={f.status.state}
+                  updateState={f.status.setState}
                 />
               }
             </div>

@@ -65,6 +65,12 @@
     },
     "shared-types": {
       "tags": []
+    },
+    "shared-nav": {
+      "tags": []
+    },
+    "urlbuilder": {
+      "tags": []
     }
   },
   "workspaceLayout": {

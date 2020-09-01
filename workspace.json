@@ -436,6 +436,54 @@
           }
         }
       }
+    },
+    "shared-nav": {
+      "root": "packages/shared/nav",
+      "sourceRoot": "packages/shared/nav/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/shared/nav/tsconfig.lib.json", "packages/shared/nav/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/shared/nav/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/shared/nav/jest.config.js",
+            "tsConfig": "packages/shared/nav/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "urlbuilder": {
+      "root": "packages/urlbuilder",
+      "sourceRoot": "packages/urlbuilder/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/urlbuilder/tsconfig.lib.json", "packages/urlbuilder/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/urlbuilder/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/urlbuilder/jest.config.js",
+            "tsConfig": "packages/urlbuilder/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

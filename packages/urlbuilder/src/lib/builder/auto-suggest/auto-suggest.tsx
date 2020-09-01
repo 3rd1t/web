@@ -1,107 +1,116 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, ChangeEvent } from "react"
 import { motion } from "framer-motion"
-export interface AutoSuggestProps {
-  suggestions: string[]
-  placeholder: string
-  icon?: React.ReactNode
-  className?: string
+
+export enum Status {
+  IDLE,
+  FOCUSED,
+  VERIFY,
+  DONE,
 }
 
-function useOutsideAlerter(ref: React.Ref<HTMLDivElement>, callback) {}
+export interface AutoSuggestProps {
+  options: string[]
+  placeholder: string
+  value: string
+  updateValue: any
+  status: Status
+  updateStatus: any
+}
 
-export const AutoSuggest = ({ suggestions, placeholder, icon, className }: AutoSuggestProps) => {
+export const AutoSuggest = ({ updateStatus, status, updateValue, value, options, placeholder }: AutoSuggestProps) => {
   const ref = useRef(null)
-  const [done, setDone] = useState(false)
-  const [input, setInput] = useState("")
-  const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions)
-  const [showSuggestions, setShowSuggestions] = useState(false)
-  const [activeSuggestion, setActiveSuggestion] = useState(-1)
+  const [filteredOptions, setFilteredOptions] = useState(options)
+  const [activeOption, setFocusOption] = useState(-1)
 
-  const handleChange = (e) => {
-    setInput(e.currentTarget.value)
+  const onBlur = () => {
+    console.log({ value })
+    const isValid = options.map((option) => option.toLowerCase()).includes(value.toLowerCase())
+    console.log({ isValid })
+    updateStatus(isValid ? Status.DONE : Status.IDLE)
   }
 
-  const onKeyDown = (e) => {
-    // Enter key to select the active suggestion
-    if (filteredSuggestions.length < 1) {
+  useEffect(() => {
+    if (status === Status.VERIFY) {
+      onBlur()
+    }
+  }, [status])
+
+  const getWidth = (): string => {
+    const padding = 4
+    const width = value.length > 0 ? value.length : 5
+    return ((status === Status.DONE ? width : width + padding) + 2).toString() + "ch"
+  }
+  /**
+   *
+   * @param e
+   */
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    // Enter key to select the active option
+    if (filteredOptions.length < 1) {
       return
     }
 
     // Enter key
-    if (e.keyCode === 13 && activeSuggestion >= 0 && activeSuggestion < filteredSuggestions.length) {
-      setInput(filteredSuggestions[activeSuggestion])
+    if (e.keyCode === 13 && activeOption >= 0 && activeOption < filteredOptions.length) {
+      updateValue(filteredOptions[activeOption])
+      updateStatus(Status.VERIFY)
     }
     //Up arrow
     else if (e.keyCode === 38) {
-      const next = activeSuggestion - 1
-      setActiveSuggestion(next >= 0 ? next : filteredSuggestions.length - 1)
+      const next = activeOption - 1
+      setFocusOption(next >= 0 ? next : filteredOptions.length - 1)
     }
     // Down arrow
     else if (e.keyCode === 40) {
-      const next = activeSuggestion + 1
-      setActiveSuggestion(next < filteredSuggestions.length ? next : 0)
+      const next = activeOption + 1
+      setFocusOption(next < filteredOptions.length ? next : 0)
     }
   }
-  // Closes the dropdown if the user clicks away
+
+  const onSubmit = () => {
+    updateValue(options[activeOption])
+  }
+
+  // Update suggestions on value change
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setShowSuggestions(false)
-      }
-    }
-
-    // Bind the event listener
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => {
-      // Unbind the event listener on clean up
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [ref])
-
-  useEffect(() => {
-    const filtered = suggestions.filter((suggestion) => suggestion.toLowerCase().includes(input.toLowerCase()))
-    setFilteredSuggestions(filtered)
-
-    // Hide suggestions if the user entered a correct value
-    if (filtered.includes(input)) {
-      setShowSuggestions(false)
-      setDone(true)
-    } else {
-      setDone(false)
-    }
-  }, [input])
+    const filtered = options.filter((option) => option.toLowerCase().includes(value.toLowerCase()))
+    setFilteredOptions(filtered)
+  }, [value])
 
   return (
-    <div ref={ref} className={className}>
-      <div className="relative flex">
-        {done ? null : icon}
-        <input
-          className="appearance-none focus:outline-none"
+    <div ref={ref}>
+      <div className="relative flex justify-center">
+        <motion.input
+          autoComplete="off"
+          layout
+          initial={{ width: getWidth() }}
+          animate={{ width: getWidth() }}
+          id="input"
+          className="text-center appearance-none focus:outline-none"
           onKeyDown={onKeyDown}
-          onFocus={() => setShowSuggestions(true)}
-          onSubmit={() => setInput(suggestions[0])}
-          value={input}
-          onChange={handleChange}
+          onFocus={() => updateStatus(Status.FOCUSED)}
+          onBlur={() => updateStatus(Status.VERIFY)}
+          onSubmit={onSubmit}
+          value={value}
+          onChange={(e) => updateValue(e.currentTarget.value)}
           placeholder={placeholder}
         />
-        {showSuggestions ? (
-          <div className="absolute z-50 mt-8 rounded shadow-lg">
-            <div className="bg-white rounded-md shadow-xs">
-              <ul className="">
-                {filteredSuggestions.map((s, i) => (
-                  <li
-                    key={i}
-                    className={`px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 ${
-                      activeSuggestion === i ? "bg-research-100" : ""
-                    }`}
-                    onClick={() => setInput(s)}
-                  >
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        {status === Status.FOCUSED ? (
+          <ul className="absolute mt-10 bg-white border border-gray-300 rounded-sm shadow-lg">
+            {filteredOptions.map((s, i) => (
+              <li
+                key={i}
+                className={`px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 ${
+                  activeOption === i ? "bg-research-100" : ""
+                }`}
+                onMouseDown={() => {
+                  updateValue(s)
+                }}
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
         ) : null}
       </div>
     </div>

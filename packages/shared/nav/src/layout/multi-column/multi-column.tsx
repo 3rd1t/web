@@ -16,7 +16,7 @@ export const MultiColumn = ({ children }: MultiColumnProps) => {
       </div>
       <div className="w-full">
         <Header></Header>
-        <div className="flex items-center justify-center">{children}</div>
+        <div className="">{children}</div>
       </div>
     </div>
   )

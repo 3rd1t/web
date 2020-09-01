@@ -8,7 +8,15 @@ export const Csv = (props: CsvProps) => {
   return (
     <div>
       <MultiColumn>
-        <Builder></Builder>
+        <main className="">
+          <div className="w-full p-8 bg-white">
+            <h1 className="text-xl">API Builder</h1>
+            <p className="text-gray-700">Build a custom url to get exactly the data you need.</p>
+          </div>
+          <div>
+            <Builder></Builder>
+          </div>
+        </main>
       </MultiColumn>
     </div>
   )

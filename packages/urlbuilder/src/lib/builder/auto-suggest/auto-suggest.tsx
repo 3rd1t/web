@@ -85,7 +85,8 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
           layout
           initial={{ width: getWidth() }}
           animate={{ width: getWidth() }}
-          id="input"
+          transition={{ type:"spring", damping: 20 }}
+          id={placeholder}
           className="text-center appearance-none focus:outline-none"
           onKeyDown={onKeyDown}
           onFocus={() => updateState(State.FOCUSED)}
@@ -102,7 +103,7 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
                 key={i}
                 className={`px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 ${
                   activeOption === i ? "bg-research-100" : ""
-                }`}
+                  }`}
                 onMouseDown={() => {
                   updateValue(s)
                 }}

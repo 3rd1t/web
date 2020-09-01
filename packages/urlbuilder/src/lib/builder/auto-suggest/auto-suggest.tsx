@@ -74,7 +74,7 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
   // Update suggestions on value change
   useEffect(() => {
     const filtered = options.filter((option) => option.toLowerCase().includes(value.toLowerCase()))
-    setFilteredOptions(filtered.length <= 1 ? options : filtered)
+    setFilteredOptions(filtered.length < 1 ? options : filtered)
   }, [value])
 
   return (

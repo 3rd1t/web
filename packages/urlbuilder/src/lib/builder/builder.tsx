@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { AutoSuggest, State } from "./auto-suggest/auto-suggest"
-
+import { motion } from "framer-motion"
 /* eslint-disable-next-line */
 export interface BuilderProps {}
 
@@ -109,15 +109,19 @@ export const Builder = (props: BuilderProps) => {
               }
             </div>
           ))}
-          <span className="p-2 font-thin bg-gray-100 border-l border-gray-300">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className={`w-6 h-6 block ${isValid() ? "text-green-500" : "text-gray-700"}`}>
-              {isValid() ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              ) : (
-   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              )}
+          <motion.span
+            animate={{ opacity: isValid() ? 1 : 0 }}
+            className="p-2 font-thin bg-gray-100 border-l border-gray-300"
+          >
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className={`w-6 h-6 block ${isValid() ? "text-green-500" : "opacity-0"}`}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-          </span>
+          </motion.span>
         </div>
       </form>
     </div>

@@ -12,26 +12,25 @@ export interface AutoSuggestProps {
   options: string[]
   placeholder: string
   value: string
-  updateValue: any
+  updateValue: React.Dispatch<React.SetStateAction<string>>
   state: State
-  updateState: any
+  updateState: React.Dispatch<React.SetStateAction<State>>
 }
-
 export const AutoSuggest = ({ updateState, state, updateValue, value, options, placeholder }: AutoSuggestProps) => {
   const ref = useRef(null)
   const [filteredOptions, setFilteredOptions] = useState(options)
   const [activeOption, setFocusOption] = useState(-1)
 
-  const onBlur = () => {
-    console.log({ value })
-    const isValid = options.map((option) => option.toLowerCase()).includes(value.toLowerCase())
-    console.log({ isValid })
-    updateState(isValid ? State.DONE : State.IDLE)
-  }
-
+  /**
+   * Runs whenever the state reaches `VERIFY`. Usually after the input loses focus.
+   *
+   * All state changes from `FOCUSED` must go through this hook and it will change
+   * the state to either `IDLE` or `DONE` depending on the current value.
+   */
   useEffect(() => {
     if (state === State.VERIFY) {
-      onBlur()
+      const isValid = options.map((option) => option.toLowerCase()).includes(value.toLowerCase())
+      updateState(isValid ? State.DONE : State.IDLE)
     }
   }, [state])
 

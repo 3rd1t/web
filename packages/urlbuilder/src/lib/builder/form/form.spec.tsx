@@ -1,11 +1,11 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import Urlbuilder from "./urlbuilder"
+import Form from "./form"
 
-describe("Urlbuilder", () => {
+describe("Form", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Urlbuilder />)
+    const { baseElement } = render(<Form setURL={() => {}} />)
     expect(baseElement).toBeTruthy()
   })
 })

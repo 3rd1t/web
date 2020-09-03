@@ -484,6 +484,30 @@
           }
         }
       }
+    },
+    "forms": {
+      "root": "packages/forms",
+      "sourceRoot": "packages/forms/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/forms/tsconfig.lib.json", "packages/forms/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/forms/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/forms/jest.config.js",
+            "tsConfig": "packages/forms/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

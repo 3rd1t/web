@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Form, Format } from "./form/form"
+import { Select } from "@perfolio/forms"
 /* eslint-disable-next-line */
 export interface BuilderProps {}
 
@@ -8,7 +9,8 @@ export const Builder = (props: BuilderProps) => {
 
   return (
     <div>
-      <Form setURL={setURL} format={Format.XLXS} />
+      {/* <Select /> */}
+      <Form setURL={setURL} baseURL="https://api.perfol.io/v1/" format={Format.XLXS} />
       <div>-{url}-</div>
     </div>
   )

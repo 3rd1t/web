@@ -79,6 +79,9 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
   return (
     <div ref={ref}>
       <div className="relative flex justify-center">
+        <label htmlFor={placeholder} className="sr-only">
+          {placeholder}
+        </label>
         <motion.input
           autoComplete="off"
           layout

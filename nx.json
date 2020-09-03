@@ -71,6 +71,9 @@
     },
     "urlbuilder": {
       "tags": []
+    },
+    "forms": {
+      "tags": []
     }
   },
   "workspaceLayout": {

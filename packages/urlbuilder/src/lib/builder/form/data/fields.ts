@@ -2,7 +2,7 @@ export const statelessFields = [
   {
     name: "factor",
 
-    options: ["3", "4", "5", "6"],
+    options: ["3factor", "4factor", "5factor", "6factor"],
   },
   {
     name: "region",

@@ -12,11 +12,12 @@ export enum Format {
 }
 
 export interface FormProps {
+  baseURL: string
   setURL: React.Dispatch<React.SetStateAction<string>>
   format?: Format
 }
 
-export const Form = ({ setURL, format }: FormProps) => {
+export const Form = ({ setURL, baseURL, format }: FormProps) => {
   const addState = (
     statelessFields: {
       name: string
@@ -50,8 +51,6 @@ export const Form = ({ setURL, format }: FormProps) => {
   const fields = addState(statelessFields)
   const [isValid, setIsValid] = useState(false)
 
-  const baseURL = "https://api.perfol.io/v1/factor/"
-
   const getURL = () => {
     return join(baseURL, ...fields.map((f) => f.value.state)) + (format ? "&format=" + format : "")
   }
@@ -67,9 +66,6 @@ export const Form = ({ setURL, format }: FormProps) => {
 
   return (
     <div>
-      <div>
-        <h2></h2>
-      </div>
       <form className="flex items-center justify-center mt-20 appearance-none">
         <div className="flex items-center mx-20 text-gray-700 border border-gray-300 rounded shadow">
           <span className="p-2 font-thin bg-gray-100 border-r border-gray-300">{baseURL}</span>

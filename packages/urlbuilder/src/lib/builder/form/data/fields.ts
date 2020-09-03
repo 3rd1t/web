@@ -1,12 +1,10 @@
 export const statelessFields = [
   {
     name: "factor",
-
     options: ["3factor", "4factor", "5factor", "6factor"],
   },
   {
     name: "region",
-
     options: [
       "USA",
       "Developed",
@@ -20,7 +18,6 @@ export const statelessFields = [
   },
   {
     name: "currency",
-
     options: [
       "EUR",
       "JPY",
@@ -44,7 +41,6 @@ export const statelessFields = [
   },
   {
     name: "interval",
-
     options: ["daily", "monthly", "annual"],
   },
 ]

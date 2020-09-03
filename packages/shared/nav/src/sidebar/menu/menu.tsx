@@ -1,26 +1,9 @@
 import React from "react"
-import { Logo } from "@perfolio/shared/ui"
 import { Title } from "./title/title"
 import { Item } from "./item/item"
-import Dropdown from "./dropdown/dropdown"
-import { motion } from "framer-motion"
-import Link from "next/link"
+import { FactorItem } from "./factor-item/factor-item"
 /* eslint-disable-next-line */
 export interface MenuProps {}
-
-const StackedItem = ({ label, href, factor, year }) => {
-  return (
-    <Link href={href}>
-      <a className="flex items-start h-16 hover:text-gray-900 ">
-        <span className="text-gray-700">{factor}</span>
-        <div className="flex flex-col items-end w-full">
-          <span className="text-sm text-gray-700 hover:text-gray-900">{label}</span>
-          <span className="flex items-center justify-center text-xs font-thin text-gray-700">{year}</span>
-        </div>
-      </a>
-    </Link>
-  )
-}
 
 export const Menu = (props: MenuProps) => {
   return (
@@ -82,16 +65,16 @@ export const Menu = (props: MenuProps) => {
           <Title label="Factor models" />
         </li>
         <li>
-          <StackedItem factor="Three" label="Fama & French" year="1993" href="/notImplemented" />
+          <FactorItem factor="Three" author="Fama & French" year="1993" href="/notImplemented" />
         </li>
         <li>
-          <StackedItem factor="Four" label="Carhart" year="1997" href="/notImplemented" />
+          <FactorItem factor="Four" author="Carhart" year="1997" href="/notImplemented" />
         </li>
         <li>
-          <StackedItem factor="Five" label="Fama & French" year="2015" href="/notImplemented" />
+          <FactorItem factor="Five" author="Fama & French" year="2015" href="/notImplemented" />
         </li>
         <li>
-          <StackedItem factor="Six" label="Fama & French" year="2018" href="/notImplemented" />
+          <FactorItem factor="Six" author="Fama & French" year="2018" href="/notImplemented" />
         </li>
       </ul>
       <div>

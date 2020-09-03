@@ -99,7 +99,7 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
           placeholder={placeholder}
         />
         {state === State.FOCUSED ? (
-          <ul className="absolute mt-10 bg-white border border-gray-300 rounded-sm shadow-lg">
+          <ul data-testid="dropdown" className="absolute mt-10 bg-white border border-gray-300 rounded-sm shadow-lg">
             {filteredOptions.map((s, i) => (
               <li
                 key={i}

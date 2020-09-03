@@ -1,18 +1,18 @@
 import React from "react"
-
+import { useRouter } from "next/router"
+import Breadcrumbs from "../../lib/bread-crumbs/bread-crumbs"
 /* eslint-disable-next-line */
-export interface HeaderProps {}
+export interface HeaderProps {
+  breadcrumbs?: string[]
+}
 
-export const Header = (props: HeaderProps) => {
+export const Header = ({ breadcrumbs }: HeaderProps) => {
+  const router = useRouter()
   return (
     <div className="w-full h-20 bg-white border-b border-gray-300">
       <ul className="flex items-center justify-between h-full px-4">
         <li key="breadcrumbs" className="text-gray-700 ">
-          <span>Perfolio</span>
-          <span className="font-thin"> / </span>
-          <span>Research</span>
-          <span className="font-thin"> / </span>
-          <span className="font-medium text-gray-900">CSV</span>
+          <Breadcrumbs path={breadcrumbs} />
         </li>
         <li key="end">
           <ul className="flex items-center justify-between">

@@ -79,7 +79,7 @@ export const Form = ({ setURL, baseURL, format }: FormProps) => {
                   options={f.options}
                   value={f.value.state}
                   updateValue={f.value.setState}
-                  state={f.state.state as State}
+                  state={f.state.state}
                   updateState={f.state.setState}
                 />
               }

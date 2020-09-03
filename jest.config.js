@@ -12,4 +12,9 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
   resolver: "@nrwl/jest/plugins/resolver",
   coverageReporters: ["text", "lcov"],
+  coverageThreshold: {
+    global: {
+      lines: 70,
+    },
+  },
 }

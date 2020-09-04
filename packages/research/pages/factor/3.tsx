@@ -9,7 +9,7 @@ export const Three = (props: ThreeProps) => {
     <div>
       <MultiColumn breadcrumbs={["Research", "Factors", "Three"]}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
-          <div className="flex items-center space-x-4 text-sm font-medium text-gray-600">
+          <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{metadata.authors}</span>
             <span>{metadata.publishYear}</span>
           </div>

@@ -10,7 +10,7 @@ export const Builder = (props: BuilderProps) => {
   return (
     <div>
       {/* <Select /> */}
-      <Form setURL={setURL} baseURL="https://api.perfol.io/v1/" format={Format.XLXS} />
+      <Form setURL={setURL} baseURL="https://api.perfol.io/d/beta/" format={Format.XLXS} />
       <div>-{url}-</div>
     </div>
   )

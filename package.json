@@ -60,7 +60,7 @@
     "prettier": "2.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-syntax-highlighter": "^13.5.1",
+    "react-syntax-highlighter": "^13.5.3",
     "tailwindcss": "^1.7.5",
     "tailwindcss-debug-screens": "^1.1.0",
     "ts-node": "~9.0.0",

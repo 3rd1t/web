@@ -84,7 +84,7 @@
     "@babel/preset-react": "7.9.4",
     "@babel/preset-typescript": "7.9.0",
     "@mdx-js/loader": "^1.6.16",
-    "@next/mdx": "^9.5.2",
+    "@next/mdx": "^9.5.3",
     "@nrwl/jest": "10.1.0",
     "@nrwl/react": "10.1.0",
     "@nrwl/storybook": "10.1.0",

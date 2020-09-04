@@ -19,7 +19,8 @@
       "@perfolio/charts": ["packages/charts/src/index.ts"],
       "@perfolio/pages": ["packages/pages/src/index.ts"],
       "@perfolio/shared/ui": ["packages/shared/ui/src/index.ts"],
-      "@perfolio/shared/types": ["packages/shared/types/src/index.ts"]
+      "@perfolio/shared/types": ["packages/shared/types/src/index.ts"],
+      "@perfolio/cms": ["packages/cms/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

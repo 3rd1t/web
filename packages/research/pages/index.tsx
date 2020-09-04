@@ -5,6 +5,7 @@ import fs from "fs"
 import Link from "next/link"
 import matter from "gray-matter"
 import Wrapper from "../components/wrapper/wrapper"
+
 interface IndexProps {
   codeExamples: {
     language: string
@@ -149,7 +150,7 @@ const Index = (props: IndexProps) => {
 
 export const getStaticProps = async () => {
   // Sources
-  const sourcePath = `${process.cwd()}/packages/research/public/sources/`
+  const sourcePath = `${process.cwd()}/packages/content/src/lib/sources/`
   const sourceFiles = fs.readdirSync(sourcePath, "utf-8")
   const sources = sourceFiles.map((filename) => {
     const meta = matter(fs.readFileSync(sourcePath + filename).toString())
@@ -170,14 +171,14 @@ export const getStaticProps = async () => {
         {
           language: "python",
           snippet: fs.readFileSync(
-            `${process.cwd()}/packages/research/public/code-snippets/import-from-api.python.txt`,
+            `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.python.txt`,
             "utf-8",
           ),
         },
         {
           language: "r",
           snippet: fs.readFileSync(
-            `${process.cwd()}/packages/research/public/code-snippets/import-from-api.r.txt`,
+            `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.r.txt`,
             "utf-8",
           ),
         },

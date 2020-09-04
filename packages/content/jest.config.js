@@ -1,5 +1,5 @@
 module.exports = {
-  name: "cms",
+  name: "content",
   preset: "../../jest.config.js",
   globals: {
     "ts-jest": {
@@ -10,5 +10,5 @@ module.exports = {
     "^.+\\.[tj]sx?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
-  coverageDirectory: "../../coverage/packages/cms",
+  coverageDirectory: "../../coverage/packages/content",
 }

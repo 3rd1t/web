@@ -461,9 +461,9 @@
         }
       }
     },
-    "cms": {
-      "root": "packages/cms",
-      "sourceRoot": "packages/cms/src",
+    "content": {
+      "root": "packages/content",
+      "sourceRoot": "packages/content/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -471,15 +471,15 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/cms/tsconfig.lib.json", "packages/cms/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/cms/**/*"]
+            "tsConfig": ["packages/content/tsconfig.lib.json", "packages/content/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/content/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "packages/cms/jest.config.js",
-            "tsConfig": "packages/cms/tsconfig.spec.json",
+            "jestConfig": "packages/content/jest.config.js",
+            "tsConfig": "packages/content/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }

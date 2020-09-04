@@ -1,7 +1,7 @@
 import React from "react"
 import { MultiColumn } from "@perfolio/shared/nav"
 import { Builder } from "@perfolio/urlbuilder"
-import Content, { metadata, graph } from "@perfolio/cms/research/factor/three.mdx"
+import Content, { metadata, graph } from "@perfolio/content/research/factor/three.mdx"
 /* eslint-disable-next-line */
 export interface ThreeProps {}
 
@@ -16,15 +16,12 @@ export const Three = (props: ThreeProps) => {
               <span>{metadata.publishYear}</span>
             </div>
             <div className="mt-2">
-
-            <Content />
+              <Content />
             </div>
           </div>
           <div className="w-2/5">{graph}</div>
         </div>
-        <div>
-          {/* <Builder></Builder> */}
-        </div>
+        <div>{/* <Builder></Builder> */}</div>
       </MultiColumn>
     </div>
   )

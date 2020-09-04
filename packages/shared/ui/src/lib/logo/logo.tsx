@@ -4,6 +4,7 @@ import React from "react"
 export interface LogoProps {
   domain?: string
   color?: string
+  imageOnly?: boolean
 }
 
 export const Logo = (props: LogoProps) => {
@@ -26,7 +27,7 @@ export const Logo = (props: LogoProps) => {
           strokeWidth="25"
         />
       </svg>
-      {logo}
+      {props.imageOnly ? null : logo}
     </div>
   )
 }

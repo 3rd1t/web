@@ -68,6 +68,15 @@
     },
     "cms": {
       "tags": []
+    },
+    "shared-nav": {
+      "tags": []
+    },
+    "urlbuilder": {
+      "tags": []
+    },
+    "forms": {
+      "tags": []
     }
   },
   "workspaceLayout": {

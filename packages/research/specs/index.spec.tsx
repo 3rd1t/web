@@ -32,14 +32,14 @@ describe(" Index", () => {
 describe("getStaticProps()", () => {
   it("loads the codeExamples correctly", async () => {
     const { props } = await getStaticProps()
-    const actualCount = fs.readdirSync(path.join(process.cwd(), "packages/research/public/sources")).length
+    const actualCount = fs.readdirSync(path.join(process.cwd(), "packages/content/src/lib/sources")).length
 
     expect(props.codeExamples.length).toBe(actualCount)
   })
 
   it("loads the codeExamples correctly", async () => {
     const { props } = await getStaticProps()
-    const actualCount = fs.readdirSync(path.join(process.cwd(), "packages/research/public/code-snippets")).length
+    const actualCount = fs.readdirSync(path.join(process.cwd(), "packages/content/src/lib/code-snippets")).length
     expect(props.sources.length).toBe(actualCount)
   })
 })

@@ -58,7 +58,12 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [require("tailwindcss-debug-screens"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/custom-forms"),
+    require("tailwindcss-debug-screens"),
+    require("@tailwindcss/typography"),
+    require("@tailwindui/react"),
+  ],
   future: {
     removeDeprecatedGapUtilities: true,
   },

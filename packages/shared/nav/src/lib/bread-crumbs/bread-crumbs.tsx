@@ -27,7 +27,7 @@ export const Breadcrumbs = ({ path }: BreadcrumbsProps) => {
   return path ? (
     <div className="flex items-center space-x-2">
       {toBreadcrumbs(path).map((s, i) => {
-        return <li key={i}>{s}</li>
+        return <span key={i}>{s}</span>
       })}
     </div>
   ) : null

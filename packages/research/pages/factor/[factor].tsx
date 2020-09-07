@@ -8,13 +8,13 @@ import path from "path"
 
 export interface FactorProps {
   source: string
-  meta: { authors: string; publishYear: number }
+  meta: { authors: string; publishYear: number, factor: string }
 }
 
 export const Factor = ({ source, meta }: FactorProps) => {
   return (
     <div>
-      <MultiColumn breadcrumbs={["Research", "Factors", "Factor"]}>
+      <MultiColumn breadcrumbs={["Research", "Factors", meta.factor]}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
           <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{meta.authors}</span>

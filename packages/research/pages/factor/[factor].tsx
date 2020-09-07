@@ -8,7 +8,7 @@ import path from "path"
 
 export interface FactorProps {
   source: string
-  meta: { authors: string; publishYear: number, factor: string }
+  meta: { authors: string; publishYear: number; factor: string }
 }
 
 export const Factor = ({ source, meta }: FactorProps) => {

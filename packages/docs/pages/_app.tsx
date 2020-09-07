@@ -8,10 +8,7 @@ const app = ({ Component, pageProps }: AppProps) => {
     <div>
       <Head>
         <title>Perfolio Documentation</title>
-        <meta
-          name="description"
-          content="Documentation for perfolio"
-        ></meta>
+        <meta name="description" content="Documentation for perfolio"></meta>
         <link href="https://fonts.googleapis.com/css?family=Inter:200,300,400,500,600,700" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png"></link>
         <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png"></link>

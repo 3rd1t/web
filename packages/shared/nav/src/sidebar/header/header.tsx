@@ -1,6 +1,7 @@
 import React from "react"
 import { useRouter } from "next/router"
 import Breadcrumbs from "../../lib/bread-crumbs/bread-crumbs"
+import Link from "next/link"
 /* eslint-disable-next-line */
 export interface HeaderProps {
   breadcrumbs?: string[]
@@ -15,29 +16,11 @@ export const Header = ({ breadcrumbs }: HeaderProps) => {
           <Breadcrumbs path={breadcrumbs} />
         </li>
         <li key="end">
-          <ul className="flex items-center justify-between">
-            <li key="search">
-              <form className="flex items-center text-sm text-gray-700">
-                <button type="submit" aria-label="Search submit">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
-                <input
-                  id="search"
-                  required
-                  name="search"
-                  type="text"
-                  className="w-full px-2 py-1 mr-3 leading-tight bg-transparent border-none appearance-none focus:outline-none"
-                  placeholder="What are you looking for"
-                  aria-label="Search"
-                ></input>
-              </form>
+          <ul className="flex items-center justify-between space-x-16">
+            <li key="documentation">
+              <Link href="/docs">
+                <a className="font-medium text-gray-800 hover:text-gray-900">Documentation</a>
+              </Link>
             </li>
             <li key="userProfile">
               <div className="flex items-center space-x-4">

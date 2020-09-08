@@ -14,7 +14,7 @@ export interface FactorProps {
 export const Factor = ({ source, meta }: FactorProps) => {
   return (
     <div>
-      <MultiColumn breadcrumbs={["Research", "Factors", meta.factor]}>
+      <MultiColumn breadcrumbs={["data", "Factors", meta.factor]}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
           <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{meta.authors}</span>
@@ -29,8 +29,10 @@ export const Factor = ({ source, meta }: FactorProps) => {
 
 export default Factor
 
+const factorDirectory = `${process.cwd()}/packages/content/src/lib/research/factor/`
+
 export async function getStaticPaths() {
-  const files = fs.readdirSync(`${process.cwd()}/packages/content/src/lib/research/factor/`)
+  const files = fs.readdirSync(factorDirectory)
   return {
     paths: files.map((f) => {
       return { params: { factor: path.basename(f, ".mdx") } }
@@ -39,7 +41,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const source = fs.readFileSync(`${process.cwd()}/packages/content/src/lib/research/factor/${params.factor}.mdx`)
+  const source = fs.readFileSync(path.join(factorDirectory,  params.factor + ".mdx"))
 
   const { content, data } = matter(source)
   const mdxSource = await renderToString(content, { scope: data })

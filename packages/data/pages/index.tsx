@@ -16,7 +16,7 @@ interface IndexProps {
 
 const Index = (props: IndexProps) => {
   const feature = (title: string, points: string[], href: string) => (
-    <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-research-500">
+    <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-data-500">
       <h1 className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900">
         {title}
       </h1>
@@ -25,7 +25,7 @@ const Index = (props: IndexProps) => {
           {points.map((point, key) => {
             return (
               <li className="flex items-center space-x-3" key={key}>
-                <svg className="w-5 h-5 text-research-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 text-data-500" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fillRule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -39,7 +39,7 @@ const Index = (props: IndexProps) => {
         </ul>
 
         <Link href={href}>
-          <a className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-research-800">
+          <a className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-data-800">
             Get started
           </a>
         </Link>
@@ -57,7 +57,7 @@ const Index = (props: IndexProps) => {
           >
             <motion.div layout>
               <HeroSection
-                headline="Get the right factor returns from our research-friendly API"
+                headline="Get the right factor returns from our data-friendly API"
                 paragraph={
                   <p className="flex flex-col xl:flex-row">
                     We offer Kenneth French’s factor returns data via convenient REST API. No csv imports and data
@@ -67,12 +67,12 @@ const Index = (props: IndexProps) => {
                 primaryButton={{
                   label: "Start now",
                   href: "#features",
-                  className: "text-white bg-research-600 hover:bg-research-800",
+                  className: "text-white bg-data-600 hover:bg-data-800",
                 }}
                 secondaryButton={{
                   label: "Contact us",
                   href: "mailto:info@perfol.io",
-                  className: "text-research-900 hover:text-research-700",
+                  className: "text-data-900 hover:text-data-700",
                 }}
               ></HeroSection>
             </motion.div>
@@ -106,7 +106,7 @@ const Index = (props: IndexProps) => {
       <Section id="sources" bg="bg-white">
         <SectionTitle
           title="Sources"
-          subtitle="We apply the latest finance research findings. Please give the authors and us some credit and cite correctly."
+          subtitle="We apply the latest finance data findings. Please give the authors and us some credit and cite correctly."
         ></SectionTitle>
         <div className="px-4 mt-20 divide-y divide-gray-400">
           {props.sources.map((s, index) => {
@@ -131,7 +131,7 @@ const Index = (props: IndexProps) => {
               <span>Ready to get started? </span>
               <br className="xl:hidden"></br>
               <span>Start with a</span>
-              <span className="text-research-500"> free plan</span>
+              <span className="text-data-500"> free plan</span>
             </h2>
             <p className="mt-2 text-gray-700">
               Explore our charts or create an account to unlock the full potential of our API.

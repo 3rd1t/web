@@ -26,11 +26,11 @@ export const Header = ({ breadcrumbs }: HeaderProps) => {
               <div className="flex items-center space-x-4">
                 <div className="flex flex-col items-end">
                   <span>Vin Venture</span>
-                  <span className="text-xs font-semibold text-research-600">Premium</span>
+                  <span className="text-xs font-semibold text-data-600">Premium</span>
                 </div>
                 <img
                   alt="Profile picture"
-                  className="object-cover w-12 h-12 border rounded-full border-research-500"
+                  className="object-cover w-12 h-12 border rounded-full border-data-500"
                   src="https://images.unsplash.com/photo-1504703395950-b89145a5425b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&fit=crop&w=651&q=80"
                 ></img>
               </div>

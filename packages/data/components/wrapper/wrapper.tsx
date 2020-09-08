@@ -8,7 +8,7 @@ export interface WrapperProps {
 export const Wrapper = ({ children }: WrapperProps) => {
   const navbar = (
     <Navbar
-      logo={<Logo color="text-research-500" domain="research"></Logo>}
+      logo={<Logo color="text-data-500" domain="data"></Logo>}
       links={[
         {
           label: "Product",
@@ -26,7 +26,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
     ></Navbar>
   )
 
-  const footer = <Footer bg="bg-research-700" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+  const footer = <Footer bg="bg-data-700" primaryText="text-white" secondaryText="text-gray-100"></Footer>
 
   return (
     <NavWrapper navbar={navbar} footer={footer}>

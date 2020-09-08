@@ -7,10 +7,10 @@ const app = ({ Component, pageProps }: AppProps) => {
   return (
     <div>
       <Head>
-        <title>Perfolio Research</title>
+        <title>Perfolio data</title>
         <meta
           name="description"
-          content="A research data platform offering Kenneth French's factor returns via a convenient REST API, conversion in several currencies included"
+          content="A data data platform offering Kenneth French's factor returns via a convenient REST API, conversion in several currencies included"
         ></meta>
         <link href="https://fonts.googleapis.com/css?family=Inter:200,300,400,500,600,700" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-touch-icon.png"></link>

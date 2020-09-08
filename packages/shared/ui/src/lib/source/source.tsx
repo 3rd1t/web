@@ -22,7 +22,7 @@ export const Source = ({ author, date, title, abstract, citation, link }: Source
     setCopied(true)
   }
 
-  const buttonStyle = "text-xs text-gray-900 focus:outline-none hover:text-research-600"
+  const buttonStyle = "text-xs text-gray-900 focus:outline-none hover:text-data-600"
 
   return (
     <div>
@@ -66,7 +66,7 @@ export const Source = ({ author, date, title, abstract, citation, link }: Source
                   <motion.svg
                     initial={{ opacity: 0, scale: 0.5, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
-                    className="h-8 text-research-600"
+                    className="h-8 text-data-600"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

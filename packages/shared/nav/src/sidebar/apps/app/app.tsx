@@ -19,8 +19,8 @@ export const App = ({ children, active, label }: AppProps) => {
           layout
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
-          className={`flex flex-col items-center justify-center w-24 h-24 duration-200 bg-gradient-to-l from-transparent hover:to-research-100 hover:text-gray-900 ${
-            active ? "text-research-600 border-l-4 pr-1 border-research-500" : ""
+          className={`flex flex-col items-center justify-center w-24 h-24 duration-200 bg-gradient-to-l from-transparent hover:to-data-100 hover:text-gray-900 ${
+            active ? "text-data-600 border-l-4 pr-1 border-data-500" : ""
           }`}
         >
           <motion.div layout>{children}</motion.div>

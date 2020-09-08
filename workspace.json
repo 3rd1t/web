@@ -1,73 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "research": {
-      "root": "packages/research",
-      "sourceRoot": "packages/research",
-      "projectType": "application",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/next:build",
-          "options": {
-            "root": "packages/research",
-            "outputPath": "dist/packages/research"
-          },
-          "configurations": {
-            "production": {}
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/next:server",
-          "options": {
-            "buildTarget": "research:build",
-            "dev": true
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "research:build:production",
-              "dev": false
-            }
-          }
-        },
-        "export": {
-          "builder": "@nrwl/next:export",
-          "options": {
-            "buildTarget": "research:build:production"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/research/tsconfig.json", "packages/research/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/research/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "packages/research/jest.config.js",
-            "tsConfig": "packages/research/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "dist/packages/research/exported",
-            "siteId": "abfda65d-dcb7-4d66-90d2-352b9ea50dc1"
-          }
-        },
-        "stage": {
-          "builder": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "dist/packages/research/exported",
-            "siteId": "8ef993a3-5ad8-482e-ae8e-28bb0d115130"
-          }
-        }
-      }
-    },
     "core": {
       "root": "packages/core",
       "sourceRoot": "packages/core",
@@ -529,6 +462,73 @@
             "jestConfig": "packages/forms/jest.config.js",
             "tsConfig": "packages/forms/tsconfig.spec.json",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "data": {
+      "root": "packages/data",
+      "sourceRoot": "packages/data",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "packages/data",
+            "outputPath": "dist/packages/data"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "data:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "data:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "data:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/data/tsconfig.json", "packages/data/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/data/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/data/jest.config.js",
+            "tsConfig": "packages/data/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/data/exported",
+            "siteId": "abfda65d-dcb7-4d66-90d2-352b9ea50dc1"
+          }
+        },
+        "stage": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/packages/data/exported",
+            "siteId": "8ef993a3-5ad8-482e-ae8e-28bb0d115130"
           }
         }
       }

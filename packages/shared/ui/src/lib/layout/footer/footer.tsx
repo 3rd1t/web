@@ -31,7 +31,7 @@ export const Footer = ({ bg, primaryText, secondaryText }: FooterProps) => {
               </span>
             </div>
 
-            {footerLink("data", "https://data.perfol.io")}
+            {footerLink("Data", "https://data.perfol.io")}
           </div>
           <div className="p-2 md:space-y-2">
             <span className={`text-xs font-semibold ${primaryText} uppercase`}>Resources</span>

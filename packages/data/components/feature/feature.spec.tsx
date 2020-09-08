@@ -5,7 +5,15 @@ import Feature from "./feature"
 
 describe("Feature", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Feature title="TITLE" sellingPoints={["1", "2", "3"]} href="/href" />)
+    const { baseElement } = render(
+      <Feature
+        title="TITLE"
+        subtitle="SUBTITLE"
+        icon={<span>Hello</span>}
+        sellingPoints={["1", "2", "3"]}
+        href="/href"
+      />,
+    )
     expect(baseElement).toBeTruthy()
   })
 })

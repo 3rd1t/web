@@ -58,13 +58,12 @@ const Index = (props: IndexProps) => {
 
         <Builders />
         <div className="w-2/3 mx-auto mt-20">
-          
-        <CTA
-          headline="Curious? Try them out here"
-          subline="Our builders are easy and intuitive to use"
-          button={{ href: "/signup", label: "Sign up" }}
+          <CTA
+            headline="Curious? Try them out here"
+            subline="Our builders are easy and intuitive to use"
+            button={{ href: "/signup", label: "Sign up" }}
           />
-          </div>
+        </div>
       </Section>
       <Section id="sources" bg="bg-gray-100">
         <SectionTitle

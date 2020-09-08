@@ -1,3 +1,4 @@
+export * from "./lib/cta/cta"
 export * from "./lib/docs/sidebar/menu/menu"
 export * from "./lib/docs/sidebar/link/link"
 export * from "./lib/docs/sidebar/category/category"

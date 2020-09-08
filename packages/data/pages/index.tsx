@@ -1,11 +1,11 @@
 import React from "react"
-import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps } from "@perfolio/shared/ui"
+import { HeroSection, CodeExamples, CTA, Section, Source, SectionTitle, SourceProps } from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
 import matter from "gray-matter"
 import Wrapper from "../components/wrapper/wrapper"
-
+import { Builders } from "../components/builders/builders"
 interface IndexProps {
   codeExamples: {
     language: string
@@ -15,38 +15,6 @@ interface IndexProps {
 }
 
 const Index = (props: IndexProps) => {
-  const feature = (title: string, points: string[], href: string) => (
-    <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-data-500">
-      <h1 className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900">
-        {title}
-      </h1>
-      <div className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start">
-        <ul className="mt-6 space-y-3 text-gray-800">
-          {points.map((point, key) => {
-            return (
-              <li className="flex items-center space-x-3" key={key}>
-                <svg className="w-5 h-5 text-data-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <span>{point}</span>
-              </li>
-            )
-          })}
-        </ul>
-
-        <Link href={href}>
-          <a className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-data-800">
-            Get started
-          </a>
-        </Link>
-      </div>
-    </motion.div>
-  )
-
   return (
     <Wrapper>
       <Section bg="bg-gray-100 " className="min-h-screen" id="index">
@@ -86,16 +54,17 @@ const Index = (props: IndexProps) => {
         <SectionTitle
           title="Kenneth French’s factor returns the way you want"
           subtitle="Conversion to your home currency included."
-        ></SectionTitle>
-        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
-          {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"], "/api")}
-          {feature("CSV", ["Use directly in Excel", "Straightforward information schema", "Easy to handle"], "/csv")}
-          {feature(
-            "Charts",
-            ["Analyse directly in your browser", "Who doesn't like charts", "Visual reprerentation"],
-            "/charts",
-          )}
-        </div>
+        />
+
+        <Builders />
+        <div className="w-2/3 mx-auto mt-20">
+          
+        <CTA
+          headline="Curious? Try them out here"
+          subline="Our builders are easy and intuitive to use"
+          button={{ href: "/signup", label: "Sign up" }}
+          />
+          </div>
       </Section>
       <Section id="sources" bg="bg-gray-100">
         <SectionTitle
@@ -119,24 +88,11 @@ const Index = (props: IndexProps) => {
         </div>
       </Section>
       <Section className="bg-white">
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-          <div>
-            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-              <span>Ready to get started? </span>
-              <br className="xl:hidden"></br>
-              <span>Start with a</span>
-              <span className="text-data-500"> free plan</span>
-            </h2>
-            <p className="mt-2 text-gray-700">
-              Explore our charts or create an account to unlock the full potential of our API.
-            </p>
-          </div>
-          <Link href="/signup">
-            <a className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
-              Sign up
-            </a>
-          </Link>
-        </div>
+        <CTA
+          headline="Ready to get started? Sign up for a free plan."
+          subline="Explore our charts or create an account to unlock the full potential of our API."
+          button={{ href: "/signup", label: "Sign up" }}
+        />
       </Section>
     </Wrapper>
   )

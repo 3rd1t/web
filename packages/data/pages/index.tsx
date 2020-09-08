@@ -97,13 +97,7 @@ const Index = (props: IndexProps) => {
           )}
         </div>
       </Section>
-      <Section id="charts" bg="bg-gray-100">
-        <SectionTitle title="Charts"></SectionTitle>
-        <div className="flex justify-center mt-16">
-          <img src="https://via.placeholder.com/700x300" alt="Placeholder for a chart"></img>
-        </div>
-      </Section>
-      <Section id="sources" bg="bg-white">
+      <Section id="sources" bg="bg-gray-100">
         <SectionTitle
           title="Sources"
           subtitle="We apply the latest finance data findings. Please give the authors and us some credit and cite correctly."
@@ -124,7 +118,7 @@ const Index = (props: IndexProps) => {
           })}
         </div>
       </Section>
-      <Section className="bg-gray-100">
+      <Section className="bg-white">
         <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
           <div>
             <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">

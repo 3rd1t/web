@@ -81,7 +81,7 @@ export const Menu = (props: MenuProps) => {
         <div className="pt-3 border-t border-gray-300">
           <Item
             label="Request feature"
-            href="/notImplemented"
+            href="mailto:request@perfol.io"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-data-400">
                 <path

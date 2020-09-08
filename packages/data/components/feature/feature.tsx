@@ -18,7 +18,7 @@ export const Feature = ({ title, subtitle, sellingPoints, icon, href }: FeatureP
         <p className="text-gray-700">{subtitle}</p>
       </div>
       <Link href={href}>
-        <a className="w-16 h-16 mx-auto duration-100 transform text-data-500 hover:scale-105 hover:text-data-700 ">
+        <a className="w-16 h-16 mx-auto duration-100 transform text-data-800 hover:scale-105 hover:text-data-600 ">
           {icon}
         </a>
       </Link>

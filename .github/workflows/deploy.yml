@@ -7,7 +7,7 @@ jobs:
   deploy:
     strategy:
       matrix:
-        package: ["core", "research", "docs"]
+        package: ["core", "data", "docs"]
     name: deploy-${{matrix.package}}
     runs-on: ubuntu-latest
     steps:

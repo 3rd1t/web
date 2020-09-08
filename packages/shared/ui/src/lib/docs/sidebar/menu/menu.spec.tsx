@@ -18,15 +18,15 @@ describe(" Menu", () => {
             ],
           },
           {
-            name: "research",
+            name: "data",
             documents: [
               {
-                name: "Research",
-                href: "/research/index",
+                name: "data",
+                href: "/data/index",
               },
               {
                 name: "Secondpost",
-                href: "/research/secondpost",
+                href: "/data/secondpost",
               },
             ],
           },

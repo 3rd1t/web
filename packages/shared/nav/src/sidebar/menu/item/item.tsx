@@ -20,7 +20,7 @@ export const Item = ({ label, href, icon, tag }: ItemProps) => {
         <div className="flex items-center justify-between">
           {label ? <span className="text-gray-700 hover:text-gray-900">{label}</span> : null}
           {tag ? (
-            <span className="flex items-center justify-center h-6 px-2 text-xs font-semibold uppercase bg-gray-200 rounded-full text-research-600">
+            <span className="flex items-center justify-center h-6 px-2 text-xs font-semibold uppercase bg-gray-200 rounded-full text-data-600">
               {tag}
             </span>
           ) : null}

@@ -21,7 +21,7 @@ module.exports = {
           800: "#282828",
           900: "#171717",
         },
-        research: {
+        data: {
           100: "#E6EEFF",
           200: "#BFD4FF",
           300: "#99B9FF",

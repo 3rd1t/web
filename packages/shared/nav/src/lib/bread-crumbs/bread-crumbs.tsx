@@ -6,7 +6,7 @@ export interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({ path }: BreadcrumbsProps) => {
-  const targetStyle = "font-medium text-gray-900 text-research-500"
+  const targetStyle = "font-medium text-gray-900 text-data-500"
   const pathStyle = "text-gray-700"
 
   const divider = <span className="font-thin text-gray-600">/</span>
@@ -37,7 +37,7 @@ export default Breadcrumbs
 {
   /* <span>Perfolio</span>
 <span className="font-thin"> / </span>
-<span>Research</span>
+<span>data</span>
 <span className="font-thin"> / </span>
 <span className="font-medium text-gray-900">CSV</span> */
 }

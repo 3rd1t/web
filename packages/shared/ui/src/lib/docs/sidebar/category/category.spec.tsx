@@ -2,7 +2,7 @@ import React from "react"
 import { render } from "@testing-library/react"
 jest.mock("next/router", () => ({
   useRouter: jest.fn().mockImplementation(() => ({
-    pathname: "/research/secondpost",
+    pathname: "/data/secondpost",
   })),
 }))
 
@@ -13,11 +13,11 @@ describe(" Category", () => {
     const { baseElement } = render(
       <Category
         collection={{
-          name: "research",
+          name: "data",
           documents: [
             {
-              name: "Research",
-              href: "/research/index",
+              name: "data",
+              href: "/data/index",
             },
           ],
         }}
@@ -30,15 +30,15 @@ describe(" Category", () => {
       const { baseElement } = render(
         <Category
           collection={{
-            name: "research",
+            name: "data",
             documents: [
               {
-                name: "Research",
-                href: "/research/index",
+                name: "data",
+                href: "/data/index",
               },
               {
                 name: "Secondpost",
-                href: "/research/secondpost",
+                href: "/data/secondpost",
               },
             ],
           }}

@@ -44,7 +44,6 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
    * @param e
    */
   const onKeyDown = (e: React.KeyboardEvent) => {
-    // Enter key to select the active option
     if (filteredOptions.length < 1) {
       return
     }
@@ -104,7 +103,7 @@ export const AutoSuggest = ({ updateState, state, updateValue, value, options, p
               <li
                 key={i}
                 className={`px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900 ${
-                  activeOption === i ? "bg-research-100" : ""
+                  activeOption === i ? "bg-data-100" : ""
                 }`}
                 onMouseDown={() => {
                   updateValue(s)

@@ -83,7 +83,7 @@ export const Menu = (props: MenuProps) => {
             label="Request feature"
             href="/notImplemented"
             icon={
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-research-400">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-data-400">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"

@@ -11,19 +11,19 @@ const data: Collection[] = [
     ],
   },
   {
-    name: "research",
+    name: "data",
     documents: [
       {
-        name: "Research",
-        href: "/research/index",
+        name: "data",
+        href: "/data/index",
       },
       {
         name: "Secondpost",
-        href: "/research/secondpost",
+        href: "/data/secondpost",
       },
       {
         name: "v2",
-        href: "/research/v2",
+        href: "/data/v2",
       },
     ],
   },

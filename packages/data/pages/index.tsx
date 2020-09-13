@@ -1,5 +1,5 @@
 import React from "react"
-import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps } from "@perfolio/shared/ui"
+import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps, Wordcloud } from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
@@ -15,36 +15,33 @@ interface IndexProps {
 }
 
 const Index = (props: IndexProps) => {
-  const feature = (title: string, points: string[], href: string) => (
-    <motion.div className="flex flex-col justify-between -space-y-2 overflow-hidden duration-100 transform bg-white border rounded-md lg:hover:scale-105 lg:w-1/3 hover:shadow-xl hover:border-2 border-data-500">
-      <h1 className="p-4 text-4xl font-black text-center lg:text-3xl md:text-lg xl:text-5xl text-carbon-900">
-        {title}
-      </h1>
-      <div className="flex flex-col items-center justify-center p-4 bg-gray-100 lg:items-start">
-        <ul className="mt-6 space-y-3 text-gray-800">
-          {points.map((point, key) => {
-            return (
-              <li className="flex items-center space-x-3" key={key}>
-                <svg className="w-5 h-5 text-data-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <span>{point}</span>
-              </li>
-            )
-          })}
-        </ul>
+  const feature = (
+    title: string,
+    subtitle: string,
+    button: { label: string; href: string },
+    illustration: React.ReactNode,
+  ) => (
+    <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center w-full">
+        <div className="space-y-2 text-left sm:text-center md:space-y-4 xl:space-y-6 lg:text-left">
+          <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl">
+            {title}
+          </h2>
+          {<div className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0">{subtitle}</div>}
 
-        <Link href={href}>
-          <a className="w-full px-4 py-2 mt-6 text-sm font-semibold text-center text-gray-100 bg-gray-900 rounded focus:outline-none hover:bg-data-800">
-            Get started
-          </a>
-        </Link>
+          <div className="sm:flex sm:justify-center lg:justify-start">
+            <div className="rounded-md shadow">
+              <Link href={button.href}>
+                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-100 transition duration-200 ease-in-out bg-gray-900 rounded-sm text-leading-6 md:py-4 md:text-lg md:px-10 focus:outline-none">
+                  {button.label}
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </motion.div>
+      {illustration}
+    </div>
   )
 
   return (
@@ -88,12 +85,13 @@ const Index = (props: IndexProps) => {
           subtitle="Conversion to your home currency included."
         ></SectionTitle>
         <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
-          {feature("REST API", ["Any programing language", "Always up to date", "Code examples available"], "/api")}
-          {feature("CSV", ["Use directly in Excel", "Straightforward information schema", "Easy to handle"], "/csv")}
           {feature(
-            "Charts",
-            ["Analyse directly in your browser", "Who doesn't like charts", "Visual reprerentation"],
-            "/charts",
+            "Nulla egestas, est ut vulputate suscipit, turpis",
+            "Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. ",
+            { label: "Sign in", href: "/signin" },
+            <Wordcloud
+              words={["Factor Returns", "Digitalization Ratings", "Risk Free Exchange", "Currency Exchange"]}
+            />,
           )}
         </div>
       </Section>

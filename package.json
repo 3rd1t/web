@@ -36,6 +36,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/react": "10.1.0",
     "@nrwl/workspace": "10.1.0",
+    "@nx-tools/nx-docker": "^0.4.1",
     "@tailwindcss/typography": "^0.2.0",
     "@types/node": "~14.10.0",
     "@types/react-dom": "16.9.8",

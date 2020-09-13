@@ -30,6 +30,7 @@ jobs:
           NODE_ENV: production
 
       - name: deploy
-        run: yarn nx deploy ${{matrix.package}}
+        run: yarn nx docker ${{matrix.package}}
         env:
-          NETLIFY_TOKEN: ${{secrets.NETLIFY_TOKEN}}
+          DOCKERHUB_USER: §{{secrets.DOCKERHUB_USER}}
+          DOCKERHUB_PASSWORD: §{{secrets.DOCKERHUB_PASSWORD}}

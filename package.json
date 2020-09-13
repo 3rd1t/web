@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "2.34.0",
     "@zeit/next-css": "1.0.1",
     "cypress": "^4.12.1",
-    "document-register-element": "1.13.1",
+    "document-register-element": "1.14.6",
     "dotenv": "8.2.0",
     "eslint": "7.8.1",
     "eslint-config-prettier": "6.11.0",

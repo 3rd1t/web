@@ -49,7 +49,7 @@ const Index = (props: IndexProps) => {
 
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="min-h-screen" id="index">
+      <Section bg="bg-gray-100" className="min-h-screen" id="index">
         <AnimateSharedLayout>
           <motion.div
             layout

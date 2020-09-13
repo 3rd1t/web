@@ -30,7 +30,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
 
   return (
     <NavWrapper navbar={navbar} footer={footer}>
-      {children}
+      <div className="mt-16">{children}</div>
     </NavWrapper>
   )
 }

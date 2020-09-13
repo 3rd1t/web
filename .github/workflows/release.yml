@@ -1,15 +1,15 @@
-name: Deploy
+name: Release
 
 on:
   push:
     branches: [ master, main ]
 jobs:
-  deploy:
+  release:
     strategy:
       matrix:
         package: ["core", "data", "docs"]
     
-    name: deploy-${{matrix.package}}
+    name: release-${{matrix.package}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,7 +17,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14"
-      - uses: actions/cache@v2
+      - name: Load dependencies from cache
+        uses: actions/cache@v2
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
@@ -25,7 +26,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: build
+      - name: Build app
         run: yarn nx export ${{matrix.package}} --with-deps --skip-nx-cache
         env:
           NODE_ENV: production
@@ -44,11 +45,9 @@ jobs:
         with:
           version: latest
 
-      - name: deploy
+      - name: Build image and push
         uses: docker/build-push-action@v2
         with:
           context: ./dist/packages/${{matrix.package}}/exported
           push: true
           tags: perfolio/${{matrix.package}}-web
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}

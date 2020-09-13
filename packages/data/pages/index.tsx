@@ -1,5 +1,14 @@
 import React from "react"
-import { HeroSection, CodeExamples, Section, Source, SectionTitle, SourceProps, Wordcloud } from "@perfolio/shared/ui"
+import {
+  HeroSection,
+  CodeExamples,
+  Section,
+  Source,
+  SectionTitle,
+  SourceProps,
+  Wordcloud,
+  FeatureSection,
+} from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
@@ -15,38 +24,9 @@ interface IndexProps {
 }
 
 const Index = (props: IndexProps) => {
-  const feature = (
-    title: string,
-    subtitle: string,
-    button: { label: string; href: string },
-    illustration: React.ReactNode,
-  ) => (
-    <div className="flex items-center justify-center">
-      <div className="flex flex-col items-center w-full">
-        <div className="space-y-2 text-left sm:text-center md:space-y-4 xl:space-y-6 lg:text-left">
-          <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl">
-            {title}
-          </h2>
-          {<div className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0">{subtitle}</div>}
-
-          <div className="sm:flex sm:justify-center lg:justify-start">
-            <div className="rounded-md shadow">
-              <Link href={button.href}>
-                <a className="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-100 transition duration-200 ease-in-out bg-gray-900 rounded-sm text-leading-6 md:py-4 md:text-lg md:px-10 focus:outline-none">
-                  {button.label}
-                </a>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      {illustration}
-    </div>
-  )
-
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="min-h-screen" id="index">
+      <Section bg="bg-gray-100" className="min-h-screen" id="index">
         <AnimateSharedLayout>
           <motion.div
             layout
@@ -79,20 +59,65 @@ const Index = (props: IndexProps) => {
           </motion.div>
         </AnimateSharedLayout>
       </Section>
-      <Section id="features" bg="bg-white">
-        <SectionTitle
-          title="Kenneth French’s factor returns the way you want"
-          subtitle="Conversion to your home currency included."
-        ></SectionTitle>
+      <Section id="data" bg="bg-white">
         <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
-          {feature(
-            "Nulla egestas, est ut vulputate suscipit, turpis",
-            "Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. ",
-            { label: "Sign in", href: "/signin" },
-            <Wordcloud
-              words={["Factor Returns", "Digitalization Ratings", "Risk Free Exchange", "Currency Exchange"]}
-            />,
-          )}
+          <FeatureSection
+            title="We offer great data"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
+          />
+        </div>
+      </Section>
+      <Section id="builders" bg="bg-gray-100">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
+          <FeatureSection
+            rightAligned={true}
+            title="Build the data as you want"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
+          />
+        </div>
+      </Section>
+      <Section id="charts" bg="bg-white">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
+          <FeatureSection
+            title="Explore data with charts"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
+          />
         </div>
       </Section>
       <Section id="sources" bg="bg-gray-100">

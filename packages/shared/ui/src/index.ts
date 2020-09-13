@@ -1,3 +1,4 @@
+export * from "./lib/layout/feature-section/feature-section"
 export * from "./lib/wordcloud/wordcloud"
 export * from "./lib/docs/sidebar/menu/menu"
 export * from "./lib/docs/sidebar/link/link"

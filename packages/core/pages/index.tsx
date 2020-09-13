@@ -100,7 +100,7 @@ const Index = (props: IndexProps) => {
   return (
     <Wrapper>
       <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">
-        <div className="flex flex-col items-start px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 xl:flex-row xl:space-y-0 xl:space-x-8">
+        <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline="Portfolio analytics insights for everyone"
             paragraph={

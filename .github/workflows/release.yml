@@ -50,4 +50,4 @@ jobs:
         with:
           context: ./dist/packages/${{matrix.package}}/exported
           push: true
-          tags: perfolio/${{matrix.package}}-web
+          tags: perfolio/web-${{matrix.package}}

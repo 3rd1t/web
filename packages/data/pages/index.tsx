@@ -1,5 +1,15 @@
 import React from "react"
-import { HeroSection, CodeExamples, CTA, Section, Source, SectionTitle, SourceProps } from "@perfolio/shared/ui"
+import {
+  HeroSection,
+  CodeExamples,
+  Section,
+  Source,
+  SectionTitle,
+  SourceProps,
+  Wordcloud,
+  FeatureSection,
+  CTA,
+} from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
@@ -17,7 +27,7 @@ interface IndexProps {
 const Index = (props: IndexProps) => {
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="min-h-screen" id="index">
+      <Section bg="bg-gray-100" className="min-h-screen" id="index">
         <AnimateSharedLayout>
           <motion.div
             layout
@@ -50,18 +60,64 @@ const Index = (props: IndexProps) => {
           </motion.div>
         </AnimateSharedLayout>
       </Section>
-      <Section id="features" bg="bg-white">
-        <SectionTitle
-          title="Kenneth French’s factor returns the way you want"
-          subtitle="Conversion to your home currency included."
-        />
-
-        <Builders />
-        <div className="w-2/3 mx-auto mt-20">
-          <CTA
-            headline="Curious? Try them out here"
-            subline="Our builders are easy and intuitive to use"
-            button={{ href: "/signup", label: "Sign up" }}
+      <Section id="data" bg="bg-white">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
+          <FeatureSection
+            title="We offer great data"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
+          />
+        </div>
+      </Section>
+      <Section id="builders" bg="bg-gray-100">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
+          <FeatureSection
+            rightAligned={true}
+            title="Build the data as you want"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
+          />
+        </div>
+      </Section>
+      <Section id="charts" bg="bg-white">
+        <div className="flex flex-col justify-center mt-20 space-y-4 lg:space-x-4 lg:space-y-0 lg:flex-row">
+          <FeatureSection
+            title="Explore data with charts"
+            subtitle="Sed laoreet eleifend nisl, eget ullamcorper velit gravida nec. Fusce porta diam tellus, sit. "
+            button={{ label: "Sign in", href: "/signin" }}
+            illustration={
+              <Wordcloud
+                words={[
+                  "Factor Returns",
+                  "Digitalization Ratings",
+                  "Risk Free Exchange",
+                  "Sustainability Ratings",
+                  "Currency Exchange",
+                ]}
+              />
+            }
           />
         </div>
       </Section>

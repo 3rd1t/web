@@ -52,11 +52,16 @@
             "passWithNoTests": true
           }
         },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+        "docker": {
+          "builder": "@nx-tools/nx-docker:build",
           "options": {
-            "outputPath": "dist/packages/core/exported",
-            "siteId": "c081d45f-4137-4570-bb1e-0f1a1645db11"
+            "repository": "perfolio/core-web",
+            "dockerfile": "./packages/core/Dockerfile",
+            "username": "$DOCKERHUB_USER",
+            "password": "$DOCKERHUB_PASSWORD",
+            "tags": "latest",
+            "push": true,
+            "socket": "/var/run/docker.sock"
           }
         },
         "stage": {
@@ -345,11 +350,16 @@
             "passWithNoTests": true
           }
         },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+        "docker": {
+          "builder": "@nx-tools/nx-docker:build",
           "options": {
-            "outputPath": "dist/packages/docs/exported",
-            "siteId": "4a2b2b79-9c92-4ec6-b4e7-e3b8e32e4ea9"
+            "repository": "perfolio/docs-web",
+            "dockerfile": "./packages/docs/Dockerfile",
+            "username": "$DOCKERHUB_USER",
+            "password": "$DOCKERHUB_PASSWORD",
+            "tags": "latest",
+            "push": true,
+            "socket": "/var/run/docker.sock"
           }
         }
       }
@@ -517,11 +527,16 @@
             "passWithNoTests": true
           }
         },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+        "docker": {
+          "builder": "@nx-tools/nx-docker:build",
           "options": {
-            "outputPath": "dist/packages/data/exported",
-            "siteId": "abfda65d-dcb7-4d66-90d2-352b9ea50dc1"
+            "repository": "perfolio/data-web",
+            "dockerfile": "./packages/data/Dockerfile",
+            "username": "$DOCKERHUB_USER",
+            "password": "$DOCKERHUB_PASSWORD",
+            "tags": "latest",
+            "push": true,
+            "socket": "/var/run/docker.sock"
           }
         },
         "stage": {

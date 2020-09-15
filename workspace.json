@@ -269,36 +269,6 @@
         }
       }
     },
-    "shared-ui-e2e": {
-      "root": "packages/shared/ui-e2e",
-      "sourceRoot": "packages/shared/ui-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "packages/shared/ui-e2e/cypress.json",
-            "tsConfig": "packages/shared/ui-e2e/tsconfig.e2e.json",
-            "devServerTarget": "shared-ui:storybook",
-            "record": true,
-            "key": "56e6c2c7-717c-457a-8594-63c1837e37a3"
-          },
-          "configurations": {
-            "ci": {
-              "devServerTarget": "shared-ui:storybook:ci"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/shared/ui-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!packages/shared/ui-e2e/**/*"]
-          }
-        }
-      }
-    },
     "docs": {
       "root": "packages/docs",
       "sourceRoot": "packages/docs",

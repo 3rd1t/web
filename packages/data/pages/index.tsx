@@ -8,13 +8,14 @@ import {
   SourceProps,
   Wordcloud,
   FeatureSection,
+  CTA,
 } from "@perfolio/shared/ui"
 import { motion, AnimateSharedLayout } from "framer-motion"
 import fs from "fs"
 import Link from "next/link"
 import matter from "gray-matter"
 import Wrapper from "../components/wrapper/wrapper"
-
+import { Builders } from "../components/builders/builders"
 interface IndexProps {
   codeExamples: {
     language: string
@@ -142,24 +143,11 @@ const Index = (props: IndexProps) => {
         </div>
       </Section>
       <Section className="bg-white">
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-          <div>
-            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-              <span>Ready to get started? </span>
-              <br className="xl:hidden"></br>
-              <span>Start with a</span>
-              <span className="text-data-500"> free plan</span>
-            </h2>
-            <p className="mt-2 text-gray-700">
-              Explore our charts or create an account to unlock the full potential of our API.
-            </p>
-          </div>
-          <Link href="/signup">
-            <a className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
-              Sign up
-            </a>
-          </Link>
-        </div>
+        <CTA
+          headline="Ready to get started? Sign up for a free plan."
+          subline="Explore our charts or create an account to unlock the full potential of our API."
+          button={{ href: "/signup", label: "Sign up" }}
+        />
       </Section>
     </Wrapper>
   )

@@ -63,6 +63,7 @@ export const CodeExamples = ({ code }: CodeExamplesProps) => {
       <motion.nav layout className="flex bg-gray-800">
         {code.map((c, i) => (
           <button
+          aria-label={c.language}
             data-testid="selectLanguage"
             key={i}
             className={`p-4 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none  hover:text-gray-400 ${

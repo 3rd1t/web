@@ -5,6 +5,8 @@ import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import path from "path"
+import { CTA } from "@perfolio/shared/ui"
+import Link from "next/link"
 
 export interface FactorProps {
   source: string
@@ -12,6 +14,9 @@ export interface FactorProps {
 }
 
 export const Factor = ({ source, meta }: FactorProps) => {
+  const buttonStyles =
+    "flex items-center space-x-2 md:text-lg text-base font-medium focus:outline-none hover:text-gray-700"
+
   return (
     <div>
       <MultiColumn breadcrumbs={["data", "Factors", meta.factor]}>
@@ -21,6 +26,48 @@ export const Factor = ({ source, meta }: FactorProps) => {
             <span>{meta.publishYear}</span>
           </div>
           {hydrate(source)}
+        </div>
+        <div className="flex items-center justify-center space-x-16">
+          <p className="text-gray-800 md:text-lg">Access this data through our builders:</p>
+          <Link href="/builder/api">
+            <a className={buttonStyles}>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 code">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+              <span>API</span>
+            </a>
+          </Link>
+          <Link href="/builder/file">
+            <a className={buttonStyles}>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 cloud-download">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                />
+              </svg>
+              <span>File</span>
+            </a>
+          </Link>
+          <Link href="/builder/chart">
+            <a className={buttonStyles}>
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 chart-square-bar">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <span>Charts</span>
+            </a>
+          </Link>
         </div>
       </MultiColumn>
     </div>
@@ -41,7 +88,7 @@ export async function getStaticPaths() {
   }
 }
 export async function getStaticProps({ params }) {
-  const source = fs.readFileSync(path.join(factorDirectory,  params.factor + ".mdx"))
+  const source = fs.readFileSync(path.join(factorDirectory, params.factor + ".mdx"))
 
   const { content, data } = matter(source)
   const mdxSource = await renderToString(content, { scope: data })

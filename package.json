@@ -99,7 +99,6 @@
     "@types/react-dom": "16.9.8",
     "babel-jest": "26.3.0",
     "babel-loader": "8.1.0",
-    "eslint-plugin-cypress": "^2.10.3",
     "jest": "26.4.2",
     "ts-jest": "26.3.0"
   }

@@ -1,7 +1,28 @@
-FROM nginx:1.19.2-alpine
+FROM node:latest AS builder
 
-COPY . /usr/share/nginx/html
+ARG SERVICE
+ENV NODE_ENV=production
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+COPY package.json .
+COPY yarn.lock .
+
+RUN yarn install
+
+COPY . .
+
+RUN yarn nx export ${SERVICE} --with-deps
+
+FROM node:latest
+
+ARG SERVICE
+
+WORKDIR /static
+COPY --from=builder /app/dist/packages/${SERVICE}/exported .
+
+RUN npm install -g serve
+
+EXPOSE 5000
+CMD ["serve", "."]
 

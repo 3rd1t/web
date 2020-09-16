@@ -48,20 +48,13 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/core/jest.config.js",
-            "tsConfig": "packages/core/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/core-web",
-            "dockerfile": "./packages/core/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-core --build-arg SERVICE=core ."
           }
         },
         "stage": {
@@ -149,7 +142,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/pages/jest.config.js",
-            "tsConfig": "packages/pages/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
@@ -233,7 +225,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/shared/ui/jest.config.js",
-            "tsConfig": "packages/shared/ui/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
@@ -316,20 +307,13 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/docs/jest.config.js",
-            "tsConfig": "packages/docs/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/docs-web",
-            "dockerfile": "./packages/docs/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-docs --build-arg SERVICE=docs ."
           }
         }
       }
@@ -368,7 +352,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/shared/nav/jest.config.js",
-            "tsConfig": "packages/shared/nav/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -392,7 +375,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/content/jest.config.js",
-            "tsConfig": "packages/content/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -416,7 +398,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/urlbuilder/jest.config.js",
-            "tsConfig": "packages/urlbuilder/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -440,7 +421,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/forms/jest.config.js",
-            "tsConfig": "packages/forms/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -493,20 +473,13 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "packages/data/jest.config.js",
-            "tsConfig": "packages/data/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/data-web",
-            "dockerfile": "./packages/data/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-data --build-arg SERVICE=data ."
           }
         },
         "stage": {

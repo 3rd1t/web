@@ -1,16 +1,17 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import FeatureSection from "./feature-section"
+import Feature from "./feature"
 
-describe("FeatureSection", () => {
+describe("Feature", () => {
   it("should render successfully", () => {
     const { baseElement } = render(
-      <FeatureSection
+      <Feature
         title="TITLE"
         subtitle="SUBTITLE"
-        button={{ label: "LABEL", href: "/href" }}
-        illustration={<span>Hello</span>}
+        icon={<span>Hello</span>}
+        sellingPoints={["1", "2", "3"]}
+        href="/href"
       />,
     )
     expect(baseElement).toBeTruthy()

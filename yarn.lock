@@ -2679,18 +2679,6 @@
     tmp "0.0.33"
     yargs "15.4.1"
 
-"@nx-tools/core@>= 0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@nx-tools/core/-/core-0.1.0.tgz#75b0d4fcfbabc60aecc414eee74f30c5a648d977"
-  integrity sha512-SsVRpuJ6uzV/LCDiohyyp+SMqbqXc7T2MK7udlilpNkhnoXHOGZ11md5dBOcQ/ew/Yi1AV2HMC1xxeOl9LBBRA==
-
-"@nx-tools/nx-docker@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@nx-tools/nx-docker/-/nx-docker-0.4.1.tgz#9b17522146fa3376a1512722490db2be758b3607"
-  integrity sha512-StY+aY+fwivTNELZ/R106gXf1ulWldBedtNyeT5sHig1DWRQS/rhK/TB9cCLzERC10Zi1xy+Vf8P2JXhLmwU5g==
-  dependencies:
-    "@nx-tools/core" ">= 0.1.0"
-
 "@oclif/color@^0.x":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@oclif/color/-/color-0.1.2.tgz#28b07e2850d9ce814d0b587ce3403b7ad8f7d987"

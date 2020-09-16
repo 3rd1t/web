@@ -52,15 +52,9 @@
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/core-web",
-            "dockerfile": "./packages/core/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-core --build-arg SERVICE=core ."
           }
         },
         "stage": {
@@ -347,15 +341,9 @@
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/docs-web",
-            "dockerfile": "./packages/docs/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-docs --build-arg SERVICE=docs ."
           }
         }
       }
@@ -519,15 +507,9 @@
           }
         },
         "docker": {
-          "builder": "@nx-tools/nx-docker:build",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "repository": "perfolio/data-web",
-            "dockerfile": "./packages/data/Dockerfile",
-            "username": "$DOCKERHUB_USER",
-            "password": "$DOCKERHUB_PASSWORD",
-            "tags": "latest",
-            "push": true,
-            "socket": "/var/run/docker.sock"
+            "command": "docker build -t perfolio/web-data --build-arg SERVICE=data ."
           }
         },
         "stage": {

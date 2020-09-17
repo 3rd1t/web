@@ -57,6 +57,12 @@
             "command": "docker build -t perfolio/web-core --build-arg SERVICE=core ."
           }
         },
+        "lhci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn nx export core --with-deps && yarn lhci autorun --collect.staticDistDir=./dist/packages/core/exported --collect.maxAutodiscoverUrls=0"
+          }
+        },
         "stage": {
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
@@ -345,6 +351,12 @@
           "options": {
             "command": "docker build -t perfolio/web-docs --build-arg SERVICE=docs ."
           }
+        },
+        "lhci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn nx export docs --with-deps && yarn lhci autorun --collect.staticDistDir=./dist/packages/docs/exported --collect.maxAutodiscoverUrls=0"
+          }
         }
       }
     },
@@ -510,6 +522,12 @@
           "builder": "@nrwl/workspace:run-commands",
           "options": {
             "command": "docker build -t perfolio/web-data --build-arg SERVICE=data ."
+          }
+        },
+        "lhci": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn nx export data --with-deps && yarn lhci autorun --collect.staticDistDir=./dist/packages/data/exported --collect.maxAutodiscoverUrls=0"
           }
         },
         "stage": {

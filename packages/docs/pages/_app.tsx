@@ -24,10 +24,11 @@ const app = ({ Component, pageProps }: AppProps) => {
       <Wrapper>
         <Section>
           <div className="relative flex w-full">
-            <div className="sticky top-0 flex-shrink-0 hidden h-screen pt-16 md:flex">
+            {/* I'm using pt-16 and -mt-16 because otherwise the sidebar would scroll up too far and hide behind the navbar */}
+            <div className="sticky top-0 flex-shrink-0 hidden h-screen pt-16 -mt-16 md:flex">
               <Menu collections={pages}></Menu>
             </div>
-            <div className="pt-16 mx-auto prose-sm md:prose lg:prose-lg xl:prose-xl">
+            <div className="pt-16 mx-auto -mt-16 prose-sm md:prose lg:prose-lg xl:prose-xl">
               <Component {...pageProps} />
             </div>
           </div>

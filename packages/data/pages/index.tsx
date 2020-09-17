@@ -118,7 +118,7 @@ const Index = (props: IndexProps) => {
           rightAligned
           title="Code"
           content={
-            <FeatureList features={["Stop being at work", "And start working", "on perfolio,", "you're lazy!"]} />
+            <FeatureList features={["Start faster with actual analysis", "Reduce sources of error", "Implement in your software", "Language-independent"]} />
           }
           illustration={<CodeExamples code={props.codeExamples}></CodeExamples>}
         />
@@ -175,6 +175,13 @@ export const getStaticProps = async () => {
   return {
     props: {
       codeExamples: [
+        {
+          language: "curl",
+          snippet: fs.readFileSync(
+            `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.curl.txt`,
+            "utf-8",
+          ),
+        },
         {
           language: "python",
           snippet: fs.readFileSync(

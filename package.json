@@ -77,7 +77,7 @@
     "@nrwl/cypress": "10.1.0",
     "@nrwl/eslint-plugin-nx": "10.1.0",
     "@netlify-builder/deploy": "^3.1.0",
-    "netlify-cli": "^2.62.0",
+    "netlify-cli": "^2.63.2",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-cypress": "^2.10.3",
     "@babel/core": "7.11.6",

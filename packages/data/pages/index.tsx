@@ -31,7 +31,7 @@ const Index = (props: IndexProps) => {
         <AnimateSharedLayout>
           <motion.div
             layout
-            className="flex flex-col items-center px-4 space-y-8 sm:pt-24 md:pt-28 lg:pt-32 xl:pt-40 lg:flex-row lg:space-y-0 lg:space-x-8"
+            className="flex flex-col items-center px-4 space-y-8 lg:flex-row lg:space-y-0 lg:space-x-8"
           >
             <motion.div layout>
               <HeroSection

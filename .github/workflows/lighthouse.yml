@@ -7,13 +7,13 @@ on:
 
 jobs:
   lighthouse:
-    strategy:
-      matrix:
-        package: ["core", "data", "docs"]
-    name: lighthouse @${{matrix.package}}
+    name: lighthouse
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
       - name: Setup node
         uses: actions/setup-node@v1
         with:
@@ -25,10 +25,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-      - name: build
-        run: yarn nx export ${{matrix.package}} --with-deps
       - name: lighthouse
-        run: yarn lhci autorun --collect.staticDistDir=./dist/packages/${{matrix.package}}/exported --collect.maxAutodiscoverUrls=0
+        run: yarn nx affected --target=lhci --parallel
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 

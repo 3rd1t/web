@@ -7,6 +7,7 @@ export interface NavbarProps {
   links: {
     label: string
     href: string
+    scroll?:boolean
   }[]
 }
 

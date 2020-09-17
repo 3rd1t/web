@@ -8,7 +8,7 @@ describe("FeatureSection", () => {
     const { baseElement } = render(
       <FeatureSection
         title="TITLE"
-        subtitle="SUBTITLE"
+        content="SUBTITLE"
         button={{ label: "LABEL", href: "/href" }}
         illustration={<span>Hello</span>}
       />,

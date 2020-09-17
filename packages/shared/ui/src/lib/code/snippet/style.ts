@@ -121,62 +121,62 @@ export default {
     color: "#aaaaca",
   },
   "code.language-css": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   "code.language-scss": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   boolean: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   string: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   entity: {
-    color: "#F6E05E",
+    color: "#66C9FF",
     cursor: "help",
   },
   url: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   ".language-css .token.string": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   ".language-scss .token.string": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   ".style .token.string": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   "attr-value": {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   keyword: {
-    color: "#F6E05E",
+    color: "#AAAAAA",
   },
   control: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   directive: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   unit: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   statement: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   regex: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   atrule: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   placeholder: {
-    color: "#F6E05E",
+    color: "#66C9FF",
   },
   variable: {
-    color: "#F6E05E",
+    color: "#FFAAFF",
   },
   deleted: {
     textDecoration: "line-through",
@@ -206,6 +206,6 @@ export default {
     color: "#393949",
   },
   ".line-highlight": {
-    background: "linear-gradient(to right, rgba(221, 103, 44, 0.2) 70%, rgba(221, 103, 44, 0))",
+    background: "#ffffff",
   },
 }

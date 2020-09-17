@@ -13,12 +13,12 @@ export const Wrapper = ({ children }: WrapperProps) => {
         {
           label: "Product",
           href: "index",
-          scroll: true
+          scroll: true,
         },
         {
           label: "Features",
           href: "data",
-          scroll: true
+          scroll: true,
         },
         {
           label: "Documentation",

@@ -6,8 +6,8 @@ import { Link as Scroll } from "react-scroll"
 export interface MobileProps {
   logo: React.ReactChild
   links: {
-    label: string,
-    href: string,
+    label: string
+    href: string
     scroll?: boolean
   }[]
 }

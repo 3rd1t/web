@@ -25,7 +25,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
         },
         {
           label: "Documentation",
-          href: "docs.perfol.io",
+          href: "https://docs.perfol.io",
         },
       ]}
     ></Navbar>

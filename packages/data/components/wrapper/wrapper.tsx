@@ -8,7 +8,7 @@ export interface WrapperProps {
 export const Wrapper = ({ children }: WrapperProps) => {
   const navbar = (
     <Navbar
-      logo={<Logo color="text-data-500" domain="data"></Logo>}
+      logo={<Logo color="text-data-600" domain="data"></Logo>}
       links={[
         {
           label: "Product",
@@ -20,13 +20,13 @@ export const Wrapper = ({ children }: WrapperProps) => {
         },
         {
           label: "Documentation",
-          href: "docs.perfol.io/data",
+          href: "https://docs.perfol.io/data",
         },
       ]}
     ></Navbar>
   )
 
-  const footer = <Footer bg="bg-data-700" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+  const footer = <Footer bg="bg-data-800" primaryText="text-white" secondaryText="text-gray-100"></Footer>
 
   return (
     <NavWrapper navbar={navbar} footer={footer}>

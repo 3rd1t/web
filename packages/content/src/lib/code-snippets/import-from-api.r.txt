@@ -1,26 +1,15 @@
 library(httr)
 library(jsonlite)
-call_api <- function(query) {
-    url <- modify_url("https://api-beta.tgr22.net/v1",
-    query = query)
-    GET(url)
-}
-resp <- call_api(
-    list(
-        token="zjGC6iUbbDXj9zoJqz7f",
-        region="Japan",
-        model="6",
-        freq="d",
-        currency="CNY",
-        from="2005-12-31",
-        to="2020-02-28",
-        dropna="0")
-    )
-cont <- fromJSON(
-    content(
-        resp,
-        as="text",
-        encoding="UTF-8"
-    )
-   )
-test <- data.frame(cont)
+
+url <- modify_url("https://api.perfol.io/d/beta/6factor/all/europe/eur/monthly",
+                  query = list(from="2009-12-31", to="2018-12-31"))
+
+resp <- GET(url)
+
+cont <- fromJSON(content(resp,
+                         as="text",
+                         encoding="UTF-8"))
+
+factors <- data.frame(cont)
+
+# Start analyzing!

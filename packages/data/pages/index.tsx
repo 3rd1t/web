@@ -118,7 +118,14 @@ const Index = (props: IndexProps) => {
           rightAligned
           title="Code"
           content={
-            <FeatureList features={["Start faster with actual analysis", "Reduce sources of error", "Implement in your software", "Language-independent"]} />
+            <FeatureList
+              features={[
+                "Start faster with actual analysis",
+                "Reduce sources of error",
+                "Implement in your software",
+                "Language-independent",
+              ]}
+            />
           }
           illustration={<CodeExamples code={props.codeExamples}></CodeExamples>}
         />

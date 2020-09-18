@@ -1,11 +1,11 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import Builders from "./builders"
+import FeatureList from "./feature-list"
 
-describe("Builders", () => {
+describe("FeatureList", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Builders />)
+    const { baseElement } = render(<FeatureList features={["Hello", "World"]} />)
     expect(baseElement).toBeTruthy()
   })
 })

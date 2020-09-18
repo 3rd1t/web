@@ -51,10 +51,6 @@
     "shared-ui": {
       "tags": []
     },
-    "shared-ui-e2e": {
-      "tags": [],
-      "implicitDependencies": ["shared-ui"]
-    },
     "docs": {
       "tags": [],
       "implicitDependencies": ["css"]

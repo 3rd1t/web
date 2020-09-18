@@ -12,7 +12,7 @@ export const Footer = ({ bg, primaryText, secondaryText }: FooterProps) => {
   const borderColor = "border-" + tmp[1] + "-" + (Number(tmp[2]) - 200).toString()
 
   const footerLink = (label: string, href: string): React.ReactNode => (
-    <a href={href} className={`block focus:outline-none ${secondaryText} hover:${primaryText}`}>
+    <a href={href} className={`py-4 block focus:outline-none ${secondaryText} hover:${primaryText}`}>
       {label}
     </a>
   )
@@ -55,11 +55,7 @@ export const Footer = ({ bg, primaryText, secondaryText }: FooterProps) => {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center px-10 py-2 text-sm md:flex-row">
             <span className={`${primaryText}`}>© Copyright {new Date().getFullYear()}. All Rights Reserved.</span>
-            <div className="flex flex-row md:flex-auto md:flex-row-reverse">
-              <a href="https://www.netlify.com">
-                <img src="https://www.netlify.com/img/global/badges/netlify-light.svg" alt="Deploys by Netlify" />
-              </a>
-            </div>
+            
           </div>
         </div>
       </div>

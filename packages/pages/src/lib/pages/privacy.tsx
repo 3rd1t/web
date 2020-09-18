@@ -23,55 +23,55 @@ export const Privacy = () => {
 
       <ul>
         <li>
-          <a href="#m14">Einleitung</a>
+          <a className="py-4" href="#m14">Einleitung</a>
         </li>
         <li>
-          <a href="#m3">Verantwortlicher</a>
+          <a className="py-4" href="#m3">Verantwortlicher</a>
         </li>
         <li>
-          <a href="#mOverview">Übersicht der Verarbeitungen</a>
+          <a className="py-4" href="#mOverview">Übersicht der Verarbeitungen</a>
         </li>
         <li>
-          <a href="#m13">Maßgebliche Rechtsgrundlagen</a>
+          <a className="py-4" href="#m13">Maßgebliche Rechtsgrundlagen</a>
         </li>
         <li>
-          <a href="#m27">Sicherheitsmaßnahmen</a>
+          <a className="py-4" href="#m27">Sicherheitsmaßnahmen</a>
         </li>
         <li>
-          <a href="#m24">Datenverarbeitung in Drittländern</a>
+          <a className="py-4" href="#m24">Datenverarbeitung in Drittländern</a>
         </li>
         <li>
-          <a href="#m134">Einsatz von Cookies</a>
+          <a className="py-4" href="#m134">Einsatz von Cookies</a>
         </li>
         <li>
-          <a href="#m317">Kommerzielle und geschäftliche Leistungen</a>
+          <a className="py-4" href="#m317">Kommerzielle und geschäftliche Leistungen</a>
         </li>
         <li>
-          <a href="#m225">Bereitstellung des Onlineangebotes und Webhosting</a>
+          <a className="py-4" href="#m225">Bereitstellung des Onlineangebotes und Webhosting</a>
         </li>
         <li>
-          <a href="#m367">Registrierung, Anmeldung und Nutzerkonto</a>
+          <a className="py-4" href="#m367">Registrierung, Anmeldung und Nutzerkonto</a>
         </li>
         <li>
-          <a href="#m182">Kontaktaufnahme</a>
+          <a className="py-4" href="#m182">Kontaktaufnahme</a>
         </li>
         <li>
-          <a href="#m17">Newsletter und elektronische Benachrichtigungen</a>
+          <a className="py-4" href="#m17">Newsletter und elektronische Benachrichtigungen</a>
         </li>
         <li>
-          <a href="#m408">Umfragen und Befragungen</a>
+          <a className="py-4" href="#m408">Umfragen und Befragungen</a>
         </li>
         <li>
-          <a href="#m12">Löschung von Daten</a>
+          <a className="py-4" href="#m12">Löschung von Daten</a>
         </li>
         <li>
-          <a href="#m15">Änderung und Aktualisierung der Datenschutzerklärung</a>
+          <a className="py-4" href="#m15">Änderung und Aktualisierung der Datenschutzerklärung</a>
         </li>
         <li>
-          <a href="#m10">Rechte der betroffenen Personen</a>
+          <a className="py-4" href="#m10">Rechte der betroffenen Personen</a>
         </li>
         <li>
-          <a href="#m42">Begriffsdefinitionen</a>
+          <a className="py-4" href="#m42">Begriffsdefinitionen</a>
         </li>
       </ul>
 
@@ -219,7 +219,7 @@ export const Privacy = () => {
         EU-Kommission:
         <a
           href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-          target="_blank"
+          target="_blank" rel="noopener"
         >
           https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de
         </a>
@@ -297,11 +297,11 @@ export const Privacy = () => {
         (wobei hierdurch auch die Funktionsfähigkeit unseres Onlineangebotes eingeschränkt werden kann). Ein Widerspruch
         gegen den Einsatz von Cookies zu Zwecken des Onlinemarketings kann auch mittels einer Vielzahl von Diensten, vor
         allem im Fall des Trackings, über die Webseiten{" "}
-        <a href="https://optout.aboutads.info" target="_blank">
+        <a href="https://optout.aboutads.info" target="_blank" rel="noopener">
           https://optout.aboutads.info
         </a>{" "}
         und{" "}
-        <a href="https://www.youronlinechoices.com/" target="_blank">
+        <a href="https://www.youronlinechoices.com/" target="_blank" rel="noopener">
           https://www.youronlinechoices.com/
         </a>{" "}
         erklärt werden. Daneben können Sie weitere Widerspruchshinweise im Rahmen der Angaben zu den eingesetzten
@@ -639,11 +639,11 @@ export const Privacy = () => {
         <li>
           <strong>Mailchimp:</strong> E-Mail-Marketing-Plattform; Dienstanbieter: "Mailchimp" - Rocket Science Group,
           LLC, 675 Ponce De Leon Ave NE #5000, Atlanta, GA 30308, USA; Website:{" "}
-          <a href="https://mailchimp.com" target="_blank">
+          <a href="https://mailchimp.com" target="_blank" rel="noopener">
             https://mailchimp.com
           </a>
           ; Datenschutzerklärung:{" "}
-          <a href="https://mailchimp.com/legal/privacy/" target="_blank">
+          <a href="https://mailchimp.com/legal/privacy/" target="_blank" rel="noopener">
             https://mailchimp.com/legal/privacy/
           </a>
           .
@@ -692,19 +692,19 @@ export const Privacy = () => {
           <strong>Google-Formular:</strong> Google-Cloud-Formulare; Dienstanbieter: Google Ireland Limited, Gordon
           House, Barrow Street, Dublin 4, Irland, Mutterunternehmen: Google LLC, 1600 Amphitheatre Parkway, Mountain
           View, CA 94043, USA; Website:{" "}
-          <a href="https://firebase.google.com" target="_blank">
+          <a href="https://firebase.google.com" target="_blank" rel="noopener">
             https://firebase.google.com
           </a>
           ; Datenschutzerklärung:{" "}
-          <a href="https://policies.google.com/privacy" target="_blank">
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
             https://policies.google.com/privacy
           </a>
           ; Widerspruchsmöglichkeit (Opt-Out): Opt-Out-Plugin:{" "}
-          <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">
+          <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener">
             https://tools.google.com/dlpage/gaoptout?hl=de
           </a>
           , Einstellungen für die Darstellung von Werbeeinblendungen:{" "}
-          <a href="https://adssettings.google.com/authenticated" target="_blank">
+          <a href="https://adssettings.google.com/authenticated" target="_blank" rel="noopener">
             https://adssettings.google.com/authenticated
           </a>
           .
@@ -841,8 +841,7 @@ export const Privacy = () => {
         <a
           href="https://datenschutz-generator.de/?l=de"
           title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-          target="_blank"
-          rel="noopener noreferrer nofollow"
+          target="_blank" rel="noopener"
         >
           Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke
         </a>

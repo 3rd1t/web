@@ -183,13 +183,6 @@ export const getStaticProps = async () => {
     props: {
       codeExamples: [
         {
-          language: "curl",
-          snippet: fs.readFileSync(
-            `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.curl.txt`,
-            "utf-8",
-          ),
-        },
-        {
           language: "python",
           snippet: fs.readFileSync(
             `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.python.txt`,
@@ -200,6 +193,13 @@ export const getStaticProps = async () => {
           language: "r",
           snippet: fs.readFileSync(
             `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.r.txt`,
+            "utf-8",
+          ),
+        },
+        {
+          language: "curl",
+          snippet: fs.readFileSync(
+            `${process.cwd()}/packages/content/src/lib/code-snippets/import-from-api.curl.txt`,
             "utf-8",
           ),
         },

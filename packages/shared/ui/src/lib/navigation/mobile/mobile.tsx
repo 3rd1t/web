@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-/* eslint-disable-next-line */
+import { Link as Scroll } from "react-scroll"
+
 export interface MobileProps {
   logo: React.ReactChild
   links: {
     label: string
     href: string
+    scroll?: boolean
   }[]
 }
 
@@ -68,10 +70,16 @@ export const Mobile = (props: MobileProps) => {
                 <ul className="px-4 py-8 space-y-8 text-center border-t border-carbon-300">
                   {props.links.map((link, index) => {
                     return (
-                      <motion.li whileTap={{ scale: 0.9 }} key={index}>
-                        <Link href={link.href}>
-                          <a className="font-semibold text-carbon-900">{link.label}</a>
-                        </Link>
+                      <motion.li className="font-semibold text-carbon-900" whileTap={{ scale: 0.9 }} key={index}>
+                        {link.scroll ? (
+                          <Scroll href="" smooth={true} spy={true} to={link.href}>
+                            {link.label}
+                          </Scroll>
+                        ) : (
+                          <Link href={link.href}>
+                            <a> {link.label}</a>
+                          </Link>
+                        )}
                       </motion.li>
                     )
                   })}

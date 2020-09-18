@@ -13,19 +13,22 @@ export const Wrapper = ({ children }: WrapperProps) => {
       links={[
         {
           label: "Product",
-          href: "/",
+          href: "index",
+          scroll: true,
         },
         {
           label: "Features",
-          href: "#features",
+          href: "features",
+          scroll: true,
         },
         {
           label: "Team",
-          href: "#team",
+          href: "team",
+          scroll: true,
         },
         {
           label: "Documentation",
-          href: "/docs",
+          href: "https://docs.perfol.io",
         },
       ]}
     ></Navbar>

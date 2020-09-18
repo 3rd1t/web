@@ -1,10 +1,12 @@
 import React from "react"
 import Link from "next/link"
+import { Link as Scroll } from "react-scroll"
 /* eslint-disable-next-line */
 export interface DesktopProps {
   links: {
     label: string
     href: string
+    scroll?: boolean
   }[]
 }
 
@@ -14,9 +16,15 @@ export const Desktop = (props: DesktopProps) => {
   const links = props.links.map((l) => {
     return (
       <li key={l.label}>
-        <Link href={l.href}>
-          <a className={navbarLinkStyle}>{l.label}</a>
-        </Link>
+        {l.scroll ? (
+          <Scroll className={navbarLinkStyle} href="" smooth={true} spy={true} to={l.href}>
+            {l.label}
+          </Scroll>
+        ) : (
+          <Link href={l.href}>
+            <a className={navbarLinkStyle}>{l.label}</a>
+          </Link>
+        )}
       </li>
     )
   })

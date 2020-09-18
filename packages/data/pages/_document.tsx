@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" style={{ scrollBehavior: "smooth" }}>
+      <Html lang="en">
         <Head />
         <body className={process.env.NODE_ENV === "production" ? "" : "debug-screens"}>
           <Main />

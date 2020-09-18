@@ -86,7 +86,7 @@
     "@babel/preset-react": "7.9.4",
     "husky": "^4.2.5",
     "@babel/preset-typescript": "7.10.4",
-    "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/loader": "^1.6.18",
     "@nrwl/jest": "10.1.0",
     "@nrwl/react": "10.1.0",
     "@nrwl/storybook": "10.1.0",

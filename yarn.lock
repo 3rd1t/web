@@ -2276,20 +2276,6 @@
     yargs "15.4.1"
     yargs-parser "20.0.0"
 
-"@nrwl/cypress@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/cypress/-/cypress-10.1.0.tgz#c448a0080ced0972d70ca097fbf9d9967c3ad49f"
-  integrity sha512-MaMvSN2vue3E9hRxVMr5pw1bjyr2tyWDVIQXrQ69r7TlYQLOUNxLWZ/8vlYZGkBExCUJABFjMUKZw4QB/Ave3Q==
-  dependencies:
-    "@angular-devkit/architect" "~0.1000.0"
-    "@angular-devkit/core" "~10.0.0"
-    "@cypress/webpack-preprocessor" "~4.1.2"
-    fork-ts-checker-webpack-plugin "^3.1.1"
-    tree-kill "1.2.2"
-    ts-loader "^5.3.1"
-    tsconfig-paths-webpack-plugin "3.2.0"
-    webpack-node-externals "1.7.2"
-
 "@nrwl/cypress@10.2.1":
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/@nrwl/cypress/-/cypress-10.2.1.tgz#e4baac118beae9682b78399050260a0c97722283"
@@ -2313,15 +2299,6 @@
     "@angular-devkit/core" "~10.0.0"
     "@typescript-eslint/experimental-utils" "^2.19.2"
 
-"@nrwl/jest@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-10.1.0.tgz#b19c63076280da44335bdd34438e2123188a08c4"
-  integrity sha512-FGazorVVp0acDnGCKWej+jnWoj84whLsEwr/rbONJD9l7OgPUh2SH7KmcYKo0BHzAc/sZuYZVSKu3dSw6Re5fw==
-  dependencies:
-    "@angular-devkit/architect" "~0.1000.0"
-    "@angular-devkit/core" "~10.0.0"
-    "@angular-devkit/schematics" "~10.0.0"
-
 "@nrwl/jest@10.2.1":
   version "10.2.1"
   resolved "https://registry.yarnpkg.com/@nrwl/jest/-/jest-10.2.1.tgz#2141a722868b38c514b891091dfd0596a57da500"
@@ -2331,13 +2308,6 @@
     "@angular-devkit/core" "~10.0.0"
     "@angular-devkit/schematics" "~10.0.0"
     rxjs "^6.5.4"
-
-"@nrwl/linter@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/linter/-/linter-10.1.0.tgz#59cc68bba14d09dd2707c1a68a944f62ce8b9d6b"
-  integrity sha512-JePWJQhRi+lIoAu4tqQMUl+/Fq+dMVNHXUds0PuMXJZntuobP57DFLmX4fjit5zLm1Lv4qZfXtX4W2CoHK6eFQ==
-  dependencies:
-    "@angular-devkit/architect" "~0.1000.0"
 
 "@nrwl/linter@10.2.1":
   version "10.2.1"
@@ -2394,25 +2364,6 @@
     rxjs "6.5.5"
     tar "5.0.5"
     uuid "^3.3.3"
-
-"@nrwl/react@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/react/-/react-10.1.0.tgz#49518dad3c52a3203458af443293c8680f1f632a"
-  integrity sha512-LZZG6L7bSmYwQGs++f59tndDSZG1TmvQotph+kx1XGE2q8xazrGFPAsvfOoVO4KyDtDJ1hYorE5s7eZVzZOgJA==
-  dependencies:
-    "@angular-devkit/schematics" "~10.0.0"
-    "@babel/core" "7.9.6"
-    "@babel/preset-react" "7.9.4"
-    "@nrwl/cypress" "10.1.0"
-    "@nrwl/jest" "10.1.0"
-    "@nrwl/web" "10.1.0"
-    "@svgr/webpack" "^5.2.0"
-    confusing-browser-globals "^1.0.9"
-    eslint-plugin-import "^2.20.1"
-    eslint-plugin-jsx-a11y "^6.2.3"
-    eslint-plugin-react "^7.18.3"
-    eslint-plugin-react-hooks "^2.4.0"
-    url-loader "^3.0.0"
 
 "@nrwl/react@10.2.1":
   version "10.2.1"
@@ -2473,96 +2424,6 @@
     tmp "0.0.33"
     tslib "^1.9.3"
     yargs-parser "20.0.0"
-
-"@nrwl/web@10.1.0":
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/@nrwl/web/-/web-10.1.0.tgz#c51338e384d221b8241700d02b82caa7cf03bfd5"
-  integrity sha512-YH9vj5+OF6kIEmJLbcrSc+FxEdZS4XzTIPEWpLt6PL5t6v9mSpxMJmC5nsWL9AuilpuFQmUfN9jeBsQi5awRTg==
-  dependencies:
-    "@angular-devkit/architect" "~0.1000.0"
-    "@angular-devkit/build-optimizer" "~0.1000.0"
-    "@angular-devkit/build-webpack" "~0.1000.0"
-    "@angular-devkit/core" "~10.0.0"
-    "@angular-devkit/schematics" "~10.0.0"
-    "@babel/core" "7.9.6"
-    "@babel/plugin-proposal-class-properties" "7.8.3"
-    "@babel/plugin-proposal-decorators" "7.8.3"
-    "@babel/plugin-transform-regenerator" "7.8.7"
-    "@babel/preset-env" "7.9.6"
-    "@babel/preset-typescript" "7.9.0"
-    "@nrwl/cypress" "10.1.0"
-    "@nrwl/jest" "10.1.0"
-    "@nrwl/linter" "10.1.0"
-    "@rollup/plugin-babel" "5.0.2"
-    "@rollup/plugin-commonjs" "11.0.2"
-    "@rollup/plugin-image" "2.0.4"
-    "@rollup/plugin-node-resolve" "7.1.1"
-    ajv "6.10.2"
-    autoprefixer "9.7.4"
-    babel-loader "8.1.0"
-    babel-plugin-const-enum "^1.0.1"
-    babel-plugin-macros "^2.8.0"
-    babel-plugin-transform-async-to-promises "^0.8.15"
-    browserslist "4.8.7"
-    cacache "12.0.2"
-    caniuse-lite "^1.0.30001030"
-    circular-dependency-plugin "5.2.0"
-    clean-css "4.2.1"
-    copy-webpack-plugin "6.0.3"
-    core-js "^3.6.5"
-    css-loader "3.4.2"
-    file-loader "4.2.0"
-    find-cache-dir "3.0.0"
-    fork-ts-checker-webpack-plugin "^3.1.1"
-    glob "7.1.4"
-    identity-obj-proxy "3.0.0"
-    jest-worker "25.1.0"
-    karma-source-map-support "1.4.0"
-    less "3.11.1"
-    less-loader "5.0.0"
-    license-webpack-plugin "2.1.2"
-    loader-utils "1.2.3"
-    mini-css-extract-plugin "0.8.0"
-    minimatch "3.0.4"
-    open "6.4.0"
-    parse5 "4.0.0"
-    postcss "7.0.27"
-    postcss-import "12.0.1"
-    postcss-loader "3.0.0"
-    raw-loader "3.1.0"
-    regenerator-runtime "0.13.3"
-    rimraf "^3.0.2"
-    rollup "1.31.1"
-    rollup-plugin-copy "^3.3.0"
-    rollup-plugin-filesize "^9.0.0"
-    rollup-plugin-local-resolve "^1.0.7"
-    rollup-plugin-peer-deps-external "^2.2.2"
-    rollup-plugin-postcss "^3.1.1"
-    rollup-plugin-typescript2 "^0.27.1"
-    rxjs "^6.5.4"
-    sass "1.22.9"
-    sass-loader "8.0.2"
-    semver "6.3.0"
-    source-map "0.7.3"
-    source-map-loader "0.2.4"
-    source-map-support "0.5.16"
-    speed-measure-webpack-plugin "1.3.1"
-    style-loader "1.0.0"
-    stylus "0.54.5"
-    stylus-loader "3.0.2"
-    terser "4.3.8"
-    terser-webpack-plugin "2.3.1"
-    tree-kill "1.2.2"
-    ts-loader "5.4.5"
-    tsconfig-paths-webpack-plugin "3.2.0"
-    webpack "4.42.0"
-    webpack-dev-middleware "3.7.0"
-    webpack-dev-server "3.9.0"
-    webpack-merge "4.2.1"
-    webpack-node-externals "1.7.2"
-    webpack-sources "1.4.3"
-    webpack-subresource-integrity "1.1.0-rc.5"
-    worker-plugin "3.2.0"
 
 "@nrwl/web@10.2.1":
   version "10.2.1"
@@ -9936,10 +9797,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framer-motion@^2.6.10:
-  version "2.6.13"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.6.13.tgz#cc26faf53bffb2d9a558bc71a3adaf3c437c0e55"
-  integrity sha512-ScEdiDyAT+kH51axqxFcHA9RLnJ8TpMQBf8HwcXBOt6wDVptHdewEnE3T7semz+7OY0sj0RCsUDhQaWo78aMqQ==
+framer-motion@^2.6.15:
+  version "2.6.15"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-2.6.15.tgz#08e8aae96f199ed1a40a8414458b455101301d6d"
+  integrity sha512-S9q1adpF0ZEoKQfI3SC3V4EAWnxa8JmHh+8H7fNgBWmiGOR9+BtglEhDcRx8/ylnb+H+uqM50RryonsnGV6U1A==
   dependencies:
     framesync "^4.1.0"
     hey-listen "^1.0.8"
@@ -17975,13 +17836,6 @@ sass-loader@8.0.2:
     neo-async "^2.6.1"
     schema-utils "^2.6.1"
     semver "^6.3.0"
-
-sass@1.22.9:
-  version "1.22.9"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.22.9.tgz#41a2ed6038027f58be2bd5041293452a29c2cb84"
-  integrity sha512-FzU1X2V8DlnqabrL4u7OBwD2vcOzNMongEJEx3xMEhWY/v26FFR3aG0hyeu2T965sfR0E9ufJwmG+Qjz78vFPQ==
-  dependencies:
-    chokidar ">=2.0.0 <4.0.0"
 
 sass@^1.26.3:
   version "1.26.11"

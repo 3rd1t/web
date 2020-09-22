@@ -100,6 +100,7 @@
     "netlify-cli": "^2.63.3",
     "prettier": "2.1.2",
     "ts-jest": "26.3.0",
-    "@lhci/cli": "^0.5.0"
+    "@types/jest": "26.0.8",
+    "@types/webpack": "4.41.21"
   }
 }

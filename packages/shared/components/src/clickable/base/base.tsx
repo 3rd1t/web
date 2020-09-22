@@ -3,7 +3,7 @@ import React from "react"
 
 /* eslint-disable-next-line */
 export interface BaseProps {
-  label: string
+  label: string | React.ReactNode
   iconLeft?: React.ReactNode
   iconRight?: React.ReactNode
 }

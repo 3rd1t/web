@@ -4,7 +4,7 @@ import { getHoverColor } from "../util/hoverColor"
 
 /* eslint-disable-next-line */
 export interface ButtonProps {
-  label: string
+  label: string | React.ReactNode
   textColor: string
   bgColor: string
   onClick: () => void

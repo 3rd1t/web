@@ -29,6 +29,22 @@ export const black = () => {
 
   return <Button label={props.label} textColor={props.textColor} bgColor={props.bgColor} onClick={props.onClick} />
 }
+
+export const iconOnly = () => {
+  /* eslint-disable-next-line */
+  const props: ButtonProps = {
+    bgColor: "bg-gray-200",
+    textColor: "text-green-500",
+    onClick: () => {},
+    label: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      </svg>
+    ),
+  }
+
+  return <Button label={props.label} textColor={props.textColor} bgColor={props.bgColor} onClick={props.onClick} />
+}
 export const red = () => {
   /* eslint-disable-next-line */
   const props: ButtonProps = {
@@ -51,7 +67,13 @@ export const block = () => {
   }
 
   return (
-      <Button width="w-full" label={props.label} textColor={props.textColor} bgColor={props.bgColor} onClick={props.onClick} />
+    <Button
+      width="w-full"
+      label={props.label}
+      textColor={props.textColor}
+      bgColor={props.bgColor}
+      onClick={props.onClick}
+    />
   )
 }
 

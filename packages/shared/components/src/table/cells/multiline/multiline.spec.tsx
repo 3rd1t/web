@@ -1,11 +1,11 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import SharedComponents from "./shared-components"
+import Multiline from "./multiline"
 
-describe("SharedComponents", () => {
+describe("Multiline", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<SharedComponents />)
+    const { baseElement } = render(<Multiline />)
     expect(baseElement).toBeTruthy()
   })
 })

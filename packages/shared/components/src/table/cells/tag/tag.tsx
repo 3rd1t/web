@@ -1,13 +1,19 @@
 import React from "react"
 
 /* eslint-disable-next-line */
-export interface TagProps {}
+export interface TagProps {
+  label: string | number | React.ReactNode
+  color: string
+  key?: number
+}
 
-export const Tag = (props: TagProps) => {
+export const Tag = ({ label, color, key }: TagProps) => {
+  const colors = `text-${color}-800 bg-${color}-200`
+
   return (
-    <div>
-      <h1>Welcome to Tag!</h1>
-    </div>
+    <td key={key} className="px-6 py-4 whitespace-no-wrap">
+      <span className={`inline-flex px-2 text-xs font-semibold leading-5 rounded-full ${colors}`}>{label}</span>
+    </td>
   )
 }
 

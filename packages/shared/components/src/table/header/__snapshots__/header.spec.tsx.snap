@@ -6,17 +6,17 @@ exports[`Header Stories primaryshould match snapshot 1`] = `
     <thead>
       <tr>
         <th
-          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50"
+          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
         >
           Name
         </th>
         <th
-          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50"
+          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
         >
           Surname
         </th>
         <th
-          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase bg-gray-50"
+          class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
         >
           Email
         </th>

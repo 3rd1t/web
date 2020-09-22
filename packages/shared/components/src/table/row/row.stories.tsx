@@ -4,7 +4,7 @@ import { Simple } from "../cells/simple/simple"
 
 export default {
   component: Row,
-  title: "Row",
+  title: "components/table/row",
 }
 
 export const primary = () => {

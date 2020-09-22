@@ -3,7 +3,7 @@ import { Header, HeaderProps } from "./header"
 
 export default {
   component: Header,
-  title: "Header",
+  title: "components/table/Header",
 }
 
 export const primary = () => {

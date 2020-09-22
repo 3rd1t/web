@@ -3,7 +3,7 @@ import { Link, LinkProps } from "./link"
 
 export default {
   component: Link,
-  title: "Link",
+  title: "components/clickable/Link",
 }
 
 export const primary = () => {

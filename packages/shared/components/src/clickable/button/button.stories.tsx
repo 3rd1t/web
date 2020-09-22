@@ -3,7 +3,7 @@ import { Button, ButtonProps } from "./button"
 
 export default {
   component: Button,
-  title: "Button",
+  title: "components/clickable/Button",
 }
 
 export const primary = () => {
@@ -46,7 +46,6 @@ export const iconOnly = () => {
   return <Button label={props.label} textColor={props.textColor} bgColor={props.bgColor} onClick={props.onClick} />
 }
 export const red = () => {
-  /* eslint-disable-next-line */
   const props: ButtonProps = {
     label: "Label",
     bgColor: "bg-red-600",
@@ -58,7 +57,6 @@ export const red = () => {
 }
 
 export const block = () => {
-  /* eslint-disable-next-line */
   const props: ButtonProps = {
     label: "Label",
     bgColor: "bg-carbon-900",
@@ -78,7 +76,6 @@ export const block = () => {
 }
 
 export const withIconLeft = () => {
-  /* eslint-disable-next-line */
   const props: ButtonProps = {
     label: "Label",
     bgColor: "bg-carbon-900",
@@ -110,7 +107,6 @@ export const withIconLeft = () => {
 }
 
 export const withIconRight = () => {
-  /* eslint-disable-next-line */
   const props: ButtonProps = {
     label: "Label",
     bgColor: "bg-carbon-900",

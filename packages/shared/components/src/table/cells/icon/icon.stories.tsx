@@ -1,23 +1,14 @@
 import React from "react"
-import { Tag, TagProps } from "./tag"
+import { Icon, IconProps } from "./icon"
 
 export default {
-  component: Tag,
-  title: "components/table/cell/Tag",
+  component: Icon,
+  title: "components/table/cell/Icon",
 }
 
 export const primary = () => {
-  const props: TagProps = {
-    label: "Active",
-    color: "green",
-  }
-
-  return <Tag label={props.label} color={props.color} />
-}
-
-export const withIcon = () => {
-  const props: TagProps = {
-    label: (
+  const props: IconProps = {
+    icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path
           strokeLinecap="round"
@@ -27,8 +18,8 @@ export const withIcon = () => {
         />
       </svg>
     ),
-    color: "purple",
+    color: "green",
   }
 
-  return <Tag label={props.label} color={props.color} />
+  return <Icon icon={props.icon} color={props.color} />
 }

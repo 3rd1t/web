@@ -1,11 +1,15 @@
-import React from "react"
 import { render } from "@testing-library/react"
-
-import Multiline from "./multiline"
+import * as stories from "./multiline.stories"
 
 describe("Multiline", () => {
-  it("should render successfully", () => {
-    const { baseElement } = render(<Multiline />)
-    expect(baseElement).toBeTruthy()
+  describe("Stories", () => {
+    Object.entries(stories).forEach((s) => {
+      if (s[0] !== "default") {
+        it(s[0] + "should match snapshot", () => {
+          const { baseElement } = render(s[1]())
+          expect(baseElement).toMatchSnapshot()
+        })
+      }
+    })
   })
 })

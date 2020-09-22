@@ -3,12 +3,13 @@ import { Multiline, MultilineProps } from "./multiline"
 
 export default {
   component: Multiline,
-  title: "Multiline",
+  title: "components/table/cell/Multiline",
 }
 
 export const primary = () => {
-  /* eslint-disable-next-line */
-  const props: MultilineProps = {}
-
-  return <Multiline />
+  const props: MultilineProps = {
+    title: "Title",
+    content: "Content",
+  }
+  return <Multiline title={props.title} content={props.content} />
 }

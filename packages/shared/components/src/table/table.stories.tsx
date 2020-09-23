@@ -16,17 +16,17 @@ export default {
 
 export const singleRow = () => {
   const columnNames = ["Name", "Number", "Updated at"]
-  const rows = [
+  const cells = [
     [<Simple label="Andreas Thomas" />, <Tag label={123456789} color="purple" />, <Simple label="22.09.2020" />],
   ]
 
-  return <Table columnNames={columnNames} rows={rows} />
+  return <Table columnNames={columnNames} cells={cells} />
 }
 
 export const multipleRows = () => {
   const columnNames = ["Name", "Number", "Updated at"]
 
-  const rows = [
+  const cells = [
     [<Simple label="Andreas Thomas" />, <Tag label={123456789} color="purple" />, <Simple label="22.09.2020" />],
     [
       <Multiline title="Nico Webersinke" content="Product lead" />,
@@ -37,13 +37,19 @@ export const multipleRows = () => {
     [<Simple label="Kevin Kohler" />, <Simple label={123456789} />, <Simple label="22.09.2020" />],
   ]
 
-  return <Table columnNames={columnNames} rows={rows} />
+  return <Table columnNames={columnNames} cells={cells} />
+}
+
+export const previewMode = () => {
+  const columnNames = ["Name", "Number", "Updated at"]
+
+  return <Table columnNames={columnNames} cells={[]} />
 }
 
 export const onDark = () => {
   const columnNames = ["Name", "Number", "Updated at"]
 
-  const rows = [
+  const cells = [
     [<Simple label="Andreas Thomas" />, <Tag label={123456789} color="purple" />, <Simple label="22.09.2020" />],
     [
       <Multiline title="Nico Webersinke" content="Product lead" />,
@@ -82,7 +88,7 @@ export const onDark = () => {
 
   return (
     <div className="p-10 bg-gray-900">
-      <Table columnNames={columnNames} rows={rows} />
+      <Table columnNames={columnNames} cells={cells} />
     </div>
   )
 }

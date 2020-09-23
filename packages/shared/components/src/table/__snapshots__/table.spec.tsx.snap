@@ -418,6 +418,201 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
 </body>
 `;
 
+exports[`Table Stories previewModeshould match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="flex flex-col"
+    >
+      <div
+        class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
+      >
+        <div
+          class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
+        >
+          <div
+            class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+          >
+            <table
+              class="min-w-full "
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                  >
+                    Name
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                  >
+                    Number
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                  >
+                    Updated at
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                class="bg-white divide-y divide-gray-200"
+              >
+                <tr>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td>
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
 exports[`Table Stories singleRowshould match snapshot 1`] = `
 <body>
   <div>

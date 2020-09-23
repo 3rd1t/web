@@ -1,12 +1,17 @@
 import React from "react"
 import { Header } from "./header/header"
+import { Preview } from "./cells/preview/preview"
 
 export interface TableProps {
   columnNames: string[]
-  rows: React.ReactNode[][]
+  cells: React.ReactNode[][]
 }
 
-export const Table = ({ columnNames, rows }: TableProps) => {
+export const Table = ({ columnNames, cells }: TableProps) => {
+  const previewCells = [0, 1, 2, 3, 4].map((_) => columnNames.map((_) => <Preview />))
+
+  const usedCells = cells.length > 0 ? cells : previewCells
+
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -15,7 +20,7 @@ export const Table = ({ columnNames, rows }: TableProps) => {
             <table className="min-w-full ">
               {<Header labels={columnNames} />}
               <tbody className="bg-white divide-y divide-gray-200">
-                {rows.map((row, rowID) => {
+                {usedCells.map((row, rowID) => {
                   return (
                     <tr key={rowID}>
                       {row.map((cell, colID) => {

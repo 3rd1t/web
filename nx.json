@@ -73,6 +73,9 @@
     "data": {
       "tags": [],
       "implicitDependencies": ["css"]
+    },
+    "shared-components": {
+      "tags": []
     }
   },
   "workspaceLayout": {

@@ -5,7 +5,6 @@ import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import path from "path"
-import { CTA } from "@perfolio/shared/ui"
 import Link from "next/link"
 
 export interface FactorProps {

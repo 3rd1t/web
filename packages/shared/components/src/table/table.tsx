@@ -1,11 +1,9 @@
 import React from "react"
-import { Header, HeaderProps } from "./header/header"
-import { Row } from "./row/row"
-import { Cell } from "./cells/cell"
+import { Header } from "./header/header"
 
 export interface TableProps {
   columnNames: string[]
-  rows: Cell[][]
+  rows: React.ReactNode[][]
 }
 
 export const Table = ({ columnNames, rows }: TableProps) => {
@@ -17,8 +15,14 @@ export const Table = ({ columnNames, rows }: TableProps) => {
             <table className="min-w-full ">
               {<Header labels={columnNames} />}
               <tbody className="bg-white divide-y divide-gray-200">
-                {rows.map((row, i) => {
-                  return <Row key={i} cells={row} />
+                {rows.map((row, rowID) => {
+                  return (
+                    <tr key={rowID}>
+                      {row.map((cell, colID) => {
+                        return <td key={colID}>{cell}</td>
+                      })}
+                    </tr>
+                  )
                 })}
               </tbody>
             </table>

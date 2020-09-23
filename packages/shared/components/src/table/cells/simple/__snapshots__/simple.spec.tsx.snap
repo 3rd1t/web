@@ -3,11 +3,15 @@
 exports[`Simple Stories primaryshould match snapshot 1`] = `
 <body>
   <div>
-    <td
-      class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap"
+    <div
+      class="px-6 py-4 whitespace-no-wrap"
     >
-      Label
-    </td>
+      <span
+        class="text-sm leading-5 text-gray-900"
+      >
+        Label
+      </span>
+    </div>
   </div>
 </body>
 `;

@@ -12,5 +12,9 @@ export const primary = () => {
     labels: ["Name", "Surname", "Email"],
   }
 
-  return <Header labels={props.labels} />
+  return (
+    <table>
+      <Header labels={props.labels} />
+    </table>
+  )
 }

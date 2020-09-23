@@ -1,6 +1,5 @@
 import React from "react"
 import { Table } from "./table"
-import { Row } from "./row/row"
 import { Header } from "./header/header"
 import { Simple } from "./cells/simple/simple"
 import { Multiline } from "./cells/multiline/multiline"
@@ -13,7 +12,6 @@ import { Button } from "./cells/button/button"
 export default {
   component: Table,
   title: "components/table",
-  subcomponents: { Row, Header },
 }
 
 export const singleRow = () => {

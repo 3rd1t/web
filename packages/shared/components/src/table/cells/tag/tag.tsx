@@ -1,4 +1,5 @@
 import React from "react"
+import { Wrapper } from "../wrapper/wrapper"
 
 /* eslint-disable-next-line */
 export interface TagProps {
@@ -11,9 +12,9 @@ export const Tag = ({ label, color, key }: TagProps) => {
   const colors = `text-${color}-800 bg-${color}-200`
 
   return (
-    <td key={key} className="px-6 py-4 whitespace-no-wrap">
+    <Wrapper>
       <span className={`inline-flex px-2 text-xs font-semibold leading-5 rounded-full ${colors}`}>{label}</span>
-    </td>
+    </Wrapper>
   )
 }
 

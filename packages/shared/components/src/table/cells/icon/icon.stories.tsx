@@ -21,5 +21,9 @@ export const primary = () => {
     color: "green",
   }
 
-  return <Icon icon={props.icon} color={props.color} />
+  return (
+    <tr>
+      <Icon icon={props.icon} color={props.color} />
+    </tr>
+  )
 }

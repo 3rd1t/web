@@ -1,16 +1,16 @@
 import React from "react"
+import Wrapper from "../wrapper/wrapper"
 
 /* eslint-disable-next-line */
 export interface SimpleProps {
   label: string | number
-  key?: number
 }
 
-export const Simple = ({ label, key }: SimpleProps) => {
+export const Simple = ({ label }: SimpleProps) => {
   return (
-    <td key={key} className="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
-      {label}
-    </td>
+    <Wrapper>
+      <span className="text-sm leading-5 text-gray-900">{label}</span>
+    </Wrapper>
   )
 }
 

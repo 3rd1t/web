@@ -1,4 +1,5 @@
 import React from "react"
+import { Wrapper } from "../wrapper/wrapper"
 
 /* eslint-disable-next-line */
 export interface MultilineProps {
@@ -9,10 +10,10 @@ export interface MultilineProps {
 
 export const Multiline = ({ title, content, key }: MultilineProps) => {
   return (
-    <td key={key} className="px-6 py-4">
+    <Wrapper>
       <span className="text-sm leading-5 text-gray-900">{title}</span>
       <p className="text-sm leading-5 text-gray-500">{content}</p>
-    </td>
+    </Wrapper>
   )
 }
 

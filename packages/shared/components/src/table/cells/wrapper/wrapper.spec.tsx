@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
-import * as stories from "./row.stories"
+import * as stories from "./wrapper.stories"
 
-describe("Row", () => {
+describe("Button", () => {
   describe("Stories", () => {
     Object.entries(stories).forEach((s) => {
       if (s[0] !== "default") {

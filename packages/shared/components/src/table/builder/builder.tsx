@@ -58,7 +58,7 @@ export const SimpleTable = (rows: Row[]): React.ReactElement => {
 
   const columnNames = Object.keys(rows[0])
 
-  const simpleCells = rows.map((row) => Object.values(row).map((fieldValue) => <Simple label={fieldValue} />))
+  const simpleCells = rows.map((row) => columnNames.map((name) => <Simple label={row[name]} />))
 
   return <Table columnNames={columnNames} cells={simpleCells} />
 }

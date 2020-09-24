@@ -4,16 +4,12 @@ import { Transition } from "@tailwindui/react"
 export interface SelectProps {
   label: string
   choices: string[]
-  setValue: React.Dispatch<React.SetStateAction<string>>
+  selected: number
+  setSelected: React.Dispatch<React.SetStateAction<number>>
 }
 
-export const Select = ({ choices, label, setValue }: SelectProps) => {
+export const Select = ({ choices, label, selected, setSelected }: SelectProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [selected, setSelected] = useState(0)
-
-  useEffect(() => {
-    setValue(choices[selected])
-  }, [choices, selected])
 
   return (
     <div className="space-y-1">
@@ -28,7 +24,12 @@ export const Select = ({ choices, label, setValue }: SelectProps) => {
             className="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
           >
             <div className="flex items-center space-x-3">
-              <span className="block truncate">{choices[selected]}</span>
+              <input
+                readOnly
+                onBlur={() => setDropdownOpen(false)}
+                className="block w-full truncate cursor-pointer focus:outline-none"
+                value={choices[selected]}
+              ></input>
             </div>
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
               <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
@@ -47,7 +48,10 @@ export const Select = ({ choices, label, setValue }: SelectProps) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="absolute z-10 w-full mt-1 bg-white rounded shadow-lg">
+          <div
+            onMouseLeave={() => setDropdownOpen(false)}
+            className="absolute z-10 w-full mt-1 bg-white rounded shadow-lg"
+          >
             <ul className="py-1 overflow-auto text-base leading-6 rounded shadow-xs max-h-56 focus:outline-none sm:text-sm sm:leading-5">
               {choices.map((c, i) => (
                 <li

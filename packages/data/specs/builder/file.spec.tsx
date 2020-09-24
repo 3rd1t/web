@@ -7,7 +7,9 @@ describe("File", () => {
   it("should render successfully", () => {
     const { baseElement } = render(
       <File
-        factorModels={[{ name: "test", factors: [{ key: "A", description: "Description" }] }]}
+        factorModels={[
+          { name: "test", description: "Description", factors: [{ name: "A", description: "Description" }] },
+        ]}
         regions={["A", "B"]}
         currencies={["A", "B"]}
         intervals={["daily", "monthly", "annual"]}

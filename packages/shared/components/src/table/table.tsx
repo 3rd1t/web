@@ -8,10 +8,11 @@ export interface TableProps {
 }
 
 export const Table = ({ columnNames, cells }: TableProps) => {
-  const previewCells = [0, 1, 2, 3, 4].map((_) => columnNames.map((_) => <Preview />))
+  if (columnNames.length === 0) {
+    columnNames
+  }
 
-  const usedCells = cells.length > 0 ? cells : previewCells
-
+  const usedCells = cells.length > 0 ? cells : [1, 2, 3].map((_) => columnNames.map((_) => <Preview />))
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

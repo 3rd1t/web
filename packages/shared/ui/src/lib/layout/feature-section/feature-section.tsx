@@ -6,9 +6,17 @@ export interface FeatureSectionProps {
   button?: { label: string; href: string }
   illustration: React.ReactNode
   rightAligned?: boolean
+  subtitle?: string
 }
 
-export const FeatureSection = ({ title, content, button, illustration, rightAligned }: FeatureSectionProps) => {
+export const FeatureSection = ({
+  title,
+  subtitle,
+  content,
+  button,
+  illustration,
+  rightAligned,
+}: FeatureSectionProps) => {
   const link = button ? (
     <Link href={button.href}>
       <a className="flex items-center font-medium text-data-700 sm:max-w-xs focus:outline-none hover:bg-gray-100 hover:text-gray-700">
@@ -35,6 +43,8 @@ export const FeatureSection = ({ title, content, button, illustration, rightAlig
       >
         {title}
       </h2>
+      <p className="mt-3 text-lg text-gray-700">{subtitle}</p>
+
       <div
         className={`flex mt-16 items-center text-left justify-around space-y-8 lg:space-y-0 flex-col ${
           rightAligned ? "lg:flex-row-reverse  lg:text-right" : "lg:text-left lg:flex-row"

@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { MultiColumn } from "@perfolio/shared/nav"
 import { Select } from "@perfolio/shared/components"
-import { Transition } from "@tailwindui/react"
 import { Table, Button, SimpleTable } from "@perfolio/shared/components"
+import { Menu, Transition } from "@headlessui/react"
+import { updateModuleBlock } from "typescript"
+
 export interface FileProps {
   factorModels: { name: string; description: string; factors: { name: string; description: string }[] }[]
   regions: string[]
@@ -12,89 +14,108 @@ export interface FileProps {
 
 const FormPart = (i: number, select: React.ReactNode, title: string, description: string): React.ReactNode => {
   return (
-    <div>
-      <h3 className="text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        {title}
-      </h3>
-      <p className="max-w-2xl mt-4 text-xl leading-7 text-gray-500 lg:mx-auto">{description}</p>
+    <div className={`flex items-center justify-between p-2 m-4 border border-gray-400 rounded $`}>
+      <div className="flex flex-col items-start w-2/3">
+        <h3 className="text-2xl font-extrabold text-gray-900">{title}</h3>
+        <p className="text-sm text-gray-500">{description}</p>
+      </div>
 
-      <div className="max-w-md mt-10">{select}</div>
+      <div className="w-1/3">{select}</div>
     </div>
   )
 }
 
 export const File = (props: FileProps) => {
-  const [model, setModel] = useState<number>(0)
-  const [factor, setFactor] = useState<number>(0)
-  const [region, setRegion] = useState<number>(0)
-  const [currency, setCurrency] = useState<number>(0)
-  const [interval, setInterval] = useState<number>(0)
+  const [model, setModel] = useState<number>(-1)
+  const [factor, setFactor] = useState<number>(-1)
+  const [region, setRegion] = useState<number>(-1)
+  const [currency, setCurrency] = useState<number>(-1)
+  const [interval, setInterval] = useState<number>(-1)
 
-  const submit = (model: string, factor: string, region: string, currency: string, interval: string) => {
-    const url = "https://api.perfol.io/d/beta/" + path()
-    fetch(url, {
-      mode: "no-cors",
-    })
-      .then((res) => res.json())
-      .then((json) => setTableContent(json))
-      .catch((err) => {
-        console.error(err)
-      })
+  const updateModel = (index: number) => {
+    if (model === -1) {
+      setActiveStep(activeStep + 1)
+    }
+    setModel(index)
+  }
+
+  const updateFactor = (index: number) => {
+    if (factor === -1) {
+      setActiveStep(activeStep + 1)
+    }
+    setFactor(index)
+  }
+
+  const updateRegion = (index: number) => {
+    if (region === -1) {
+      setActiveStep(activeStep + 1)
+    }
+    setRegion(index)
+  }
+
+  const updateCurrency = (index: number) => {
+    if (currency === -1) {
+      setActiveStep(activeStep + 1)
+    }
+    setCurrency(index)
+  }
+
+  const updateInterval = (index: number) => {
+    if (interval === -1) {
+      setActiveStep(activeStep + 1)
+    }
+    setInterval(index)
+  }
+
+  const submit = () => {
+    console.log(path())
   }
 
   const [tableContent, setTableContent] = useState([])
 
-  const formData: { step: string; title: string; description: string; select: React.ReactNode }[] = [
+  const formData: { step: string; description: string; select: React.ReactNode }[] = [
     {
       step: "Model",
-      title: "Select a factor model",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
       select: (
         <Select
           selected={model}
-          setSelected={setModel}
-          label="Factor model"
+          setSelected={updateModel}
           choices={props.factorModels.map((m) => m.description)}
         ></Select>
       ),
     },
     {
       step: "Factor",
-      title: "Select a factor",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
       select: (
         <Select
           selected={factor}
-          setSelected={setFactor}
-          label="Factor"
-          choices={props.factorModels
-            .filter((f) => f.name === props.factorModels[model].name)[0]
-            .factors.map((f) => f.description)}
+          setSelected={updateFactor}
+          choices={
+            model >= 0
+              ? props.factorModels
+                .filter((f) => f.name === props.factorModels[model].name)[0]
+                .factors.map((f) => f.description)
+              : []
+          }
         ></Select>
       ),
     },
     {
       step: "Region",
-      title: "Select a region",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: <Select selected={region} setSelected={setRegion} label="Region" choices={props.regions}></Select>,
+      select: <Select selected={region} setSelected={updateRegion} choices={props.regions}></Select>,
     },
     {
       step: "Currency",
-      title: "Select a currency",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-
-      select: (
-        <Select selected={currency} setSelected={setCurrency} label="Currency" choices={props.currencies}></Select>
-      ),
+      select: <Select selected={currency} setSelected={updateCurrency} choices={props.currencies}></Select>,
     },
     {
       step: "Interval",
-      title: "Select an interval",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: (
-        <Select selected={interval} setSelected={setInterval} label="Interval" choices={props.intervals}></Select>
-      ),
+      select: <Select selected={interval} setSelected={updateInterval} choices={props.intervals}></Select>,
     },
   ]
 
@@ -122,82 +143,90 @@ export const File = (props: FileProps) => {
   return (
     <div>
       <MultiColumn breadcrumbs={["data", "builder", "file"]}>
-        <div className="flex flex-col items-center justify-center w-full h-full space-y-20">
-          <div className="flex items-center justify-center">
-            <aside className="flex flex-col w-1/3 space-y-4">
+        <div className="p-8">
+          <div className="flex justify-between">
+            <span className="text-lg font-semibold text-gray-800">Build your custom file</span>
+            <div className="flex space-x-4">
               {formData.map((part, i) => (
-                <button onClick={() => setActiveStep(i)} className="flex items-center space-x-4 focus:outline-none">
+                <div className="flex items-center focus:outline-none">
                   <div
-                    className={`border-4 rounded-full ${
-                      i < activeStep
+                    className={`border-4 rounded-full ${i < activeStep
                         ? "border-transparent"
                         : i === activeStep
-                        ? "border-data-200"
-                        : "border-transparent"
-                    }`}
+                          ? "border-data-200"
+                          : "border-transparent"
+                      }`}
                   >
                     <div
                       className={`w-2 h-2 flex rounded-full ${i <= activeStep ? "bg-data-600" : "bg-gray-300"}`}
                     ></div>
                   </div>
-                  <span
-                    className={`text-sm  ${
-                      i === activeStep ? "text-gray-900 font-semibold" : "text-gray-600 font-medium"
-                    } `}
-                  >
-                    {part.step}
-                  </span>
-                </button>
+                </div>
               ))}
-            </aside>
-            <main className="inset-y-0 w-2/3 ml-20">
-              {formData.map((part, i) => {
-                return (
-                  <Transition show={i === activeStep}>
-                    {FormPart(i, part.select, part.title, part.description)}
-                  </Transition>
-                )
-              })}
-              <div className="flex items-center justify-end mt-10 divide-x divide-gray-200">
-                <Button
-                  textColor="text-gray-800"
-                  iconLeft={
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fillRule="evenodd"
-                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  }
-                  bgColor="bg-transparent"
-                  onClick={previous}
-                  label="Prev"
-                />
-                <Button
-                  textColor="text-gray-800"
-                  iconRight={
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fillRule="evenodd"
-                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  }
-                  bgColor="bg-transparent"
-                  onClick={() => {
-                    activeStep < formData.length - 1 ? next : submit
-                  }}
-                  label={activeStep < formData.length - 1 ? "Next" : "Finish"}
-                />
-              </div>
-            </main>
+            </div>
           </div>
-          <div className="w-full px-20 space-y-2">
-            <span className="text-lg font-medium leading-6 text-gray-600">Preview</span>
-            <Table columnNames={["Date", "MOM", "HML", "OMG", "LOL", "WTF"]} cells={tableContent} />
+          <div className="mt-8 space-y-4">
+            {formData.map((part, i) => {
+              return (
+                <Transition
+                  show={i <= activeStep}
+                  enter="transition-opacity duration-75"
+                  enterFrom="opacity-0"
+                  enterTo="opacity-100"
+                  leave="transition-opacity duration-150"
+                  leaveFrom="opacity-100"
+                  leaveTo="opacity-0"
+                >
+                  <div
+                    className={`flex items-center justify-between p-3 border border-gray-400 rounded ${i === activeStep ? "bg-gray-100" : ""
+                      }`}
+                  >
+                    <div className="flex flex-col items-start w-2/3">
+                      <div className="flex items-center space-x-3">
+                        <Transition
+                          show={i < activeStep}
+                          enter="transition-opacity duration-75"
+                          enterFrom="opacity-0"
+                          enterTo="opacity-100"
+                          leave="transition-opacity duration-150"
+                          leaveFrom="opacity-100"
+                          leaveTo="opacity-0"
+                        >
+                          <svg
+                            className="w-6 h-6 text-data-600"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </Transition>
+                        <h3 className="text-2xl font-extrabold text-gray-900">{part.step}</h3>
+                      </div>
+                      <Transition show={i === activeStep}
+                        enter="transition-opacity duration-75"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition-opacity duration-150"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0">
+                        <p className="text-sm text-gray-500">{part.description}</p>
+                      </Transition>
+                    </div>
+
+                    <div className="w-1/3">{part.select}</div>
+                  </div>
+                </Transition>
+              )
+            })}
           </div>
+        </div>
+        <div>
+          <Button textColor="text-gray-900" label="Submit" onClick={submit} />
         </div>
       </MultiColumn>
     </div>

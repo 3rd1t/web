@@ -2,20 +2,17 @@ import React, { useState, useEffect } from "react"
 import { Transition } from "@tailwindui/react"
 /* eslint-disable-next-line */
 export interface SelectProps {
-  label: string
   choices: string[]
   selected: number
   setSelected: React.Dispatch<React.SetStateAction<number>>
+  showLabel?: boolean
 }
 
-export const Select = ({ choices, label, selected, setSelected }: SelectProps) => {
+export const Select = ({ choices, selected, setSelected }: SelectProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   return (
     <div className="space-y-1">
-      <label id="listbox-label" className="block text-sm font-medium leading-5 text-gray-700">
-        {label}
-      </label>
       <div className="relative">
         <span className="inline-block w-full rounded-md shadow-sm">
           <button
@@ -28,7 +25,7 @@ export const Select = ({ choices, label, selected, setSelected }: SelectProps) =
                 readOnly
                 onBlur={() => setDropdownOpen(false)}
                 className="block w-full truncate cursor-pointer focus:outline-none"
-                value={choices[selected]}
+                value={selected >= 0 ? choices[selected] : ""}
               ></input>
             </div>
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">

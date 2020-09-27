@@ -1629,6 +1629,11 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
+"@headlessui/react@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-0.1.2.tgz#254381e8a3235777a6b8113378d299e1c5601df2"
+  integrity sha512-OEsmQxRmhHrGQoxtVJLhc+f5dRqn3ng1Kldk6myfU3otaB7JXkDt2WT1AVhd15Khkg9hXeQNLNnp/WqsrVHPvg==
+
 "@icons/material@^0.2.4":
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"

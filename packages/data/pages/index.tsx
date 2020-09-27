@@ -55,7 +55,8 @@ const Index = (props: IndexProps) => {
       </Section>
       <Section id="data" bg="bg-white">
         <FeatureSection
-          title="High quality data, used in production by our own apps"
+          title="Get high quality data the easy way"
+          subTitle="Used in production by our own apps."
           content={
             <FeatureList
               features={[
@@ -83,12 +84,13 @@ const Index = (props: IndexProps) => {
       <Section id="builders" bg="bg-gray-100">
         <FeatureSection
           rightAligned
-          title="Build datasets the way you want"
+          title="Build data sets tailored to your needs"
+          subTitle="Fetch and parse only what's necessary."
           content={
             <FeatureList
               features={[
-                "Fetch data dynamically via our data-friendly API",
-                "Export data snapshots as json, csv or xlsx file",
+                "Fetch data dynamically via our data-friendly RESTful API",
+                "Export data snapshots as JSON, CSV or XLSX file",
                 "Get instant insights through our visualization tools",
               ]}
             />
@@ -100,6 +102,7 @@ const Index = (props: IndexProps) => {
       <Section id="charts" bg="bg-white">
         <FeatureSection
           title="Create awesome charts quickly"
+          subTitle="Stop spending hours fiddling with charting tools."
           content={
             <FeatureList
               features={[
@@ -116,14 +119,15 @@ const Index = (props: IndexProps) => {
       <Section id="sources" bg="bg-gray-100">
         <FeatureSection
           rightAligned
-          title="Code"
+          title="Made for researchers and analysts"
+          subTitle="Seamlessly integrates with your Python Pandas or R workflow."
           content={
             <FeatureList
               features={[
                 "Start faster with actual analysis",
                 "Reduce sources of error",
-                "Implement in your software",
                 "Language-independent",
+                "Implement in your apps",
               ]}
             />
           }
@@ -132,8 +136,8 @@ const Index = (props: IndexProps) => {
       </Section>
       <Section id="sources" bg="bg-white">
         <SectionTitle
-          title="Sources"
-          subtitle="We apply the latest finance data findings. Please give the authors and us some credit and cite correctly."
+          title="Data sources"
+          subtitle="We obtain our raw data only from selected high-quality sources. If you use our data for research, please always give the authors and us some credit and cite correctly."
         ></SectionTitle>
         <div className="px-4 mt-20 divide-y divide-gray-400">
           {props.sources.map((s, index) => {

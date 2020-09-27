@@ -1,4 +1,7 @@
 export const getHoverColor = (color: string): string => {
+  if (color.includes("transparent")) {
+    return ""
+  }
   const tokens = color.split("-")
   if (tokens.length !== 3) {
     throw new Error(

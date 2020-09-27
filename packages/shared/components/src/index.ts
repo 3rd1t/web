@@ -1,3 +1,6 @@
+export * from "./form/radio/radio"
+export * from "./form/select/select"
+export * from "./table/builder/builder"
 export * from "./table/table"
 export * from "./clickable/button/button"
 export * from "./clickable/link/link"

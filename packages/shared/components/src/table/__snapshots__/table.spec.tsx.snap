@@ -545,64 +545,6 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>

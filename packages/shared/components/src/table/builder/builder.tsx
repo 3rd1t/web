@@ -52,6 +52,9 @@ export function validateFields(rows: Row[]): boolean {
 }
 
 export const SimpleTable = (rows: Row[]): React.ReactElement => {
+  if (rows.length === 0) {
+    return <Table columnNames={[]} cells={[]} />
+  }
   if (!validateFields(rows)) {
     throw new Error("rows do not have the same field names")
   }

@@ -6,9 +6,10 @@ export interface FeatureSectionProps {
   button?: { label: string; href: string }
   illustration: React.ReactNode
   rightAligned?: boolean
+  subTitle?: string
 }
 
-export const FeatureSection = ({ title, content, button, illustration, rightAligned }: FeatureSectionProps) => {
+export const FeatureSection = ({ title, content, button, illustration, rightAligned, subTitle }: FeatureSectionProps) => {
   const link = button ? (
     <Link href={button.href}>
       <a className="flex items-center font-medium text-data-700 sm:max-w-xs focus:outline-none hover:bg-gray-100 hover:text-gray-700">
@@ -29,16 +30,17 @@ export const FeatureSection = ({ title, content, button, illustration, rightAlig
   return (
     <>
       <h2
-        className={`text-4xl font-extrabold leading-10 tracking-tight text-gray-800 xl:text-5xl sm:leading-none md:text-5xl text-left ${
-          rightAligned ? "lg:text-right" : ""
-        }`}
+        className={`text-4xl font-extrabold leading-10 tracking-tight text-gray-800 xl:text-5xl sm:leading-none md:text-5xl text-left ${rightAligned ? "lg:text-right" : ""
+          }`}
       >
         {title}
       </h2>
+      <p className={`mt-5 text-xl text-gray-700 ${rightAligned ? "lg:text-right" : ""}`}>
+        {subTitle}
+      </p>
       <div
-        className={`flex mt-16 items-center text-left justify-around space-y-8 lg:space-y-0 flex-col ${
-          rightAligned ? "lg:flex-row-reverse  lg:text-right" : "lg:text-left lg:flex-row"
-        }`}
+        className={`flex mt-16 items-center text-left justify-around space-y-8 lg:space-y-0 flex-col ${rightAligned ? "lg:flex-row-reverse  lg:text-right" : "lg:text-left lg:flex-row"
+          }`}
       >
         <div className={`flex flex-grow ${rightAligned ? "justify-end" : "justify-start"}`}>{illustration}</div>
         <div className="flex-grow">

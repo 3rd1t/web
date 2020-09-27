@@ -7,6 +7,16 @@ describe("getHoverColor()", () => {
     want: string
   }[] = [
     {
+      name: "Returns empty string when background is transparent",
+      color: "bg-transparent",
+      want: "",
+    },
+    {
+      name: "Returns empty string when background is transparent",
+      color: "text-transparent",
+      want: "",
+    },
+    {
       name: "Returns a lighter background",
       color: "bg-gray-900",
       want: "hover:bg-gray-800",

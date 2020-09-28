@@ -23,7 +23,9 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build-storybook": "yarn nx build-storybook shared-components",
+    "chromatic": "npx chromatic --project-token pzwibf2kvtd -o dist/storybook/shared-components"
   },
   "private": true,
   "dependencies": {

@@ -12,13 +12,12 @@ export const Select = ({ choices, selected, setSelected }: SelectProps) => {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   return (
-    <div className="space-y-1">
       <div className="relative">
-        <span className="inline-block w-full rounded-md shadow-sm">
+        <span className="inline-block w-full rounded-sm">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             type="button"
-            className="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+            className="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
           >
             <div className="flex items-center space-x-3">
               <input
@@ -69,7 +68,6 @@ export const Select = ({ choices, selected, setSelected }: SelectProps) => {
           </div>
         </Transition>
       </div>
-    </div>
   )
 }
 

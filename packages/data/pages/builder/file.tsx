@@ -95,8 +95,8 @@ export const File = (props: FileProps) => {
           choices={
             model >= 0
               ? props.factorModels
-                .filter((f) => f.name === props.factorModels[model].name)[0]
-                .factors.map((f) => f.description)
+                  .filter((f) => f.name === props.factorModels[model].name)[0]
+                  .factors.map((f) => f.description)
               : []
           }
         ></Select>
@@ -150,12 +150,13 @@ export const File = (props: FileProps) => {
               {formData.map((part, i) => (
                 <div className="flex items-center focus:outline-none">
                   <div
-                    className={`border-4 rounded-full ${i < activeStep
+                    className={`border-4 rounded-full ${
+                      i < activeStep
                         ? "border-transparent"
                         : i === activeStep
-                          ? "border-data-200"
-                          : "border-transparent"
-                      }`}
+                        ? "border-data-200"
+                        : "border-transparent"
+                    }`}
                   >
                     <div
                       className={`w-2 h-2 flex rounded-full ${i <= activeStep ? "bg-data-600" : "bg-gray-300"}`}
@@ -165,65 +166,7 @@ export const File = (props: FileProps) => {
               ))}
             </div>
           </div>
-          <div className="mt-8 space-y-4">
-            {formData.map((part, i) => {
-              return (
-                <Transition
-                  show={i <= activeStep}
-                  enter="transition-opacity duration-75"
-                  enterFrom="opacity-0"
-                  enterTo="opacity-100"
-                  leave="transition-opacity duration-150"
-                  leaveFrom="opacity-100"
-                  leaveTo="opacity-0"
-                >
-                  <div
-                    className={`flex items-center justify-between p-3 border border-gray-400 rounded ${i === activeStep ? "bg-gray-100" : ""
-                      }`}
-                  >
-                    <div className="flex flex-col items-start w-2/3">
-                      <div className="flex items-center space-x-3">
-                        <Transition
-                          show={i < activeStep}
-                          enter="transition-opacity duration-75"
-                          enterFrom="opacity-0"
-                          enterTo="opacity-100"
-                          leave="transition-opacity duration-150"
-                          leaveFrom="opacity-100"
-                          leaveTo="opacity-0"
-                        >
-                          <svg
-                            className="w-6 h-6 text-data-600"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </Transition>
-                        <h3 className="text-2xl font-extrabold text-gray-900">{part.step}</h3>
-                      </div>
-                      <Transition show={i === activeStep}
-                        enter="transition-opacity duration-75"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="transition-opacity duration-150"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0">
-                        <p className="text-sm text-gray-500">{part.description}</p>
-                      </Transition>
-                    </div>
-
-                    <div className="w-1/3">{part.select}</div>
-                  </div>
-                </Transition>
-              )
-            })}
-          </div>
+          <div className="mt-8 space-y-4"></div>
         </div>
         <div>
           <Button textColor="text-gray-900" label="Submit" onClick={submit} />

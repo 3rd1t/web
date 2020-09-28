@@ -71,7 +71,7 @@ export const MultistepForm = (props: MultistepFormProps) => {
                             layout
                             initial={{ opacity: 0, x: -20, width: 0 }}
                             animate={{ opacity: 1, x: 0, width: "auto" }}
-                            exit={{ opacity: 0, x:-20, width: 0 }}
+                            exit={{ opacity: 0, x: -20, width: 0 }}
                             transition={{ damping: 300 }}
                           >
                             <svg

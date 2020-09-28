@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { MultistepForm, MultistepFormProps } from "./multistep-form"
+import React from "react"
+import { MultistepForm } from "./multistep-form"
 
 export default {
   component: MultistepForm,
@@ -7,8 +7,11 @@ export default {
 }
 
 export const twoSteps = () => {
-  const [first, setFirst] = useState<number>(-1)
-  const [second, setSecond] = useState<number>(-1)
+  const first = -1
+  const setFirst = (v: number) => {}
+  const second = -1
+  const setSecond = (v: number) => {}
+
   const props: {
     steps: {
       name: string
@@ -196,11 +199,18 @@ export const realExample = () => {
     intervals: ["daily", "monthly", "annual"],
   }
 
-  const [model, setModel] = useState<number>(-1)
-  const [factor, setFactor] = useState<number>(-1)
-  const [region, setRegion] = useState<number>(-1)
-  const [currency, setCurrency] = useState<number>(-1)
-  const [interval, setInterval] = useState<number>(-1)
+  const model = -1
+  const setModel = (v: number) => {}
+  const factor = -1
+  const setFactor = (v: number) => {}
+
+  const region = -1
+  const setRegion = (v: number) => {}
+  const currency = -1
+  const setCurrency = (v: number) => {}
+  const interval = -1
+  const setInterval = (v: number) => {}
+
   const steps: {
     name: string
     description: string

@@ -126,7 +126,7 @@ export const File = (props: FileProps) => {
           <div className="flex items-center justify-center">
             <aside className="flex flex-col w-1/3 space-y-4">
               {formData.map((part, i) => (
-                <button onClick={() => setActiveStep(i)} className="flex items-center space-x-4 focus:outline-none">
+                <button key={i} onClick={() => setActiveStep(i)} className="flex items-center space-x-4 focus:outline-none">
                   <div
                     className={`border-4 rounded-full ${
                       i < activeStep
@@ -153,7 +153,7 @@ export const File = (props: FileProps) => {
             <main className="inset-y-0 w-2/3 ml-20">
               {formData.map((part, i) => {
                 return (
-                  <Transition show={i === activeStep}>
+                  <Transition key={i} show={i === activeStep}>
                     {FormPart(i, part.select, part.title, part.description)}
                   </Transition>
                 )

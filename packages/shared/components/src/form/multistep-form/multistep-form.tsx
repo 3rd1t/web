@@ -51,9 +51,7 @@ export const MultistepForm = (props: MultistepFormProps) => {
                       setActive(i)
                     }
                   }}
-                  className={`flex flex-col md:flex-row  md:items-center p-3 border md:justify-between border-gray-400 hover:bg-gray-100 rounded ${
-                    i === progress || i === active ? "bg-gray-100" : ""
-                  }`}
+                  className="flex flex-col p-3 bg-white border border-gray-300 rounded md:flex-row md:items-center md:justify-between hover:border-data-500"
                 >
                   <div className="md:w-2/3">
                     <div className="flex items-center justify-start space-x-3">

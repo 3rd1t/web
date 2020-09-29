@@ -1629,10 +1629,10 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
-"@headlessui/react@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-0.1.2.tgz#254381e8a3235777a6b8113378d299e1c5601df2"
-  integrity sha512-OEsmQxRmhHrGQoxtVJLhc+f5dRqn3ng1Kldk6myfU3otaB7JXkDt2WT1AVhd15Khkg9hXeQNLNnp/WqsrVHPvg==
+"@headlessui/react@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-0.1.3.tgz#648eba13322a1a7ed0c5f3425eda3ad2d84ad602"
+  integrity sha512-Lo8RW8f0z9fMeW/exoy3faoBXusXqiNbCp/K3dQjeLBI4r4ngsaXaLqoHHTLd2gPBEYUjQvBMSDiBRK3Mm2mag==
 
 "@icons/material@^0.2.4":
   version "0.2.4"
@@ -2359,10 +2359,10 @@
     webpack-merge "4.2.1"
     webpack-node-externals "1.7.2"
 
-"@nrwl/nx-cloud@latest":
-  version "10.1.1"
-  resolved "https://registry.yarnpkg.com/@nrwl/nx-cloud/-/nx-cloud-10.1.1.tgz#bfb3e70b8ffdf190e82622f7822792ef1e108ae0"
-  integrity sha512-R7vDsI/5RveiqAMPc16QYNPD29LiHe3fJgDXW4n4qjDLEq2nOtn1MOlMM0T4kH7hqhL5UIuZ2GipafMuui+ykw==
+"@nrwl/nx-cloud@10.1.6":
+  version "10.1.6"
+  resolved "https://registry.yarnpkg.com/@nrwl/nx-cloud/-/nx-cloud-10.1.6.tgz#117da97562b1c60c17a25765d718d8e2963cf9ce"
+  integrity sha512-m/B3gBojAl7UI0L/HJeAR9mbUOEIzNPuIndL0yoBrla/mpd5RatSf4VUsKHUD0X+ST8RYnwbfkXIkKO3HVf7tQ==
   dependencies:
     axios "^0.19.0"
     node-machine-id "^1.1.12"

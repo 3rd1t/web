@@ -1,3 +1,4 @@
+export * from "./form/multistep-form/multistep-form"
 export * from "./form/radio/radio"
 export * from "./form/select/select"
 export * from "./table/builder/builder"

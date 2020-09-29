@@ -23,10 +23,13 @@
     "update": "nx migrate latest",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "build-storybook": "yarn nx build-storybook shared-components",
+    "chromatic": "npx chromatic --project-token pzwibf2kvtd -o dist/storybook/shared-components"
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^0.1.2",
     "@next/mdx": "^9.5.3",
     "@nrwl/next": "10.2.1",
     "@nrwl/node": "10.2.1",
@@ -46,6 +49,7 @@
     "gray-matter": "^4.0.2",
     "lightweight-charts": "^3.1.5",
     "lint-staged": "^10.4.0",
+    "@types/jest": "26.0.8",
     "next": "9.5.3",
     "next-mdx-remote": "^1.0.0",
     "nx": "^10.2.1",
@@ -89,7 +93,6 @@
     "@storybook/addon-viewport": "^6.0.21",
     "@storybook/react": "6.0.21",
     "@testing-library/react": "11.0.4",
-    "@types/jest": "26.0.8",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "@types/webpack": "4.41.21",

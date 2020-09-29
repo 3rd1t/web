@@ -6,7 +6,7 @@ import { getHoverColor } from "../util/hoverColor"
 export interface ButtonProps {
   label: string | React.ReactNode
   textColor: string
-  bgColor: string
+  bgColor?: string
   onClick: () => void
   iconLeft?: React.ReactNode
   iconRight?: React.ReactNode

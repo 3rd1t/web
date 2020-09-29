@@ -1,4 +1,7 @@
 export const getHoverColor = (color: string): string => {
+  if (color === "" || typeof color === "undefined") {
+    return ""
+  }
   if (color.includes("transparent")) {
     return ""
   }

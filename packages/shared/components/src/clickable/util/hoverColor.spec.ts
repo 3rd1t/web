@@ -7,6 +7,11 @@ describe("getHoverColor()", () => {
     want: string
   }[] = [
     {
+      name: "Returns empty string when background is empty",
+      color: "",
+      want: "",
+    },
+    {
       name: "Returns empty string when background is transparent",
       color: "bg-transparent",
       want: "",
@@ -56,7 +61,7 @@ describe("getHoverColor()", () => {
   })
 
   describe("when a bad className is passed in", () => {
-    const testCases = ["", "bg-gray", "bg-gray-100-another"]
+    const testCases = ["bg-gray", "bg-gray-100-another"]
 
     testCases.forEach((tc) => {
       it("throws", () => {

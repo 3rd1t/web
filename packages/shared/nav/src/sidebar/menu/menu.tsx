@@ -7,7 +7,7 @@ export interface MenuProps {}
 
 export const Menu = (props: MenuProps) => {
   return (
-    <div className="flex flex-col justify-between px-4 py-4 bg-gray-100 border-l border-r border-gray-300 ">
+    <div className="flex flex-col justify-between px-4 py-4 bg-white border-l border-r border-gray-300 ">
       <ul className="flex flex-col w-full">
         <li>
           <Title label="Builder" />

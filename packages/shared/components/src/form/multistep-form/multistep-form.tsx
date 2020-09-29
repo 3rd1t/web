@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Select } from "@perfolio/shared/components"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
+import Button from "../../clickable/button/button"
 
 type Step = {
   name: string
@@ -20,22 +21,13 @@ export const MultistepForm = (props: MultistepFormProps) => {
   const [active, setActive] = useState<number>(0)
 
   const updateState = (step: Step) => (newValue: number) => {
-    console.log({ progress, active })
     // Only advance if the field did not have a selection in the first place.
     if (step.value < 0) {
       setProgress(progress + 1)
     }
-    console.log("running")
     setActive(progress + 1)
-    console.log("ran")
-
     step.setValue(newValue)
   }
-
-  useEffect(() => {
-    console.log({ active })
-  }, [active])
-
   useEffect(() => {
     setActive(progress)
   }, [progress])
@@ -45,7 +37,7 @@ export const MultistepForm = (props: MultistepFormProps) => {
       <AnimateSharedLayout>
         {props.steps.map((step, i) => {
           return (
-            <AnimatePresence>
+            <AnimatePresence key={i}>
               {i <= progress ? (
                 <motion.div
                   layout

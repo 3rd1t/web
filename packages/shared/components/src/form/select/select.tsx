@@ -13,7 +13,11 @@ export const Select = ({ choices, selected, setSelected }: SelectProps) => {
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button className="w-full p-2 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+            <Menu.Button
+              className={`w-full p-2 text-left transition duration-150 ease-in-out bg-white border  rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue sm:text-sm sm:leading-5 ${
+                selected < 0 ? "border-data-500" : "border-gray-300"
+              }`}
+            >
               <input
                 readOnly
                 className="truncate cursor-pointer focus:outline-none"
@@ -38,7 +42,10 @@ export const Select = ({ choices, selected, setSelected }: SelectProps) => {
                 <Menu.Items className="flex flex-col items-start py-1 overflow-auto text-base leading-6 rounded-sm shadow-xs max-h-56 focus:outline-none sm:text-sm sm:leading-5 ">
                   {choices.map((choice, i) => {
                     return (
-                      <Menu.Item className="w-full py-2 pl-3 text-left text-gray-900 cursor-default select-none hover:bg-data-300">
+                      <Menu.Item
+                        key={i}
+                        className="w-full py-2 pl-3 text-left text-gray-900 cursor-default select-none hover:bg-data-300"
+                      >
                         {({ active }) => (
                           <button
                             onClick={() => setSelected(i)}

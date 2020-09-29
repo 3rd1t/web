@@ -1,28 +1,13 @@
 import React, { useState, useEffect } from "react"
 import { MultiColumn } from "@perfolio/shared/nav"
-import { Select } from "@perfolio/shared/components"
-import { Table, Button, SimpleTable } from "@perfolio/shared/components"
-import { Menu, Transition } from "@headlessui/react"
-import { updateModuleBlock } from "typescript"
+import { MultistepForm, Table, Button } from "@perfolio/shared/components"
+import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
 
 export interface FileProps {
   factorModels: { name: string; description: string; factors: { name: string; description: string }[] }[]
   regions: string[]
   currencies: string[]
   intervals: string[]
-}
-
-const FormPart = (i: number, select: React.ReactNode, title: string, description: string): React.ReactNode => {
-  return (
-    <div className={`flex items-center justify-between p-2 m-4 border border-gray-400 rounded $`}>
-      <div className="flex flex-col items-start w-2/3">
-        <h3 className="text-2xl font-extrabold text-gray-900">{title}</h3>
-        <p className="text-sm text-gray-500">{description}</p>
-      </div>
-
-      <div className="w-1/3">{select}</div>
-    </div>
-  )
 }
 
 export const File = (props: FileProps) => {
@@ -32,104 +17,67 @@ export const File = (props: FileProps) => {
   const [currency, setCurrency] = useState<number>(-1)
   const [interval, setInterval] = useState<number>(-1)
 
-  const updateModel = (index: number) => {
-    if (model === -1) {
-      setActiveStep(activeStep + 1)
-    }
-    setModel(index)
-  }
+  useEffect(() => {
+    setFactor(-1)
+  }, [model])
 
-  const updateFactor = (index: number) => {
-    if (factor === -1) {
-      setActiveStep(activeStep + 1)
-    }
-    setFactor(index)
-  }
-
-  const updateRegion = (index: number) => {
-    if (region === -1) {
-      setActiveStep(activeStep + 1)
-    }
-    setRegion(index)
-  }
-
-  const updateCurrency = (index: number) => {
-    if (currency === -1) {
-      setActiveStep(activeStep + 1)
-    }
-    setCurrency(index)
-  }
-
-  const updateInterval = (index: number) => {
-    if (interval === -1) {
-      setActiveStep(activeStep + 1)
-    }
-    setInterval(index)
-  }
-
-  const submit = () => {
-    console.log(path())
-  }
-
-  const [tableContent, setTableContent] = useState([])
-
-  const formData: { step: string; description: string; select: React.ReactNode }[] = [
+  const steps: {
+    name: string
+    description: string
+    choices: string[]
+    value: number
+    setValue: React.Dispatch<React.SetStateAction<number>>
+  }[] = [
     {
-      step: "Model",
+      name: "Model",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: (
-        <Select
-          selected={model}
-          setSelected={updateModel}
-          choices={props.factorModels.map((m) => m.description)}
-        ></Select>
-      ),
+      choices: props.factorModels.map((m) => m.description),
+      value: model,
+      setValue: setModel,
     },
     {
-      step: "Factor",
+      name: "Factor",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: (
-        <Select
-          selected={factor}
-          setSelected={updateFactor}
-          choices={
-            model >= 0
-              ? props.factorModels
-                  .filter((f) => f.name === props.factorModels[model].name)[0]
-                  .factors.map((f) => f.description)
-              : []
-          }
-        ></Select>
-      ),
+      choices:
+        model >= 0
+          ? props.factorModels.find((f) => f.name === props.factorModels[model].name).factors.map((f) => f.description)
+          : [],
+      value: factor,
+      setValue: setFactor,
     },
     {
-      step: "Region",
+      name: "Region",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: <Select selected={region} setSelected={updateRegion} choices={props.regions}></Select>,
+      choices: props.regions,
+      value: region,
+      setValue: setRegion,
     },
     {
-      step: "Currency",
+      name: "Currency",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: <Select selected={currency} setSelected={updateCurrency} choices={props.currencies}></Select>,
+      choices: props.currencies,
+      value: currency,
+      setValue: setCurrency,
     },
     {
-      step: "Interval",
+      name: "Interval",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      select: <Select selected={interval} setSelected={updateInterval} choices={props.intervals}></Select>,
+      choices: props.intervals,
+      value: interval,
+      setValue: setInterval,
     },
   ]
 
-  const [activeStep, setActiveStep] = useState<number>(0)
-  const next = () => {
-    if (activeStep + 1 < formData.length) {
-      setActiveStep(activeStep + 1)
+  const [cells, setCells] = useState([])
+  const [complete, setComplete] = useState(false)
+  // Checks if form is complete and sets table content
+  useEffect(() => {
+    if (model >= 0 && factor >= 0 && region >= 0 && currency >= 0 && interval >= 0) {
+      setComplete(true)
+    } else {
+      setComplete(false)
     }
-  }
-  const previous = () => {
-    if (activeStep - 1 >= 0) {
-      setActiveStep(activeStep - 1)
-    }
-  }
+  }, [model, factor, region, currency, interval])
 
   const path = () => {
     return [
@@ -140,38 +88,76 @@ export const File = (props: FileProps) => {
       props.intervals[interval],
     ].join("/")
   }
+
+  const columnNames = (): string[] => {
+    if (model < 0 || factor < 0) {
+      return []
+    }
+
+    const selectedFactor = props.factorModels[model].factors[factor].name
+    if (selectedFactor.toLowerCase() === "all") {
+      return ["Date", ...props.factorModels[model].factors.map((f) => f.name)]
+    }
+    return ["Date", props.factorModels[model].factors[factor].name]
+  }
+
   return (
     <div>
-      <MultiColumn breadcrumbs={["data", "builder", "file"]}>
-        <div className="p-8">
-          <div className="flex justify-between">
-            <span className="text-lg font-semibold text-gray-800">Build your custom file</span>
-            <div className="flex space-x-4">
-              {formData.map((part, i) => (
-                <div className="flex items-center focus:outline-none">
-                  <div
-                    className={`border-4 rounded-full ${
-                      i < activeStep
-                        ? "border-transparent"
-                        : i === activeStep
-                        ? "border-data-200"
-                        : "border-transparent"
-                    }`}
+      <AnimateSharedLayout>
+        <MultiColumn breadcrumbs={["data", "builder", "file"]}>
+          <div className="p-8 space-y-4">
+            <h3 className="text-lg font-semibold text-gray-800">Build your custom file</h3>
+            <MultistepForm steps={steps} />
+
+            <AnimatePresence>
+              {complete ? (
+                <>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ damping: 300 }}
                   >
-                    <div
-                      className={`w-2 h-2 flex rounded-full ${i <= activeStep ? "bg-data-600" : "bg-gray-300"}`}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                    <Table columnNames={columnNames()} cells={cells}></Table>
+                  </motion.div>
+
+                  <motion.div
+                    layout
+                    className="mt-16 text-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ damping: 300 }}
+                  >
+                    <Button
+                      onClick={() => console.log("DONE")}
+                      label="Download"
+                      bgColor="bg-carbon-900"
+                      textColor="text-gray-100"
+                      iconRight={
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                          />
+                        </svg>
+                      }
+                    ></Button>
+                  </motion.div>
+                </>
+              ) : null}
+            </AnimatePresence>
           </div>
-          <div className="mt-8 space-y-4"></div>
-        </div>
-        <div>
-          <Button textColor="text-gray-900" label="Submit" onClick={submit} />
-        </div>
-      </MultiColumn>
+        </MultiColumn>
+      </AnimateSharedLayout>
     </div>
   )
 }

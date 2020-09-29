@@ -37,7 +37,7 @@ exports[`MultistepForm Stories realExampleshould match snapshot 1`] = `
           >
             <button
               aria-haspopup="true"
-              class="w-full p-2 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+              class="w-full p-2 text-left transition duration-150 ease-in-out bg-white border  rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue sm:text-sm sm:leading-5 border-data-500"
               id="headlessui-menu-button-2"
               type="button"
             >
@@ -109,7 +109,7 @@ exports[`MultistepForm Stories twoStepsshould match snapshot 1`] = `
           >
             <button
               aria-haspopup="true"
-              class="w-full p-2 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
+              class="w-full p-2 text-left transition duration-150 ease-in-out bg-white border  rounded-sm cursor-default hover:border-data-400 focus:outline-none focus:shadow-outline-blue sm:text-sm sm:leading-5 border-data-500"
               id="headlessui-menu-button-1"
               type="button"
             >

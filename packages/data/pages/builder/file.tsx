@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { MultiColumn } from "@perfolio/shared/nav"
-import { MultistepForm, Table, Button } from "@perfolio/shared/components"
+import { MultiColumn } from "@perfolio/components/nav/layout/multi-column/multi-column"
+import { MultistepForm } from "@perfolio/components/form/multistep-form/multistep-form"
+import { Table } from "@perfolio/components/table/table"
+import { Button } from "@perfolio/components/clickable/button/button"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
 
 export interface FileProps {

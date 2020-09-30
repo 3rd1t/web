@@ -18,7 +18,9 @@ export const MultiColumn = ({ children, breadcrumbs }: MultiColumnProps) => {
       </div>
       <div className="w-full min-h-screen">
         <Header breadcrumbs={breadcrumbs}></Header>
-        <main className="h-full pt-20 -mt-20">{children}</main>
+        <main className="h-full pt-20 -mt-20">
+          <div className="h-full bg-gray-100">{children}</div>
+        </main>
       </div>
     </div>
   )

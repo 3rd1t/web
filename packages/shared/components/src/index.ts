@@ -1,3 +1,4 @@
+export * from "./progress/dots/dots"
 export * from "./form/multistep-form/multistep-form"
 export * from "./form/radio/radio"
 export * from "./form/select/select"

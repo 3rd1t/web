@@ -106,8 +106,7 @@ export const File = (props: FileProps) => {
       <AnimateSharedLayout>
         <MultiColumn breadcrumbs={["data", "builder", "file"]}>
           <div className="p-8 space-y-4">
-            <h3 className="text-lg font-semibold text-gray-800">Build your custom file</h3>
-            <MultistepForm steps={steps} />
+            <MultistepForm steps={steps} title="Build your custom file" />
 
             <AnimatePresence>
               {complete ? (

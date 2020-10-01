@@ -30,19 +30,19 @@ export const App = ({ href, icon, active, label }: AppProps) => {
           ${!!href ? "hover:text-black hover:bg-data-400 " : ""}
         }`}
         >
-            <div className={!!href ? "" : "opacity-50"}>{icon}</div>
-            <AnimatePresence>
-              {open ? (
-                <motion.span
-                  initial={{ width: 0 }}
-                  animate={{ width: "auto" }}
-                  exit={{ width: 0 }}
-                  className="max-w-sm px-2 py-1 text-sm text-gray-900 truncate"
-                >
-                  {label}
-                </motion.span>
-              ) : null}
-            </AnimatePresence>
+          <div className={!!href ? "" : "opacity-50"}>{icon}</div>
+          <AnimatePresence>
+            {open ? (
+              <motion.span
+                initial={{ width: 0 }}
+                animate={{ width: "auto" }}
+                exit={{ width: 0 }}
+                className="max-w-sm px-2 py-1 text-sm text-gray-900 truncate"
+              >
+                {label}
+              </motion.span>
+            ) : null}
+          </AnimatePresence>
         </div>
       </a>
     </Link>

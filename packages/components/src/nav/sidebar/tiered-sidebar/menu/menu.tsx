@@ -4,8 +4,6 @@ import React from "react"
 export interface MenuProps {}
 
 export const Menu = (props: MenuProps) => {
-
-
   return (
     <div className="h-full ml-16 text-black bg-white">
       <h1>Welcome to menu!</h1>

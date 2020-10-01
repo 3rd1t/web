@@ -17,7 +17,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <div className="flex items-center space-x-2">
       <svg
-        className="h-6 text-gray-900 stroke-current"
+        className="w-full text-gray-900 stroke-current"
         viewBox="0 0 194 148"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

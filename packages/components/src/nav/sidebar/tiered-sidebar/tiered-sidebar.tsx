@@ -18,11 +18,11 @@ export const TieredSidebar = (props: TieredSidebarProps) => {
         Toggle
       </button>
       <div className="relative mt-20">
-        <Main open={open} navbarWidth={navbarWidth}></Main>
-        <div className="w-full">
-          <div className="h-screen">
-            <Menu></Menu>
-          </div>
+        <div className="absolute border-r border-gray-300">
+          <Main open={open} setOpen={setOpen} navbarWidth={navbarWidth}></Main>
+        </div>
+        <div className="">
+          <Menu></Menu>
         </div>
       </div>
     </div>

@@ -1,14 +1,26 @@
 import React from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import Link from "next/link"
+import { wrap } from "module"
 
 interface AppProps {
   icon: React.ReactNode
-  label?: string
+  label?: React.ReactNode
   open: boolean
+  onClick?: () => void
+  href?: string
 }
-export const App = ({ icon, label, open }: AppProps) => {
-  return (
-    <div className="relative flex items-center h-12 m-4 text-gray-600 rounded hover:bg-data-400 hover:text-white">
+export const App = ({ icon, label, open, onClick, href }: AppProps) => {
+  if (onClick && href) {
+    throw new Error("Must not have href and onClick at the same time")
+  }
+
+  const wrapperClass = `relative flex items-center h-12 m-4 text-gray-600 rounded focus:outline-none   ${
+    onClick || href ? "hover:bg-data-400 hover:text-white cursor-pointer" : "hover:text-gray-500"
+  }`
+
+  const content = (
+    <>
       <span className="flex items-center justify-center w-12">{icon}</span>
       <AnimatePresence>
         {open ? (
@@ -37,8 +49,26 @@ export const App = ({ icon, label, open }: AppProps) => {
           </motion.span>
         ) : null}
       </AnimatePresence>
-    </div>
+    </>
   )
+
+  if (href) {
+    return (
+      <Link href={href}>
+        <a className={wrapperClass}>{content}</a>
+      </Link>
+    )
+  }
+
+  if (onClick) {
+    return (
+      <div onClick={onClick} className={wrapperClass}>
+        {content}
+      </div>
+    )
+  }
+
+  return <div className={wrapperClass}>{content}</div>
 }
 
 export default App

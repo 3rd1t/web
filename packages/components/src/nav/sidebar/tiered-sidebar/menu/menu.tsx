@@ -5,8 +5,8 @@ export interface MenuProps {}
 
 export const Menu = (props: MenuProps) => {
   return (
-    <div className="h-full ml-16 text-black bg-white">
-      <h1>Welcome to menu!</h1>
+    <div className="min-h-screen ml-20 text-black bg-white">
+      <section></section>
     </div>
   )
 }

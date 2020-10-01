@@ -2,18 +2,18 @@ import React from "react"
 import { Apps } from "../../sidebar/apps/apps"
 import { Header } from "../../top/header/header"
 import { Menu } from "../../sidebar/menu/menu"
+import TieredSidebar from "../../sidebar/tiered-sidebar/tiered-sidebar"
 /* eslint-disable-next-line */
-export interface MultiColumnProps {
+export interface SidebarLayoutProps {
   children: React.ReactNode
   breadcrumbs?: string[]
 }
 
-export const MultiColumn = ({ children, breadcrumbs }: MultiColumnProps) => {
+export const SidebarLayout = ({ children, breadcrumbs }: SidebarLayoutProps) => {
   return (
     <div className="flex">
       <div className="sticky top-0 flex flex-shrink-0 min-h-screen">
-        <Apps></Apps>
-        <Menu></Menu>
+        <TieredSidebar />
       </div>
       <div className="w-full min-h-screen">
         <Header breadcrumbs={breadcrumbs}></Header>
@@ -25,4 +25,4 @@ export const MultiColumn = ({ children, breadcrumbs }: MultiColumnProps) => {
   )
 }
 
-export default MultiColumn
+export default SidebarLayout

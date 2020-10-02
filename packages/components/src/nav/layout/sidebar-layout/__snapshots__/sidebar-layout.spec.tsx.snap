@@ -12,11 +12,6 @@ exports[`SidebarLayout primary should match snapshot 1`] = `
         <div
           style="width: 320px;"
         >
-          <button
-            class="text-white"
-          >
-            Toggle
-          </button>
           <div
             class="relative"
           >

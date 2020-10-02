@@ -1,11 +1,11 @@
 import React from "react"
-import { MultiColumn } from "@perfolio/shared/nav"
+import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
+import { Link } from "@perfolio/components/clickable/link/link"
 import fs from "fs"
 import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import path from "path"
-import Link from "next/link"
 
 export interface FactorProps {
   source: string
@@ -18,7 +18,7 @@ export const Factor = ({ source, meta }: FactorProps) => {
 
   return (
     <div>
-      <MultiColumn breadcrumbs={["data", "Factors", meta.factor]}>
+      <SidebarLayout breadcrumbs={["data", "Factors", meta.factor]}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
           <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{meta.authors}</span>
@@ -28,8 +28,11 @@ export const Factor = ({ source, meta }: FactorProps) => {
         </div>
         <div className="flex items-center justify-center space-x-16">
           <p className="text-gray-800 md:text-lg">Access this data through our builders:</p>
-          <Link href="/builder/api">
-            <a className={buttonStyles}>
+          <Link
+            textColor="text-gray-900"
+            label="API"
+            href="/builder/api"
+            iconLeft={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 code">
                 <path
                   strokeLinecap="round"
@@ -38,11 +41,13 @@ export const Factor = ({ source, meta }: FactorProps) => {
                   d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
                 />
               </svg>
-              <span>API</span>
-            </a>
-          </Link>
-          <Link href="/builder/file">
-            <a className={buttonStyles}>
+            }
+          />
+          <Link
+            textColor="text-gray-900"
+            label="File"
+            href="/builder/file"
+            iconLeft={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 cloud-download">
                 <path
                   strokeLinecap="round"
@@ -51,11 +56,13 @@ export const Factor = ({ source, meta }: FactorProps) => {
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
                 />
               </svg>
-              <span>File</span>
-            </a>
-          </Link>
-          <Link href="/builder/chart">
-            <a className={buttonStyles}>
+            }
+          />
+          <Link
+            textColor="text-gray-900"
+            label="Charts"
+            href="/builder/chart"
+            iconLeft={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 chart-square-bar">
                 <path
                   strokeLinecap="round"
@@ -64,11 +71,10 @@ export const Factor = ({ source, meta }: FactorProps) => {
                   d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                 />
               </svg>
-              <span>Charts</span>
-            </a>
-          </Link>
+            }
+          />
         </div>
-      </MultiColumn>
+      </SidebarLayout>
     </div>
   )
 }

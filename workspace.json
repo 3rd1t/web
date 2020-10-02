@@ -346,29 +346,6 @@
         }
       }
     },
-    "shared-nav": {
-      "root": "packages/shared/nav",
-      "sourceRoot": "packages/shared/nav/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": ["packages/shared/nav/tsconfig.lib.json", "packages/shared/nav/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**", "!packages/shared/nav/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "packages/shared/nav/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "content": {
       "root": "packages/content",
       "sourceRoot": "packages/content/src",
@@ -509,9 +486,32 @@
         }
       }
     },
-    "shared-components": {
-      "root": "packages/shared/components",
-      "sourceRoot": "packages/shared/components/src",
+    "util": {
+      "root": "packages/util",
+      "sourceRoot": "packages/util/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["packages/util/tsconfig.lib.json", "packages/util/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**", "!packages/util/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "components": {
+      "root": "packages/components",
+      "sourceRoot": "packages/components/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -520,18 +520,18 @@
           "options": {
             "linter": "eslint",
             "tsConfig": [
-              "packages/shared/components/tsconfig.lib.json",
-              "packages/shared/components/tsconfig.spec.json",
-              "packages/shared/components/.storybook/tsconfig.json"
+              "packages/components/tsconfig.lib.json",
+              "packages/components/tsconfig.spec.json",
+              "packages/components/.storybook/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**", "!packages/shared/components/**/*"]
+            "exclude": ["**/node_modules/**", "!packages/components/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "packages/shared/components/jest.config.js",
-            "tsConfig": "packages/shared/components/tsconfig.spec.json",
+            "jestConfig": "packages/components/jest.config.js",
+            "tsConfig": "packages/components/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
@@ -541,7 +541,7 @@
             "uiFramework": "@storybook/react",
             "port": 4400,
             "config": {
-              "configFolder": "packages/shared/components/.storybook"
+              "configFolder": "packages/components/.storybook"
             }
           },
           "configurations": {
@@ -556,7 +556,7 @@
             "uiFramework": "@storybook/react",
             "outputPath": "dist/storybook/shared-components",
             "config": {
-              "configFolder": "packages/shared/components/.storybook"
+              "configFolder": "packages/components/.storybook"
             }
           },
           "configurations": {

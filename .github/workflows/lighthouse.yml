@@ -29,6 +29,8 @@ jobs:
         run: yarn nx affected --target=lhci --parallel
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
       - name: clean up
         run: rm -rf ./.lighthouse

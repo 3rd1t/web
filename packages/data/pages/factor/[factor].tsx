@@ -1,5 +1,5 @@
 import React from "react"
-import { MultiColumn } from "@perfolio/components/nav/layout/multi-column/multi-column"
+import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
 import { Link } from "@perfolio/components/clickable/link/link"
 import fs from "fs"
 import renderToString from "next-mdx-remote/render-to-string"
@@ -18,7 +18,7 @@ export const Factor = ({ source, meta }: FactorProps) => {
 
   return (
     <div>
-      <MultiColumn breadcrumbs={["data", "Factors", meta.factor]}>
+      <SidebarLayout breadcrumbs={["data", "Factors", meta.factor]}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
           <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{meta.authors}</span>
@@ -74,7 +74,7 @@ export const Factor = ({ source, meta }: FactorProps) => {
             }
           />
         </div>
-      </MultiColumn>
+      </SidebarLayout>
     </div>
   )
 }

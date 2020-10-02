@@ -24,7 +24,8 @@
       "@perfolio/shared/nav": ["packages/shared/nav/src/index.ts"],
       "@perfolio/urlbuilder": ["packages/urlbuilder/src/index.ts"],
       "@perfolio/forms": ["packages/forms/src/index.ts"],
-      "@perfolio/shared/components": ["packages/shared/components/src/index.ts"]
+      "@perfolio/util/*": ["packages/util/src/*"],
+      "@perfolio/components/*": ["packages/components/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

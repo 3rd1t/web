@@ -4,16 +4,9 @@ import React from "react"
 export interface HeroSectionProps {
   headline: string
   paragraph: React.ReactNode
-  primaryButton: {
-    label: string
-    href: string
-    className: string
-  }
-  secondaryButton?: {
-    label: string
-    href: string
-    className: string
-  }
+  primaryButton: React.ReactNode
+  secondaryButton: React.ReactNode
+
   children?: React.ReactNode
 }
 
@@ -30,23 +23,9 @@ export const HeroSection = (props: HeroSectionProps) => {
         {<div className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0">{props.paragraph}</div>}
 
         <div className="space-y-4 md:space-x-4 md:space-y-0">
-          <div className="sm:flex sm:justify-center lg:justify-start">
-            <div className="rounded-md shadow">
-              <a
-                href={props.primaryButton.href}
-                className={[commonButtonClasses, props.primaryButton.className].join(" ")}
-              >
-                {props.primaryButton.label}
-              </a>
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a
-                href={props.secondaryButton.href}
-                className={[commonButtonClasses, props.secondaryButton.className].join(" ")}
-              >
-                {props.secondaryButton.label}
-              </a>
-            </div>
+          <div className="items-center sm:flex sm:justify-center lg:justify-start">
+            <div className="shadow">{props.primaryButton}</div>
+            <div className="mt-3 sm:mt-0 sm:ml-3">{props.secondaryButton}</div>
           </div>
         </div>
       </div>

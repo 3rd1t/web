@@ -1,6 +1,7 @@
 import React from "react"
 import { HeroSection, Section, Profile, Feature } from "@perfolio/shared/ui"
 import Wrapper from "../components/wrapper/wrapper"
+import { Link } from "@perfolio/components/clickable/link/link"
 /* eslint-disable-next-line */
 interface IndexProps {}
 
@@ -109,16 +110,18 @@ const Index = (props: IndexProps) => {
                 place and gives you access to the latest analytics methods in science.
               </p>
             }
-            primaryButton={{
-              label: "Get started",
-              href: "/signup",
-              className: "text-white bg-gray-900 hover:bg-carbon-800",
-            }}
-            secondaryButton={{
-              label: "Log in",
-              href: "/login",
-              className: "text-carbon-900 hover:text-carbon-700",
-            }}
+            primaryButton={
+              <Link
+                className="px-4 py-2 font-semibold"
+                label="Start now"
+                bgColor="bg-core-300"
+                textColor="text-gray-900"
+                href="#features"
+              />
+            }
+            secondaryButton={
+              <Link className="font-medium" textColor="text-gray-900" label="Contact us" href="mailto:info@perfol.io" />
+            }
           ></HeroSection>
 
           <div className="hidden max-w-screen-sm shadow-xl lg:block">

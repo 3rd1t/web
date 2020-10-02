@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { MultiColumn } from "@perfolio/shared/nav"
-import { MultistepForm, Table, Button } from "@perfolio/shared/components"
+import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
+import { MultistepForm } from "@perfolio/components/form/multistep-form/multistep-form"
+import { Table } from "@perfolio/components/table/table"
+import { Button } from "@perfolio/components/clickable/button/button"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
 
 export interface FileProps {
@@ -104,7 +106,7 @@ export const File = (props: FileProps) => {
   return (
     <div>
       <AnimateSharedLayout>
-        <MultiColumn breadcrumbs={["data", "builder", "file"]}>
+        <SidebarLayout breadcrumbs={["data", "builder", "file"]}>
           <div className="p-8 space-y-4">
             <MultistepForm steps={steps} title="Build your custom file" />
 
@@ -155,7 +157,7 @@ export const File = (props: FileProps) => {
               ) : null}
             </AnimatePresence>
           </div>
-        </MultiColumn>
+        </SidebarLayout>
       </AnimateSharedLayout>
     </div>
   )

@@ -26,6 +26,9 @@ jobs:
         run: yarn install
       - name: Lint
         run: yarn fmt
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -47,6 +50,9 @@ jobs:
         run: yarn install
       - name: build
         run: yarn nx affected:build --with-deps
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
   unit-test:
     name: unit test
@@ -69,6 +75,9 @@ jobs:
         run: yarn install
       - name: test
         run: yarn affected:test
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
  
   e2e-test:
@@ -96,6 +105,9 @@ jobs:
         run: |
           yarn nx export css
           yarn nx affected:e2e --headless
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
 
 

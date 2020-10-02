@@ -2,6 +2,7 @@ import React from "react"
 import { Logo } from "@perfolio/shared/ui"
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import { App } from "../app/app"
+import Link from "next/link"
 /* eslint-disable-next-line */
 export interface MainProps {
   navbarWidth: number
@@ -23,15 +24,19 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
       }}
       transition={{ damping: 100, staggerChildren: 1 }}
       animate={open ? "expanded" : "collapsed"}
-      className="flex flex-col justify-between min-h-screen pt-12 pb-4 bg-gray-200"
+      className="relative flex flex-col justify-between min-h-screen pt-12 bg-gray-200"
     >
       <div>
-        <App href="/" open={false} icon={<Logo imageOnly />} />
+        <Link href="/">
+          <a className="flex items-center w-12 h-12 m-4 focus:outline-none">
+            <Logo imageOnly imageColor="text-data-500" />
+          </a>
+        </Link>
         <div className="mt-12">
           <App
             href="/factor/3"
             open={open}
-            label="Factor_Returns"
+            label="Factor Returns"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 trending-up">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -70,7 +75,7 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
 
           <App
             open={open}
-            label="FX_Rates"
+            label="FX Rates"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 currency-dollar">
                 <path
@@ -84,7 +89,7 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
           />
           <App
             open={open}
-            label="Riskfree_Rates"
+            label="Riskfree Rates"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 library">
                 <path
@@ -147,6 +152,28 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
           open={open}
         />
       </div>
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="absolute inset-y-0 right-0 flex items-center p-1"
+          >
+            <button
+              aria-label="close menu"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center w-3 h-10 focus:outline-none "
+            >
+              <span className="w-1 h-10 bg-gray-400 rounded-full hover:bg-data-300"></span>
+            </button>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </motion.nav>
   )
 }

@@ -1,7 +1,5 @@
 import React from "react"
-import { Apps } from "../../sidebar/apps/apps"
 import { Header } from "../../top/header/header"
-import { Menu } from "../../sidebar/menu/menu"
 import TieredSidebar from "../../sidebar/tiered-sidebar/tiered-sidebar"
 /* eslint-disable-next-line */
 export interface SidebarLayoutProps {

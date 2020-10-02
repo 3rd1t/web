@@ -3,6 +3,7 @@ import React from "react"
 /* eslint-disable-next-line */
 export interface LogoProps {
   domain?: string
+  imageColor?: string
   color?: string
   imageOnly?: boolean
 }
@@ -17,7 +18,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <div className="flex items-center space-x-2">
       <svg
-        className="w-full text-gray-900 stroke-current"
+        className={`w-full stroke-current ${props.imageColor}`}
         viewBox="0 0 194 148"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

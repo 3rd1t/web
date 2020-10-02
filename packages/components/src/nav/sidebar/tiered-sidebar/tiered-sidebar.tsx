@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion"
 /* eslint-disable-next-line */
 export interface TieredSidebarProps {}
 
-const navbarWidth = 64 * 4
+const navbarWidth = 80 * 4
 
 export const TieredSidebar = (props: TieredSidebarProps) => {
   const [open, setOpen] = useState(false)
@@ -17,7 +17,7 @@ export const TieredSidebar = (props: TieredSidebarProps) => {
       <button className="text-white" onClick={() => setOpen(!open)}>
         Toggle
       </button>
-      <div className="relative mt-20">
+      <div className="relative">
         <div className="absolute border-r border-gray-300">
           <Main open={open} setOpen={setOpen} navbarWidth={navbarWidth}></Main>
         </div>

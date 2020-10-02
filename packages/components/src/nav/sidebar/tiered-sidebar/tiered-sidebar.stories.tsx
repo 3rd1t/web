@@ -10,5 +10,10 @@ export const primary = () => {
   /* eslint-disable-next-line */
   const props: TieredSidebarProps = {}
 
-  return <TieredSidebar />
+  return (
+    <div className="flex">
+      <TieredSidebar />
+      <div>Content</div>
+    </div>
+  )
 }

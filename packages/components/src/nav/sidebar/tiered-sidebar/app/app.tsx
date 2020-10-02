@@ -44,6 +44,7 @@ export const App = ({ icon, label, open, onClick, href }: AppProps) => {
             initial="hidden"
             animate="visible"
             exit="hidden"
+            className="whitespace-no-wrap"
           >
             {label}
           </motion.span>

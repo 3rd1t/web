@@ -6,10 +6,10 @@ import { Button } from "@perfolio/components/clickable/button/button"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
 
 export interface FileProps {
-  factorModels: { name: string; description: string; factors: { name: string; description: string }[] }[]
-  regions: string[]
-  currencies: string[]
-  intervals: string[]
+  factorModels: { value: string; display: string; factors: { value: string; display: string }[] }[]
+  regions: { value: string; display: string }[]
+  currencies: { value: string; display: string }[]
+  intervals: { value: string; display: string }[]
 }
 
 export const File = (props: FileProps) => {
@@ -27,46 +27,46 @@ export const File = (props: FileProps) => {
     name: string
     description: string
     choices: string[]
-    value: number
-    setValue: React.Dispatch<React.SetStateAction<number>>
+    choice: number
+    setChoice: React.Dispatch<React.SetStateAction<number>>
   }[] = [
     {
       name: "Model",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.factorModels.map((m) => m.description),
-      value: model,
-      setValue: setModel,
+      choices: props.factorModels.map((m) => m.display),
+      choice: model,
+      setChoice: setModel,
     },
     {
       name: "Factor",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
       choices:
         model >= 0
-          ? props.factorModels.find((f) => f.name === props.factorModels[model].name).factors.map((f) => f.description)
+          ? props.factorModels.find((f) => f.value === props.factorModels[model].value).factors.map((f) => f.display)
           : [],
-      value: factor,
-      setValue: setFactor,
+      choice: factor,
+      setChoice: setFactor,
     },
     {
       name: "Region",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.regions,
-      value: region,
-      setValue: setRegion,
+      choices: props.regions.map((r) => r.display),
+      choice: region,
+      setChoice: setRegion,
     },
     {
       name: "Currency",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.currencies,
-      value: currency,
-      setValue: setCurrency,
+      choices: props.currencies.map((c) => c.display),
+      choice: currency,
+      setChoice: setCurrency,
     },
     {
       name: "Interval",
       description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.intervals,
-      value: interval,
-      setValue: setInterval,
+      choices: props.intervals.map((i) => i.display),
+      choice: interval,
+      setChoice: setInterval,
     },
   ]
 
@@ -83,11 +83,11 @@ export const File = (props: FileProps) => {
 
   const path = () => {
     return [
-      props.factorModels[model].name,
-      props.factorModels[model].factors[factor].name,
-      props.regions[region],
-      props.currencies[currency],
-      props.intervals[interval],
+      props.factorModels[model].value,
+      props.factorModels[model].factors[factor].value,
+      props.regions[region].value,
+      props.currencies[currency].value,
+      props.intervals[interval].value,
     ].join("/")
   }
 
@@ -96,11 +96,11 @@ export const File = (props: FileProps) => {
       return []
     }
 
-    const selectedFactor = props.factorModels[model].factors[factor].name
+    const selectedFactor = props.factorModels[model].factors[factor].value
     if (selectedFactor.toLowerCase() === "all") {
-      return ["Date", ...props.factorModels[model].factors.map((f) => f.name)]
+      return ["Date", ...props.factorModels[model].factors.map((f) => f.value)]
     }
-    return ["Date", props.factorModels[model].factors[factor].name]
+    return ["Date", props.factorModels[model].factors[factor].value]
   }
 
   return (
@@ -166,160 +166,8 @@ export const File = (props: FileProps) => {
 export default File
 
 export async function getStaticProps() {
+  const config = await fetch("https://api.perfol.io/d/beta/builder/factor").then((res) => res.json())
   return {
-    props: {
-      factorModels: [
-        {
-          name: "3factor",
-          description: "3 Factor model by Fama & French 1993",
-          factors: [
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "all",
-              description: "All factors",
-            },
-          ],
-        },
-        {
-          name: "4factor",
-          description: "4 Factor model by Fama & French 1993",
-
-          factors: [
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "all",
-              description: "All factors",
-            },
-          ],
-        },
-        {
-          name: "5factor",
-          description: "5 Factor model by Fama & French 1993",
-
-          factors: [
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-
-            {
-              name: "all",
-              description: "All factors",
-            },
-          ],
-        },
-        {
-          name: "6factor",
-          description: "6 Factor model by Fama & French 1993",
-
-          factors: [
-            {
-              name: "mom",
-              description: "Momentum",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-            {
-              name: "XXX",
-              description: "maybe just spell it out",
-            },
-
-            {
-              key: "all",
-              description: "All factors",
-            },
-          ],
-        },
-      ],
-      regions: [
-        "USA",
-        "Developed",
-        "Developed_ex_US",
-        "Europe",
-        "Japan",
-        "Asia_Pacific_ex_Japan",
-        "North_America",
-        "Emerging",
-      ],
-
-      currencies: [
-        "EUR",
-        "JPY",
-        "GBP",
-        "CHF",
-        "RUB",
-        "AUD",
-        "BRL",
-        "CAD",
-        "CNY",
-        "INR",
-        "DKK",
-        "NZD",
-        "NOK",
-        "SEK",
-        "PLN",
-        "ILS",
-        "KRW",
-        "TRY",
-      ],
-
-      intervals: ["daily", "monthly", "annual"],
-    },
+    props: config,
   }
 }

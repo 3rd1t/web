@@ -18,7 +18,7 @@ export const Logo = (props: LogoProps) => {
   return (
     <div className="flex items-center space-x-2">
       <svg
-        className={`w-full stroke-current ${props.imageColor}`}
+        className={`w-10 h-10 stroke-current ${props.imageColor}`}
         viewBox="0 0 194 148"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -12,15 +12,12 @@ export interface ItemProps {
 export const Item = ({ label, href, icon, tag }: ItemProps) => {
   return (
     <Link href={href}>
-      <a
-        aria-label="Settings"
-        className="flex items-center h-12 space-x-2 text-gray-400 rounded-lg hover:text-gray-900"
-      >
-        {icon ? icon : null}
+      <a aria-label={label} className="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100">
+        <span className="flex items-center justify-center text-lg text-gray-400">{icon ? icon : null}</span>
         <div className="flex items-center justify-between space-x-1">
-          {label ? <span className="text-gray-700 hover:text-gray-900">{label}</span> : null}
+          {label ? <span className="ml-3">{label}</span> : null}
           {tag ? (
-            <span className="flex items-center justify-center h-6 px-2 text-xs font-semibold uppercase bg-opacity-25 rounded bg-data-400 text-data-700">
+            <span className="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700">
               {tag}
             </span>
           ) : null}

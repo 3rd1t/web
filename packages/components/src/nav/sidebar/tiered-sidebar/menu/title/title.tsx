@@ -5,7 +5,7 @@ export interface TitleProps {
 }
 
 export const Title = ({ label }: TitleProps) => {
-  return <span className="flex my-4 text-sm font-medium text-gray-800 uppercase hover:text-gray-600">{label}</span>
+  return <span className="flex my-4 text-sm font-medium text-gray-600 uppercase">{label}</span>
 }
 
 export default Title

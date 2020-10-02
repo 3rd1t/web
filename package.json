@@ -57,6 +57,7 @@
     "react-dom": "16.13.1",
     "react-scroll": "^1.8.1",
     "react-syntax-highlighter": "^13.5.3",
+    "swr": "^0.3.5",
     "tailwindcss": "^1.8.10",
     "tailwindcss-debug-screens": "^1.1.0",
     "ts-node": "~9.0.0",

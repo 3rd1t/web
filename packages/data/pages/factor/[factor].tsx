@@ -6,6 +6,8 @@ import renderToString from "next-mdx-remote/render-to-string"
 import hydrate from "next-mdx-remote/hydrate"
 import matter from "gray-matter"
 import path from "path"
+import { menuContent } from "../../content/menu-content"
+
 
 export interface FactorProps {
   source: string
@@ -18,7 +20,7 @@ export const Factor = ({ source, meta }: FactorProps) => {
 
   return (
     <div>
-      <SidebarLayout breadcrumbs={["data", "Factors", meta.factor]}>
+      <SidebarLayout breadcrumbs={["data", "Factors", meta.factor]} menuContent={menuContent()}>
         <div className="p-16 prose-sm md:prose lg:prose-lg xl:prose-xl max-w-none">
           <div className="flex items-center space-x-4 text-sm font-medium text-gray-700">
             <span>{meta.authors}</span>

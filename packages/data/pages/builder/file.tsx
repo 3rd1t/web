@@ -4,6 +4,7 @@ import { MultistepForm } from "@perfolio/components/form/multistep-form/multiste
 import { Table } from "@perfolio/components/table/table"
 import { Button } from "@perfolio/components/clickable/button/button"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
+import { menuContent } from "../../content/menu-content"
 
 export interface FileProps {
   factorModels: { value: string; display: string; factors: { value: string; display: string }[] }[]
@@ -30,45 +31,45 @@ export const File = (props: FileProps) => {
     choice: number
     setChoice: React.Dispatch<React.SetStateAction<number>>
   }[] = [
-    {
-      name: "Model",
-      description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.factorModels.map((m) => m.display),
-      choice: model,
-      setChoice: setModel,
-    },
-    {
-      name: "Factor",
-      description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices:
-        model >= 0
-          ? props.factorModels.find((f) => f.value === props.factorModels[model].value).factors.map((f) => f.display)
-          : [],
-      choice: factor,
-      setChoice: setFactor,
-    },
-    {
-      name: "Region",
-      description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.regions.map((r) => r.display),
-      choice: region,
-      setChoice: setRegion,
-    },
-    {
-      name: "Currency",
-      description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.currencies.map((c) => c.display),
-      choice: currency,
-      setChoice: setCurrency,
-    },
-    {
-      name: "Interval",
-      description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
-      choices: props.intervals.map((i) => i.display),
-      choice: interval,
-      setChoice: setInterval,
-    },
-  ]
+      {
+        name: "Model",
+        description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
+        choices: props.factorModels.map((m) => m.display),
+        choice: model,
+        setChoice: setModel,
+      },
+      {
+        name: "Factor",
+        description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
+        choices:
+          model >= 0
+            ? props.factorModels.find((f) => f.value === props.factorModels[model].value).factors.map((f) => f.display)
+            : [],
+        choice: factor,
+        setChoice: setFactor,
+      },
+      {
+        name: "Region",
+        description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
+        choices: props.regions.map((r) => r.display),
+        choice: region,
+        setChoice: setRegion,
+      },
+      {
+        name: "Currency",
+        description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
+        choices: props.currencies.map((c) => c.display),
+        choice: currency,
+        setChoice: setCurrency,
+      },
+      {
+        name: "Interval",
+        description: "Quisque ultrices odio ut tellus congue, scelerisque egestas augue accumsan.",
+        choices: props.intervals.map((i) => i.display),
+        choice: interval,
+        setChoice: setInterval,
+      },
+    ]
 
   const [cells, setCells] = useState([])
   const [complete, setComplete] = useState(false)
@@ -103,10 +104,17 @@ export const File = (props: FileProps) => {
     return ["Date", props.factorModels[model].factors[factor].value]
   }
 
+
+
+
+
+
+
+
   return (
     <div>
       <AnimateSharedLayout>
-        <SidebarLayout breadcrumbs={["data", "builder", "file"]}>
+        <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent()}>
           <div className="p-8 space-y-4">
             <MultistepForm steps={steps} title="Build your custom file" />
 
@@ -166,7 +174,13 @@ export const File = (props: FileProps) => {
 export default File
 
 export async function getStaticProps() {
-  const config = await fetch("https://api.perfol.io/d/beta/builder/factor").then((res) => res.json())
+  //https://api.perfol.io/d/beta/builder/factor"
+  const url = process.env.NEXT_PUBLIC_BUILDER_CONFIG_URL
+  console.warn(url)
+  if (!url) {
+    throw new Error("NEXT_PUBLIC_BUILDER_CONFIG_URL must be set")
+  }
+  const config = await fetch(url).then((res) => res.json())
   return {
     props: config,
   }

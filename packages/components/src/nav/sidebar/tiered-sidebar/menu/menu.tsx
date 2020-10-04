@@ -1,8 +1,5 @@
 import React from "react"
-import { Title } from "./title/title"
 import { Item } from "./item/item"
-import { FactorItem } from "./factor-item/factor-item"
-import ExpandItem from "./expand-item/expand-item"
 /* eslint-disable-next-line */
 export interface MenuProps {
   content?: {
@@ -14,19 +11,18 @@ export interface MenuProps {
 export const Menu = ({ content }: MenuProps) => {
   return (
     <div className="flex flex-col justify-between min-h-screen px-4 py-4 ml-20 bg-white border-r border-gray-300">
-      <div className="flex flex-col space-y-8">
-        {content.map((c, i) => {
-          return (
-            <div>
-              {c.title}
-              <div>
-                {c.items}
+      {content ? (
+        <div className="flex flex-col space-y-8">
+          {content.map((c, i) => {
+            return (
+              <div key={i}>
+                {c.title}
+                <div>{c.items}</div>
               </div>
-            </div>
-          )
-        })}
-       
-      </div>
+            )
+          })}
+        </div>
+      ) : null}
       <div className="pt-3 border-t border-gray-300">
         <Item
           label="Request feature"

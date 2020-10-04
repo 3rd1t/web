@@ -11,7 +11,7 @@ export interface TieredSidebarProps {
 
 const navbarWidth = 80 * 4
 
-export const TieredSidebar = ({menuContent}: TieredSidebarProps) => {
+export const TieredSidebar = ({ menuContent }: TieredSidebarProps) => {
   const [open, setOpen] = useState(false)
   return (
     <div style={{ width: navbarWidth }}>

@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import File from "../../pages/builder/file"
+import File from "../../pages/app/factor/file"
 
 describe("File", () => {
   it("should render successfully", () => {

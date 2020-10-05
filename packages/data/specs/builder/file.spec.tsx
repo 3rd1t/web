@@ -1,20 +1,27 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import File from "../../pages/builder/file"
+import File from "../../pages/app/factor/file"
 
 describe("File", () => {
   it("should render successfully", () => {
     const { baseElement } = render(
       <File
-        factorModels={[
-          { name: "test", description: "Description", factors: [{ name: "A", description: "Description" }] },
+        factorModels={[{ value: "test", display: "Description", factors: [{ value: "A", display: "Description" }] }]}
+        regions={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
         ]}
-        regions={["A", "B"]}
-        currencies={["A", "B"]}
-        intervals={["daily", "monthly", "annual"]}
+        currencies={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
+        ]}
+        intervals={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
+        ]}
       />,
     )
-    expect(baseElement).toBeTruthy()
+    expect(baseElement).toMatchSnapshot()
   })
 })

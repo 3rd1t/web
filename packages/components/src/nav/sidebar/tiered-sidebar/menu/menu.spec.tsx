@@ -5,7 +5,7 @@ import Menu from "./menu"
 
 describe("Menu", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Menu />)
+    const { baseElement } = render(<Menu content={[]} />)
     expect(baseElement).toBeTruthy()
   })
 })

@@ -7,8 +7,8 @@ type Step = {
   name: string
   description: string
   choices: string[]
-  value: number
-  setValue: React.Dispatch<React.SetStateAction<number>>
+  choice: number
+  setChoice: React.Dispatch<React.SetStateAction<number>>
 }
 
 /* eslint-disable-next-line */
@@ -21,13 +21,13 @@ export const MultistepForm = (props: MultistepFormProps) => {
   const [progress, setProgress] = useState<number>(0)
   const [active, setActive] = useState<number>(0)
 
-  const updateState = (step: Step) => (newValue: number) => {
+  const updateState = (step: Step) => (newChoice: number) => {
     // Only advance if the field did not have a selection in the first place.
-    if (step.value < 0) {
+    if (step.choice < 0) {
       setProgress(progress + 1)
     }
     setActive(progress + 1)
-    step.setValue(newValue)
+    step.setChoice(newChoice)
   }
   useEffect(() => {
     setActive(progress)
@@ -109,7 +109,7 @@ export const MultistepForm = (props: MultistepFormProps) => {
                     <div className="w-full mt-4 md:w-1/3 md:mt-0">
                       <Select
                         label={step.name}
-                        selected={step.value}
+                        selected={step.choice}
                         setSelected={updateState(step)}
                         choices={step.choices}
                       />

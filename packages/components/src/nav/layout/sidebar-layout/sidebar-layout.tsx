@@ -1,17 +1,22 @@
 import React from "react"
 import { Header } from "../../top/header/header"
 import TieredSidebar from "../../sidebar/tiered-sidebar/tiered-sidebar"
+
 /* eslint-disable-next-line */
 export interface SidebarLayoutProps {
   children: React.ReactNode
   breadcrumbs?: string[]
+  menuContent: {
+    title: React.ReactNode
+    items: React.ReactNode[]
+  }[]
 }
 
-export const SidebarLayout = ({ children, breadcrumbs }: SidebarLayoutProps) => {
+export const SidebarLayout = ({ children, breadcrumbs, menuContent }: SidebarLayoutProps) => {
   return (
     <div className="flex">
       <div className="sticky top-0 flex flex-shrink-0 min-h-screen">
-        <TieredSidebar />
+        <TieredSidebar menuContent={menuContent} />
       </div>
       <div className="w-full min-h-screen">
         <Header breadcrumbs={breadcrumbs}></Header>

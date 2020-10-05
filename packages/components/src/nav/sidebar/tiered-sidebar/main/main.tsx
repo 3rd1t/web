@@ -28,8 +28,18 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
     >
       <div>
         <Link href="/">
-          <a className="flex items-center w-12 h-12 m-4 focus:outline-none">
-            <Logo imageOnly imageColor="text-data-500" />
+          <a className="flex items-center justify-center w-12 h-12 m-4 focus:outline-none">
+            <svg
+              className="w-10 h-10 stroke-current text-data-500"
+              viewBox="0 0 194 148"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 106.208L97.3883 17.8199L134.158 54.5894M185.07 41.8615L96.6814 130.25L59.9118 93.4803"
+                strokeWidth="25"
+              />
+            </svg>
           </a>
         </Link>
         <div className="mt-12">
@@ -45,7 +55,7 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
           />
           <App
             open={open}
-            label="Sunstainability"
+            label="Sustainability"
             icon={
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 globe-alt">
                 <path
@@ -167,7 +177,7 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
             <button
               aria-label="close menu"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center w-3 h-10 focus:outline-none "
+              className="flex items-center justify-center w-3 h-10 focus:outline-none"
             >
               <span className="w-1 h-10 bg-gray-400 rounded-full hover:bg-data-300"></span>
             </button>

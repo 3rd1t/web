@@ -114,8 +114,8 @@ const Index = (props: IndexProps) => {
               <Link
                 className="px-4 py-2 font-semibold"
                 label="Start now"
-                bgColor="bg-core-300"
-                textColor="text-gray-900"
+                bgColor="bg-carbon-900"
+                textColor="text-gray-100"
                 href="#features"
               />
             }

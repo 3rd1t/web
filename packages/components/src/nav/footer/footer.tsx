@@ -36,7 +36,7 @@ const socialMedia = () => {
 
 export const Footer = () => {
   return (
-    <footer className="container flex flex-col items-center justify-center px-4 pt-12 pb-8 mx-auto space-y-8 text-gray-700 bg-white border-t border-gray-400">
+    <footer className="container flex flex-col items-center justify-center px-8 pt-12 pb-8 mx-auto space-y-8 text-gray-700 bg-white border-t border-gray-400">
       <div className="flex items-center justify-between w-full md:flex-col md:space-y-8">
         <div className="text-gray-900">
           <Logo />

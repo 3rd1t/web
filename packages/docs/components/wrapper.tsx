@@ -20,9 +20,8 @@ export const Wrapper = ({ children }: WrapperProps) => {
     ></Navbar>
   )
 
-
   return (
-    <NavWrapper navbar={navbar} footer={<Footer/>}>
+    <NavWrapper navbar={navbar} footer={<Footer />}>
       <div className="mt-16">{children}</div>
     </NavWrapper>
   )

@@ -17,7 +17,7 @@ export const Menu = ({ content }: MenuProps) => {
             return (
               <div key={i}>
                 {c.title}
-                <div>{c.items}</div>
+                {c.items}
               </div>
             )
           })}

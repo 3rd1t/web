@@ -1,7 +1,7 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import Url from "../../pages/builder/url"
+import Url from "../../pages/app/factor/url"
 
 describe("Url", () => {
   it("should render successfully", () => {

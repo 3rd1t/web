@@ -1,6 +1,6 @@
 import React from "react"
-import { NavWrapper, Navbar, Logo, Footer } from "@perfolio/shared/ui"
-
+import { NavWrapper, Navbar, Logo } from "@perfolio/shared/ui"
+import { Footer } from "@perfolio/components/nav/footer/footer"
 /* eslint-disable-next-line */
 export interface WrapperProps {
   children: React.ReactNode
@@ -34,7 +34,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
     ></Navbar>
   )
 
-  const footer = <Footer bg="bg-carbon-900" primaryText="text-white" secondaryText="text-gray-100"></Footer>
+  const footer = <Footer />
 
   return (
     <NavWrapper navbar={navbar} footer={footer}>

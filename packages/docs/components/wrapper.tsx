@@ -1,5 +1,6 @@
 import React from "react"
-import { NavWrapper, Navbar, Logo, Footer } from "@perfolio/shared/ui"
+import { NavWrapper, Navbar, Logo } from "@perfolio/shared/ui"
+import { Footer } from "@perfolio/components/nav/footer/footer"
 
 /* eslint-disable-next-line */
 export interface WrapperProps {

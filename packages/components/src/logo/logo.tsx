@@ -11,7 +11,7 @@ export interface LogoProps {
 export const Logo = (props: LogoProps) => {
   const logo = (
     <div className="text-xl font-semibold">
-      <span className="text-gray-800">PERFOLIO</span>
+      <span>PERFOLIO</span>
       {props.domain && props.color && <span className={`uppercase ${props.color}`}>{props.domain}</span>}
     </div>
   )

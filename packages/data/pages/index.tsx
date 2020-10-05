@@ -64,7 +64,7 @@ const Index = (props: IndexProps) => {
       <Section id="data" bg="bg-white">
         <FeatureSection
           title="Get high quality data the easy way"
-          subTitle="Used in production by our own apps."
+          subTitle="Used in production by our own apps"
           content={
             <FeatureList
               features={[
@@ -93,7 +93,7 @@ const Index = (props: IndexProps) => {
         <FeatureSection
           rightAligned
           title="Build data sets tailored to your needs"
-          subTitle="Fetch and parse only what's necessary."
+          subTitle="Fetch and parse only what's necessary"
           content={
             <FeatureList
               features={[
@@ -110,7 +110,7 @@ const Index = (props: IndexProps) => {
       <Section id="charts" bg="bg-white">
         <FeatureSection
           title="Create awesome charts quickly"
-          subTitle="Stop spending hours fiddling with charting tools."
+          subTitle="Stop spending hours fiddling with charting tools"
           content={
             <FeatureList
               features={[
@@ -128,7 +128,7 @@ const Index = (props: IndexProps) => {
         <FeatureSection
           rightAligned
           title="Made for researchers and analysts"
-          subTitle="Seamlessly integrates with your Python Pandas or R workflow."
+          subTitle="Seamlessly integrates with your Python Pandas or R workflow"
           content={
             <FeatureList
               features={[

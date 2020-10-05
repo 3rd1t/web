@@ -20,10 +20,9 @@ export const Wrapper = ({ children }: WrapperProps) => {
     ></Navbar>
   )
 
-  const footer = <Footer bg="bg-gray-900" primaryText="text-white" secondaryText="text-gray-100"></Footer>
 
   return (
-    <NavWrapper navbar={navbar} footer={footer}>
+    <NavWrapper navbar={navbar} footer={<Footer/>}>
       <div className="mt-16">{children}</div>
     </NavWrapper>
   )

@@ -1,10 +1,12 @@
 import React from "react"
-import Link from "next/link"
+import Link from "@perfolio/components/clickable/link/link"
 /* eslint-disable-next-line */
 export interface CTAProps {
   headline: string
   subline: string
   button: {
+    bgColor?: string
+    textColor?: string
     label: string
     href: string
   }
@@ -19,11 +21,13 @@ export const CTA = ({ headline, button, subline }: CTAProps) => {
         </h2>
         <p className="mt-2 text-gray-700">{subline}</p>
       </div>
-      <Link href={button.href}>
-        <a className="block w-full px-6 py-3 font-semibold text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800 hover:bg-carbon-600">
-          {button.label}
-        </a>
-      </Link>
+      <Link
+        className="px-4 py-2 font-semibold"
+        label={button.label}
+        bgColor={button.bgColor}
+        textColor={button.textColor}
+        href={button.href}
+      />
     </div>
   )
 }

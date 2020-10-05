@@ -14,6 +14,7 @@ import { FeatureList } from "../components/feature-list/feature-list"
 import fs from "fs"
 import matter from "gray-matter"
 import Wrapper from "../components/wrapper/wrapper"
+import { Link } from "@perfolio/components/clickable/link/link"
 interface IndexProps {
   codeExamples: {
     language: string
@@ -36,16 +37,23 @@ const Index = (props: IndexProps) => {
                   platform.
                 </p>
               }
-              primaryButton={{
-                label: "Start now",
-                href: "#features",
-                className: "text-white bg-data-600 hover:bg-data-800",
-              }}
-              secondaryButton={{
-                label: "Contact us",
-                href: "mailto:info@perfol.io",
-                className: "text-data-900 hover:text-data-700",
-              }}
+              primaryButton={
+                <Link
+                  className="px-4 py-2 font-semibold"
+                  label="Start now"
+                  bgColor="bg-data-300"
+                  textColor="text-gray-900"
+                  href="#features"
+                />
+              }
+              secondaryButton={
+                <Link
+                  className="font-medium"
+                  textColor="text-gray-900"
+                  label="Contact us"
+                  href="mailto:info@perfol.io"
+                />
+              }
             ></HeroSection>
           </div>
           <div className="hidden lg:block">
@@ -56,7 +64,7 @@ const Index = (props: IndexProps) => {
       <Section id="data" bg="bg-white">
         <FeatureSection
           title="Get high quality data the easy way"
-          subTitle="Used in production by our own apps."
+          subTitle="Used in production by our own apps"
           content={
             <FeatureList
               features={[
@@ -85,7 +93,7 @@ const Index = (props: IndexProps) => {
         <FeatureSection
           rightAligned
           title="Build data sets tailored to your needs"
-          subTitle="Fetch and parse only what's necessary."
+          subTitle="Fetch and parse only what's necessary"
           content={
             <FeatureList
               features={[
@@ -102,7 +110,7 @@ const Index = (props: IndexProps) => {
       <Section id="charts" bg="bg-white">
         <FeatureSection
           title="Create awesome charts quickly"
-          subTitle="Stop spending hours fiddling with charting tools."
+          subTitle="Stop spending hours fiddling with charting tools"
           content={
             <FeatureList
               features={[
@@ -120,7 +128,7 @@ const Index = (props: IndexProps) => {
         <FeatureSection
           rightAligned
           title="Made for researchers and analysts"
-          subTitle="Seamlessly integrates with your Python Pandas or R workflow."
+          subTitle="Seamlessly integrates with your Python Pandas or R workflow"
           content={
             <FeatureList
               features={[
@@ -159,7 +167,7 @@ const Index = (props: IndexProps) => {
         <CTA
           headline="Ready to get started? Sign up for a free plan."
           subline="Explore our charts or create an account to unlock the full potential of our API."
-          button={{ href: "/signup", label: "Sign up" }}
+          button={{ href: "/signup", label: "Sign up", bgColor: "bg-carbon-900", textColor: "text-gray-100" }}
         />
       </Section>
     </Wrapper>

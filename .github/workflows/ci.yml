@@ -14,7 +14,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: "14"
       - uses: actions/cache@v2
@@ -26,6 +26,9 @@ jobs:
         run: yarn install
       - name: Lint
         run: yarn fmt
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
   build:
     name: Build
     runs-on: ubuntu-latest
@@ -35,7 +38,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: "14"
       - uses: actions/cache@v2
@@ -47,6 +50,9 @@ jobs:
         run: yarn install
       - name: build
         run: yarn nx affected:build --with-deps
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
   unit-test:
     name: unit test
@@ -57,7 +63,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: "14"
       - uses: actions/cache@v2
@@ -69,6 +75,9 @@ jobs:
         run: yarn install
       - name: test
         run: yarn affected:test
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
  
   e2e-test:
@@ -80,7 +89,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.1.2
         with:
           node-version: "14"
       - uses: actions/cache@v2
@@ -96,6 +105,9 @@ jobs:
         run: |
           yarn nx export css
           yarn nx affected:e2e --headless
+        env:
+          NX_BRANCH: ${{ github.event.number }}
+          NX_RUN_GROUP: ${{ github.run_id }}
 
 
 

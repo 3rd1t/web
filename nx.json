@@ -61,9 +61,6 @@
     "content": {
       "tags": []
     },
-    "shared-nav": {
-      "tags": []
-    },
     "urlbuilder": {
       "tags": []
     },
@@ -74,7 +71,10 @@
       "tags": [],
       "implicitDependencies": ["css"]
     },
-    "shared-components": {
+    "util": {
+      "tags": []
+    },
+    "components": {
       "tags": []
     }
   },

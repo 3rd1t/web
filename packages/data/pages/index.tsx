@@ -124,7 +124,7 @@ const Index = (props: IndexProps) => {
           illustration={<img src="https://via.placeholder.com/500x360" alt="Placeholder for UI"></img>}
         />
       </Section>
-      <Section id="sources" bg="bg-gray-100">
+      <Section id="code" bg="bg-gray-100">
         <FeatureSection
           rightAligned
           title="Made for researchers and analysts"
@@ -139,7 +139,7 @@ const Index = (props: IndexProps) => {
               ]}
             />
           }
-          illustration={<CodeExamples code={props.codeExamples}></CodeExamples>}
+          illustration={<div className="hidden md:block"><CodeExamples code={props.codeExamples}></CodeExamples></div>}
         />
       </Section>
       <Section id="sources" bg="bg-white">
@@ -163,7 +163,7 @@ const Index = (props: IndexProps) => {
           })}
         </div>
       </Section>
-      <Section className="bg-white">
+      <Section className="bg-gray-100">
         <CTA
           headline="Ready to get started? Sign up for a free plan."
           subline="Explore our charts or create an account to unlock the full potential of our API."

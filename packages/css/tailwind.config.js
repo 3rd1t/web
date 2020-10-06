@@ -66,6 +66,7 @@ module.exports = {
     require("tailwindcss-debug-screens"),
     require("@tailwindcss/typography"),
     require("@tailwindui/react"),
+    require("@tailwindcss/ui"),
   ],
   future: {
     removeDeprecatedGapUtilities: true,

@@ -16,8 +16,6 @@
     </a>
 </div>
 
-
-
 # Applications
 
 ## Core
@@ -28,10 +26,10 @@
 
 [data.perfol.io](https://data.perfol.io)
 
-
 ## Analytics (coming soon)
+
 [analytics.perfol.io](https://analytics.perfol.io)
 
-
 ## Documentation
+
 [docs.perfol.io](https://docs.perfol.io)

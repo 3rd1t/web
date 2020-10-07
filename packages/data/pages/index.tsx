@@ -139,7 +139,11 @@ const Index = (props: IndexProps) => {
               ]}
             />
           }
-          illustration={<div className="hidden md:block"><CodeExamples code={props.codeExamples}></CodeExamples></div>}
+          illustration={
+            <div className="hidden md:block">
+              <CodeExamples code={props.codeExamples}></CodeExamples>
+            </div>
+          }
         />
       </Section>
       <Section id="sources" bg="bg-white">

@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
-import {Builder} from "@perfolio/urlbuilder"
+import { Builder } from "@perfolio/urlbuilder"
 import { menuContent } from "../../../content/menu-content"
 
-export interface FileProps {
+export interface URLProps {
   factorModels: { value: string; display: string; factors: { value: string; display: string }[] }[]
   regions: { value: string; display: string }[]
   currencies: { value: string; display: string }[]
   intervals: { value: string; display: string }[]
 }
-
 
 export const URL = (props: URLProps) => {
   const [model, setModel] = useState<number>(-1)
@@ -70,11 +69,11 @@ export const URL = (props: URLProps) => {
   ]
 
   return (
-        <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
-          <div className="p-8 space-y-4">
-            <Builder/>
-          </div>
-        </SidebarLayout>
+    <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
+      <div className="p-8 space-y-4">
+        <Builder />
+      </div>
+    </SidebarLayout>
   )
 }
 

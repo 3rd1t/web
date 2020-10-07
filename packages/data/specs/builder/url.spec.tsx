@@ -1,11 +1,27 @@
 import React from "react"
 import { render } from "@testing-library/react"
 
-import Url from "../../pages/app/factor/url"
+import URL from "../../pages/app/factor/url"
 
-describe("Url", () => {
+describe("URL", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Url />)
-    expect(baseElement).toBeTruthy()
+    const { baseElement } = render(
+      <URL
+        factorModels={[{ value: "test", display: "Description", factors: [{ value: "A", display: "Description" }] }]}
+        regions={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
+        ]}
+        currencies={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
+        ]}
+        intervals={[
+          { value: "A", display: "AA" },
+          { value: "B", display: "BB" },
+        ]}
+      />,
+    )
+    expect(baseElement).toMatchSnapshot()
   })
 })

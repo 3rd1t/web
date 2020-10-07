@@ -1,11 +1,12 @@
 import React from "react"
 import { Section } from "@perfolio/shared/ui"
 import Link from "next/link"
+import { NextPage } from "next"
 
 /* eslint-disable-next-line */
 export interface SuccessProps {}
 
-export const Success = (props: SuccessProps) => {
+export const Success: NextPage = (props: SuccessProps) => {
   return (
     <Section className="flex items-center min-h-screen bg-gray-100">
       <div className="flex flex-col items-center justify-center">

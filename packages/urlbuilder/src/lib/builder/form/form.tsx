@@ -54,7 +54,6 @@ export const Form = ({ setURL, baseURL, format, choices }: FormProps) => {
     })
   }
 
-
   const fields = addState(statelessFields)
   const [isValid, setIsValid] = useState(false)
 

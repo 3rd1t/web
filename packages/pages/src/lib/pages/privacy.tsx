@@ -23,55 +23,89 @@ export const Privacy = () => {
 
       <ul>
         <li>
-          <a className="py-4" href="#m14">Einleitung</a>
+          <a className="py-4" href="#m14">
+            Einleitung
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m3">Verantwortlicher</a>
+          <a className="py-4" href="#m3">
+            Verantwortlicher
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#mOverview">Übersicht der Verarbeitungen</a>
+          <a className="py-4" href="#mOverview">
+            Übersicht der Verarbeitungen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m13">Maßgebliche Rechtsgrundlagen</a>
+          <a className="py-4" href="#m13">
+            Maßgebliche Rechtsgrundlagen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m27">Sicherheitsmaßnahmen</a>
+          <a className="py-4" href="#m27">
+            Sicherheitsmaßnahmen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m24">Datenverarbeitung in Drittländern</a>
+          <a className="py-4" href="#m24">
+            Datenverarbeitung in Drittländern
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m134">Einsatz von Cookies</a>
+          <a className="py-4" href="#m134">
+            Einsatz von Cookies
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m317">Kommerzielle und geschäftliche Leistungen</a>
+          <a className="py-4" href="#m317">
+            Kommerzielle und geschäftliche Leistungen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m225">Bereitstellung des Onlineangebotes und Webhosting</a>
+          <a className="py-4" href="#m225">
+            Bereitstellung des Onlineangebotes und Webhosting
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m367">Registrierung, Anmeldung und Nutzerkonto</a>
+          <a className="py-4" href="#m367">
+            Registrierung, Anmeldung und Nutzerkonto
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m182">Kontaktaufnahme</a>
+          <a className="py-4" href="#m182">
+            Kontaktaufnahme
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m17">Newsletter und elektronische Benachrichtigungen</a>
+          <a className="py-4" href="#m17">
+            Newsletter und elektronische Benachrichtigungen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m408">Umfragen und Befragungen</a>
+          <a className="py-4" href="#m408">
+            Umfragen und Befragungen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m12">Löschung von Daten</a>
+          <a className="py-4" href="#m12">
+            Löschung von Daten
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m15">Änderung und Aktualisierung der Datenschutzerklärung</a>
+          <a className="py-4" href="#m15">
+            Änderung und Aktualisierung der Datenschutzerklärung
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m10">Rechte der betroffenen Personen</a>
+          <a className="py-4" href="#m10">
+            Rechte der betroffenen Personen
+          </a>
         </li>
         <li>
-          <a className="py-4" href="#m42">Begriffsdefinitionen</a>
+          <a className="py-4" href="#m42">
+            Begriffsdefinitionen
+          </a>
         </li>
       </ul>
 
@@ -219,7 +253,8 @@ export const Privacy = () => {
         EU-Kommission:
         <a
           href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de"
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
         >
           https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection_de
         </a>
@@ -841,7 +876,8 @@ export const Privacy = () => {
         <a
           href="https://datenschutz-generator.de/?l=de"
           title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-          target="_blank" rel="noopener"
+          target="_blank"
+          rel="noopener"
         >
           Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke
         </a>

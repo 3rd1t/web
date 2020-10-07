@@ -1,5 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
+import builder1 from "./builder1"
 
 
 class LineChart extends React.Component {
@@ -106,12 +107,11 @@ class LineChart extends React.Component {
           options={{
             title:{
               display:true,
-              text:'Relative performance of FF size/value portfolios, 2010 - 2020',
               fontSize:24,
             },
             legend:{
               display:true,
-              position:'right'
+              position:'bottom'
             }
           }}
         />

@@ -100,7 +100,7 @@
     "@types/webpack": "4.41.22",
     "babel-jest": "26.5.2",
     "babel-loader": "8.1.0",
-    "cypress": "3.0.0",
+    "cypress": "4.12.1",
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.12.0",
     "eslint-plugin-cypress": "^2.10.3",

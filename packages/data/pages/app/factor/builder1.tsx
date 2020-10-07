@@ -1,5 +1,4 @@
 import LineChart from "./line-chart"
-import { Simple } from "@perfolio/components/table/cells/simple/simple"
 import React from "react"
 export type Row = Record<string, string | number>
 
@@ -53,17 +52,15 @@ export function validateFields(rows: Row[]): boolean {
 
 export const SimpleChart = (rows: Row[]): React.ReactElement => {
   if (rows.length === 0) {
-    return <LineChart columnNames={[]} cells={[]} />
+    return <LineChart labels={[]} cells={[]} />
   }
   if (!validateFields(rows)) {
     throw new Error("rows do not have the same field names")
   }
 
   const columnNames = Object.keys(rows[0])
-
-  // const simpleCells = rows.map((row) => columnNames.map((name) => <Simple label={row[name]} />))
   
-  const simpleCells = rows.map((row) => row[columnNames[1]])
+  const simpleCells = rows.map((row) => row[columnNames[1]]) 
 
-  return <LineChart columnNames={columnNames} cells={simpleCells} />
+  return <LineChart labels={columnNames} cells={simpleCells} />
 }

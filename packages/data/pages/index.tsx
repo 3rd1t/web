@@ -120,7 +120,7 @@ const Index = (props: IndexProps) => {
               ]}
             />
           }
-          button={{ label: "Sign in", href: "/signin" }}
+          button={{ label: "View charts", href: "/app" }}
           illustration={<img src="https://via.placeholder.com/500x360" alt="Placeholder for UI"></img>}
         />
       </Section>

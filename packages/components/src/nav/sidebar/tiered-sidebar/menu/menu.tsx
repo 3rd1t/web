@@ -15,10 +15,13 @@ export const Menu = ({ content }: MenuProps) => {
         <div className="flex flex-col space-y-8">
           {content.map((c, i) => {
             return (
-              <>
+              <div key={i}>
                 {c.title}
-                {c.items}
-              </>
+
+                {c.items.map((item, key) => {
+                  return <div key={key}>{item}</div>
+                })}
+              </div>
             )
           })}
         </div>

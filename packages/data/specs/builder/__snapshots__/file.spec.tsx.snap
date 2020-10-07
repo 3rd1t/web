@@ -208,237 +208,255 @@ exports[`File should render successfully 1`] = `
                   <div
                     class="flex flex-col space-y-8"
                   >
-                    <span
-                      class="flex my-4 text-sm font-medium text-gray-600 uppercase"
-                    >
-                      Builder
-                    </span>
-                    <a
-                      aria-label="API"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="/factor/api"
-                    >
+                    <div>
                       <span
-                        class="flex items-center justify-center text-lg text-gray-400"
+                        class="flex my-4 text-sm font-medium text-gray-600 uppercase"
                       >
-                        <svg
-                          class="w-6 h-6 code"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
+                        Builder
                       </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
+                      <div>
+                        <a
+                          aria-label="API"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/factor/api"
                         >
-                          API
-                        </span>
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6 code"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              API
+                            </span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                    <a
-                      aria-label="File Download"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="/factor/file"
-                    >
+                      <div>
+                        <a
+                          aria-label="File Download"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/factor/file"
+                        >
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6 cloud-download"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              File Download
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div>
+                        <a
+                          aria-label="Charts"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/factor/chart"
+                        >
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6 chart-square-bar"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Charts
+                            </span>
+                            <span
+                              class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
+                            >
+                              coming soon
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div>
                       <span
-                        class="flex items-center justify-center text-lg text-gray-400"
+                        class="flex my-4 text-sm font-medium text-gray-600 uppercase"
                       >
-                        <svg
-                          class="w-6 h-6 cloud-download"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
+                        Factor Models
                       </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
+                      <div>
+                        <a
+                          aria-label="Quickstart"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/notImlemented"
                         >
-                          File Download
-                        </span>
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                              <path
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Quickstart
+                            </span>
+                            <span
+                              class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
+                            >
+                              WIP
+                            </span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                    <a
-                      aria-label="Charts"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="/factor/chart"
-                    >
+                      <div>
+                        <a
+                          aria-label="Example USA"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/notImplemented"
+                        >
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Example USA
+                            </span>
+                            <span
+                              class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
+                            >
+                              WIP
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div>
                       <span
-                        class="flex items-center justify-center text-lg text-gray-400"
+                        class="flex my-4 text-sm font-medium text-gray-600 uppercase"
                       >
-                        <svg
-                          class="w-6 h-6 chart-square-bar"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
+                        Learn more
                       </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
+                      <div>
+                        <a
+                          aria-label="Documentation"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="https://docs.perfol.io/"
                         >
-                          Charts
-                        </span>
-                        <span
-                          class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
-                        >
-                          coming soon
-                        </span>
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Documentation
+                            </span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                    <span
-                      class="flex my-4 text-sm font-medium text-gray-600 uppercase"
-                    >
-                      Factor Models
-                    </span>
-                    <a
-                      aria-label="Quickstart"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="/notImlemented"
-                    >
-                      <span
-                        class="flex items-center justify-center text-lg text-gray-400"
-                      >
-                        <svg
-                          class="w-6 h-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                          <path
-                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
-                      </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
-                        >
-                          Quickstart
-                        </span>
-                        <span
-                          class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
-                        >
-                          WIP
-                        </span>
-                      </div>
-                    </a>
-                    <a
-                      aria-label="Example USA"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="/notImplemented"
-                    >
-                      <span
-                        class="flex items-center justify-center text-lg text-gray-400"
-                      >
-                        <svg
-                          class="w-6 h-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
-                      </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
-                        >
-                          Example USA
-                        </span>
-                        <span
-                          class="flex items-center justify-center px-1 text-xs uppercase bg-opacity-25 rounded bg-data-400 text-data-700"
-                        >
-                          WIP
-                        </span>
-                      </div>
-                    </a>
-                    <span
-                      class="flex my-4 text-sm font-medium text-gray-600 uppercase"
-                    >
-                      Learn more
-                    </span>
-                    <a
-                      aria-label="Documentation"
-                      class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
-                      href="https://docs.perfol.io/"
-                    >
-                      <span
-                        class="flex items-center justify-center text-lg text-gray-400"
-                      >
-                        <svg
-                          class="w-6 h-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                          />
-                        </svg>
-                      </span>
-                      <div
-                        class="flex items-center justify-between space-x-1"
-                      >
-                        <span
-                          class="ml-3"
-                        >
-                          Documentation
-                        </span>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                   <div
                     class="pt-3 border-t border-gray-300"

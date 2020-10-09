@@ -71,7 +71,7 @@ export const URL = (props: URLProps) => {
   return (
     <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
       <div className="p-8 space-y-4">
-        <Builder />
+        <Builder choices={props} />
       </div>
     </SidebarLayout>
   )

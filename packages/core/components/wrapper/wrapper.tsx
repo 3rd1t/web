@@ -6,7 +6,7 @@ export interface WrapperProps {
   children: React.ReactNode
 }
 
-export const Wrapper = ({ children }: WrapperProps) => {
+export const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
   const navbar = (
     <Navbar
       logo={<Logo></Logo>}

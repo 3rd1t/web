@@ -28,12 +28,43 @@ const Logo = (language: string): React.ReactNode => {
               <path d="M49.297-80.563c0-6.859-1.922-8.062-8.531-8.062H28.625c-3.86 0-7.938.844-7.938 5.766 0 5.062 4.563 5.78 7.938 5.78h9.14v65.532h-9.14c-3.86 0-7.938.844-7.938 5.781C20.688-.719 25.25 0 28.625 0h29.328c3.375 0 7.938-.719 7.938-5.766 0-4.937-4.079-5.78-7.938-5.78h-8.656zm0 0" />
             </symbol>
           </defs>
-          <use xmlns="http://www.w3.org/1999/xlink" transform="translate(-86.211 -184.055)" height="100%" width="100%" y="286.977" x="71.18" href="#a" />
-          <use xmlns="http://www.w3.org/1999/xlink" transform="translate(-86.211 -184.055)" height="100%" width="100%" y="286.977" x="133.711" href="#b" />
-          <use xmlns="http://www.w3.org/1999/xlink" transform="translate(-86.211 -184.055)" height="100%" width="100%" y="286.977" x="196.242" href="#c" />
-          <use xmlns="http://www.w3.org/1999/xlink" transform="translate(-86.211 -184.055)" height="100%" width="100%" y="286.977" x="239.653" href="#d" />
+          <use
+            xmlns="http://www.w3.org/1999/xlink"
+            transform="translate(-86.211 -184.055)"
+            height="100%"
+            width="100%"
+            y="286.977"
+            x="71.18"
+            href="#a"
+          />
+          <use
+            xmlns="http://www.w3.org/1999/xlink"
+            transform="translate(-86.211 -184.055)"
+            height="100%"
+            width="100%"
+            y="286.977"
+            x="133.711"
+            href="#b"
+          />
+          <use
+            xmlns="http://www.w3.org/1999/xlink"
+            transform="translate(-86.211 -184.055)"
+            height="100%"
+            width="100%"
+            y="286.977"
+            x="196.242"
+            href="#c"
+          />
+          <use
+            xmlns="http://www.w3.org/1999/xlink"
+            transform="translate(-86.211 -184.055)"
+            height="100%"
+            width="100%"
+            y="286.977"
+            x="239.653"
+            href="#d"
+          />
         </svg>
-
       )
 
     case "python":
@@ -91,8 +122,9 @@ export const CodeExamples = ({ code }: CodeExamplesProps) => {
             aria-label={c.language}
             data-testid="selectLanguage"
             key={i}
-            className={`p-4 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none  hover:text-gray-400 ${i === active ? "text-gray-200" : "text-gray-600"
-              }`}
+            className={`p-4 text-xs font-semibold tracking-wide no-underline uppercase focus:outline-none  hover:text-gray-400 ${
+              i === active ? "text-gray-200" : "text-gray-600"
+            }`}
             onClick={() => setActive(i)}
           >
             {Logo(c.language)}

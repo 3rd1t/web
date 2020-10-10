@@ -1,10 +1,11 @@
 import React from "react"
 import { Section } from "@perfolio/shared/ui"
 import { Wrapper } from "../components/wrapper/wrapper"
+import { NextPage } from "next"
 /* eslint-disable-next-line */
 export interface RoadmapProps {}
 
-export const Roadmap = (props: RoadmapProps) => {
+export const Roadmap: NextPage = (props: RoadmapProps) => {
   return (
     <Wrapper>
       <Section bg="bg-gray-100 " className="" id="">

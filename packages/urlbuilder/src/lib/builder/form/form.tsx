@@ -15,9 +15,15 @@ export interface FormProps {
   baseURL: string
   setURL: React.Dispatch<React.SetStateAction<string>>
   format?: Format
+  choices: {
+    factorModels: { value: string; display: string; factors: { value: string; display: string }[] }[]
+    regions: { value: string; display: string }[]
+    currencies: { value: string; display: string }[]
+    intervals: { value: string; display: string }[]
+  }
 }
 
-export const Form = ({ setURL, baseURL, format }: FormProps) => {
+export const Form = ({ setURL, baseURL, format, choices }: FormProps) => {
   const addState = (
     statelessFields: {
       name: string
@@ -67,7 +73,7 @@ export const Form = ({ setURL, baseURL, format }: FormProps) => {
   return (
     <div>
       <form className="flex items-center justify-center mt-20 appearance-none">
-        <div className="flex items-center mx-20 text-gray-700 border border-gray-300 rounded shadow">
+        <div className="flex items-center mx-20 text-gray-700 bg-white border border-gray-300 rounded shadow">
           <span className="p-2 font-thin bg-gray-100 border-r border-gray-300">{baseURL}</span>
 
           {fields.map((f, i) => (

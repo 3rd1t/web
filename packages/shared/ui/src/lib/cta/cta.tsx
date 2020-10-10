@@ -14,20 +14,22 @@ export interface CTAProps {
 
 export const CTA = ({ headline, button, subline }: CTAProps) => {
   return (
-    <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-      <div>
-        <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-          {headline}
-        </h2>
+    <div>
+      <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        {headline}
+      </h2>
+      <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
         <p className="mt-2 text-gray-700">{subline}</p>
+        <div className="w-full whitespace-no-wrap sm:w-auto">
+          <Link
+            className="px-4 py-2 font-semibold "
+            label={button.label}
+            bgColor={button.bgColor}
+            textColor={button.textColor}
+            href={button.href}
+          />
+        </div>
       </div>
-      <Link
-        className="px-4 py-2 font-semibold"
-        label={button.label}
-        bgColor={button.bgColor}
-        textColor={button.textColor}
-        href={button.href}
-      />
     </div>
   )
 }

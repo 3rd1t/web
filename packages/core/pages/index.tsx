@@ -2,6 +2,7 @@ import React from "react"
 import { HeroSection, Section, Profile, Feature } from "@perfolio/shared/ui"
 import Wrapper from "../components/wrapper/wrapper"
 import { Link } from "@perfolio/components/clickable/link/link"
+import { NextPage } from "next"
 /* eslint-disable-next-line */
 interface IndexProps {}
 
@@ -97,7 +98,7 @@ const features = [
   },
 ]
 
-const Index = (props: IndexProps) => {
+const Index: NextPage = (props: IndexProps) => {
   return (
     <Wrapper>
       <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">

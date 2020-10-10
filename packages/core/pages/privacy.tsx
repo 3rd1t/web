@@ -2,10 +2,11 @@ import React from "react"
 import { Privacy as Content } from "@perfolio/pages"
 import { Section } from "@perfolio/shared/ui"
 import { Wrapper } from "../components/wrapper/wrapper"
+import { NextPage } from "next"
 /* eslint-disable-next-line */
 export interface PrivacyProps {}
 
-export const Privacy = (props: PrivacyProps) => {
+export const Privacy: NextPage = (props: PrivacyProps) => {
   return (
     <Wrapper>
       <Section className="min-h-screen">

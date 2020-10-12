@@ -106,7 +106,7 @@
     "eslint-plugin-cypress": "^2.10.3",
     "husky": "^4.2.5",
     "jest": "26.5.2",
-    "netlify-cli": "^2.65.0",
+    "netlify-cli": "^2.65.5",
     "prettier": "^2.0.4",
     "react-test-renderer": "^16.13.1",
     "ts-jest": "26.4.1"

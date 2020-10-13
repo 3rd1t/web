@@ -1,6 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import builder1 from "./builder1"
+import { chartData } from "./builder1"
 
 
 class LineChart extends React.Component {
@@ -101,8 +101,8 @@ class LineChart extends React.Component {
     return (
       <div className="LineChart">
         <Line
-          data={this.chartData}
-          width={1200}
+          data={this.state.chartData}
+          width={1000}
           height={500}
           options={{
             title:{

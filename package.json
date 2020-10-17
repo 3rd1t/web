@@ -30,7 +30,7 @@
   "private": true,
   "dependencies": {
     "@headlessui/react": "^0.2.0",
-    "@next/mdx": "^9.5.3",
+    "@next/mdx": "^9.5.5",
     "@nrwl/next": "10.3.0",
     "@nrwl/node": "10.3.0",
     "@nrwl/nx-cloud": "10.1.6",
@@ -77,9 +77,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
-    "@babel/preset-env": "7.11.5",
+    "@babel/preset-env": "7.12.1",
     "@babel/preset-react": "7.10.4",
-    "@babel/preset-typescript": "7.10.4",
+    "@babel/preset-typescript": "7.12.1",
     "@lhci/cli": "^0.5.0",
     "@mdx-js/loader": "^1.6.18",
     "@netlify-builder/deploy": "^3.1.0",

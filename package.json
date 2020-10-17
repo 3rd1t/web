@@ -30,7 +30,7 @@
   "private": true,
   "dependencies": {
     "@headlessui/react": "^0.2.0",
-    "@next/mdx": "^9.5.3",
+    "@next/mdx": "^9.5.5",
     "@nrwl/next": "10.3.0",
     "@nrwl/node": "10.3.0",
     "@nrwl/nx-cloud": "10.1.6",

@@ -117,7 +117,7 @@ export const File = (props: FileProps) => {
     <div>
       <AnimateSharedLayout>
         <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
-          <div className="p-8 space-y-4">
+          <div className="p-8 space-y-16">
             <MultistepForm steps={steps} title="Build your custom file" />
 
             <AnimatePresence>

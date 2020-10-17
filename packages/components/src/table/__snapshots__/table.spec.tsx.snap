@@ -4,7 +4,7 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="flex flex-col"
+      class="flex flex-col "
     >
       <div
         class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
@@ -13,7 +13,7 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
           class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
         >
           <div
-            class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+            class="overflow-hidden border border-gray-300 sm:rounded"
           >
             <table
               class="min-w-full "
@@ -21,17 +21,23 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
               <thead>
                 <tr>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-left
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Name
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Number
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Updated at
                   </th>
@@ -41,18 +47,22 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                 class="bg-white divide-y divide-gray-200"
               >
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Andreas Thomas
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -63,12 +73,14 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         22.09.2020
                       </span>
@@ -76,7 +88,9 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -92,23 +106,27 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                       </p>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         123456789
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         22.09.2020
                       </span>
@@ -116,34 +134,40 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Mads Jordt
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         123456789
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         22.09.2020
                       </span>
@@ -151,34 +175,40 @@ exports[`Table Stories multipleRowsshould match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Kevin Kohler
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         123456789
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         22.09.2020
                       </span>
@@ -202,7 +232,7 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
       class="p-10 bg-gray-900"
     >
       <div
-        class="flex flex-col"
+        class="flex flex-col "
       >
         <div
           class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
@@ -211,7 +241,7 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
             class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
           >
             <div
-              class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+              class="overflow-hidden border border-gray-300 sm:rounded"
             >
               <table
                 class="min-w-full "
@@ -219,17 +249,23 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                 <thead>
                   <tr>
                     <th
-                      class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                      class="
+                text-left
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                     >
                       Name
                     </th>
                     <th
-                      class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                      class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                     >
                       Number
                     </th>
                     <th
-                      class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                      class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                     >
                       Updated at
                     </th>
@@ -239,18 +275,22 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                   class="bg-white divide-y divide-gray-200"
                 >
                   <tr>
-                    <td>
+                    <td
+                      class="text-left"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           Andreas Thomas
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
@@ -261,12 +301,14 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           22.09.2020
                         </span>
@@ -274,7 +316,9 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td
+                      class="text-left"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
@@ -290,18 +334,22 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                         </p>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           123456789
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
@@ -333,18 +381,22 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td
+                      class="text-left"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           Mads Jordt
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
@@ -360,12 +412,14 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                         </p>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           22.09.2020
                         </span>
@@ -373,29 +427,35 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                     </td>
                   </tr>
                   <tr>
-                    <td>
+                    <td
+                      class="text-left"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           Kevin Kohler
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
                         <span
-                          class="text-sm leading-5 text-gray-900"
+                          class="text-sm leading-5 text-right text-gray-900"
                         >
                           123456789
                         </span>
                       </div>
                     </td>
-                    <td>
+                    <td
+                      class="text-right"
+                    >
                       <div
                         class="px-6 py-4 whitespace-no-wrap"
                       >
@@ -422,7 +482,7 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="flex flex-col"
+      class="flex flex-col "
     >
       <div
         class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
@@ -431,7 +491,7 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
           class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
         >
           <div
-            class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+            class="overflow-hidden border border-gray-300 sm:rounded"
           >
             <table
               class="min-w-full "
@@ -439,17 +499,23 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
               <thead>
                 <tr>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-left
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Name
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Number
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Updated at
                   </th>
@@ -459,7 +525,9 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                 class="bg-white divide-y divide-gray-200"
               >
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -468,7 +536,9 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                       />
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -477,36 +547,9 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                       />
                     </div>
                   </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="px-6 py-4 whitespace-no-wrap"
-                    >
-                      <span
-                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
-                      />
-                    </div>
-                  </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -517,7 +560,9 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -526,7 +571,9 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                       />
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -535,7 +582,44 @@ exports[`Table Stories previewModeshould match snapshot 1`] = `
                       />
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="text-left"
+                  >
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="text-right"
+                  >
+                    <div
+                      class="px-6 py-4 whitespace-no-wrap"
+                    >
+                      <span
+                        class="inline-flex w-full h-2 max-w-xs rounded-full md:h-3 bg-gradient-to-t from-gray-200 to-gray-300"
+                      />
+                    </div>
+                  </td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -559,7 +643,7 @@ exports[`Table Stories singleRowshould match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="flex flex-col"
+      class="flex flex-col "
     >
       <div
         class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
@@ -568,7 +652,7 @@ exports[`Table Stories singleRowshould match snapshot 1`] = `
           class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
         >
           <div
-            class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+            class="overflow-hidden border border-gray-300 sm:rounded"
           >
             <table
               class="min-w-full "
@@ -576,17 +660,23 @@ exports[`Table Stories singleRowshould match snapshot 1`] = `
               <thead>
                 <tr>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-left
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Name
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Number
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     Updated at
                   </th>
@@ -596,18 +686,22 @@ exports[`Table Stories singleRowshould match snapshot 1`] = `
                 class="bg-white divide-y divide-gray-200"
               >
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Andreas Thomas
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
@@ -618,12 +712,14 @@ exports[`Table Stories singleRowshould match snapshot 1`] = `
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         22.09.2020
                       </span>

@@ -608,7 +608,7 @@ exports[`File should render successfully 1`] = `
               class="h-full bg-gray-100 border-t border-gray-300"
             >
               <div
-                class="p-8 space-y-4"
+                class="p-8 space-y-16"
               >
                 <div
                   class="flex items-center justify-between"

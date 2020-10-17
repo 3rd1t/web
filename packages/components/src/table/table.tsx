@@ -14,10 +14,10 @@ export const Table = ({ columnNames, cells }: TableProps) => {
 
   const usedCells = cells.length > 0 ? cells : [1, 2, 3].map((_) => columnNames.map((_) => <Preview />))
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <div className="overflow-hidden border-b border-gray-200 shadow sm:rounded">
+          <div className="overflow-hidden border border-gray-300 sm:rounded">
             <table className="min-w-full ">
               {<Header labels={columnNames} />}
               <tbody className="bg-white divide-y divide-gray-200">
@@ -25,7 +25,11 @@ export const Table = ({ columnNames, cells }: TableProps) => {
                   return (
                     <tr key={rowID}>
                       {row.map((cell, colID) => {
-                        return <td key={colID}>{cell}</td>
+                        return (
+                          <td key={colID} className={colID === 0 ? "text-left" : "text-right"}>
+                            {cell}
+                          </td>
+                        )
                       })}
                     </tr>
                   )

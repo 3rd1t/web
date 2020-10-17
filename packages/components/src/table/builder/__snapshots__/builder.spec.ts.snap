@@ -4,7 +4,7 @@ exports[`SimpleTable should match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="flex flex-col"
+      class="flex flex-col "
     >
       <div
         class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8"
@@ -13,7 +13,7 @@ exports[`SimpleTable should match snapshot 1`] = `
           class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8"
         >
           <div
-            class="overflow-hidden border-b border-gray-200 shadow sm:rounded"
+            class="overflow-hidden border border-gray-300 sm:rounded"
           >
             <table
               class="min-w-full "
@@ -21,12 +21,16 @@ exports[`SimpleTable should match snapshot 1`] = `
               <thead>
                 <tr>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-left
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     name
                   </th>
                   <th
-                    class="px-6 py-4 text-xs font-medium leading-4 tracking-wider text-left text-gray-700 uppercase bg-gray-100"
+                    class="
+                text-right
+                px-6 py-4 text-xs font-medium leading-4 tracking-wider text-gray-700 uppercase bg-gray-100"
                   >
                     age
                   </th>
@@ -36,23 +40,27 @@ exports[`SimpleTable should match snapshot 1`] = `
                 class="bg-white divide-y divide-gray-200"
               >
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Hello
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         1
                       </span>
@@ -60,23 +68,27 @@ exports[`SimpleTable should match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         World
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         2
                       </span>
@@ -84,23 +96,27 @@ exports[`SimpleTable should match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Bruce
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         3
                       </span>
@@ -108,23 +124,27 @@ exports[`SimpleTable should match snapshot 1`] = `
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td
+                    class="text-left"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         Wayne
                       </span>
                     </div>
                   </td>
-                  <td>
+                  <td
+                    class="text-right"
+                  >
                     <div
                       class="px-6 py-4 whitespace-no-wrap"
                     >
                       <span
-                        class="text-sm leading-5 text-gray-900"
+                        class="text-sm leading-5 text-right text-gray-900"
                       >
                         4
                       </span>

@@ -6,7 +6,7 @@ export interface FooterProps {}
 const footerLink = (label: React.ReactNode | string, href: string, ariaLabel?: string): React.ReactNode => {
   return (
     <Link href={href}>
-      <a aria-label={ariaLabel} className="hover:text-gray-100">
+      <a aria-label={ariaLabel} className="hover:text-carbon-900">
         {label}
       </a>
     </Link>
@@ -39,12 +39,15 @@ export const Footer = () => {
     <footer className="bg-white border-t border-gray-400 ">
       <div className="container flex flex-col items-center justify-center px-8 pt-12 pb-8 mx-auto space-y-8 text-gray-700">
         <div className="flex items-center justify-between w-full md:flex-col md:space-y-8">
-          <div className="text-gray-900">
-            <Logo />
-          </div>
+          <Link href="/">
+            <a className="text-gray-900">
+              <Logo />
+            </a>
+          </Link>
           <div className="flex items-center justify-start md:hidden">{socialMedia()}</div>
         </div>
         <div className="flex flex-row space-x-4 text-right md:items-center md:justify-between md:space-x-16">
+          {footerLink("Perfolio", "https://perfol.io")}
           {footerLink("Data", "https://data.perfol.io")}
           {footerLink("Analytics", "https://analytics.perfol.io")}
           {footerLink("Contact", "mailto:info@perfol.io")}

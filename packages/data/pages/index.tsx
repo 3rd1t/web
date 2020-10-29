@@ -98,13 +98,13 @@ const Index = (props: IndexProps) => {
             <FeatureList
               features={[
                 "Fetch data dynamically via our data-friendly RESTful API",
-                "Export data snapshots as JSON, CSV or XLSX file",
+                "Export data snapshots as JSON, CSV or XML file",
                 "Get instant insights through our visualization tools",
               ]}
             />
           }
           button={{ label: "Sign in", href: "/signin" }}
-          illustration={<img src="https://via.placeholder.com/500x360" alt="Placeholder for UI"></img>}
+          illustration={<img src="img/Data_Mockup_Images_Download.svg" alt="Available formats for data download (.xml, .json and .csv)"></img>}
         />
       </Section>
       <Section id="charts" bg="bg-white">

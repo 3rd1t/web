@@ -33,7 +33,7 @@
     "@next/mdx": "^9.5.5",
     "@nrwl/next": "10.3.0",
     "@nrwl/node": "10.3.0",
-    "@nrwl/nx-cloud": "10.1.6",
+    "@nrwl/nx-cloud": "10.1.8",
     "@nrwl/react": "10.3.0",
     "@nrwl/workspace": "10.3.0",
     "@tailwindcss/custom-forms": "^0.2.1",

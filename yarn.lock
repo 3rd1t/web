@@ -15382,10 +15382,10 @@ nwsapi@^2.2.0:
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
   integrity sha512-h2AatdwYH+JHiZpv7pt/gSX1XoRGb7L/qSIeuqA6GwYoF9w1vP1cw42TO0aI2pNyshRK5893hNSl+1//vHK7hQ==
 
-nx@^10.3.0:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/nx/-/nx-10.3.0.tgz#6564e0301a0a292f11db0741cc91812ae81c3299"
-  integrity sha512-hQNHhtKB2yN6sDnu6wQUzaWxcz90HJBz1muEZ4d6TmMtCIxUZCf/2ETrPZv48pPkrkyofatmLt02rM43dRZ3DA==
+nx@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.yarnpkg.com/nx/-/nx-10.3.1.tgz#7b2107a0324053c794b45522032218ffaacdd8b5"
+  integrity sha512-PLxQhndQ/G5LFTjGbPn49DKppG10obq5musSAVl0hkDdN/5hwFtG6yTcxIQFdfWbr7qFQcChXrkc1/y++tgSrA==
   dependencies:
     "@nrwl/cli" "*"
 

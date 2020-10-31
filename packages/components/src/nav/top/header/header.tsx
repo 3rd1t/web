@@ -7,7 +7,7 @@ import {capitalize} from "@perfolio/util/strings/capitalize"
 /* eslint-disable-next-line */
 export interface HeaderProps {
   breadcrumbs?: string[],
-  user: {
+  user?: {
     nickname: string
   }
 }
@@ -39,7 +39,7 @@ export const Header = ({ breadcrumbs, user }: HeaderProps) => {
               <Dropdown
                 button={
                   <div className="flex flex-col items-end w-40 rounded hover:text-data-800 hover:font-semibold">
-                    <span>{capitalize(user.nickname)}</span>
+                    <span>{capitalize(user?.nickname)}</span>
                     <span className="text-xs font-semibold text-data-700">Premium</span>
                   </div>
                 }

@@ -6,10 +6,10 @@ export const auth0 = initAuth0({
   domain: process.env.AUTH0_DOMAIN,
   clientId: process.env.AUTH0_CLIENT_ID,
   clientSecret: process.env.AUTH0_CLIENT_SECRET,
-  audience: "https://api.perfol.io",
+  audience: process.env.AUTH0_AUDIENCE,
   scope: "openid profile",
-  redirectUri: "http://localhost:4200/api/callback",
-  postLogoutRedirectUri: "http://localhost:4200/",
+  redirectUri: process.env.AUTH0_REDIRECT_URI,
+  postLogoutRedirectUri: process.env.AUTH0_POST_LOGOUT_REDIRECT_URI,
   session: {
     // The secret used to encrypt the cookie.
     cookieSecret: process.env.COOKIE_SECRET,

@@ -7,7 +7,7 @@ export default auth0.requireAuthentication(async function xxx(
 ): Promise<void> {
   try {
     const tc = await auth0.tokenCache(req, res)
-    const {accessToken} = await tc.getAccessToken()
+    const { accessToken } = await tc.getAccessToken()
     console.log(accessToken)
     res.end()
   } catch (error) {

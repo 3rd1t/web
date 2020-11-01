@@ -21,5 +21,6 @@ ARG SERVICE
 WORKDIR /app
 COPY --from=builder /app/dist/packages/${SERVICE} .
 COPY .env .
-RUN npm i
-CMD ["npm", "run", "start"]
+RUN yarn install
+RUN ls -al .next
+CMD ["yarn", "start"]

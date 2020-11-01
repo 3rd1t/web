@@ -8,6 +8,7 @@ export interface URLProps {
   regions: { value: string; display: string }[]
   currencies: { value: string; display: string }[]
   intervals: { value: string; display: string }[]
+  user: { nickname: string }
 }
 
 export const URL = (props: URLProps) => {
@@ -69,7 +70,7 @@ export const URL = (props: URLProps) => {
   ]
 
   return (
-    <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
+    <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")} user={props.user}>
       <div className="p-8 space-y-4">
         <Builder choices={props} />
       </div>

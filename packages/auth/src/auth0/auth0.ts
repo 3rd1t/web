@@ -1,5 +1,5 @@
 import { initAuth0 } from "@auth0/nextjs-auth0"
-import { IClaims } from '@auth0/nextjs-auth0/dist/session/session'
+import { IClaims } from "@auth0/nextjs-auth0/dist/session/session"
 import { NextPageContext } from "next"
 
 export const auth0 = initAuth0({
@@ -44,4 +44,3 @@ export async function requireUser(ctx: NextPageContext): Promise<IClaims> {
   }
   return session.user
 }
-

@@ -4,6 +4,6 @@ import { render } from "@testing-library/react"
 
 describe(" Index", () => {
   it("renders correctly", () => {
-    expect(render(<Index />)).toBeTruthy()
+    expect(render(<Index i18n={{ headline: "Headline", subline: "Subline" }} />)).toBeTruthy()
   })
 })

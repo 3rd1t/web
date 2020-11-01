@@ -2,9 +2,12 @@ import React from "react"
 import { HeroSection, Section, Profile, Feature } from "@perfolio/shared/ui"
 import Wrapper from "../components/wrapper/wrapper"
 import { Link } from "@perfolio/components/clickable/link/link"
-import { NextPage } from "next"
+import { NextPage, NextPageContext } from "next"
+import { translations, translate } from "../i18n/text"
 /* eslint-disable-next-line */
-interface IndexProps {}
+interface IndexProps {
+  i18n: { [key: string]: string }
+}
 
 const features = [
   {
@@ -98,19 +101,14 @@ const features = [
   },
 ]
 
-const Index: NextPage = (props: IndexProps) => {
+const Index = ({ i18n }: IndexProps) => {
   return (
     <Wrapper>
       <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
-            headline="Portfolio analytics insights for everyone"
-            paragraph={
-              <p className="flex flex-col xl:flex-row">
-                Keeping track of all your assets and their performance is hard. Perfolio brings all information to one
-                place and gives you access to the latest analytics methods in science.
-              </p>
-            }
+            headline={i18n.headline}
+            paragraph={<p className="flex flex-col xl:flex-row">{i18n.subline}</p>}
             primaryButton={
               <Link
                 className="px-4 py-2 font-semibold"
@@ -252,3 +250,12 @@ const Index: NextPage = (props: IndexProps) => {
   )
 }
 export default Index
+
+export function getServerSideProps(ctx) {
+  const { locale } = ctx
+  return {
+    props: {
+      i18n: translate(locale),
+    },
+  }
+}

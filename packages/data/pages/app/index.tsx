@@ -1,5 +1,5 @@
 import React from "react"
-import { NextPageContext } from 'next';
+import { NextPageContext } from "next"
 
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
 import { menuContent } from "../../content/menu-content"
@@ -8,10 +8,10 @@ import { auth0, requireUser } from "@perfolio/auth/auth0/auth0"
 export interface AppProps {
   user: {
     nickname: string
-  } 
+  }
 }
 
-export const App =({ user }: AppProps) => {
+export const App = ({ user }: AppProps) => {
   return (
     <div>
       <SidebarLayout breadcrumbs={["WEHR", "FOLIO"]} menuContent={menuContent("factor")} user={user}>

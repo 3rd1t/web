@@ -9,8 +9,8 @@ export interface SidebarLayoutProps {
   menuContent: {
     title: React.ReactNode
     items: React.ReactNode[]
-  }[],
-  user?: {
+  }[]
+  user: {
     nickname: string
   }
 }

@@ -20,6 +20,7 @@ describe("File", () => {
           { value: "A", display: "AA" },
           { value: "B", display: "BB" },
         ]}
+        user={{ nickname: "Vin Venture" }}
       />,
     )
     expect(baseElement).toMatchSnapshot()

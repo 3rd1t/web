@@ -8,7 +8,7 @@ export default {
 
 export const primary = () => {
   return (
-    <SidebarLayout breadcrumbs={["First", "Second", "Active"]}>
+    <SidebarLayout breadcrumbs={["First", "Second", "Active"]} user={{ nickname: "User" }}>
       <span>Content</span>
     </SidebarLayout>
   )

@@ -12,6 +12,9 @@ export interface FileProps {
   regions: { value: string; display: string }[]
   currencies: { value: string; display: string }[]
   intervals: { value: string; display: string }[]
+  user: {
+    nickname: string
+  }
 }
 
 export const File = (props: FileProps) => {
@@ -116,7 +119,7 @@ export const File = (props: FileProps) => {
   return (
     <div>
       <AnimateSharedLayout>
-        <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")}>
+        <SidebarLayout breadcrumbs={["data", "builder", "file"]} menuContent={menuContent("factor")} user={props.user}>
           <div className="p-8 space-y-16">
             <MultistepForm steps={steps} title="Build your custom file" />
 

@@ -175,7 +175,7 @@ export const File = (props: FileProps) => {
 
 export default File
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const url = process.env.NEXT_PUBLIC_BUILDER_CONFIG_URL
   if (!url) {
     throw new Error("NEXT_PUBLIC_BUILDER_CONFIG_URL must be set")

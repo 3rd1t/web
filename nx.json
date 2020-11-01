@@ -76,6 +76,9 @@
     },
     "components": {
       "tags": []
+    },
+    "auth": {
+      "tags": []
     }
   },
   "workspaceLayout": {

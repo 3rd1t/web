@@ -40,10 +40,10 @@ const Index = (props: IndexProps) => {
               primaryButton={
                 <Link
                   className="px-4 py-2 font-semibold"
-                  label="Start now"
+                  label="Sign in"
                   bgColor="bg-data-300"
                   textColor="text-gray-900"
-                  href="#features"
+                  href="/api/login"
                 />
               }
               secondaryButton={

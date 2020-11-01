@@ -1,4 +1,4 @@
-FROM node:latest AS builder
+FROM node:15 AS builder
 
 ARG SERVICE
 ENV NODE_ENV=production
@@ -12,16 +12,14 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn nx export ${SERVICE} --with-deps
+RUN yarn nx build ${SERVICE} --with-deps
 
-FROM node:latest
+FROM node:15-alpine3.10
 
 ARG SERVICE
 
-WORKDIR /static
-COPY --from=builder /app/dist/packages/${SERVICE}/exported .
-
-RUN npm install -g serve
-
-EXPOSE 5000
-CMD ["serve", "."]
+WORKDIR /app
+COPY --from=builder /app/dist/packages/${SERVICE} .
+COPY .env .
+RUN npm i
+CMD ["npm", "run", "start"]

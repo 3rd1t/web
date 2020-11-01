@@ -25,7 +25,7 @@ export const Link = (props: LinkProps) => {
   ].join(" ")
 
   return (
-    <NextLink href={props.href}>
+    <NextLink href={props.href} locale="de">
       <a>
         <div className={className}>
           <Base label={props.label} iconLeft={props.iconLeft} iconRight={props.iconRight}></Base>

@@ -140,7 +140,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/pages/tsconfig.lib.json", "packages/pages/tsconfig.spec.json"],
+            "tsConfig": [
+              "packages/pages/tsconfig.lib.json",
+              "packages/pages/tsconfig.spec.json",
+              "packages/pages/.storybook/tsconfig.json"
+            ],
             "exclude": ["**/node_modules/**", "!packages/pages/**/*"]
           }
         },
@@ -223,7 +227,11 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "tsConfig": ["packages/shared/ui/tsconfig.lib.json", "packages/shared/ui/tsconfig.spec.json"],
+            "tsConfig": [
+              "packages/shared/ui/tsconfig.lib.json",
+              "packages/shared/ui/tsconfig.spec.json",
+              "packages/shared/ui/.storybook/tsconfig.json"
+            ],
             "exclude": ["**/node_modules/**", "!packages/shared/ui/**/*"]
           }
         },

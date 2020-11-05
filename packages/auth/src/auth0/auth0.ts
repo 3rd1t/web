@@ -2,17 +2,30 @@ import { initAuth0 } from "@auth0/nextjs-auth0"
 import { IClaims } from "@auth0/nextjs-auth0/dist/session/session"
 import { NextPageContext } from "next"
 
+function getEnvOrPanic(key: string): string {
+  const value = process.env[key]
+  if (!value || value == "") {
+    throw new Error(`Requires environment variable [${key}] to be set`)
+  }
+  return value
+}
+
+// hello
+//auth0|5fa2d204c722290069646702
+// andreas
+//auth0|5fa2d204c722290069646702
+
 export const auth0 = initAuth0({
-  domain: process.env.AUTH0_DOMAIN,
-  clientId: process.env.AUTH0_CLIENT_ID,
-  clientSecret: process.env.AUTH0_CLIENT_SECRET,
-  audience: process.env.AUTH0_AUDIENCE,
+  domain: getEnvOrPanic("AUTH0_DOMAIN"),
+  clientId: getEnvOrPanic("AUTH0_CLIENT_ID"),
+  clientSecret: getEnvOrPanic("AUTH0_CLIENT_SECRET"),
+  // audience: getEnvOrPanic("AUTH0_AUDIENCE"),
   scope: "openid profile",
-  redirectUri: process.env.AUTH0_REDIRECT_URI,
-  postLogoutRedirectUri: process.env.AUTH0_POST_LOGOUT_REDIRECT_URI,
+  redirectUri: getEnvOrPanic("AUTH0_REDIRECT_URI"),
+  postLogoutRedirectUri: getEnvOrPanic("AUTH0_POST_LOGOUT_REDIRECT_URI"),
   session: {
     // The secret used to encrypt the cookie.
-    cookieSecret: process.env.COOKIE_SECRET,
+    cookieSecret: getEnvOrPanic("COOKIE_SECRET"),
     // The cookie lifetime (expiration) in seconds. Set to 8 hours by default.
     cookieLifetime: 60 * 60 * 8,
     // (Optional) The cookie domain this should run on. Leave it blank to restrict it to your domain.

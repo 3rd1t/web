@@ -6,9 +6,8 @@ export default auth0.requireAuthentication(async function xxx(
   res: NextApiResponse,
 ): Promise<void> {
   try {
-    const tc = await auth0.tokenCache(req, res)
-    const { accessToken } = await tc.getAccessToken()
-    console.log(accessToken)
+    const session = await auth0.getSession(req)
+    console.log({ session })
     res.end()
   } catch (error) {
     console.error(error)

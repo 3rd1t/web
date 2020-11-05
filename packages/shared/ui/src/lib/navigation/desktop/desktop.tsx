@@ -1,6 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { Link as Scroll } from "react-scroll"
+import { SelectLight } from "@perfolio/components/form/select-light/select-light"
+
 /* eslint-disable-next-line */
 export interface DesktopProps {
   links: {
@@ -28,6 +31,32 @@ export const Desktop = (props: DesktopProps) => {
       </li>
     )
   })
+
+  const choices = [
+    {
+      name: "English",
+      locale: "en",
+    },
+    {
+      name: "Deutsch",
+      locale: "de",
+    },
+  ]
+
+  const [choice, setChoice] = useState(0)
+  const router = useRouter()
+
+  links.push(
+    <li key="languageSetting">
+      <SelectLight label="Language" choices={choices.map((c) => c.name)} selected={choice} setSelected={setChoice} />,
+    </li>,
+  )
+
+  useEffect(() => {
+    const locale = choices.map((c) => c.locale)[choice]
+    router.push(router.pathname, router.pathname, { locale })
+  }, [choice])
+
   return (
     <div className="w-auto">
       <ul className="flex items-center space-x-10">{links}</ul>

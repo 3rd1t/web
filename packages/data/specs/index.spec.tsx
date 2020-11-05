@@ -3,7 +3,11 @@ import Index, { getStaticProps } from "../pages/index"
 import { render } from "@testing-library/react"
 import fs from "fs"
 import path from "path"
+const useRouter = jest.spyOn(require("next/router"), "useRouter")
 
+useRouter.mockImplementation(() => ({
+  push: jest.fn(),
+}))
 describe(" Index", () => {
   describe("with code snippets", () => {
     it("renders correctly", () => {

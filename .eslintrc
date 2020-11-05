@@ -39,6 +39,13 @@
       "rules": {
         "@typescript-eslint/no-unused-vars": "off"
       }
+    },
+    {
+      "files": ["*.spec.tsx"],
+      "rules": {
+        "@typescript-eslint/no-var-require": "off"
+      }
+      
     }
   ]
 }

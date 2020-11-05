@@ -21,9 +21,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Independent",
-    description:
-      "We are not part of any bank or insurance company. We give you an unbiased view of your portfolio, not selling any investment products.",
+    title: "independend",
+    description: "independendDescription",
   },
   {
     icon: (
@@ -36,9 +35,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Complex made easy",
-    description:
-      "Everybody should have access to the latest analytics methods in science. Making these methods as simple and understandable as possible is part of our core business.",
+    title: "complexMadeEasy",
+    description: "complexMadeEasyDescription",
   },
   {
     icon: (
@@ -112,14 +110,19 @@ const Index = ({ i18n }: IndexProps) => {
             primaryButton={
               <Link
                 className="px-4 py-2 font-semibold"
-                label="Start now"
+                label={i18n.signin}
                 bgColor="bg-carbon-900"
                 textColor="text-gray-100"
-                href="#features"
+                href="/api/login"
               />
             }
             secondaryButton={
-              <Link className="font-medium" textColor="text-gray-900" label="Contact us" href="mailto:info@perfol.io" />
+              <Link
+                className="font-medium"
+                textColor="text-gray-900"
+                label={i18n.contact}
+                href="mailto:info@perfol.io"
+              />
             }
           ></HeroSection>
 
@@ -131,15 +134,15 @@ const Index = ({ i18n }: IndexProps) => {
       <Section bg="bg-white" id="features" className="flex flex-col justify-center">
         <div className="md:text-center">
           <h3 className="text-3xl font-bold leading-8 tracking-tight text-carbon-900 sm:text-4xl sm:leading-10">
-            Why Perfolio?
+            {i18n.whyPerfolio}
           </h3>
-          <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">Make decisions based on data.</p>
+          <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">{i18n.whyPerfolioSubline}</p>
         </div>
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features.map((f, index) => {
             return (
               <li key={index} className="p-3 md:w-1/2 xl:w-1/3">
-                <Feature icon={f.icon} title={f.title} description={f.description}></Feature>
+                <Feature icon={f.icon} title={i18n[f.title]} description={i18n[f.description]}></Feature>
               </li>
             )
           })}
@@ -167,9 +170,7 @@ const Index = ({ i18n }: IndexProps) => {
             <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
               <h2 className="text-lg font-medium leading-6 text-carbon-900">Perfolio</h2>
               <p className="text-base leading-6 text-left md:text text-carbon-600 md:text-center">
-                At Perfolio, we believe that investment decisions should always be based on as much well-founded
-                information as possible. It is our mission to provide our users the most relevant and accurate financial
-                information available.
+                {i18n.perfolioDescription1}
               </p>
             </div>
           </div>
@@ -178,33 +179,29 @@ const Index = ({ i18n }: IndexProps) => {
               <Profile
                 className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
                 name="Nicolas Webersinke"
-                title="Product"
+                title={i18n.product}
                 image="/img/nico.jpeg"
               ></Profile>
               <Profile
                 className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
                 name="Andreas Thomas"
-                title="Tech"
+                title={i18n.tech}
                 image="/img/andreas.jpeg"
               ></Profile>
               <Profile
                 className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
                 name="Mads Jordt"
-                title="Sales"
+                title={i18n.sales}
                 image="/img/mads.jpeg"
               ></Profile>
               <Profile
                 className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
                 name="Kevin Kohler"
-                title="Marketing"
+                title={i18n.marketing}
                 image="/img/kevin.jpeg"
               ></Profile>
             </div>
-            <p className="mt-8 text-center text-carbon-600">
-              We are a motivated team of enthusiastic techies who are passionate about capital market topics. Bringing
-              together different backgrounds and skills, we want to revolutionize the way investors track their assets
-              and measure the success of their investment strategy. We are always happy to chat - drop us a message!
-            </p>
+            <p className="mt-8 text-center text-carbon-600">{i18n.perfolioDescription2}</p>
           </div>
         </div>
       </Section>
@@ -212,10 +209,10 @@ const Index = ({ i18n }: IndexProps) => {
         <div className="container flex flex-col justify-around mx-auto lg:flex-row">
           <div>
             <h2 className="text-2xl font-semibold leading-8 text-carbon-900 font-display sm:text-3xl sm:leading-9">
-              Curious for more?
+              {i18n.cta}
             </h2>
             <p className="max-w-2xl mt-2 text-base leading-6">
-              <span className="text-carbon-600">Follow us on our roadmap and on </span>
+              <span className="text-carbon-600">{i18n.ctaSubline}</span>
               <a target="blank" href="https://github.com/perfolio">
                 github
               </a>
@@ -240,7 +237,7 @@ const Index = ({ i18n }: IndexProps) => {
                 type="submit"
                 className="relative block w-full px-6 py-3 mt-4 text-base font-semibold leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800"
               >
-                Subscribe
+                {i18n.signin}
               </button>
             </div>
           </form>

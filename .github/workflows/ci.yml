@@ -53,6 +53,7 @@ jobs:
         env:
           NX_BRANCH: ${{ github.event.number }}
           NX_RUN_GROUP: ${{ github.run_id }}
+          AUTH0_DOMAIN: "dummy.auth0.com"
 
   unit-test:
     name: unit test

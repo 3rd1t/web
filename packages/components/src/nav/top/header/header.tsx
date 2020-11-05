@@ -3,9 +3,13 @@ import Breadcrumbs from "../../bread-crumbs/bread-crumbs"
 import Link from "@perfolio/components/clickable/link/link"
 import NextLink from "next/link"
 import Dropdown from "@perfolio/components/form/dropdown/dropdown"
+import { capitalize } from "@perfolio/util/strings/capitalize"
 /* eslint-disable-next-line */
 export interface HeaderProps {
   breadcrumbs?: string[]
+  user: {
+    nickname: string
+  }
 }
 
 function dropdownItem(label: string, href: string, icon: React.ReactNode): React.ReactNode {
@@ -19,7 +23,7 @@ function dropdownItem(label: string, href: string, icon: React.ReactNode): React
   )
 }
 
-export const Header = ({ breadcrumbs }: HeaderProps) => {
+export const Header = ({ breadcrumbs, user }: HeaderProps) => {
   return (
     <div className="w-full h-20">
       <ul className="flex items-center justify-between h-full px-4">
@@ -35,7 +39,7 @@ export const Header = ({ breadcrumbs }: HeaderProps) => {
               <Dropdown
                 button={
                   <div className="flex flex-col items-end w-40 rounded hover:text-data-800 hover:font-semibold">
-                    <span>Vin Venture</span>
+                    <span>{capitalize(user.nickname)}</span>
                     <span className="text-xs font-semibold text-data-700">Premium</span>
                   </div>
                 }
@@ -79,7 +83,7 @@ export const Header = ({ breadcrumbs }: HeaderProps) => {
                   <div className="pt-3 border-t border-gray-300">
                     {dropdownItem(
                       "Log out",
-                      "",
+                      "/api/logout",
                       <svg
                         className="w-6 h-6"
                         fill="currentColor"

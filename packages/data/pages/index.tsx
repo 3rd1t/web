@@ -40,10 +40,10 @@ const Index = (props: IndexProps) => {
               primaryButton={
                 <Link
                   className="px-4 py-2 font-semibold"
-                  label="Start now"
+                  label="Sign in"
                   bgColor="bg-data-300"
                   textColor="text-gray-900"
-                  href="#features"
+                  href="/api/login"
                 />
               }
               secondaryButton={
@@ -104,7 +104,12 @@ const Index = (props: IndexProps) => {
             />
           }
           button={{ label: "Sign in", href: "/signin" }}
-          illustration={<img src="img/Data_Mockup_Images_Download.svg" alt="Available formats for data download (.xml, .json and .csv)"></img>}
+          illustration={
+            <img
+              src="img/Data_Mockup_Images_Download.svg"
+              alt="Available formats for data download (.xml, .json and .csv)"
+            ></img>
+          }
         />
       </Section>
       <Section id="charts" bg="bg-white">

@@ -20,6 +20,9 @@ const app = ({ Component, pageProps }: AppProps) => {
         <link rel="mask-icon" href="/fav/safari-pinned-tab.svg" color="#1A202C"></link>
         <meta name="msapplication-TileColor" content="#1A202C"></meta>
         <meta name="theme-color" content="#1A202C"></meta>
+
+        <link rel="alternative" hrefLang="en" href="https://perfol.io"></link>
+        <link rel="alternative" hrefLang="de" href="https://perfol.io/de"></link>
       </Head>
       <Component {...pageProps} />
     </div>

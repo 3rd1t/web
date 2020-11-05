@@ -17,4 +17,5 @@ module.exports = {
       lines: 70,
     },
   },
+  projects: ["<rootDir>"],
 }

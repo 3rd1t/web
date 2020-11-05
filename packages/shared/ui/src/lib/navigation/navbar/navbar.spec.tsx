@@ -1,6 +1,11 @@
 import React from "react"
 import Navbar from "./navbar"
 import { render } from "@testing-library/react"
+const useRouter = jest.spyOn(require("next/router"), "useRouter")
+
+useRouter.mockImplementation(() => ({
+  push: jest.fn(),
+}))
 
 describe(" Navbar", () => {
   it("renders correctly", () => {

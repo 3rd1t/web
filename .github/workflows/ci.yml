@@ -58,6 +58,7 @@ jobs:
           AUTH0_CLIENT_SECRET: NOT_EMPTY
           AUTH0_REDIRECT_URI: NOT_EMPTY
           AUTH0_POST_LOGOUT_REDIRECT_URI: NOT_EMPTY
+          COOKIE_SECRET: NOT_EMPTY
 
   unit-test:
     name: unit test

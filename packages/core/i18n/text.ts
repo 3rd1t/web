@@ -7,7 +7,12 @@ export interface Translation {
   de: string
 }
 
+
+
+
 export const translations: Translations = {
+
+
   headline: {
     en: "Portfolio analytics insights for everyone",
     de: "Portfolio Analyse für jedermann",

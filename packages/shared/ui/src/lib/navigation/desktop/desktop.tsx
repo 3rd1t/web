@@ -54,7 +54,7 @@ export const Desktop = (props: DesktopProps) => {
 
   useEffect(() => {
     const locale = choices.map((c) => c.locale)[choice]
-    router.push(router.pathname, router.pathname, { locale: locale })
+    router.push(router.pathname, router.pathname, { locale })
   }, [choice])
 
   return (

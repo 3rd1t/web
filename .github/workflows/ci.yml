@@ -53,6 +53,8 @@ jobs:
         env:
           NX_BRANCH: ${{ github.event.number }}
           NX_RUN_GROUP: ${{ github.run_id }}
+          # Apparently node actually looks for these during the build step
+          # So we need them in our CI as well, even though they can be anything
           AUTH0_DOMAIN: NOT_EMPTY
           AUTH0_CLIENT_ID: NOT_EMPTY
           AUTH0_CLIENT_SECRET: NOT_EMPTY

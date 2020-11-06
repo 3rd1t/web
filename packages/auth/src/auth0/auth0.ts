@@ -10,11 +10,6 @@ function getEnvOrPanic(key: string): string {
   return value
 }
 
-// hello
-//auth0|5fa2d204c722290069646702
-// andreas
-//auth0|5fa2d204c722290069646702
-
 export const auth0 = initAuth0({
   domain: getEnvOrPanic("AUTH0_DOMAIN"),
   clientId: getEnvOrPanic("AUTH0_CLIENT_ID"),

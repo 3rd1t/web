@@ -79,6 +79,13 @@
     },
     "auth": {
       "tags": []
+    },
+    "analytics": {
+      "tags": []
+    },
+    "analytics-e2e": {
+      "tags": [],
+      "implicitDependencies": ["analytics"]
     }
   },
   "workspaceLayout": {

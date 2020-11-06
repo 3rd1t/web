@@ -595,6 +595,82 @@
           }
         }
       }
+    },
+    "analytics": {
+      "root": "packages/analytics",
+      "sourceRoot": "packages/analytics",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "packages/analytics",
+            "outputPath": "dist/packages/analytics"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "analytics:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "analytics:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "analytics:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/analytics/**/*.{ts,tsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/analytics/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "analytics-e2e": {
+      "root": "packages/analytics-e2e",
+      "sourceRoot": "packages/analytics-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "packages/analytics-e2e/cypress.json",
+            "tsConfig": "packages/analytics-e2e/tsconfig.e2e.json",
+            "devServerTarget": "analytics:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "analytics:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/analytics-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {

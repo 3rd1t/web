@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout"
 import { MultistepForm } from "@perfolio/components/form/multistep-form/multistep-form"
-import { Button } from "@perfolio/components/clickable/button/button"
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion"
 import { menuContent } from "../../../content/menu-content"
 import { SimpleChart } from './builder1'
@@ -97,6 +96,7 @@ export const LineChart = (props: LineChartProps) => {
     ].join("/")
   }
 
+/* Not needed for chart
   function download(url: string, filename: string) {
     fetch(url)
       .then((res) => res.blob())
@@ -112,6 +112,7 @@ export const LineChart = (props: LineChartProps) => {
       })
       .catch(() => console.error("Could not download file"))
   }
+  */
 
   return (
     <div>
@@ -139,30 +140,7 @@ export const LineChart = (props: LineChartProps) => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ damping: 300 }}
-                  >
-                    <Button
-                      onClick={() => download("https://api.perfol.io/d/beta/" + path(), "factor.json")}
-                      label="Download"
-                      bgColor="bg-carbon-900"
-                      textColor="text-gray-100"
-                      iconRight={
-                        <svg
-                          className="w-6 h-6"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                      }
-                    ></Button>
-                  </motion.div>
+                  />
                 </>
               ) : null}
             </AnimatePresence>

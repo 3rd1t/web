@@ -71,6 +71,18 @@ class LineChart extends React.Component {
             legend:{
               display:true,
               position:'bottom'
+            },
+            scales: {
+              xAxes: [{
+                 gridLines: {
+                    display: false
+                 }
+              }],
+              yAxes: [{
+                 gridLines: {
+                    display: false
+                 }
+              }]
             }
           }}
         />

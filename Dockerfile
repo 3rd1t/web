@@ -1,7 +1,6 @@
 FROM node:15 AS builder
 
 ARG SERVICE
-ENV NODE_ENV=production
 
 WORKDIR /app
 
@@ -11,8 +10,9 @@ COPY yarn.lock .
 RUN yarn install
 
 COPY . .
-
-RUN yarn nx build ${SERVICE} --with-deps
+ENV NODE_ENV=production
+RUN yarn nx build css
+RUN yarn nx build ${SERVICE} --with-deps  --skip-nx-cache
 
 FROM node:15-alpine3.10
 
@@ -22,5 +22,6 @@ WORKDIR /app
 COPY --from=builder /app/dist/packages/${SERVICE} .
 COPY .env .
 RUN yarn install
-RUN ls -al .next
-CMD ["yarn", "start"]
+
+ENV PORT 3000
+CMD ["yarn", "start", "-p", ${PORT}]

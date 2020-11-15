@@ -643,6 +643,12 @@
             "jestConfig": "packages/analytics/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "docker": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "docker build -t perfolio/web-analytics --build-arg SERVICE=analytics . && docker push perfolio/web-analytics"
+          }
         }
       }
     },

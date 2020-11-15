@@ -81,7 +81,8 @@
       "tags": []
     },
     "analytics": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["css"]
     },
     "analytics-e2e": {
       "tags": [],

@@ -24,7 +24,7 @@ export const HeroSection = (props: HeroSectionProps) => {
 
         <div className="space-y-4 md:space-x-4 md:space-y-0">
           <div className="items-center sm:flex sm:justify-center lg:justify-start">
-            <div className="shadow">{props.primaryButton}</div>
+            <div className="rounded shadow">{props.primaryButton}</div>
             <div className="mt-3 sm:mt-0 sm:ml-3">{props.secondaryButton}</div>
           </div>
         </div>

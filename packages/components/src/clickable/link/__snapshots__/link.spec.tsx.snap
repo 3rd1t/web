@@ -7,7 +7,7 @@ exports[`Link Stories blackshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -29,7 +29,7 @@ exports[`Link Stories blockshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -54,7 +54,7 @@ exports[`Link Stories onDarkshould match snapshot 1`] = `
         href="/href"
       >
         <div
-          class="focus:outline-none transition duration-200 text-teal-200 hover:text-teal-300   "
+          class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-teal-200 hover:text-teal-300   "
         >
           <div
             class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -77,7 +77,7 @@ exports[`Link Stories primaryshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -99,7 +99,7 @@ exports[`Link Stories redshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-red-700 hover:text-red-600   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-red-700 hover:text-red-600   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -121,7 +121,7 @@ exports[`Link Stories withIconLeftAndRightshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -175,7 +175,7 @@ exports[`Link Stories withIconLeftshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -219,7 +219,7 @@ exports[`Link Stories withIconRightshould match snapshot 1`] = `
       href="/href"
     >
       <div
-        class="focus:outline-none transition duration-200 text-gray-900 hover:text-gray-800   "
+        class="focus:outline-none transition duration-200 rounded-sm py-1 px-2 text-gray-900 hover:text-gray-800   "
       >
         <div
           class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"

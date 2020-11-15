@@ -32,11 +32,11 @@ export const SelectLight = ({ label, choices, selected, setSelected }: SelectLig
                   aria-label={label}
                   className="relative w-full pr-10 text-left text-gray-700 transition duration-150 ease-in-out focus:outline-none focus:border-gray-300 sm:text-sm sm:leading-5"
                 >
-                  <span className="flex items-center text-lg font-medium text-gray-700 truncate transition duration-150 ease-in-out hover:text-black">
+                  <span className="flex items-center text-lg text-gray-700 truncate transition duration-150 ease-in-out hover:text-black">
                     Language
                   </span>
                   <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                    <svg className="w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <svg className="w-5 h-5 text-perfolio-silver" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                       <path
                         d="M7 7l3-3 3 3m0 6l-3 3-3-3"
                         strokeWidth="1.5"
@@ -64,8 +64,8 @@ export const SelectLight = ({ label, choices, selected, setSelected }: SelectLig
                       {({ selected, active }) => (
                         <div
                           className={`${
-                            active ? " bg-carbon-800 text-white" : "text-gray-800"
-                          } cursor-default select-none relative py-2  px-4`}
+                            active ? " bg-primary-400" : ""
+                          } cursor-default select-none text-gray-900 relative py-2  px-4`}
                         >
                           <span className={`${selected ? "font-semibold" : "font-normal"} block truncate`}>
                             {choice}

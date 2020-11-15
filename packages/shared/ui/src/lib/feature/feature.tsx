@@ -10,7 +10,7 @@ export interface FeatureProps {
 export const Feature = ({ title, description, icon }: FeatureProps) => {
   return (
     <div className="flex items-start space-x-1 md:space-x-4">
-      <div className="z-10 inline-flex items-start justify-center text-gray-100 border-2 rounded bg-carbon-900 border-carbon-900">
+      <div className="z-10 inline-flex items-start justify-center text-gray-100 rounded bg-gradient-to-t from-indigo-600 to-purple-800">
         <span className="w-10 h-10 p-2 lg:p-3 xl:p-4 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:h-16 lg:w-16">{icon}</span>
       </div>
 

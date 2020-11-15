@@ -111,8 +111,8 @@ const Index = ({ i18n }: IndexProps) => {
               <Link
                 className="px-4 py-2 font-semibold"
                 label={i18n.signin}
-                bgColor="bg-carbon-900"
-                textColor="text-gray-100"
+                bgColor="bg-primary-400"
+                textColor="text-gray-900"
                 href="/api/login"
               />
             }
@@ -154,9 +154,9 @@ const Index = ({ i18n }: IndexProps) => {
         </h2>
         <div className="flex flex-col items-center mt-10 md:flex-row">
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-carbon-900">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-primary-400">
               <svg
-                className="w-full p-3 text-gray-100 stroke-current md:p-4"
+                className="w-full p-3 text-black stroke-current md:p-4"
                 viewBox="0 0 194 148"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

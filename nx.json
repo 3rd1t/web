@@ -79,6 +79,14 @@
     },
     "auth": {
       "tags": []
+    },
+    "analytics": {
+      "tags": [],
+      "implicitDependencies": ["css"]
+    },
+    "analytics-e2e": {
+      "tags": [],
+      "implicitDependencies": ["analytics"]
     }
   },
   "workspaceLayout": {

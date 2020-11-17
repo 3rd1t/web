@@ -111,15 +111,15 @@ const Index = ({ i18n }: IndexProps) => {
               <Link
                 className="px-4 py-2 font-semibold"
                 label={i18n.signin}
-                bgColor="bg-carbon-900"
-                textColor="text-gray-100"
-                href="/api/login"
+                bgColor="bg-purple-800"
+                textColor="text-purple-100"
+                href="https://app.perfol.io/api/signin"
               />
             }
             secondaryButton={
               <Link
                 className="font-medium"
-                textColor="text-gray-900"
+                textColor="text-purple-900"
                 label={i18n.contact}
                 href="mailto:info@perfol.io"
               />
@@ -133,7 +133,7 @@ const Index = ({ i18n }: IndexProps) => {
       </Section>
       <Section bg="bg-white" id="features" className="flex flex-col justify-center">
         <div className="md:text-center">
-          <h3 className="text-3xl font-bold leading-8 tracking-tight text-carbon-900 sm:text-4xl sm:leading-10">
+          <h3 className="text-3xl font-bold leading-8 tracking-tight text-purple-900 sm:text-4xl sm:leading-10">
             {i18n.whyPerfolio}
           </h3>
           <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">{i18n.whyPerfolioSubline}</p>
@@ -149,12 +149,12 @@ const Index = ({ i18n }: IndexProps) => {
         </ul>
       </Section>
       <Section className="flex flex-col justify-center" id="team">
-        <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-carbon-900 sm:text-4xl sm:leading-10">
+        <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-purple-900 sm:text-4xl sm:leading-10">
           Our Team
         </h2>
         <div className="flex flex-col items-center mt-10 md:flex-row">
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full md:h-32 md:w-32 bg-carbon-900">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-600 to-purple-800 md:h-32 md:w-32">
               <svg
                 className="w-full p-3 text-gray-100 stroke-current md:p-4"
                 viewBox="0 0 194 148"
@@ -208,7 +208,7 @@ const Index = ({ i18n }: IndexProps) => {
       <Section bg="bg-white" id="subscribe" className="flex flex-col justify-center">
         <div className="container flex flex-col justify-around mx-auto lg:flex-row">
           <div>
-            <h2 className="text-2xl font-semibold leading-8 text-carbon-900 font-display sm:text-3xl sm:leading-9">
+            <h2 className="text-2xl font-semibold leading-8 text-purple-900 font-display sm:text-3xl sm:leading-9">
               {i18n.cta}
             </h2>
             <p className="max-w-2xl mt-2 text-base leading-6">
@@ -219,28 +219,28 @@ const Index = ({ i18n }: IndexProps) => {
               .
             </p>
           </div>
-          <form name="email-subs" className="mt-6" method="POST" data-netlify="true" action="/subscribe/success">
-            <input type="hidden" name="form-name" value="email-subs" />
-            <div className="sm:flex">
-              <input
-                id="email"
-                required
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                className="block w-full px-4 py-3 text-base leading-6 bg-white border rounded shadow-none placeholder-carbon-600 border-carbon-300 sm:max-w-xs focus:outline-none focus:border-carbon-700"
-              ></input>
-              <label className="sr-only" htmlFor="email">
-                Add your email.
-              </label>
-              <button
-                type="submit"
-                className="relative block w-full px-6 py-3 mt-4 text-base font-semibold leading-6 text-white transition duration-150 ease-in-out border border-transparent rounded shadow-md bg-carbon-900 sm:mt-0 sm:h-auto sm:ml-4 sm:w-auto hover:bg-carbon-800 focus:outline-none focus:bg-carbon-800"
+          <Link
+            href="https://app.perfol.io/api/signin"
+            label={i18n.signin}
+            bgColor="bg-purple-800"
+            textColor="text-purple-100"
+            iconLeft={
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                {i18n.signin}
-              </button>
-            </div>
-          </form>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                />
+              </svg>
+            }
+          />
         </div>
       </Section>
     </Wrapper>

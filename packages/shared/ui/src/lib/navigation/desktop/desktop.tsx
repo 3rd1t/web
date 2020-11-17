@@ -14,7 +14,7 @@ export interface DesktopProps {
 }
 
 export const Desktop = (props: DesktopProps) => {
-  const navbarLinkStyle = "text-lg font-medium text-gray-700 transition duration-150 ease-in-out hover:text-black"
+  const navbarLinkStyle = "text-lg text-gray-700 transition duration-150 ease-in-out hover:text-black"
 
   const links = props.links.map((l) => {
     return (
@@ -48,13 +48,20 @@ export const Desktop = (props: DesktopProps) => {
 
   links.push(
     <li key="languageSetting">
-      <SelectLight label="Language" choices={choices.map((c) => c.name)} selected={choice} setSelected={setChoice} />,
+      <SelectLight label="Language" choices={choices.map((c) => c.name)} selected={choice} setSelected={setChoice} />
+    </li>,
+  )
+  links.push(
+    <li key="signin">
+      <Link href="/api/login">
+        <a className="px-4 py-2 font-medium text-gray-100 bg-gray-900 rounded">Sign in</a>
+      </Link>
     </li>,
   )
 
   useEffect(() => {
     const locale = choices.map((c) => c.locale)[choice]
-    router.push(router.pathname, router.pathname, { locale })
+    router.push(router.pathname, router.pathname, { locale: locale })
   }, [choice])
 
   return (

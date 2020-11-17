@@ -16,7 +16,7 @@ export interface LinkProps {
 
 export const Link = (props: LinkProps) => {
   const className = [
-    "focus:outline-none transition duration-200",
+    "focus:outline-none transition duration-200 rounded-sm py-1 px-2",
     props.textColor,
     getHoverColor(props.textColor),
     props.bgColor,

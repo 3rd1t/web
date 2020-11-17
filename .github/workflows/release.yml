@@ -4,10 +4,10 @@ on:
   push:
     branches: [ master, main ]
 jobs:
-  release:
+  build:
     strategy:
       matrix:
-        package: ["core", "data", "docs"]
+        package: ["core", "data", "docs", "analytics"]
     
     name: release-${{matrix.package}}
     runs-on: ubuntu-latest
@@ -34,3 +34,15 @@ jobs:
             SERVICE=${{matrix.package}}
           push: true
           tags: perfolio/web-${{matrix.package}}
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh terraform apply
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        username: ${{ secrets.DEPLOY_USER }}
+        key: ${{ secrets.DEPLOY_KEY }}
+        port: ${{ secrets.DEPLOY_PORT }}
+        script: cd ~/deploy/prod && sh run.sh

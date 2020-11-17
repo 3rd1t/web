@@ -35,8 +35,10 @@ jobs:
           push: true
           tags: perfolio/web-${{matrix.package}}
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
+    name: Deploy
+
     steps:
     - name: executing remote ssh terraform apply
       uses: appleboy/ssh-action@master

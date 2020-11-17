@@ -129,7 +129,7 @@ export const translations: Translations = {
 
 export function translate(locale: string): { [key: string]: string } {
   const translated = {}
-  Object.entries(translations).map((t) => {
+  Object.entries(translations).forEach((t) => {
     translated[t[0]] = t[1][locale]
   })
   return translated

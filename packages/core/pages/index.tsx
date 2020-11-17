@@ -102,7 +102,7 @@ const features = [
 const Index = ({ i18n }: IndexProps) => {
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="relative min-h-screen" id="index">
+      <Section bg="bg-gray-100 " className="relative py-20" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline={i18n.headline}

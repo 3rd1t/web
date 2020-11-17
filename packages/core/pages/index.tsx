@@ -113,7 +113,7 @@ const Index = ({ i18n }: IndexProps) => {
                 label={i18n.signin}
                 bgColor="bg-purple-800"
                 textColor="text-purple-100"
-                href="/api/login"
+                href="https://app.perfol.io/api/signin"
               />
             }
             secondaryButton={
@@ -220,7 +220,7 @@ const Index = ({ i18n }: IndexProps) => {
             </p>
           </div>
           <Link
-            href="/api/signin"
+            href="https://app.perfol.io/api/signin"
             label={i18n.signin}
             bgColor="bg-purple-800"
             textColor="text-purple-100"

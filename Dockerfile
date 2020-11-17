@@ -11,7 +11,7 @@ RUN yarn install
 
 COPY . .
 ENV NODE_ENV=production
-RUN yarn nx build ${SERVICE} --with-deps  --skip-nx-cache
+RUN yarn nx build ${SERVICE} --with-deps
 
 FROM node:15-alpine3.10
 
@@ -21,7 +21,7 @@ WORKDIR /app
 COPY --from=builder /app/dist/packages/${SERVICE} .
 # Copying next.config.js to use the serverRuntimeConfig object.
 COPY --from=builder /app/packages/${SERVICE}/next.config.js .
-RUN yarn install
+RUN yarn install --production=true
 
 
 # Runtime variables

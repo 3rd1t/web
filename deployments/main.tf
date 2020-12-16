@@ -6,22 +6,22 @@ provider "docker" {
 
 
 
-resource "docker_container" "perfolio_web_analytics" {
-  name     = "perfolio-web-analytics"
-  image    = docker_image.web_analytics.name
-  hostname = var.web_analytics.host
+resource "docker_container" "perfolio_web_app" {
+  name     = "perfolio-web-app"
+  image    = docker_image.web_app.name
+  hostname = var.web_app.host
 
   restart = "always"
   ports {
     internal = 4200
-    external = var.web_analytics.port
+    external = var.web_app.port
   }
   labels {
     label = "traefik.enable"
     value = true
   }
   labels {
-    label = "traefik.http.routers.analytics.rule"
+    label = "traefik.http.routers.app.rule"
     value = "Host(`app.perfol.io`)"
   }
   env = [

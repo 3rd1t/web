@@ -7,7 +7,7 @@ provider "docker" {
 
 
 resource "docker_container" "perfolio_web_app" {
-  name     = "perfolio-web-app-${data.docker_registry_image.web_app.sha256_digest}"
+  name     = "perfolio-web-app-${replace(data.docker_registry_image.web_app.sha256_digest, ":", "-")}"
   image    = docker_image.web_app.name
   hostname = var.web_app.host
 
@@ -42,7 +42,8 @@ resource "docker_container" "perfolio_web_app" {
 
 
 resource "docker_container" "perfolio_web_website" {
-  name     = "perfolio-web-website-${data.docker_registry_image.web_website.sha256_digest}"
+  name     = "perfolio-web-website-${replace(data.docker_registry_image.web_website.sha256_digest, ":", "-")}"
+
   image    = docker_image.web_website.name
   hostname = var.web_website.host
 

@@ -28,10 +28,6 @@ export const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
           href: "team",
           scroll: true,
         },
-        {
-          label: "Documentation",
-          href: "https://docs.perfol.io",
-        },
       ]}
     ></Navbar>
   );

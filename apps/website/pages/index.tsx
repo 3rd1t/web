@@ -4,8 +4,8 @@ import { Section } from "@perfolio/components/layout/section/section";
 import { Profile } from "@perfolio/components/profile/profile";
 import { Feature } from "@perfolio/components/feature/feature";
 import Wrapper from "../components/wrapper/wrapper";
+import { Button } from "@perfolio/components/clickable/link/button";
 import { Link } from "@perfolio/components/clickable/link/link";
-import { NextPage, NextPageContext } from "next";
 import { translate } from "@perfolio/i18n/translations";
 /* eslint-disable-next-line */
 interface IndexProps {
@@ -103,7 +103,7 @@ const features = (i18n) => {
 const Index = ({ i18n }: IndexProps) => {
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="relative py-20" id="index">
+      <Section bg="bg-gray-50 " className="relative py-20" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline={i18n.headline}
@@ -111,18 +111,15 @@ const Index = ({ i18n }: IndexProps) => {
               <p className="flex flex-col xl:flex-row">{i18n.subline}</p>
             }
             primaryButton={
-              <Link
-                className="px-4 py-2 font-semibold"
+              <Button
                 label={i18n.signin}
-                bgColor="bg-purple-800"
-                textColor="text-purple-100"
+                textColor="text-white"
                 href="https://app.perfol.io/api/signin"
               />
             }
             secondaryButton={
               <Link
-                className="font-medium"
-                textColor="text-purple-900"
+                textColor="text-gray-900 hover:text-gray-700"
                 label={i18n.contact}
                 href="mailto:info@perfol.io"
               />
@@ -137,16 +134,15 @@ const Index = ({ i18n }: IndexProps) => {
       <Section
         bg="bg-white"
         id="features"
-        className="flex flex-col justify-center"
+        className="flex flex-col justify-center bg-white "
       >
-        <div className="md:text-center">
-          <h3 className="text-3xl font-bold leading-8 tracking-tight text-purple-900 sm:text-4xl sm:leading-10">
-            {i18n.whyPerfolio}
-          </h3>
-          <p className="max-w-2xl mt-4 text-xl leading-7 text-carbon-500 md:mx-auto">
-            {i18n.whyPerfolioSubline}
-          </p>
-        </div>
+        <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
+          {i18n.whyPerfolio}
+        </h2>
+        <p className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          {i18n.whyPerfolioSubline}
+        </p>
+
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features(i18n).map((f, index) => {
             return (
@@ -161,13 +157,16 @@ const Index = ({ i18n }: IndexProps) => {
           })}
         </ul>
       </Section>
-      <Section className="flex flex-col justify-center" id="team">
-        <h2 className="text-3xl font-extrabold leading-8 tracking-tight text-center text-purple-900 sm:text-4xl sm:leading-10">
-          Our Team
+      <Section className="flex flex-col justify-center bg-gray-50 " id="team">
+        <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
+          {i18n.ourTeam}
         </h2>
+        <p className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          Who is behind all of this?
+        </p>
         <div className="flex flex-col items-center mt-10 md:flex-row">
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-600 to-purple-800 md:h-32 md:w-32">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-900 to-purple-800 md:h-32 md:w-32">
               <svg
                 className="w-full p-3 text-gray-100 stroke-current md:p-4"
                 viewBox="0 0 194 148"
@@ -181,15 +180,15 @@ const Index = ({ i18n }: IndexProps) => {
               </svg>
             </div>
             <div className="flex flex-col items-center justify-center mt-4 space-y-2 text-center">
-              <h2 className="text-lg font-medium leading-6 text-carbon-900">
+              <h2 className="text-lg font-medium leading-6 text-gray-900">
                 Perfolio
               </h2>
-              <p className="text-base leading-6 text-left md:text text-carbon-600 md:text-center">
+              <p className="text-base leading-6 text-left text-gray-600 md:text md:text-center">
                 {i18n.perfolioDescription1}
               </p>
             </div>
           </div>
-          <div className="pt-4 mt-4 border-t border-carbon-300 md:w-2/3 md:pl-8 md:py-8 md:border-l md:border-t-0 md:mt-0">
+          <div className="pt-4 mt-4 border-t border-gray-300 md:w-2/3 md:pl-8 md:py-8 md:border-l md:border-t-0 md:mt-0">
             <div className="flex flex-col items-center justify-center sm:flex-row sm:flex-wrap">
               <Profile
                 className="w-2/3 p-4 sm:w-1/2 lg:w-1/4"
@@ -216,7 +215,7 @@ const Index = ({ i18n }: IndexProps) => {
                 image="/img/kevin.jpeg"
               ></Profile>
             </div>
-            <p className="mt-8 text-center text-carbon-600">
+            <p className="mt-8 text-center text-gray-600">
               {i18n.perfolioDescription2}
             </p>
           </div>
@@ -225,42 +224,19 @@ const Index = ({ i18n }: IndexProps) => {
       <Section
         bg="bg-white"
         id="subscribe"
-        className="flex flex-col justify-center"
+        className="bg-white "
       >
-        <div className="container flex flex-col justify-around mx-auto lg:flex-row">
-          <div>
-            <h2 className="text-2xl font-semibold leading-8 text-purple-900 font-display sm:text-3xl sm:leading-9">
-              {i18n.cta}
-            </h2>
-            <p className="max-w-2xl mt-2 text-base leading-6">
-              <span className="text-carbon-600">{i18n.ctaSubline}</span>
-              <a target="blank" href="https://github.com/perfolio">
-                github
-              </a>
-              .
-            </p>
-          </div>
-          <Link
-            href="https://app.perfol.io/api/signin"
-            label={i18n.signin}
-            bgColor="bg-purple-800"
-            textColor="text-purple-100"
-            iconLeft={
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                />
-              </svg>
-            }
+        <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
+          Get in touch
+        </h2>
+        <p className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          {i18n.cta}
+        </p>
+        <div className="flex items-center justify-center">
+          <Button
+            href="https://app.perfol.io/api/signup"
+            label={i18n.signup}
+            textColor="text-white"
           />
         </div>
       </Section>

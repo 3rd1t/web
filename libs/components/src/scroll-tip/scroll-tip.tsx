@@ -18,7 +18,7 @@ export const ScrollTip = (props: ScrollTipProps) => {
     >
       <div
         className={
-          "inline-flex p-2 transform rotate-45 shadow-xl lg:p-4 bg-carbon-900 hover:scale-110 ease-in-out duration-200" +
+          "inline-flex p-2 transform rotate-45 shadow-xl lg:p-4 bg-gray-900 hover:scale-110 ease-in-out duration-200" +
           " " +
           props.className
         }
@@ -29,7 +29,7 @@ export const ScrollTip = (props: ScrollTipProps) => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="w-6 h-6 text-carbon-50"
+              className="w-6 h-6 text-gray-50"
             >
               <path
                 strokeLinecap="round"

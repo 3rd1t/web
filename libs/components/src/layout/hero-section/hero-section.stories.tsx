@@ -19,12 +19,12 @@ export const primary = () => {
     primaryButton: {
       label: "Get started",
       href: "/signup",
-      className: "text-white bg-gray-900 hover:bg-carbon-800",
+      className: "text-white bg-gray-900 hover:bg-gray-800",
     },
     secondaryButton: {
       label: "Log in",
       href: "/login",
-      className: "text-carbon-900 hover:text-carbon-700",
+      className: "text-gray-900 hover:text-gray-700",
     },
   };
 

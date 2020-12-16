@@ -1,6 +1,7 @@
 import React from "react";
 import { HeroSection } from "@perfolio/components/layout/hero-section/hero-section";
 import { Section } from "@perfolio/components/layout/section/section";
+import { SectionTitle } from "@perfolio/components/layout/section-title/section-title";
 import { Profile } from "@perfolio/components/profile/profile";
 import { Feature } from "@perfolio/components/feature/feature";
 import Wrapper from "../components/wrapper/wrapper";
@@ -136,12 +137,7 @@ const Index = ({ i18n }: IndexProps) => {
         id="features"
         className="flex flex-col justify-center bg-white "
       >
-        <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
-          {i18n.whyPerfolio}
-        </h2>
-        <p className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          {i18n.whyPerfolioSubline}
-        </p>
+        <SectionTitle tag={i18n.whyPerfolio} title={i18n.whyPerfolioSubline}/>
 
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features(i18n).map((f, index) => {
@@ -158,12 +154,7 @@ const Index = ({ i18n }: IndexProps) => {
         </ul>
       </Section>
       <Section className="flex flex-col justify-center bg-gray-50 " id="team">
-        <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
-          {i18n.ourTeam}
-        </h2>
-        <p className="mb-8 text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          Who is behind all of this?
-        </p>
+      <SectionTitle tag={i18n.ourTeam} title={i18n.ourTeamDescription} onRight/>
         <div className="flex flex-col items-center mt-10 md:flex-row">
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-900 to-purple-800 md:h-32 md:w-32">

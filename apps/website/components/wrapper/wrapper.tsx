@@ -24,6 +24,11 @@ export const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
           scroll: true,
         },
         {
+          label: "Pricing",
+          href: "pricing",
+          scroll: true,
+        },
+        {
           label: "Team",
           href: "team",
           scroll: true,

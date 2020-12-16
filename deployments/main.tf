@@ -33,6 +33,10 @@ resource "docker_container" "perfolio_web_app" {
     "COOKIE_SECRET=${var.cookie_secret}",
   ]
 
+  lifecycle {
+    create_before_destroy = true
+  }
+
 
 }
 
@@ -55,6 +59,8 @@ resource "docker_container" "perfolio_web_website" {
     label = "traefik.http.routers.website.rule"
     value = "Host(`perfol.io`)"
   }
-
+lifecycle {
+    create_before_destroy = true
+  }
 
 }

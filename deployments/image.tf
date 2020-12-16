@@ -1,16 +1,16 @@
-resource "docker_registry_image" "web_analytics" {
+data "docker_registry_image" "web_analytics" {
   name = "perfolio/web-analytics:${var.tag}"
 }
 resource "docker_image" "web_analytics" {
-  name          = docker_registry_image.web-analytics.name
-  pull_triggers = [docker_registry_image.web-analytics.sha256_digest]
+  name          = data.docker_registry_image.web-analytics.name
+  pull_triggers = [data.docker_registry_image.web-analytics.sha256_digest]
 }
 
 
-resource "docker_registry_image" "web_core" {
-  name = "perfolio/web-core:${var.tag}"
+data "docker_registry_image" "web_website" {
+  name = "perfolio/web-website:${var.tag}"
 }
-resource "docker_image" "web_core" {
-  name          = docker_registry_image.web-core.name
-  pull_triggers = [docker_registry_image.web-core.sha256_digest]
+resource "docker_image" "web_website" {
+  name          = data.docker_registry_image.web-website.name
+  pull_triggers = [data.docker_registry_image.web-website.sha256_digest]
 }

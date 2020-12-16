@@ -37,22 +37,22 @@ resource "docker_container" "perfolio_web_analytics" {
 }
 
 
-resource "docker_container" "perfolio_web_core" {
-  name     = "perfolio-web-core"
-  image    = docker_image.web_core.name
-  hostname = var.web_core.host
+resource "docker_container" "perfolio_web_website" {
+  name     = "perfolio-web-website"
+  image    = docker_image.web_website.name
+  hostname = var.web_website.host
 
   restart = "always"
   ports {
     internal = 4200
-    external = var.web_core.port
+    external = var.web_website.port
   }
   labels {
     label = "traefik.enable"
     value = true
   }
   labels {
-    label = "traefik.http.routers.core.rule"
+    label = "traefik.http.routers.website.rule"
     value = "Host(`perfol.io`)"
   }
 

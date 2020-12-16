@@ -1,21 +1,10 @@
 module.exports = {
-  testMatch: ["**/+(*.)+(spec|test).+(ts|js)?(x)"],
-  globals: {
-    "ts-jest": {
-      tsconfig: "<rootDir>/tsconfig.spec.json",
-    },
-  },
-  transform: {
-    "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "@nrwl/react/plugins/jest",
-    "^.+\\.[tj]sx?$": "ts-jest",
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
-  resolver: "@nrwl/jest/plugins/resolver",
-  coverageReporters: ["text", "lcov"],
-  coverageThreshold: {
-    global: {
-      lines: 70,
-    },
-  },
-  projects: ["<rootDir>"],
-}
+  projects: [
+    "<rootDir>/apps/app",
+    "<rootDir>/libs/components",
+    "<rootDir>/libs/auth",
+    "<rootDir>/apps/website",
+    "<rootDir>/libs/i18n",
+    "<rootDir>/libs/util",
+  ],
+};

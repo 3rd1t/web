@@ -1,2 +1,0 @@
-curl "https://api.perfol.io/d/beta/6factor/all/europe/eur/monthly?"\
-     "format=csv&from=2009-12-31&to=2018-12-31" > 6factor_europe.csv

@@ -1,7 +1,7 @@
 {
   "npmScope": "perfolio",
   "affected": {
-    "defaultBase": "origin/main"
+    "defaultBase": "master"
   },
   "implicitDependencies": {
     "workspace.json": "*",
@@ -10,19 +10,15 @@
       "devDependencies": "*"
     },
     "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
     "nx.json": "*"
   },
   "tasksRunnerOptions": {
-    "local": {
-      "options": {
-        "runner": "@nrwl/workspace/src/tasks-runner/tasks-runner-v2",
-        "cacheableOperations": ["build", "test", "lint", "e2e"]
-      }
-    },
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "accessToken": "Y2M3YWMwZDItN2ZlZi00YzgwLWJkZjEtZWZkNTU4NTVkZWM2fHJlYWQtd3JpdGU=",
+        "accessToken": "MzJiNTExOTQtMTE1MC00YTE3LWI3ZDgtZTNkNDE1NTI2YTgzfHJlYWQtd3JpdGU=",
         "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
@@ -30,48 +26,7 @@
     }
   },
   "projects": {
-    "core": {
-      "tags": [],
-      "implicitDependencies": ["css"]
-    },
-    "core-e2e": {
-      "tags": [],
-      "implicitDependencies": ["core"]
-    },
-    "css": {
-      "tags": []
-    },
-    "pages": {
-      "tags": []
-    },
-    "pages-e2e": {
-      "tags": [],
-      "implicitDependencies": ["pages"]
-    },
-    "shared-ui": {
-      "tags": []
-    },
-    "docs": {
-      "tags": [],
-      "implicitDependencies": ["css"]
-    },
-    "shared-types": {
-      "tags": []
-    },
-    "content": {
-      "tags": []
-    },
-    "urlbuilder": {
-      "tags": []
-    },
-    "forms": {
-      "tags": []
-    },
-    "data": {
-      "tags": [],
-      "implicitDependencies": ["css"]
-    },
-    "util": {
+    "app": {
       "tags": []
     },
     "components": {
@@ -80,17 +35,14 @@
     "auth": {
       "tags": []
     },
-    "analytics": {
-      "tags": [],
-      "implicitDependencies": ["css"]
+    "website": {
+      "tags": []
     },
-    "analytics-e2e": {
-      "tags": [],
-      "implicitDependencies": ["analytics"]
+    "i18n": {
+      "tags": []
+    },
+    "util": {
+      "tags": []
     }
-  },
-  "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
   }
 }

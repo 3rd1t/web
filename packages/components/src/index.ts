@@ -1,7 +1,0 @@
-export * from "./progress/dots/dots"
-export * from "./form/multistep-form/multistep-form"
-export * from "./form/radio/radio"
-export * from "./table/builder/builder"
-export * from "./table/table"
-export * from "./clickable/button/button"
-export * from "./clickable/link/link"

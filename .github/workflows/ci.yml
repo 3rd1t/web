@@ -26,11 +26,11 @@ jobs:
         run: yarn install
       - name: Lint
         run: yarn fmt
-        env:
-          NX_BRANCH: ${{ github.event.number }}
-          NX_RUN_GROUP: ${{ github.run_id }}
   build:
-    name: Build
+    strategy:
+      matrix:
+        app: [website, app]
+    name: Build ${{matrix.app}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -49,10 +49,8 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: build
-        run: yarn nx affected:build --with-deps
+        run: yarn nx build ${{matrix.app}}
         env:
-          NX_BRANCH: ${{ github.event.number }}
-          NX_RUN_GROUP: ${{ github.run_id }}
           # Apparently node actually looks for these during the build step
           # So we need them in our CI as well, even though they can be anything
           AUTH0_DOMAIN: NOT_EMPTY
@@ -61,7 +59,6 @@ jobs:
           AUTH0_REDIRECT_URI: NOT_EMPTY
           AUTH0_POST_LOGOUT_REDIRECT_URI: NOT_EMPTY
           COOKIE_SECRET: NOT_EMPTYaaaaaaaaaaaaaaaaaaaaaaa
-
   unit-test:
     name: unit test
     runs-on: ubuntu-latest
@@ -82,41 +79,6 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: test
-        run: yarn affected:test
-        env:
-          NX_BRANCH: ${{ github.event.number }}
-          NX_RUN_GROUP: ${{ github.run_id }}
+        run: yarn test
 
  
-  e2e-test:
-    name: e2e test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - name: Setup node
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: "14"
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-
-      - name: Install dependencies
-        run: yarn install
-      - name: Install cypress
-        run: yarn cypress install
-      - name: Run Integration test
-        run: |
-          yarn nx export css
-          yarn nx affected:e2e --headless
-        env:
-          NX_BRANCH: ${{ github.event.number }}
-          NX_RUN_GROUP: ${{ github.run_id }}
-
-
-
-  

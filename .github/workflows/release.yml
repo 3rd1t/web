@@ -38,7 +38,8 @@ jobs:
           push: true
           context: .
           file: ./build/Dockerfile
-          args: "SERVICE=${{matrix.svc}}"
+          build-args: 
+            SERVICE=${{matrix.svc}}
           tags: |
             perfolio/web-${{matrix.svc}}:prod
             perfolio/web-${{matrix.svc}}:latest

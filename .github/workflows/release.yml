@@ -7,7 +7,7 @@ jobs:
   build:
     strategy:
       matrix:
-        svc: [core, app]
+        svc: [website, app]
     name: release
     runs-on: ubuntu-latest
     steps:

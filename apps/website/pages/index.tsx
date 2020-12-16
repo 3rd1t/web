@@ -5,7 +5,6 @@ import { Profile } from "@perfolio/components/profile/profile";
 import { Feature } from "@perfolio/components/feature/feature";
 import Wrapper from "../components/wrapper/wrapper";
 import { Link } from "@perfolio/components/clickable/link/link";
-import { NextPage, NextPageContext } from "next";
 import { translate } from "@perfolio/i18n/translations";
 /* eslint-disable-next-line */
 interface IndexProps {
@@ -103,7 +102,7 @@ const features = (i18n) => {
 const Index = ({ i18n }: IndexProps) => {
   return (
     <Wrapper>
-      <Section bg="bg-gray-100 " className="relative py-20" id="index">
+      <Section bg="font-inter bg-gray-100 " className="relative py-20" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
             headline={i18n.headline}
@@ -114,15 +113,15 @@ const Index = ({ i18n }: IndexProps) => {
               <Link
                 className="px-4 py-2 font-semibold"
                 label={i18n.signin}
-                bgColor="bg-purple-800"
-                textColor="text-purple-100"
+                bgColor="bg-gradient-to-t from-indigo-900 to-purple-800 hover:from-indigo-700 hover:to-purple-700"
+                textColor="text-white"
                 href="https://app.perfol.io/api/signin"
               />
             }
             secondaryButton={
               <Link
                 className="font-medium"
-                textColor="text-purple-900"
+                textColor="text-gray-900"
                 label={i18n.contact}
                 href="mailto:info@perfol.io"
               />

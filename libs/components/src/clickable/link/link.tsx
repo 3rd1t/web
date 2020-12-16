@@ -1,6 +1,5 @@
 import React from "react";
 import { Base } from "../base/base";
-import { getHoverColor } from "../util/hoverColor";
 import NextLink from "next/link";
 
 /* eslint-disable-next-line */
@@ -18,9 +17,7 @@ export const Link = (props: LinkProps) => {
   const className = [
     "focus:outline-none transition duration-200 rounded-sm py-1 px-2",
     props.textColor,
-    getHoverColor(props.textColor),
     props.bgColor,
-    getHoverColor(props.bgColor),
     props.className,
   ].join(" ");
 

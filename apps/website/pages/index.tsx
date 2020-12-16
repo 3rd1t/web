@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { HeroSection } from "@perfolio/components/layout/hero-section/hero-section";
 import { Section } from "@perfolio/components/layout/section/section";
 import { SectionTitle } from "@perfolio/components/layout/section-title/section-title";
@@ -8,6 +9,7 @@ import Wrapper from "../components/wrapper/wrapper";
 import { Button } from "@perfolio/components/clickable/link/button";
 import { Link } from "@perfolio/components/clickable/link/link";
 import { translate } from "@perfolio/i18n/translations";
+import { Switch } from "@headlessui/react";
 /* eslint-disable-next-line */
 interface IndexProps {
   i18n: { [key: string]: string };
@@ -102,6 +104,10 @@ const features = (i18n) => {
   ];
 };
 const Index = ({ i18n }: IndexProps) => {
+  const [anually, setAnually] = useState(false);
+
+
+
   return (
     <Wrapper>
       <Section bg="bg-gray-50 " className="relative py-20" id="index">
@@ -135,9 +141,9 @@ const Index = ({ i18n }: IndexProps) => {
       <Section
         bg="bg-white"
         id="features"
-        className="flex flex-col justify-center bg-white "
+        className="flex flex-col justify-cente "
       >
-        <SectionTitle tag={i18n.whyPerfolio} title={i18n.whyPerfolioSubline}/>
+        <SectionTitle tag={i18n.whyPerfolio} title={i18n.whyPerfolioSubline} onRight />
 
         <ul className="flex flex-col flex-wrap mx-auto my-24 md:flex-row">
           {features(i18n).map((f, index) => {
@@ -153,8 +159,226 @@ const Index = ({ i18n }: IndexProps) => {
           })}
         </ul>
       </Section>
-      <Section className="flex flex-col justify-center bg-gray-50 " id="team">
-      <SectionTitle tag={i18n.ourTeam} title={i18n.ourTeamDescription} onRight/>
+      <Section
+        bg="bg-gray-50"
+        id="pricing"
+        className="flex flex-col justify-center"
+      >
+        <SectionTitle
+          tag="Fair pricing"
+          title="Start for free, cancel anytime!"
+          
+        />
+
+<div className="flex items-center justify-center p-12">
+      <div className="mx-auto">
+        <Switch.Group as="div" className="flex items-center space-x-4">
+          <Switch.Label className="text-gray-700">Pay anually</Switch.Label>
+          <Switch
+            as="button"
+            checked={anually}
+            onChange={setAnually}
+            className={`${
+              anually ? "bg-purple-800" : "bg-gray-200"
+            } relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:shadow-outline`}
+          >
+            {({ checked }) => (
+              <span
+                className={`${
+                  checked ? "translate-x-5" : "translate-x-0"
+                } inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full`}
+              />
+            )}
+          </Switch>
+        </Switch.Group>
+      </div>
+    </div>
+        <div className="flex justify-center -m-4">
+        <div className="flex flex-col items-center p-4 ">
+            <div className="relative flex flex-col h-full p-6 overflow-hidden border border-gray-300 rounded">
+            <h2 className="mb-1 text-xl font-medium tracking-widest text-center text-gray-800">
+                FREE
+              </h2>
+              <h1 className="flex items-start justify-center pb-4 mb-4 leading-none text-gray-900 border-b border-gray-200">
+                <span className="text-3xl font-semibold text-gray-700">
+                  $
+                </span>
+                <span className="font-semibold text-gray-900 text-7xl">
+                  0
+                </span>
+              </h1>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Vexillologist pitchfork
+              </p>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Tumeric plaid portland
+              </p>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Hexagon neutra unicorn
+              </p>
+              <p className="flex items-center mb-6 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Mixtape chillwave tumeric
+              </p>
+                <Button
+                  href="https://app.perfol.io/api/signin"
+                  label={i18n.signin}
+                  textColor="text-white"
+                />
+            </div>
+          </div> <div className="flex flex-col items-center p-4">
+            <div className="relative flex flex-col h-full p-6 overflow-hidden border-2 border-purple-800 rounded bg-purple-50">
+              <h2 className="mb-1 text-xl font-medium tracking-widest text-center text-purple-800">
+                PRO
+              </h2>
+              <h1 className="flex items-start justify-center pb-4 mb-4 leading-none text-gray-900 border-b border-gray-200">
+                <span className="text-3xl font-semibold text-purple-700">
+                  $
+                </span>
+                <span className="font-semibold text-purple-900 text-7xl">
+                  {anually ? 4 : 5}
+                </span>
+                <div className="flex flex-col ml-1 leading-5 text-gray-700">
+
+                <span>
+                  /month
+                </span>
+                <span>
+                  {anually ? "billed anually" : "billed monthly"}
+                </span>
+                </div>
+              </h1>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Vexillologist pitchfork
+              </p>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Tumeric plaid portland
+              </p>
+              <p className="flex items-center mb-2 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Hexagon neutra unicorn
+              </p>
+              <p className="flex items-center mb-6 text-gray-600">
+                <span className="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 text-purple-800">
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    className="w-3 h-3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M20 6L9 17l-5-5"></path>
+                  </svg>
+                </span>
+                Mixtape chillwave tumeric
+              </p>
+                <Button
+                  href="https://app.perfol.io/api/signin"
+                  label="Buy PRO"
+                  textColor="text-white"
+                />
+            </div>
+          </div>
+         </div>
+      </Section>
+      <Section
+        bg="bg-white"
+        className="flex flex-col justify-center"
+        id="team"
+      >
+        <SectionTitle tag={i18n.ourTeam} title={i18n.ourTeamDescription}onRight />
+
         <div className="flex flex-col items-center mt-10 md:flex-row">
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-900 to-purple-800 md:h-32 md:w-32">
@@ -212,11 +436,7 @@ const Index = ({ i18n }: IndexProps) => {
           </div>
         </div>
       </Section>
-      <Section
-        bg="bg-white"
-        id="subscribe"
-        className="bg-white "
-      >
+      <Section bg="bg-gray-50" id="subscribe">
         <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
           Get in touch
         </h2>

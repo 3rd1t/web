@@ -103,6 +103,10 @@ export const translations: Translations = {
     en: "Our Team",
     de: "Unser Team",
   },
+  ourTeamDescription: {
+    en: "Who is behind this?",
+    de: "Wer steckt dahinter?"
+  },
   perfolioDescription1: {
     en:
       "At Perfolio, we believe that investment decisions should always be based on as much well-founded information as possible. It is our mission to provide our users the most relevant and accurate financial information available.",

@@ -45,7 +45,7 @@ export const Mobile = (props: MobileProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 z-10 h-screen bg-carbon-900"
+              className="absolute inset-0 z-10 h-screen bg-gray-900"
               onTap={() => {
                 setOpen(false);
               }}
@@ -87,11 +87,11 @@ export const Mobile = (props: MobileProps) => {
                     </svg>
                   </motion.button>
                 </div>
-                <ul className="px-4 py-8 space-y-8 text-center border-t border-carbon-300">
+                <ul className="px-4 py-8 space-y-8 text-center border-t border-gray-300">
                   {props.links.map((link, index) => {
                     return (
                       <motion.li
-                        className="font-semibold text-carbon-900"
+                        className="font-semibold text-gray-900"
                         whileTap={{ scale: 0.9 }}
                         key={index}
                       >

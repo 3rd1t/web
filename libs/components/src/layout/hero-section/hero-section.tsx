@@ -17,11 +17,11 @@ export const HeroSection = (props: HeroSectionProps) => {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left">
-        <h2 className="text-4xl font-extrabold leading-10 tracking-tight text-carbon-900 xl:text-5xl sm:leading-none md:text-5xl">
+        <h2 className="text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
           {props.headline}
         </h2>
         {
-          <div className="text-carbon-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0">
+          <div className="text-gray-600 sm:text-lg sm:mx-auto md:text-xl lg:mx-0">
             {props.paragraph}
           </div>
         }

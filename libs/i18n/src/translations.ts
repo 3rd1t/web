@@ -22,6 +22,11 @@ export const translations: Translations = {
     en: "Sign in",
     de: "Log in",
   },
+  signup: {
+    en: "Sign up",
+    de: "Anmelden",
+  },
+
   contact: {
     en: "Contact us",
     de: "Kontakt",
@@ -131,8 +136,8 @@ export const translations: Translations = {
     de: "Du willst mehr erfahren?",
   },
   ctaSubline: {
-    en: "Follow us on ",
-    de: "Folg uns auf ",
+    en: "Create an account:",
+    de: "Erstelle einen Account:",
   },
 };
 

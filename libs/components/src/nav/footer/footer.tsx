@@ -11,7 +11,7 @@ const footerLink = (
 ): React.ReactNode => {
   return (
     <Link href={href}>
-      <a aria-label={ariaLabel} className="hover:text-carbon-900">
+      <a aria-label={ariaLabel} className="hover:text-gray-900">
         {label}
       </a>
     </Link>
@@ -49,8 +49,8 @@ const socialMedia = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-400 ">
-      <div className="container flex flex-col items-center justify-center px-8 pt-12 pb-8 mx-auto space-y-8 text-gray-700">
+    <footer className="border-t border-indigo-900 bg-gradient-to-t from-white to-gray-100 ">
+      <div className="container flex flex-col items-center justify-center px-8 pt-12 pb-8 mx-auto space-y-8 text-gray-800">
         <div className="flex items-center justify-between w-full md:flex-col md:space-y-8">
           <Link href="/">
             <a className="text-gray-900">

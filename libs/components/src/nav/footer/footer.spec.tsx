@@ -6,7 +6,7 @@ describe("Footer", () => {
   it("renders correctly", () => {
     const { baseElement } = render(
       <Footer
-        bg="bg-carbon-900"
+        bg="bg-gray-900"
         primaryText="text-white"
         secondaryText="text-gray-200"
       />

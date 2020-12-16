@@ -25,7 +25,7 @@ export const black = () => {
   /* eslint-disable-next-line */
   const props: ButtonProps = {
     label: "Label",
-    bgColor: "bg-carbon-900",
+    bgColor: "bg-gray-900",
     textColor: "text-gray-100",
     onClick: action("clicked"),
   }
@@ -62,7 +62,7 @@ export const red = () => {
 export const block = () => {
   const props: ButtonProps = {
     label: "Label",
-    bgColor: "bg-carbon-900",
+    bgColor: "bg-gray-900",
     textColor: "text-gray-100",
     onClick: action("clicked"),
   }
@@ -81,7 +81,7 @@ export const block = () => {
 export const withIconLeft = () => {
   const props: ButtonProps = {
     label: "Label",
-    bgColor: "bg-carbon-900",
+    bgColor: "bg-gray-900",
     textColor: "text-gray-100",
     onClick: action("clicked"),
     iconLeft: (
@@ -112,7 +112,7 @@ export const withIconLeft = () => {
 export const withIconRight = () => {
   const props: ButtonProps = {
     label: "Label",
-    bgColor: "bg-carbon-900",
+    bgColor: "bg-gray-900",
     textColor: "text-gray-100",
     onClick: action("clicked"),
     iconRight: (
@@ -136,7 +136,7 @@ export const withIconRight = () => {
 export const withIconLeftAndRight = () => {
   const props: ButtonProps = {
     label: "Label",
-    bgColor: "bg-carbon-900",
+    bgColor: "bg-gray-900",
     textColor: "text-gray-100",
     onClick: action("clicked"),
     iconLeft: (

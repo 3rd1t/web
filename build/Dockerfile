@@ -1,4 +1,4 @@
-FROM node:15
+FROM node:15 as builder
 
 WORKDIR /app
 
@@ -16,9 +16,23 @@ ARG SERVICE
 RUN yarn nx build ${SERVICE}
 
 
+FROM node:15-alpine
+ARG SERVICE 
+
+WORKDIR /app
+
+
+
+COPY --from=builder /app/dist/apps/${SERVICE} ./
+# COPY --from=builder /app/dist/apps/${SERVICE}/.next ./.next/
+RUN ls -al
+
+RUN yarn install 
+RUN yarn add @nrwl/workspace
+
 
 # Runtime variables
-ENV PORT 4200
+ENV PORT 3000
 ENV AUTH0_DOMAIN XXX
 ENV AUTH0_CLIENT_ID XXX
 ENV AUTH0_CLIENT_SECRET XXX
@@ -28,4 +42,4 @@ ENV COOKIE_SECRET XXX
 
 
 EXPOSE ${PORT}
-CMD ["yarn", "nx", "start", ${SERVICE}]
+CMD ["yarn", "start"]

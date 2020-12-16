@@ -1,26 +1,26 @@
 
-variable "web_analytics" {
-  description = "The host and port of the analytics website"
+variable "web_app" {
+  description = "The host and port of the app website"
   type = object({
     host = string
     port = number
   })
   default = {
-    host = "perfolio-web-analytics"
+    host = "perfolio-web-app"
     port = 43002
   }
 
 }
 
 
-variable "web_core" {
-  description = "The host and port of the core website"
+variable "web_website" {
+  description = "The host and port of the website"
   type = object({
     host = string
     port = number
   })
   default = {
-    host = "perfolio-web-core"
+    host = "perfolio-web-website"
     port = 43001
   }
 

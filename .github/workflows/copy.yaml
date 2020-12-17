@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  push:
+    branches: [ master, main ]
+jobs:
+  copy:
+    name: copy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Push directory to another repository
+        uses: cpina/github-action-push-to-another-repository@v1.2
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: "."
+          destination-github-username: "chronark"
+          destination-repository-name: "perfolio-web"

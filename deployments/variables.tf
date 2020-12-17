@@ -45,6 +45,6 @@ variable "cookie_secret" {
 
 variable "tag" {
   description = "Docker image tag, use `prod` for production"
-  type = string
-  default = "latest"
+  type        = string
+  default     = "latest"
 }

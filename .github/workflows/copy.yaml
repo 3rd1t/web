@@ -16,5 +16,7 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "."
-          destination-github-username: "chronark"
-          destination-repository-name: "perfolio-web"
+          target-branch: main
+          user-email: dev@chronark.com
+          destination-github-username: chronark
+          destination-repository-name: perfolio-web

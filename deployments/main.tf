@@ -43,7 +43,6 @@ resource "docker_container" "perfolio_web_app" {
 
 resource "docker_container" "perfolio_web_website" {
   name     = "perfolio-web-website-${replace(data.docker_registry_image.web_website.sha256_digest, ":", "-")}"
-
   image    = docker_image.web_website.name
   hostname = var.web_website.host
 

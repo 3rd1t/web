@@ -30,17 +30,9 @@ job "app" {
     task "app" {
       driver = "docker"
 
-
       template {
-        data      = <<EOH
-            AUTH0_CLIENT_ID=2fG5w743qzoG0tgTbV9FFki0jC4dc666
-            AUTH0_CLIENT_SECRET=LALNcOMBAn8CAzN5KIgnrpZYL2eSvMVfARbIPl6fplkEhmGqz7PQBicn3sXYtz7c
-            AUTH0_DOMAIN=perfolio.eu.auth0.com
-            AUTH0_REDIRECT_URI=https://app.perfol.io/api/callback
-            AUTH0_POST_LOGOUT_REDIRECT_URI=https://perfol.io/
-            COOKIE_SECRET=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        EOH
-        destination = "secrets/.env"
+        data = "/home/terraform/deploy/.env"
+        destination = "${NOMAD_SECRETS_DIR}/.env"
         env         = true
         change_mode = "restart"
       }

@@ -33,15 +33,14 @@ job "website" {
       config {
         image = "perfolio/web-website"
         ports = ["http"]
+        labels {
+          "traefik.enable" = "true",
+          "traefik.http.routers.website.rule" = "Path(`perfol.io`)",
+        }
       }
 
       service {
         name = "website"
-
-        tags = [
-          "traefik.enable=true",
-          "traefik.http.routers.http.rule=Path(`perfol.io`)",
-        ]
       }
     }
   }

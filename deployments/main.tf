@@ -1,4 +1,6 @@
-provider "nomad" {}
+provider "nomad" {
+  address = var.NOMAD_ADDR
+}
 
 
 

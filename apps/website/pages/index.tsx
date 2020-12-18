@@ -134,7 +134,7 @@ const Index = ({ i18n }: IndexProps) => {
           ></HeroSection>
 
           <div className="hidden max-w-screen-sm shadow-xl lg:block">
-            <Image src="/img/analytics_preview.png" alt="Analytics Preview" width="1920" height="1080"/>
+            <Image src="/img/analytics_preview.jpg" alt="Analytics Preview" width="1920" height="1080"/>
           </div>
         </div>
       </Section>

@@ -1,5 +1,8 @@
-provider "nomad" {}
 
+provider "nomad" {
+  address = var.nomad.address
+  secret_id = var.nomad.token
+}
 resource "nomad_job" "website" {
   jobspec = file("${path.module}/jobs/website.hcl")
 }

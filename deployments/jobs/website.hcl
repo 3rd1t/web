@@ -39,10 +39,8 @@ job "website" {
         name = "website"
 
         tags = [
-          "public",
-          "web",
           "traefik.enable=true",
-          "traefik.http.routers.website.rule=Host(`perfol.io`)",
+          "traefik.http.routers.http.rule=Path(`perfol.io`)",
         ]
       }
     }

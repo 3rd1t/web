@@ -31,7 +31,7 @@ job "app" {
       driver = "docker"
 
       template {
-        data = "/home/terraform/deploy/.env"
+        source = "/home/terraform/deploy/.env"
         destination = "${NOMAD_SECRETS_DIR}/.env"
         env         = true
         change_mode = "restart"

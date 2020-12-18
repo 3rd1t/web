@@ -31,7 +31,7 @@ job "app" {
       driver = "docker"
 
       template {
-        source = "/home/terraform/deploy/.env"
+        source      = "/home/terraform/deploy/.env"
         destination = "${NOMAD_SECRETS_DIR}/.env"
         env         = true
         change_mode = "restart"
@@ -40,17 +40,15 @@ job "app" {
       config {
         image = "perfolio/web-app"
         ports = ["http"]
+         labels {
+          "traefik.enable" = "true",
+          "traefik.http.routers.app.rule" = "Host(`app.perfol.io`)",
+        }
       }
 
       service {
         name = "app"
 
-        tags = [
-          "public",
-          "web",
-          "traefik.enable=true",
-          "traefik.http.routers.app.rule=Host(`app.perfol.io`)",
-        ]
       }
     }
   }

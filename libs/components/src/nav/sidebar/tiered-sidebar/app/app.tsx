@@ -17,7 +17,7 @@ export const App = ({ icon, label, open, onClick, href }: AppProps) => {
 
   const wrapperClass = `relative flex items-center h-12 m-4 text-gray-600 rounded focus:outline-none   ${
     onClick || href
-      ? "bg-gradient-to-r hover:from-purple-700 hover:to-purple-600 hover:text-white cursor-pointer hover:font-medium"
+      ? "bg-gradient-to-t hover:from-indigo-900 hover:to-purple-800 hover:text-white cursor-pointer hover:font-medium"
       : "hover:text-gray-500"
   }`;
 
@@ -46,7 +46,7 @@ export const App = ({ icon, label, open, onClick, href }: AppProps) => {
             initial="hidden"
             animate="visible"
             exit="hidden"
-            className="whitespace-no-wrap"
+            className="whitespace-nowrap"
           >
             {label}
           </motion.span>

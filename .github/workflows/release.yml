@@ -54,4 +54,4 @@ jobs:
       
 
       - name: Apply
-        run: terraform apply -auto-approve
+        run: terraform -chdir=deployments apply -auto-approve

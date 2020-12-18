@@ -193,7 +193,7 @@ const Index = ({ i18n }: IndexProps) => {
         </Switch.Group>
       </div>
     </div>
-        <div className="flex justify-center -m-4">
+        <div className="flex flex-col justify-center -m-4 md:flex-row">
         <div className="flex flex-col items-center p-4 ">
             <div className="relative flex flex-col h-full p-6 overflow-hidden border border-gray-300 rounded">
             <h2 className="mb-1 text-xl font-medium tracking-widest text-center text-gray-800">

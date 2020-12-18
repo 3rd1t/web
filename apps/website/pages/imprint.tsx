@@ -1,11 +1,14 @@
 import React from "react";
 import { Section } from "@perfolio/components/layout/section/section";
+import {Wrapper} from "../components/wrapper/wrapper"
 
 /* eslint-disable-next-line */
 export interface ImprintProps {}
 
 export const Imprint = (props: ImprintProps) => {
   return (
+    <Wrapper>
+
     <Section className="mx-auto prose-sm prose sm:prose lg:prose-lg xl:prose-xl">
       <span className="text-sm ">German only</span>
       <h1>Imprint / Impressum</h1>
@@ -97,6 +100,7 @@ export const Imprint = (props: ImprintProps) => {
         Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
       </p>
     </Section>
+    </Wrapper>
   );
 };
 

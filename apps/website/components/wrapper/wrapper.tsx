@@ -15,22 +15,22 @@ export const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
       links={[
         {
           label: "Product",
-          href: "index",
+          href: "/#index",
           scroll: true,
         },
         {
           label: "Features",
-          href: "features",
+          href: "/#features",
           scroll: true,
         },
         {
           label: "Pricing",
-          href: "pricing",
+          href: "/#pricing",
           scroll: true,
         },
         {
           label: "Team",
-          href: "team",
+          href: "/#team",
           scroll: true,
         },
       ]}

@@ -12,19 +12,22 @@ export interface DesktopProps {
 }
 
 export const Desktop = (props: DesktopProps) => {
+  const router = useRouter();
+
   const navbarLinkStyle =
     "text-lg text-gray-700 transition duration-150 ease-in-out hover:text-black";
 
   const links = props.links.map((l) => {
+    const path = l.href.split("#")[0];
     return (
       <li key={l.label}>
-        {l.scroll ? (
+        {l.scroll && router.pathname == path ? (
           <Scroll
+            href={path}
             className={navbarLinkStyle}
-            href=""
             smooth={true}
             spy={true}
-            to={l.href}
+            to={l.href.split("#")[1]}
           >
             {l.label}
           </Scroll>
@@ -49,11 +52,10 @@ export const Desktop = (props: DesktopProps) => {
   ];
 
   const [choice, setChoice] = useState(0);
-  const router = useRouter();
 
   links.push(
     <li key="signin">
-      <Link href="/api/login">
+      <Link href="https://app.perfol.io/api/signin">
         <a className="px-4 py-2 font-medium text-gray-100 bg-gray-900 rounded">
           Sign in
         </a>

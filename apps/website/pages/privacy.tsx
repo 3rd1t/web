@@ -1,8 +1,10 @@
 import React from "react";
 import { Section } from "@perfolio/components/layout/section/section";
-
+import {Wrapper} from "../components/wrapper/wrapper"
 export const Privacy = () => {
   return (
+    <Wrapper>
+
     <Section className="mx-auto prose-sm prose sm:prose lg:prose-lg xl:prose-xl">
       <h1>Datenschutzerklärung</h1>
 
@@ -1135,6 +1137,8 @@ export const Privacy = () => {
         </a>
       </p>
     </Section>
+    </Wrapper>
+
   );
 };
 

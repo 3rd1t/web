@@ -35,7 +35,7 @@ job "website" {
         ports = ["http"]
         labels {
           "traefik.enable" = "true",
-          "traefik.http.routers.website.rule" = "Path(`perfol.io`)",
+          "traefik.http.routers.website.rule" = "Path(`perfol.io/`)",
         }
       }
 

@@ -52,6 +52,7 @@ jobs:
         with:
           cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
       
-
+      - name: Init
+        run: terraform -chdir=deployments init
       - name: Apply
         run: terraform -chdir=deployments apply -auto-approve

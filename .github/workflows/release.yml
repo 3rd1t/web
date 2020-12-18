@@ -43,4 +43,15 @@ jobs:
           tags: |
             perfolio/web-${{matrix.svc}}:prod
             perfolio/web-${{matrix.svc}}:latest
-  
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge main -> release
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          from_branch: main
+          target_branch: release
+          github_token: ${{ github.token }}

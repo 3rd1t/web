@@ -44,6 +44,7 @@ jobs:
             perfolio/web-${{matrix.svc}}:prod
             perfolio/web-${{matrix.svc}}:latest
   release:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master

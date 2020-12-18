@@ -12,7 +12,7 @@ job "website" {
   }
 
   group "website" {
-    count = 1
+    count = 3
 
     network {
       port "http" {
@@ -33,15 +33,17 @@ job "website" {
       config {
         image = "perfolio/web-website"
         ports = ["http"]
-         labels {
-          "traefik.enable" = "true",
-          "traefik.http.routers.website.rule" = "Host(`perfol.io`)",
-        }
       }
 
       service {
         name = "website"
         port = "http"
+
+        tags = [
+          "traefik.enable=true",
+          "traefik.http.routers.website.rule=Host(`perfol.io`)",
+        ]
+
       }
     }
   }

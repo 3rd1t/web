@@ -12,7 +12,7 @@ job "app" {
   }
 
   group "app" {
-    count = 1
+    count = 3
 
     network {
       port "http" {
@@ -40,15 +40,27 @@ job "app" {
       config {
         image = "perfolio/web-app"
         ports = ["http"]
-         labels {
-          "traefik.enable" = "true",
-          "traefik.http.routers.app.rule" = "Host(`app.perfol.io`)",
+
+        labels {
+          "traefik.enable"                = "true"
+          "traefik.http.routers.app.rule" = "Host(`app.perfol.io`)"
         }
       }
 
       service {
         name = "app"
-
+        port = "http"
+ tags = [
+          "traefik.enable=true",
+          "traefik.http.routers.app.rule=Host(`app.perfol.io`)",
+        ]
+        check {
+          type     = "http"
+          port     = "http"
+          path     = "/"
+          interval = "2s"
+          timeout  = "2s"
+        }
       }
     }
   }

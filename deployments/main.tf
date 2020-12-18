@@ -1,5 +1,10 @@
+variable "nomad_addr" {
+  type = string
+  default = "http://localhost:4646"
+}
+
 provider "nomad" {
-  address = var.NOMAD_ADDR
+  address = var.nomad_addr
 }
 
 

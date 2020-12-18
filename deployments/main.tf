@@ -1,8 +1,4 @@
-provider "nomad" {
-  address = var.NOMAD_ADDR
-}
-
-
+provider "nomad" {}
 
 resource "nomad_job" "website" {
   jobspec = file("${path.module}/jobs/website.hcl")

@@ -43,7 +43,7 @@ jobs:
           tags: |
             perfolio/web-${{matrix.svc}}:prod
             perfolio/web-${{matrix.svc}}:latest
-  release:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:

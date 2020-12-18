@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Image from 'next/image'
 import { HeroSection } from "@perfolio/components/layout/hero-section/hero-section";
 import { Section } from "@perfolio/components/layout/section/section";
 import { SectionTitle } from "@perfolio/components/layout/section-title/section-title";
@@ -134,7 +134,7 @@ const Index = ({ i18n }: IndexProps) => {
           ></HeroSection>
 
           <div className="hidden max-w-screen-sm shadow-xl lg:block">
-            <img src="/img/analytics_preview.jpg" alt="Analytics Preview"></img>
+            <Image src="/img/analytics_preview.png" alt="Analytics Preview" width="1920" height="1080"/>
           </div>
         </div>
       </Section>
@@ -383,7 +383,7 @@ const Index = ({ i18n }: IndexProps) => {
           <div className="text-center md:w-1/3 md:pr-8 md:py-8">
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-t from-indigo-900 to-purple-800 md:h-32 md:w-32">
               <svg
-                className="w-full p-3 text-gray-100 stroke-current md:p-4"
+                className="w-full p-3 text-white stroke-current md:p-4"
                 viewBox="0 0 194 148"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

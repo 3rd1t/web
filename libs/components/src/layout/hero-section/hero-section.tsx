@@ -17,7 +17,7 @@ export const HeroSection = (props: HeroSectionProps) => {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left">
-        <h2 className="text-3xl font-extrabold leading-none tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+        <h2 className="py-4 -my-4 text-3xl font-extrabold leading-none tracking-tight text-gradient bg-gradient-to-tr from-gray-900 via-indigo-900 to-gray-900 sm:text-5xl lg:text-6xl">
           {props.headline}
         </h2>
         {

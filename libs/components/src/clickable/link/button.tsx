@@ -19,7 +19,7 @@ export const Button = (props: ButtonProps) => {
       textColor={props.textColor}
       bgColor={
         props.bgColor ||
-        "bg-gradient-to-t from-indigo-900 to-purple-800 hover:from-indigo-800 hover:to-purple-700"
+        "bg-gradient-to-tr from-indigo-900 to-purple-800 hover:from-indigo-800 hover:to-purple-700"
       }
       href={props.href}
       iconLeft={props.iconLeft}

@@ -211,6 +211,87 @@ exports[`SidebarLayout primary should match snapshot 1`] = `
                   class="flex flex-col justify-between min-h-screen px-4 py-4 ml-20 bg-white border-r border-gray-300"
                 >
                   <div
+                    class="flex flex-col space-y-8"
+                  >
+                    <div>
+                      <span
+                        class="flex my-4 text-sm font-medium text-gray-600 uppercase"
+                      >
+                        Add Transactions
+                      </span>
+                      <div>
+                        <a
+                          aria-label="Upload statement"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/"
+                        >
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Upload statement
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                      <div>
+                        <a
+                          aria-label="Add manually"
+                          class="flex items-center p-2 text-gray-800 rounded-lg hover:bg-gray-100"
+                          href="/app/add-transaction"
+                        >
+                          <span
+                            class="flex items-center justify-center text-lg text-gray-400"
+                          >
+                            <svg
+                              class="w-6 h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                              />
+                            </svg>
+                          </span>
+                          <div
+                            class="flex items-center justify-between space-x-1"
+                          >
+                            <span
+                              class="ml-3"
+                            >
+                              Add manually
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
                     class="pt-3 border-t border-gray-300"
                   >
                     <a

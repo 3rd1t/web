@@ -2,7 +2,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
 import { RecoilRoot } from "recoil";
-import "tailwindcss/tailwind.css";
+import "@perfolio/css";
 
 const app = ({ Component, pageProps }: AppProps) => {
   return (

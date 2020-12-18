@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Breadcrumbs from "../../bread-crumbs/bread-crumbs";
 /* eslint-disable-next-line */
 export interface HeaderProps {
-  breadcrumbs?: string[];
+  breadcrumbs?: {label:string, href:string}[];
   user: {
     nickname: string;
   };

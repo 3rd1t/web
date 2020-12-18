@@ -1,16 +1,16 @@
 import React from "react";
 /* eslint-disable-next-line */
 export interface BreadcrumbsProps {
-  path: string[];
+  path: {label:string,href:string}[];
 }
 
 export const Breadcrumbs = ({ path }: BreadcrumbsProps) => {
-  const targetStyle = "font-medium text-purple-700";
+  const targetStyle = "font-medium text-purple-900";
   const pathStyle = "text-gray-700";
 
   const divider = <span className="font-thin text-gray-700">/</span>;
 
-  const toBreadcrumbs = (path: string[]): React.ReactNode[] => {
+  const toBreadcrumbs = (path: {label:string,href:string}[]): React.ReactNode[] => {
     const breadcrumbs: React.ReactNode[] = [];
 
     for (let i = 0; i < path.length; i++) {
@@ -18,9 +18,9 @@ export const Breadcrumbs = ({ path }: BreadcrumbsProps) => {
         breadcrumbs.push(divider);
       }
       breadcrumbs.push(
-        <span className={i < path.length - 1 ? pathStyle : targetStyle}>
-          {path[i]}
-        </span>
+          <a href={path[i].href} className={i < path.length - 1 ? pathStyle : targetStyle}> 
+          {path[i].label}
+          </a>
       );
     }
 

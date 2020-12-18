@@ -391,7 +391,11 @@ const DonutChart = () => {
 export const Index = ({ user }: IndexProps) => {
   return (
     <SidebarLayout
-      breadcrumbs={["Perfolio", "Analysis", "Dashboard"]}
+      breadcrumbs={[
+        {label: "Perfolio", href: "/"},
+        { label: "Analytics", href: "/" },
+        { label: "Dashboard", href: "/" },
+      ]}
       menuContent={[
         {
           title: <Title label="Add Transactions" />,

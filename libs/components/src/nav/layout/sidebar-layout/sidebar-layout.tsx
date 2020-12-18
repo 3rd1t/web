@@ -5,7 +5,7 @@ import TieredSidebar from "../../sidebar/tiered-sidebar/tiered-sidebar";
 /* eslint-disable-next-line */
 export interface SidebarLayoutProps {
   children: React.ReactNode;
-  breadcrumbs?: string[];
+  breadcrumbs?: {label: string, href: string}[];
   menuContent: {
     title: React.ReactNode;
     items: React.ReactNode[];

@@ -11,7 +11,7 @@ export const SectionTitle = (props: SectionTitleProps) => {
   const { title, tag, onRight } = props;
 
   return (
-    <div className={onRight ? "text-right": "text-left"}>
+    <div className={onRight ? "lg:text-right": "text-center sm:text-left"}>
         <h2 className="mb-3 font-semibold tracking-wide text-purple-800 uppercase sm:text-lg sm:leading-snug">
           {tag}
         </h2>

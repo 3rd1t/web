@@ -38,7 +38,7 @@ job "app" {
       }
 
       config {
-        image = "perfolio/web-app:prod"
+        image = "perfolio/web-app"
         ports = ["http"]
       }
 

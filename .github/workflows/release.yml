@@ -44,15 +44,14 @@ jobs:
             perfolio/web-${{matrix.svc}}:prod
             perfolio/web-${{matrix.svc}}:latest
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
     steps:
-      - uses: actions/checkout@master
-
-      - name: Merge main -> release
-        uses: devmasx/merge-branch@v1.3.1
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
         with:
-          type: now
-          from_branch: main
-          target_branch: release
-          github_token: ${{ github.token }}
+          cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
+      
+
+      - name: Apply
+        run: terraform apply -auto-approve

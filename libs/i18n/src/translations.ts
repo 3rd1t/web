@@ -36,8 +36,8 @@ export const translations: Translations = {
     de: "Warum Perfolio?",
   },
   whyPerfolioSubline: {
-    en: "Make decisions based on data.",
-    de: "Fälle Entscheidungen basierend auf Daten.",
+    en: "Make decisions based on data",
+    de: "Fälle Entscheidungen basierend auf Daten",
   },
   independent: {
     en: "Independent",

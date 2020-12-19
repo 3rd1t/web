@@ -11,7 +11,7 @@ export const SectionTitle = (props: SectionTitleProps) => {
   const { title, tag, onRight } = props;
 
   return (
-    <div className={onRight ? "lg:text-right" : "text-center sm:text-left"}>
+    <div className={`text-center md:text-left ${onRight ? "md:text-right" : ""}`}>
       <span className="font-semibold tracking-wide uppercase text-gradient bg-gradient-to-tr from-indigo-900 to-purple-800 sm:text-lg sm:leading-snug">
         {tag}
       </span>

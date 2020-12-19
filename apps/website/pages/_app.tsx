@@ -11,7 +11,7 @@ const app = ({ Component, pageProps }: AppProps) => {
         <title>Perfolio</title>
         <meta
           name="description"
-          content="An application for investment portfolio analytics, aggregating, analyzing and measuring performance of holdings such as stocks, bonds or real estate"
+          content="Investment portfolio analytics, aggregating, analyzing and measuring performance of holdings such as stocks, bonds or real estate"
         />
         <link
           rel="stylesheet" href="https://rsms.me/inter/inter.css"

@@ -6,30 +6,32 @@ import { Footer } from "@perfolio/components/nav/footer/footer";
 /* eslint-disable-next-line */
 export interface WrapperProps {
   children: React.ReactNode;
+  i18n?: Record<string,string>
 }
 
-export const Wrapper: React.FC<WrapperProps> = ({ children }: WrapperProps) => {
+export const Wrapper: React.FC<WrapperProps> = ({ children ,i18n}: WrapperProps) => {
+
   const navbar = (
     <Navbar
       logo={<Logo></Logo>}
       links={[
         {
-          label: "Product",
+          label: i18n?.product || "Product",
           href: "/#index",
           scroll: true,
         },
         {
-          label: "Features",
+          label: i18n?.features || "Features",
           href: "/#features",
           scroll: true,
         },
         {
-          label: "Pricing",
+          label: i18n?.pricing || "Pricing",
           href: "/#pricing",
           scroll: true,
         },
         {
-          label: "Team",
+          label: i18n?.team || "Team",
           href: "/#team",
           scroll: true,
         },

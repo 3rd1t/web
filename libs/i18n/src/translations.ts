@@ -121,7 +121,7 @@ export const translations: Translations = {
   },
   product: {
     en: "Product",
-    de: "Product",
+    de: "Produkt",
   },
   tech: {
     en: "Tech",
@@ -143,6 +143,18 @@ export const translations: Translations = {
     en: "Create an account:",
     de: "Erstelle einen Account:",
   },
+  team:{
+    en: "Team",
+    de: "Team",
+  },
+  pricing: {
+    en: "Pricing",
+    de: "Preise"
+  },
+  features:{
+    en:"Features",
+    de: "Features"
+  }
 };
 
 export function translate(locale: string): { [key: string]: string } {

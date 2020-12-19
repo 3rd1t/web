@@ -16,19 +16,19 @@ describe(" Navbar", () => {
         links={[
           {
             label: "Product",
-            href: "#product",
+            href: "/#product",
           },
           {
             label: "Features",
-            href: "#features",
+            href: "/#features",
+          },
+          {
+            label: "Pricing",
+            href: "/#pricing",
           },
           {
             label: "Team",
-            href: "#team",
-          },
-          {
-            label: "Documentation",
-            href: "#",
+            href: "/#team",
           },
         ]}
       />

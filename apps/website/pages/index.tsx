@@ -109,7 +109,7 @@ const Index = ({ i18n }: IndexProps) => {
 
 
   return (
-    <Wrapper>
+    <Wrapper i18n={i18n}>
       <Section bg="bg-gray-50 " className="relative py-20" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection

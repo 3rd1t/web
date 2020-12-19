@@ -12,7 +12,13 @@ jest.mock("next/router", () => ({
 describe("Wrapper", () => {
   it("should render successfully", () => {
     const { baseElement } = render(
-      <Wrapper>
+      <Wrapper i18n={{
+        product: "Product",
+        team: "Team",
+        features: "Features",
+        pricing: "Pricing"
+
+      }}>
         <h1>Hello World</h1>
       </Wrapper>
     );

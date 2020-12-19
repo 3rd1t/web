@@ -40,33 +40,24 @@ export const Desktop = (props: DesktopProps) => {
     );
   });
 
-  const choices = [
-    {
-      name: "English",
-      locale: "en",
-    },
-    {
-      name: "Deutsch",
-      locale: "de",
-    },
-  ];
 
-  const [choice, setChoice] = useState(0);
+  links.push(
+    <li key="i18n">
+      <Link href={router.pathname||"/"} locale={router.locale === "en" ? "de" : "en"}>
+        <a>{router.locale === "en" ? "Deutsch" : "English"}</a>
+      </Link>
+    </li>
+  )
 
   links.push(
     <li key="signin">
       <Link href="https://app.perfol.io/api/signin">
         <a className="px-4 py-2 font-medium text-gray-100 bg-gray-900 rounded">
-          Sign in
+          {router.locale === "en" ? "Sign in" : "Anmelden"}
         </a>
       </Link>
     </li>
   );
-
-  useEffect(() => {
-    const locale = choices.map((c) => c.locale)[choice];
-    router.push(router.pathname, router.pathname, { locale: locale });
-  }, [choice]);
 
   return (
     <div className="w-auto">

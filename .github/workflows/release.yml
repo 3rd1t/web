@@ -59,7 +59,7 @@ jobs:
         run: terraform -chdir=deployments init
       - name: Taint
         run: |
-          terraform -chdir taint nomad_job.website
-          terraform -chdir taint nomad_job.app
+          terraform -chdir=deployments taint nomad_job.website
+          terraform -chdir=deployments taint nomad_job.app
       - name: Apply
         run: terraform -chdir=deployments apply -auto-approve

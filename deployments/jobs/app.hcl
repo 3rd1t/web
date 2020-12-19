@@ -43,7 +43,7 @@ job "app" {
       }
 
       service {
-        name = "website"
+        name = "app"
         port = "http"
 
         tags = [

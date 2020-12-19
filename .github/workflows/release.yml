@@ -32,7 +32,7 @@ jobs:
         with:
           version: latest
       - name: Pull image
-        run: docker pull ${perfolio/web-${{matrix.svc}}}
+        run: docker pull perfolio/web-${{matrix.svc}}
       - name: Build image and push
         uses: docker/build-push-action@v2
         with:

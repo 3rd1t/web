@@ -8,11 +8,11 @@ job "app" {
     healthy_deadline  = "3m"
     progress_deadline = "10m"
     auto_revert       = true
-    canary            = 0
+    canary            = 1
   }
 
   group "app" {
-    count = 3
+    count = 2
 
     network {
       port "http" {
@@ -40,27 +40,16 @@ job "app" {
       config {
         image = "perfolio/web-app"
         ports = ["http"]
-
-        labels {
-          "traefik.enable"                = "true"
-          "traefik.http.routers.app.rule" = "Host(`app.perfol.io`)"
-        }
       }
 
       service {
-        name = "app"
+        name = "website"
         port = "http"
- tags = [
+
+        tags = [
           "traefik.enable=true",
           "traefik.http.routers.app.rule=Host(`app.perfol.io`)",
         ]
-        check {
-          type     = "http"
-          port     = "http"
-          path     = "/"
-          interval = "2s"
-          timeout  = "2s"
-        }
       }
     }
   }

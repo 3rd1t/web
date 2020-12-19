@@ -8,11 +8,11 @@ job "website" {
     healthy_deadline  = "3m"
     progress_deadline = "10m"
     auto_revert       = true
-    canary            = 0
+    canary            = 1
   }
 
   group "website" {
-    count = 3
+    count = 2
 
     network {
       port "http" {
@@ -43,7 +43,6 @@ job "website" {
           "traefik.enable=true",
           "traefik.http.routers.website.rule=Host(`perfol.io`)",
         ]
-
       }
     }
   }

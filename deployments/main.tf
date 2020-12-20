@@ -4,12 +4,28 @@ provider "nomad" {
 }
 
 
+
+
+data "docker_registry_image" "website" {
+  name = "perfolio/web-website"
+}
+resource "docker_image" "website" {
+  name          = data.docker_registry_image.website.name
+  pull_triggers = [data.docker_registry_image.website.sha256_digest]
+}
+
+data "docker_registry_image" "app" {
+  name = "perfolio/web-app"
+}
+resource "docker_image" "app" {
+  name          = data.docker_registry_image.app.name
+  pull_triggers = [data.docker_registry_image.app.sha256_digest]
+}
 resource "nomad_job" "website" {
-  jobspec = templatefile("${path.module}/jobs/website.hcl", { version = var.package_version })
+  jobspec = templatefile("${path.module}/jobs/website.hcl", { image = docker_image.website.latest })
 }
 
 resource "nomad_job" "app" {
-  jobspec = templatefile("${path.module}/jobs/app.hcl", { version = var.package_version })
+  jobspec = templatefile("${path.module}/jobs/app.hcl", { image = docker_image.app.latest })
 }
-
 

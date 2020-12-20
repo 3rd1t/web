@@ -6,4 +6,9 @@ terraform {
       name = "web"
     }
   }
+  required_providers {
+    docker = {
+      source = "kreuzwerker/docker"
+    }
+  }
 }

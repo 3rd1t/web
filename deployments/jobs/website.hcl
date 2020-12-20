@@ -31,7 +31,7 @@ job "website" {
       driver = "docker"
 
       config {
-        image = "perfolio/web-website:${version}"
+        image = "${image}"
         ports = ["http"]
       }
 

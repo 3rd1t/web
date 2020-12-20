@@ -7,10 +7,3 @@ variable "nomad" {
   })
   sensitive = true
 }
-
-
-variable "package_version" {
-  type        = string
-  description = "Semantic version"
-
-}

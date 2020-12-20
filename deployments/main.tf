@@ -8,7 +8,7 @@ provider "nomad" {
 // If we wouldn't do it, terraform could not detect a change and would not run the nomad jobs.
 
 data "docker_registry_image" "website" {
-  name = "perfolio/web-website:latest"
+  name = "perfolio/web-website"
 }
 resource "docker_image" "website" {
   name          = data.docker_registry_image.website.name
@@ -16,7 +16,7 @@ resource "docker_image" "website" {
 }
 
 data "docker_registry_image" "app" {
-  name = "perfolio/web-app:latest"
+  name = "perfolio/web-app"
 }
 resource "docker_image" "app" {
   name          = data.docker_registry_image.app.name

@@ -69,5 +69,6 @@ jobs:
         run: terraform -chdir=deployments init
       - name: Apply
         run: |
-          echo "{\"package_version\": \"$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json)\"}" > ./deployments/version.auto.tfvars.json
+          VERSION=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json)
+          echo "{\"package_version\": \"${VERSION}\"}" > ./deployments/version.auto.tfvars.json
           terraform -chdir=deployments apply -auto-approve -var "package_version=${{TF_VAR_package_version}}"

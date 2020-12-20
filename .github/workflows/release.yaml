@@ -26,8 +26,6 @@ jobs:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
           
-
-
       - run: echo ${{github.ref}}
       - name: Build image and push
         uses: docker/build-push-action@v2
@@ -37,8 +35,7 @@ jobs:
           file: ./build/Dockerfile
           build-args: 
             SERVICE=${{matrix.svc}}
-          tags: |
-            perfolio/web-${{matrix.svc}}:latest
+          tags: perfolio/web-${{matrix.svc}}:latest
 
   deploy:
     runs-on: ubuntu-latest

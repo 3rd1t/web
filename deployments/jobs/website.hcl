@@ -8,7 +8,7 @@ job "website" {
     healthy_deadline  = "3m"
     progress_deadline = "10m"
     auto_revert       = true
-    canary            = 1
+    canary            = 2
   }
 
   group "website" {
@@ -43,6 +43,10 @@ job "website" {
           "traefik.enable=true",
           "traefik.http.routers.website.rule=Host(`perfol.io`)",
         ]
+      }
+       resources {
+        cpu = 100
+        memory = 100
       }
     }
   }

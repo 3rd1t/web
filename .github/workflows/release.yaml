@@ -12,9 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Check out source code"
-        run: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
+        use: actions/checkout@v2
       - name: "Setup Node.js"
         uses: "actions/setup-node@v1"
         with:
@@ -25,10 +23,13 @@ jobs:
         with:
           tag-prefix: ''
           target-branch: main
+          skip-tag: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
@@ -53,7 +54,7 @@ jobs:
           build-args: 
             SERVICE=${{matrix.svc}}
           tags: |
-            perfolio/web-${{matrix.svc}}:${{sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json}}
+            perfolio/web-${{matrix.svc}}:${{steps.get_version.outputs.VERSION}}
             perfolio/web-${{matrix.svc}}:latest
 
   deploy:
@@ -69,6 +70,5 @@ jobs:
         run: terraform -chdir=deployments init
       - name: Apply
         run: |
-          VERSION=$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json)
-          echo "{\"package_version\": \"${VERSION}\"}" > ./deployments/version.auto.tfvars.json
+          echo "{\"package_version\": \"${{steps.get_version.outputs.VERSION}}\"}" > ./deployments/version.auto.tfvars.json
           terraform -chdir=deployments apply -auto-approve -var "package_version=${{TF_VAR_package_version}}"

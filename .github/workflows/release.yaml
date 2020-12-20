@@ -71,4 +71,4 @@ jobs:
       - name: Apply
         run: |
           echo "{\"package_version\": \"${{steps.get_version.outputs.VERSION}}\"}" > ./deployments/version.auto.tfvars.json
-          terraform -chdir=deployments apply -auto-approve -var "package_version=${{TF_VAR_package_version}}"
+          terraform -chdir=deployments apply -auto-approve

@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ published ]
+    branches: [ main ]
 jobs:
   build:
     strategy:

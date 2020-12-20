@@ -8,7 +8,8 @@ job "app" {
     healthy_deadline  = "3m"
     progress_deadline = "10m"
     auto_revert       = true
-    canary            = 2
+    canary            = 0
+
   }
 
   group "app" {
@@ -51,14 +52,19 @@ job "app" {
           "traefik.enable=true",
           "traefik.http.routers.app.rule=Host(`app.perfol.io`)",
         ]
-        canary_tags = [
-          "traefik.enable=false",
-        ]
+         check {
+         type = "http"
+         port = "http"
+         path = "/"
+interval = "5s"
+timeout = "2s"
+      }
       }
       resources {
         cpu = 100
         memory = 100
       }
+     
     }
   }
 }

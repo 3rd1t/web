@@ -8,7 +8,7 @@ job "website" {
     healthy_deadline  = "3m"
     progress_deadline = "10m"
     auto_revert       = true
-    canary            = 2
+    canary            = 0
   }
 
   group "website" {

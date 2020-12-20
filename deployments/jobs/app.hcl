@@ -32,13 +32,13 @@ job "app" {
 
       template {
         source      = "/home/terraform/deploy/.env"
-        destination = "${NOMAD_SECRETS_DIR}/.env"
+        destination = "secrets/.env"
         env         = true
         change_mode = "restart"
       }
 
       config {
-        image = "perfolio/web-app"
+        image = "perfolio/web-app:${version}"
         ports = ["http"]
       }
 

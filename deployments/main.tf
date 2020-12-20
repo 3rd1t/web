@@ -1,13 +1,15 @@
-
 provider "nomad" {
-  address = var.nomad.address
+  address   = var.nomad.address
   secret_id = var.nomad.token
 }
+
+
 resource "nomad_job" "website" {
-  jobspec = file("${path.module}/jobs/website.hcl")
+  jobspec = templatefile("${path.module}/jobs/website.hcl", { version = var.package_version })
 }
 
 resource "nomad_job" "app" {
-  jobspec = file("${path.module}/jobs/app.hcl")
+  jobspec = templatefile("${path.module}/jobs/app.hcl", { version = var.package_version })
 }
+
 

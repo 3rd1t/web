@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
 jobs:
   build:
     strategy:
@@ -11,7 +11,24 @@ jobs:
     name: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: "Check out source code"
+        run: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: "Setup Node.js"
+        uses: "actions/setup-node@v1"
+        with:
+          node-version: 14
+      - name: "Automated Version Bump"
+        id: version-bump
+        uses: "phips28/gh-action-bump-version@master"
+        with:
+          tag-prefix: ''
+          target-branch: main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
@@ -25,6 +42,8 @@ jobs:
           password: ${{secrets.DOCKERHUB_PASSWORD}}
           
 
+
+      - run: echo ${{github.ref}}
       - name: Build image and push
         uses: docker/build-push-action@v2
         with:
@@ -34,8 +53,9 @@ jobs:
           build-args: 
             SERVICE=${{matrix.svc}}
           tags: |
-            perfolio/web-${{matrix.svc}}:prod
+            perfolio/web-${{matrix.svc}}:${{sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json}}
             perfolio/web-${{matrix.svc}}:latest
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -47,9 +67,7 @@ jobs:
       
       - name: Init
         run: terraform -chdir=deployments init
-      - name: Taint
-        run: |
-          terraform -chdir=deployments taint nomad_job.website
-          terraform -chdir=deployments taint nomad_job.app
       - name: Apply
-        run: terraform -chdir=deployments apply -auto-approve
+        run: |
+          echo "{\"package_version\": \"$(sed 's/.*"version": "\(.*\)".*/\1/;t;d' ./package.json)\"}" > ./deployments/version.auto.tfvars.json
+          terraform -chdir=deployments apply -auto-approve -var "package_version=${{TF_VAR_package_version}}"

@@ -39,7 +39,7 @@ job "app" {
       }
 
       config {
-        image = "${image}"
+        image = "perfolio/web-app"
 
         ports = ["http"]
       }
@@ -51,6 +51,7 @@ job "app" {
         tags = [
           "traefik.enable=true",
           "traefik.http.routers.app.rule=Host(`app.perfol.io`)",
+          "hash=${hash}"
         ]
          check {
          type = "http"

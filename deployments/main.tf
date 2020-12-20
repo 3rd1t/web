@@ -23,10 +23,10 @@ resource "docker_image" "app" {
   pull_triggers = [data.docker_registry_image.app.sha256_digest]
 }
 resource "nomad_job" "website" {
-  jobspec = templatefile("${path.module}/jobs/website.hcl", { image = docker_image.website.name })
+  jobspec = templatefile("${path.module}/jobs/website.hcl", { hash = docker_image.website.latest })
 }
 
 resource "nomad_job" "app" {
-  jobspec = templatefile("${path.module}/jobs/app.hcl", { image = docker_image.app.name })
-}
+    jobspec = templatefile("${path.module}/jobs/app.hcl", { hash = docker_image.app.latest })
 
+}

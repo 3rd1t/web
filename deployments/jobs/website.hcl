@@ -31,7 +31,7 @@ job "website" {
       driver = "docker"
 
       config {
-        image = "${image}"
+        image = "perfolio/web-website"
         ports = ["http"]
       }
 
@@ -42,6 +42,7 @@ job "website" {
         tags = [
           "traefik.enable=true",
           "traefik.http.routers.website.rule=Host(`perfol.io`)",
+          "${hash}"
         ]
       }
        resources {

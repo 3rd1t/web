@@ -52,4 +52,4 @@ jobs:
       - name: Init
         run: terraform -chdir=deployments init
       - name: Apply
-        run: terraform -chdir=deployments apply -auto-approve -var "nomad={ address = \"${{secrets.NOMAD_ADDR}}\", token = \"${{secrets.NOMAD_TOKEN}}\""
+        run: terraform -chdir=deployments apply -auto-approve -var "nomad={ address = \"${{secrets.NOMAD_ADDR}}\", token = \"${{secrets.NOMAD_TOKEN}}\" }"

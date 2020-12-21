@@ -113,7 +113,7 @@ const Index = ({ i18n }: IndexProps) => {
       <Section bg="bg-gray-50 " className="relative py-20" id="index">
         <div className="flex flex-col items-center px-4 space-y-8 xl:flex-row xl:space-y-0 xl:space-x-8">
           <HeroSection
-            headline={i18n.headline}
+            headline={i18n.headline + " TEST"}
             paragraph={
               <p className="flex flex-col xl:flex-row">{i18n.subline}</p>
             }

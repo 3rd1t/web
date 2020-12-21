@@ -1,14 +1,14 @@
-name: Release
+name: Deploy
 
 on:
   push:
     branches: [ main ]
 jobs:
-  build:
+  deploy:
     strategy:
       matrix:
         svc: [website, app]
-    name: Build ${{matrix.svc}}
+    name: Deploy ${{matrix.svc}}
     runs-on: ubuntu-latest
     steps:
       - name: "Check out source code"
@@ -26,29 +26,21 @@ jobs:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
           
-      - run: echo ${{github.ref}}
       - name: Build image and push
         uses: docker/build-push-action@v2
         with:
           push: true
           context: .
-          file: ./build/Dockerfile
-          build-args: 
-            SERVICE=${{matrix.svc}}
+          file: ./apps/${{matrix.svc}}/Dockerfile
           tags: perfolio/web-${{matrix.svc}}:latest
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
-      
-      - name: Init
-        run: terraform -chdir=deployments init
-      - name: Apply
-        run: terraform -chdir=deployments apply -auto-approve
+      - name: Setup nomad
+        run: |
+            curl https://releases.hashicorp.com/nomad/1.0.1/nomad_1.0.1_linux_amd64.zip -p nomad.zip
+            unzip nomad.zip
+
+      - name: Schedule ${{matrix.svc}}
+        run: ./nomad job run ./deployments/jobs/${{matrix.svc}}.hcl
         env:
-          TF_VAR_nomad: "{ address = \"${{secrets.NOMAD_ADDR}}\", token = \"${{secrets.NOMAD_TOKEN}}\" }"
+          NOMAD_ADDR: ${{secrets.NOMAD_ADDR}}
+          NOMAD_TOKEN: ${{secrets.NOMAD_TOKEN}}

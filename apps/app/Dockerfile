@@ -1,5 +1,4 @@
 FROM node:15 as builder
-
 WORKDIR /workspace
 
 COPY package.json .
@@ -7,16 +6,13 @@ COPY yarn.lock .
 
 RUN yarn install
 
-
 COPY . .
+
 ENV NODE_ENV=production
-
-
-RUN yarn nx build website
+RUN yarn nx build ${SERVICE}
 
 
 FROM node:15-alpine
-
 WORKDIR /workspace
 
 
@@ -35,7 +31,6 @@ ENV AUTH0_CLIENT_SECRET XXX
 ENV AUTH0_REDIRECT_URI XXX
 ENV AUTH0_POST_LOGOUT_REDIRECT_URI XXX
 ENV COOKIE_SECRET XXX
-
 
 
 EXPOSE 3000

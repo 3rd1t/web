@@ -21,9 +21,8 @@ WORKDIR /workspace
 
 
 COPY --from=builder /workspace/dist/apps/website ./
-RUN ls -al
 
-RUN yarn install 
+RUN yarn install --production=true
 RUN yarn add @nrwl/workspace
 
 

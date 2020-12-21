@@ -18,9 +18,9 @@ WORKDIR /workspace
 
 
 COPY --from=builder /workspace/dist/apps/app ./
-RUN ls -al
 
-RUN yarn install 
+
+RUN yarn install --production=true
 RUN yarn add @nrwl/workspace
 
 

@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { auth0 } from "@perfolio/auth/auth0";
 import getConfig from "next/config";
-import { endianness } from "os";
 
 const krakenURL = getConfig().serverRuntimeConfig.api;
 export default auth0().requireAuthentication(

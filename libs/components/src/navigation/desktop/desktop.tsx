@@ -52,7 +52,7 @@ export const Desktop = (props: DesktopProps) => {
   links.push(
     <li key="signin">
       <Link href="https://app.perfol.io/api/signin">
-        <a className="px-4 py-2 font-medium text-gray-100 bg-gray-900 rounded">
+        <a className="px-4 py-2 font-medium text-gray-100 rounded-sm bg-gradient-to-tr from-indigo-900 to-purple-800">
           {router.locale === "en" ? "Sign in" : "Anmelden"}
         </a>
       </Link>

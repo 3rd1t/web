@@ -103,3 +103,5 @@ jobs:
         run: terraform -chdir=deployments validate -no-color
         env:
           NOMAD_ADDR: http://localhost:4646
+
+  

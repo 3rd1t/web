@@ -54,12 +54,7 @@ jobs:
       - name: Initialize Terraform
         run: terraform -chdir=deployments init
 
-      - name: Get short SHA
-        id: hash
-        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-
       - name: Schedule ${{matrix.svc}}
-        run: terraform -chdir=deployments apply -auto-approve
+        run: terraform -chdir=deployments apply -auto-approve -var "tag=$(echo ${GITHUB_SHA} | cut -c1-8)"
         env:
           TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN}}\"}"
-          TF_VAR_tag: ${{ steps.hash.outputs.sha8 }}

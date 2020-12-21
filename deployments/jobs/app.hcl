@@ -21,7 +21,7 @@ job "app" {
       driver = "docker"
 
       config {
-        image      = "perfolio/web-app"
+        image      = "perfolio/web-app:${tag}"
         ports      = ["http"]
         force_pull = true
       }

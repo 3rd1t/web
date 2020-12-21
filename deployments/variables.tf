@@ -7,3 +7,9 @@ variable "nomad" {
   })
   sensitive = true
 }
+
+variable "tag" {
+  description = "docker image tag"
+  type = string
+  default = "latest"
+}

@@ -24,22 +24,25 @@ jobs:
         with:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
-          
+
+      - name: Get short SHA
+        id: hash
+        run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
+
       - name: Build image and push
         uses: docker/build-push-action@v2
         with:
           push: true
           context: .
           file: ./apps/${{matrix.svc}}/Dockerfile
-          tags: perfolio/web-${{matrix.svc}}:latest
+          tags: perfolio/web-${{matrix.svc}}:${{ steps.hash.outputs.sha8 }}
 
-      - name: Setup nomad
-        run: |
-            curl https://releases.hashicorp.com/nomad/1.0.1/nomad_1.0.1_linux_amd64.zip -o nomad.zip
-            unzip nomad.zip
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
 
       - name: Schedule ${{matrix.svc}}
-        run: ./nomad job run ./deployments/jobs/${{matrix.svc}}.hcl
+        run: terraform apply -auto-approve -target=nomad_job.${{matrix.svc}}
         env:
-          NOMAD_ADDR: ${{secrets.NOMAD_ADDR}}
-          NOMAD_TOKEN: ${{secrets.NOMAD_TOKEN}}
+          TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN\"}"
+          TF_VAR_tag: ${{ steps.hash.outputs.sha8 }}

@@ -17,7 +17,7 @@ export const HeroSection = (props: HeroSectionProps) => {
   return (
     <div className="flex flex-col items-center w-full">
       <div className="space-y-4 text-left sm:text-center md:space-y-8 xl:space-y-12 lg:text-left">
-        <h2 className="py-4 -my-4 text-3xl font-extrabold leading-none tracking-tight text-gradient bg-gradient-to-tr from-gray-900 via-indigo-900 to-gray-900 sm:text-5xl lg:text-6xl">
+        <h2 className="py-4 -my-4 text-3xl font-extrabold leading-none tracking-tight text-gradient bg-gradient-to-tr from-gray-900 via-violet-900 to-gray-900 sm:text-5xl lg:text-6xl">
           {props.headline}
         </h2>
         {
@@ -27,7 +27,7 @@ export const HeroSection = (props: HeroSectionProps) => {
         }
 
         <div className="space-y-4 md:space-x-4 md:space-y-0">
-          <div className="items-center sm:flex sm:justify-center lg:justify-start">
+          <div className="items-center justify-center sm:flex xl:justify-start">
             <div className="rounded shadow">{props.primaryButton}</div>
             <div className="mt-3 sm:mt-0 sm:ml-3">{props.secondaryButton}</div>
           </div>

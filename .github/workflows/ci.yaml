@@ -60,7 +60,7 @@ jobs:
           AUTH0_POST_LOGOUT_REDIRECT_URI: NOT_EMPTY
           COOKIE_SECRET: NOT_EMPTYaaaaaaaaaaaaaaaaaaaaaaa
   unit-test:
-    name: unit test
+    name: Unit Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -83,6 +83,7 @@ jobs:
 
   terraform:
     runs-on: ubuntu-latest
+    name: Validate terraform
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1

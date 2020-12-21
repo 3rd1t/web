@@ -35,7 +35,9 @@ jobs:
           push: true
           context: .
           file: ./apps/${{matrix.svc}}/Dockerfile
-          tags: perfolio/web-${{matrix.svc}}:${{ steps.hash.outputs.sha8 }}
+          tags: |
+            perfolio/web-${{matrix.svc}}:${{ steps.hash.outputs.sha8 }}
+            perfolio/web-${{matrix.svc}}:latest
 
       - uses: hashicorp/setup-terraform@v1
         with:
@@ -44,5 +46,5 @@ jobs:
       - name: Schedule ${{matrix.svc}}
         run: terraform apply -auto-approve -target=nomad_job.${{matrix.svc}}
         env:
-          TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN\"}"
+          TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN}}\"}"
           TF_VAR_tag: ${{ steps.hash.outputs.sha8 }}

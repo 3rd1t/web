@@ -44,7 +44,7 @@ jobs:
           cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
 
       - name: Schedule ${{matrix.svc}}
-        run: terraform apply -auto-approve -target=nomad_job.${{matrix.svc}}
+        run: terraform -chdir=deployments apply -auto-approve -target=nomad_job.${{matrix.svc}}
         env:
           TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN}}\"}"
           TF_VAR_tag: ${{ steps.hash.outputs.sha8 }}

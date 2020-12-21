@@ -1,14 +1,14 @@
-name: Deploy
+name: Release
 
 on:
   push:
     branches: [ main ]
 jobs:
-  deploy:
+  release:
     strategy:
       matrix:
         svc: [website, app]
-    name: Deploy ${{matrix.svc}}
+    name: Release ${{matrix.svc}}
     runs-on: ubuntu-latest
     steps:
       - name: "Check out source code"
@@ -39,6 +39,14 @@ jobs:
             perfolio/web-${{matrix.svc}}:${{ steps.hash.outputs.sha8 }}
             perfolio/web-${{matrix.svc}}:latest
 
+
+  deploy:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check out source code"
+        uses: actions/checkout@v2
+
       - uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
@@ -51,7 +59,7 @@ jobs:
         run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
 
       - name: Schedule ${{matrix.svc}}
-        run: terraform -chdir=deployments apply -auto-approve -target=nomad_job.${{matrix.svc}}
+        run: terraform -chdir=deployments apply -auto-approve
         env:
           TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN}}\"}"
           TF_VAR_tag: ${{ steps.hash.outputs.sha8 }}

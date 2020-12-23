@@ -153,7 +153,7 @@ export const Main = ({ navbarWidth, open, setOpen }: MainProps) => {
               onClick={() => setOpen(false)}
               className="flex items-center justify-center w-3 h-10 focus:outline-none"
             >
-              <span className="w-1 h-10 bg-gray-400 rounded-full hover:bg-purple-300"></span>
+              <span className="w-1 h-12 bg-gray-400 rounded-full bg-gradient-to-t hover:from-indigo-600 hover:to-violet-500"></span>
             </button>
           </motion.div>
         ) : null}

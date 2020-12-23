@@ -1,9 +1,8 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 import React from "react";
-import { RecoilRoot } from "recoil";
 import "@perfolio/css";
-
+import {RecoilRoot} from "recoil"
 const app = ({ Component, pageProps }: AppProps) => {
   return (
     <div>

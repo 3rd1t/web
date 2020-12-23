@@ -5,8 +5,8 @@ export interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({ path }: BreadcrumbsProps) => {
-  const targetStyle = "font-medium text-purple-900";
-  const pathStyle = "text-gray-700";
+  const targetStyle = "font-medium text-gradient bg-gradient-to-t from-indigo-900 to-violet-800 hover:from-indigo-600 to-violet-500";
+  const pathStyle = "text-gray-700  hover:text-gray-500";
 
   const divider = <span className="font-thin text-gray-700">/</span>;
 

@@ -77,7 +77,7 @@
     "@nrwl/node": "^11.0.8",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/react": "11.0.8",
-    "@nrwl/tao": "11.0.8",
+    "@nrwl/tao": "11.0.18",
     "@nrwl/web": "11.0.8",
     "@nrwl/workspace": "11.0.8",
     "@storybook/addon-actions": "^6.1.11",

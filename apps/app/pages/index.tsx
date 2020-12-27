@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { NextPageContext } from "next";
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout";
 import { requireUser } from "@perfolio/auth/auth0";
@@ -6,10 +6,43 @@ import { Table } from "@perfolio/components/table/table";
 import { Tag } from "@perfolio/components/table/cells/tag/tag";
 import { Multiline } from "@perfolio/components/table/cells/multiline/multiline";
 import { RangePicker, chartRangeState } from "@perfolio/components/rangepicker";
-import { AreaChart } from "../components/charts/areachart";
+import AreaChart from "@perfolio/charts/area-chart";
 import { selector, atom, useRecoilValue, useRecoilState } from "recoil";
-import aapl from "../components/charts/data";
+import aapl from "@perfolio/charts/data";
 import getConfig from "next/config";
+import {DonutChart}from"@perfolio/charts/donut-chart"
+interface StatsProps {
+  label: string;
+  change: number;
+  value: number;
+  addSign?: boolean;
+  unit: string;
+}
+
+const Stats = ({ label, change, value, addSign, unit = "$" }: StatsProps) => {
+  return (
+    <div className="text-gray-900">
+      <div className="flex items-center justify-between space-x-1">
+        <span className="text-lg text-gray-600 ">{label}</span>
+        <span
+          className={`px-2 rounded-sm ${
+            change >= 0
+              ? "text-emerald-800 bg-emerald-100"
+              : "text-red-800 bg-red-100"
+          }`}
+        >
+          {`${change >= 0 ? "+" : "-"}${formatValue(change)}`}%
+        </span>
+      </div>
+      <div className="text-4xl font-semibold">
+        {`${addSign ? (value >= 0 ? "+" : "") : ""}${unit}${formatValue(
+          value
+        )}`}
+      </div>
+    </div>
+  );
+};
+
 const formatValue = (v: number): string => {
   return v.toLocaleString("en-US", {
     minimumIntegerDigits: 1,
@@ -57,6 +90,26 @@ const lastValueState = selector({
   },
 });
 
+const intervalNameState = selector({
+  key: "intervalNameState",
+  get: ({ get }) => {
+    const label = get(chartRangeState).label;
+    switch (label) {
+      case "1W":
+        return "Last Week";
+      case "1M":
+        return "Last Month";
+      case "3M":
+        return "Three Months";
+      case "1Y":
+        return "Last Year";
+      case "YTD":
+        return "Current Year";
+      case "MAX":
+        return "All time";
+    }
+  },
+});
 const totalChangeState = selector({
   key: "totalChangeState",
   get: ({ get }) => {
@@ -87,7 +140,7 @@ const localChangeState = selector({
   },
 });
 export const Index = ({ user }: IndexProps) => {
-  const [series, setSeries] = useRecoilState(seriesState);
+  const [_, setSeries] = useRecoilState(seriesState);
 
   useEffect(() => {
     setSeries(
@@ -95,12 +148,12 @@ export const Index = ({ user }: IndexProps) => {
         return { time: new Date(d.date), value: d.close };
       })
     );
-    
   }, []);
   const selectedSeries = useRecoilValue(selectedSeriesState);
+
   const totalChange = useRecoilValue(totalChangeState);
   const localChange = useRecoilValue(localChangeState);
-  console.log({selectedSeries})
+
   return (
     <SidebarLayout
       breadcrumbs={[
@@ -114,40 +167,21 @@ export const Index = ({ user }: IndexProps) => {
         <div className="flex ">
           <div className="flex-grow">
             <div className="flex items-center justify-between">
-              <div className="flex items-center justify-between divide-x divide-gray-300">
-                <div className="pr-8">
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg text-gray-600 ">Investment</span>
-                    <span
-                      className={`px-2 rounded-full ${
-                        totalChange.absolute >= 0
-                          ? "text-emerald-800 bg-emerald-100"
-                          : "text-red-800 bg-red-100"
-                      }`}
-                    >
-                      {formatValue(totalChange.relative * 100)}%
-                    </span>
-                  </div>
-                  <div className="text-4xl font-semibold tracking-wide">
-                    ${formatValue(useRecoilValue(lastValueState))}
-                  </div>
-                </div>
+              <div className="flex items-center justify-between space-x-8 divide-x divide-gray-300">
+                <Stats
+                  label="Investment"
+                  value={useRecoilValue(lastValueState)}
+                  change={totalChange.relative * 100}
+                  unit="$"
+                />
                 <div className="pl-8">
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg text-gray-600">Today</span>
-                    <span
-                      className={`px-2 rounded-full ${
-                        localChange.relative >= 0
-                          ? "text-emerald-800 bg-emerald-100"
-                          : "text-red-800 bg-red-100"
-                      }`}
-                    >
-                      {formatValue(localChange.relative * 100)}%
-                    </span>
-                  </div>
-                  <div className="text-4xl font-semibold tracking-wide">
-                    ${formatValue(localChange.absolute)}
-                  </div>
+                  <Stats
+                    label={useRecoilValue(intervalNameState)}
+                    value={localChange.absolute}
+                    addSign
+                    change={localChange.relative * 100}
+                    unit="$"
+                  />
                 </div>
               </div>
               <RangePicker />
@@ -155,9 +189,7 @@ export const Index = ({ user }: IndexProps) => {
             <AreaChart data={selectedSeries} />
           </div>
           <div className="flex-grow">
-            <div className="h-full m-8">
-              {/* <DonutChart /> */}
-            </div>
+            <div className="h-full m-8">{<DonutChart width={400} height={400} />}</div>
           </div>
         </div>
 

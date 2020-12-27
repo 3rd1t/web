@@ -7,5 +7,6 @@ module.exports = {
     "<rootDir>/libs/i18n",
     "<rootDir>/libs/util",
     "<rootDir>/libs/css",
+    "<rootDir>/libs/charts",
   ],
 };

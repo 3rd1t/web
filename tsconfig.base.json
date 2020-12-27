@@ -19,7 +19,8 @@
       "@perfolio/auth/*": ["libs/auth/src/*"],
       "@perfolio/i18n/*": ["libs/i18n/src/*"],
       "@perfolio/util/*": ["libs/util/src/*"],
-      "@perfolio/css": ["libs/css/src/tailwind.css"]
+      "@perfolio/css": ["libs/css/src/tailwind.css"],
+      "@perfolio/charts/*": ["libs/charts/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

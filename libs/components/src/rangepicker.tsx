@@ -38,7 +38,7 @@ const options: Option[] = [
 
 export const chartRangeState = atom({
   key: "chartRangeState",
-  default: options[0],
+  default: options[1],
 })
 
 

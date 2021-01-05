@@ -10,8 +10,6 @@ jobs:
         svc: [website, app]
     name: Release ${{matrix.svc}}
     runs-on: ubuntu-latest
-    outputs:
-      tag: ${{steps.tag.outputs.hash}}
     steps:
       - name: "Check out source code"
         uses: actions/checkout@v2
@@ -27,10 +25,6 @@ jobs:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
 
-      - name: Get short SHA
-        id: tag
-        run: echo "::set-output name=hash::$(echo ${GITHUB_SHA} | cut -c1-8)"
-
       - name: Build image and push
         uses: docker/build-push-action@v2
         with:
@@ -38,26 +32,29 @@ jobs:
           context: .
           file: ./apps/${{matrix.svc}}/Dockerfile
           tags: |
-            perfolio/web-${{matrix.svc}}:${{ steps.tag.outputs.hash }}
-            perfolio/web-${{matrix.svc}}:latest
+            perfolio/web-${{matrix.svc}}
 
 
   deploy:
     needs: release
     runs-on: ubuntu-latest
     steps:
-      - name: "Check out source code"
+      - name: Check out source code
         uses: actions/checkout@v2
-
-      - uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
-
-      - name: Initialize Terraform
-        run: terraform -chdir=deployments init
-
-      - name: Schedule ${{matrix.svc}}
-        run: terraform -chdir=deployments apply -auto-approve
+      - name: Setup go
+        uses: actions/setup-go@v2
+      - name: Install levant
+        run: |
+          git clone git://github.com/hashicorp/levant.git
+          cd levant
+          make build
+      
+      - name: Schedule erebus
+        run: |
+          ./levant/bin/levant deploy \
+            -force=true \
+            -force-count \
+          ./deployments/${{matrix.svc}}.hcl
         env:
-          TF_VAR_nomad: "{address=\"${{secrets.NOMAD_ADDR}}\",token=\"${{secrets.NOMAD_TOKEN}}\"}"
-          TF_VAR_tag: ${{needs.release.outputs.tag}}
+          NOMAD_ADDR: ${{secrets.NOMAD_ADDR}}
+          NOMAD_TOKEN: ${{secrets.NOMAD_TOKEN}}

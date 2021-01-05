@@ -30,13 +30,13 @@ const frequency = (d: LetterFrequency) => d.frequency;
 const getBrowserColor = scaleOrdinal({
   domain: browserNames,
   range: [
-    'rgba(0,0,0,0.7)',
-    'rgba(0,0,0,0.6)',
-    'rgba(0,0,0,0.5)',
-    'rgba(0,0,0,0.4)',
-    'rgba(0,0,0,0.3)',
-    'rgba(0,0,0,0.2)',
-    'rgba(0,0,0,0.1)',
+    'rgb(21, 33, 255,0.7)',
+    'rgb(21, 33, 255,0.6)',
+    'rgb(21, 33, 255,0.5)',
+    'rgb(21, 33, 255,0.4)',
+    'rgb(21, 33, 255,0.3)',
+    'rgb(21, 33, 255,0.2)',
+    'rgb(21, 33, 255,0.1)',
   ],
 });
 const getLetterFrequencyColor = scaleOrdinal({

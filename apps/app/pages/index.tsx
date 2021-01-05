@@ -10,7 +10,7 @@ import AreaChart from "@perfolio/charts/area-chart";
 import { selector, atom, useRecoilValue, useRecoilState } from "recoil";
 import aapl from "@perfolio/charts/data";
 import getConfig from "next/config";
-import {DonutChart}from"@perfolio/charts/donut-chart"
+import { DonutChart } from "@perfolio/charts/donut-chart";
 interface StatsProps {
   label: string;
   change: number;
@@ -189,7 +189,9 @@ export const Index = ({ user }: IndexProps) => {
             <AreaChart data={selectedSeries} />
           </div>
           <div className="flex-grow">
-            <div className="h-full m-8">{<DonutChart width={400} height={400} />}</div>
+            <div className="h-full m-8">
+              {<DonutChart width={400} height={400} />}
+            </div>
           </div>
         </div>
 

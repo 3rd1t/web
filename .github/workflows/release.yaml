@@ -35,12 +35,6 @@ jobs:
             perfolio/web-${{matrix.svc}}
 
 
-  deploy:
-    needs: release
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out source code
-        uses: actions/checkout@v2
       - name: Setup go
         uses: actions/setup-go@v2
       - name: Install levant

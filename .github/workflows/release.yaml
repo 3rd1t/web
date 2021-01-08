@@ -34,6 +34,13 @@ jobs:
           tags: |
             perfolio/web-${{matrix.svc}}
 
+
+  deploy:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2
       - name: Setup go
         uses: actions/setup-go@v2
       - name: Install levant
@@ -41,13 +48,17 @@ jobs:
           git clone git://github.com/hashicorp/levant.git
           cd levant
           make build
-      
-      - name: Schedule ${{matrix.svc}}
+      - name: Import Secrets
+        uses: hashicorp/vault-action@v2.1.1
+        with:
+          url: ${{secrets.VAULT_ADDR}}
+          token: ${{ secrets.VAULT_TOKEN }}
+          secrets: |
+              kv/prod/nomad address | NOMAD_ADDR ;
+              kv/prod/nomad root_token | NOMAD_TOKEN
+      - name: Schedule erebus
         run: |
           ./levant/bin/levant deploy \
             -force=true \
             -force-count \
           ./deployments/${{matrix.svc}}.hcl
-        env:
-          NOMAD_ADDR: ${{secrets.NOMAD_ADDR}}
-          NOMAD_TOKEN: ${{secrets.NOMAD_TOKEN}}

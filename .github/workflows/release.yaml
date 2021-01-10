@@ -48,8 +48,8 @@ jobs:
           url: ${{secrets.VAULT_ADDR}}
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
-              secret/kv/prod/nomad address | NOMAD_ADDR ;
-              secret/kv/prod/nomad root_token | NOMAD_TOKEN
+              prod/nomad address | NOMAD_ADDR ;
+              prod/nomad root_token | NOMAD_TOKEN
       - name: Schedule erebus
         run: |
           ./levant/bin/levant deploy \

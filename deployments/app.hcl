@@ -9,7 +9,7 @@ job "app" {
   }
 
   group "app" {
-    count = 2
+    count = 1
 
     network {
       port "http" {
@@ -36,6 +36,22 @@ job "app" {
         ]
       }
 
+      vault {
+        policies = ["apps"]
+      }
+      template {
+        data = <<EOF
+AUTH0_DOMAIN="{{with secret "prod/auth0"}}{{.Data.domain}}{{end}}"
+AUTH0_CLIENT_ID={{with secret "prod/auth0"}}{{.Data.clientId}}{{end}}"
+AUTH0_CLIENT_SECRET={{with secret "prod/auth0"}}{{.Data.clientSecret}}{{end}}"
+AUTH0_REDIRECT_URI={{with secret "prod/auth0"}}{{.Data.redirectUri}}{{end}}"
+AUTH0_POST_LOGOUT_REDIRECT_URI={{with secret "prod/auth0"}}{{.Data.postLogoutRedirectUri}}{{end}}"
+COOKIE_SECRET={{with secret "prod/cookies"}}{{.Data.cookieSecret}}{{end}}"
+API_ADDRESS="https://api.perfol.io"
+        EOF
+        destination = "secrets/.env"
+        env = true
+      }
       resources {
         cpu    = 200
         memory = 150

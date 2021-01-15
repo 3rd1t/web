@@ -16,6 +16,5 @@ module.exports = withNx({
     },
     cookieSecret: process.env.COOKIE_SECRET,
     api: process.env.API_ADDRESS,
-    iexToken:process.env.IEX_TOKEN
   },
 });

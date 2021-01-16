@@ -10,7 +10,7 @@ export interface Translation {
 export const translations: Translations = {
   headline: {
     en: "Portfolio analytics insights for everyone",
-    de: "Portfolioanalyse für alle",
+    de: "Portfolio analytics insights for everyone",
   },
   subline: {
     en:
@@ -51,7 +51,7 @@ export const translations: Translations = {
   },
   complexMadeEasy: {
     en: "Complex made easy",
-    de: "Einfache Darstellung von komplexen Inhalten",
+    de: "Simpel statt komplex",
   },
   complexMadeEasyDescription: {
     en:
@@ -61,7 +61,7 @@ export const translations: Translations = {
   },
   allInOnePlace: {
     en: "All in one place",
-    de: "Alle Vermögenswerte an einem Ort",
+    de: "Alles an einem Ort",
   },
   allInOnePlaceDescription: {
     en:

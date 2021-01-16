@@ -239,10 +239,5 @@ export default Index;
 export async function getServerSideProps(ctx: NextPageContext) {
   const user = await requireUser(ctx);
 
-  return {
-    props: {
-      user,
-      iexToken: getConfig().serverRuntimeConfig.iexToken,
-    },
-  };
+  return {props:{user}}
 }

@@ -7,6 +7,7 @@ export function auth0() {
   const { serverRuntimeConfig } = getConfig();
   const {
     domain,
+    audience,
     clientId,
     clientSecret,
     redirectUri,
@@ -15,6 +16,7 @@ export function auth0() {
   const cookieSecret = serverRuntimeConfig.cookieSecret;
   return initAuth0({
     domain,
+    audience,
     clientId,
     clientSecret,
     // audience: getEnvOrPanic("AUTH0_AUDIENCE"),
@@ -30,11 +32,11 @@ export function auth0() {
       // (Optional) SameSite configuration for the session cookie. Defaults to 'lax', but can be changed to 'strict' or 'none'. Set it to false if you want to disable the SameSite setting.
       cookieSameSite: "lax",
       // (Optional) Store the id_token in the session. Defaults to false.
-      storeIdToken: true,
+      storeIdToken: false,
       // (Optional) Store the access_token in the session. Defaults to false.
-      storeAccessToken: false,
+      storeAccessToken: true,
       // (Optional) Store the refresh_token in the session. Defaults to false.
-      storeRefreshToken: false,
+      storeRefreshToken: true,
     },
     oidcClient: {
       // (Optional) Configure the timeout in milliseconds for HTTP requests to Auth0.
@@ -58,4 +60,10 @@ export async function requireUser(ctx: NextPageContext): Promise<IClaims> {
     return {};
   }
   return session.user;
+}
+
+export async function getAccessToken(req, res): Promise<string>{
+  const tokenCache = auth0().tokenCache(req, res);
+  const {accessToken} = await tokenCache.getAccessToken();
+  return accessToken
 }

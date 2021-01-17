@@ -12,7 +12,7 @@ export const Menu = ({ content }: MenuProps) => {
   return (
     <div className="flex flex-col justify-between min-h-screen px-4 py-4 ml-20 bg-white border-r border-gray-300">
       {content ? (
-        <div className="flex flex-col space-y-8">
+        <div className="flex flex-col space-y-16">
           {content.map((c, i) => {
             return (
               <div key={i}>

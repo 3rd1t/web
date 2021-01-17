@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { NextPageContext } from "next";
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout";
-import { requireUser } from "@perfolio/auth/auth0";
+import { requireUser, getAccessToken } from "@perfolio/auth/auth0";
 import { Table } from "@perfolio/components/table/table";
 import { Tag } from "@perfolio/components/table/cells/tag/tag";
 import { Multiline } from "@perfolio/components/table/cells/multiline/multiline";
@@ -11,6 +11,8 @@ import { selector, atom, useRecoilValue, useRecoilState } from "recoil";
 import aapl from "@perfolio/charts/data";
 import getConfig from "next/config";
 import { DonutChart } from "@perfolio/charts/donut-chart";
+import axios from "axios";
+
 interface StatsProps {
   label: string;
   change: number;
@@ -55,6 +57,7 @@ export interface IndexProps {
   user: {
     nickname: string;
   };
+  history: any;
   iexToken: string;
 }
 interface Datum {
@@ -139,16 +142,16 @@ const localChangeState = selector({
     };
   },
 });
-export const Index = ({ user }: IndexProps) => {
+export const Index = ({ user, history }: IndexProps) => {
   const [_, setSeries] = useRecoilState(seriesState);
-
+  console.log(history);
   useEffect(() => {
     setSeries(
       aapl.map((d) => {
         return { time: new Date(d.date), value: d.close };
       })
     );
-  }, []);
+  }, [setSeries]);
   const selectedSeries = useRecoilValue(selectedSeriesState);
 
   const totalChange = useRecoilValue(totalChangeState);
@@ -237,7 +240,19 @@ export const Index = ({ user }: IndexProps) => {
 export default Index;
 
 export async function getServerSideProps(ctx: NextPageContext) {
+
+const {apiAddr} = getConfig().serverRuntimeConfig;
   const user = await requireUser(ctx);
 
-  return {props:{user}}
+  const accessToken = await getAccessToken(ctx.req, ctx.res);
+  const historyResponse = await axios.get(
+    `${apiAddr}/v1/history?token=${accessToken}`
+  );
+  const history = historyResponse.data || [];
+  return {
+    props: {
+      user,
+      history ,
+    },
+  };
 }

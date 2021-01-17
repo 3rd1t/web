@@ -44,7 +44,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-left"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -57,7 +57,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-right"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -72,7 +72,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-left"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -85,7 +85,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-right"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -100,7 +100,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-left"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -113,7 +113,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-right"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -128,7 +128,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-left"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"
@@ -141,7 +141,7 @@ exports[`SimpleTable should match snapshot 1`] = `
                     class="text-right"
                   >
                     <div
-                      class="px-6 py-4 whitespace-no-wrap"
+                      class="px-3 py-2 whitespace-no-wrap"
                     >
                       <span
                         class="text-sm leading-5 text-right text-gray-900"

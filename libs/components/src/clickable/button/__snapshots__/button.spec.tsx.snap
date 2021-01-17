@@ -4,7 +4,7 @@ exports[`Button Stories blackshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-gray-100 hover:text-gray-200 bg-gray-900 hover:bg-gray-800"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-100 bg-gray-900 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -22,7 +22,7 @@ exports[`Button Stories blockshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none w-full text-gray-100 hover:text-gray-200 bg-gray-900 hover:bg-gray-800"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-100 bg-gray-900 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -40,7 +40,7 @@ exports[`Button Stories iconOnlyshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-green-500 hover:text-green-600 bg-gray-200 hover:bg-gray-300"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-green-500 bg-gray-200 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -71,7 +71,7 @@ exports[`Button Stories primaryshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-gray-900 hover:text-gray-800 bg-gray-200 hover:bg-gray-300"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-900 bg-gray-200 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -89,7 +89,7 @@ exports[`Button Stories redshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-red-100 hover:text-red-200 bg-red-600 hover:bg-red-500"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-red-100 bg-red-600 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -107,7 +107,7 @@ exports[`Button Stories withIconLeftAndRightshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-gray-100 hover:text-gray-200 bg-gray-900 hover:bg-gray-800"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-100 bg-gray-900 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -157,7 +157,7 @@ exports[`Button Stories withIconLeftshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-gray-100 hover:text-gray-200 bg-gray-900 hover:bg-gray-800"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-100 bg-gray-900 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"
@@ -197,7 +197,7 @@ exports[`Button Stories withIconRightshould match snapshot 1`] = `
 <body>
   <div>
     <button
-      class="focus:outline-none  text-gray-100 hover:text-gray-200 bg-gray-900 hover:bg-gray-800"
+      class="focus:outline-none transition duration-200 rounded-sm py-1 px-4 font-medium text-gray-100 bg-gray-900 "
     >
       <div
         class="flex items-center justify-center px-4 py-2 space-x-2 rounded-sm"

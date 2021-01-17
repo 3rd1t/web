@@ -3,6 +3,7 @@ import Head from "next/head";
 import React from "react";
 import "@perfolio/css";
 import {RecoilRoot} from "recoil"
+
 const app = ({ Component, pageProps }: AppProps) => {
   return (
     <div>

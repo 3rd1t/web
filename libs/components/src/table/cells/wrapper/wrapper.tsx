@@ -6,7 +6,7 @@ export interface WrapperProps {
 }
 
 export const Wrapper = ({ children }: WrapperProps) => {
-  return <div className="px-6 py-4 whitespace-no-wrap">{children}</div>;
+  return <div className="px-3 py-2 whitespace-no-wrap">{children}</div>;
 };
 
 export default Wrapper;

@@ -61,6 +61,7 @@
     "react-scroll": "^1.8.1",
     "react-spring": "^8.0.27",
     "recoil": "^0.1.2",
+    "swr": "^0.4.0",
     "tailwindcss": "^2.0.2",
     "tslib": "^2.0.0"
   },

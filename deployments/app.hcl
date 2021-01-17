@@ -5,7 +5,7 @@ job "app" {
   update {
     auto_revert  = true
     auto_promote = true
-    canary       = 2
+    canary       = 1
   }
 
   group "app" {
@@ -41,12 +41,12 @@ job "app" {
       }
       template {
         data = <<EOF
-AUTH0_DOMAIN={{with secret "prod/auth0_app"}}{{.Data.domain}}{{end}}
-AUTH0_CLIENT_ID={{with secret "prod/auth0_app"}}{{.Data.clientId}}{{end}}
-AUTH0_CLIENT_SECRET={{with secret "prod/auth0_app"}}{{.Data.clientSecret}}{{end}}
-AUTH0_REDIRECT_URI={{with secret "prod/auth0_app"}}{{.Data.redirectUri}}{{end}}
-AUTH0_POST_LOGOUT_REDIRECT_URI={{with secret "prod/auth0_app"}}{{.Data.postLogoutRedirectUri}}{{end}}
-AUTH0_AUDIENCE={{with secret "prod/auth0_api"}}{{.Data.identifier}}{{end}}
+AUTH0_DOMAIN={{with secret "prod/auth0/application"}}{{.Data.domain}}{{end}}
+AUTH0_CLIENT_ID={{with secret "prod/auth0/application"}}{{.Data.clientId}}{{end}}
+AUTH0_CLIENT_SECRET={{with secret "prod/auth0/application"}}{{.Data.clientSecret}}{{end}}
+AUTH0_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.redirectUri}}{{end}}
+AUTH0_POST_LOGOUT_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.postLogoutRedirectUri}}{{end}}
+AUTH0_AUDIENCE={{with secret "prod/auth0/api"}}{{.Data.identifier}}{{end}}
 COOKIE_SECRET={{with secret "prod/cookies"}}{{.Data.secret}}{{end}}
 API_ADDRESS=https://api.perfol.io
         EOF

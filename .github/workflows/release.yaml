@@ -52,7 +52,7 @@ jobs:
           secrets: |
               prod/nomad address    | NOMAD_ADDR ;
               prod/nomad root_token | NOMAD_TOKEN ;
-      - name: Schedule erebus
+      - name: Schedule ${{matrix-svc}}
         run: |
           ./levant/bin/levant deploy \
             -force=true \

@@ -5,7 +5,7 @@ job "website" {
   update {
     auto_revert  = true
     auto_promote = true
-    canary       = 2
+    canary       = 1
   }
 
   group "website" {

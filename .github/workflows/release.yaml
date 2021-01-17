@@ -35,6 +35,7 @@ jobs:
           file: ./apps/${{matrix.svc}}/Dockerfile
           tags: |
             perfolio/web-${{matrix.svc}}:${{ steps.tag.outputs.tag }}
+            perfolio/web-${{matrix.svc}}:latest
 
 
       - name: Setup go

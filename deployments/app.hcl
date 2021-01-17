@@ -46,7 +46,7 @@ AUTH0_CLIENT_ID={{with secret "prod/auth0/application"}}{{.Data.clientId}}{{end}
 AUTH0_CLIENT_SECRET={{with secret "prod/auth0/application"}}{{.Data.clientSecret}}{{end}}
 AUTH0_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.redirectUri}}{{end}}
 AUTH0_POST_LOGOUT_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.postLogoutRedirectUri}}{{end}}
-AUTH0_AUDIENCE={{with secret "prod/auth0/api"}}{{.Data.identifier}}{{end}}
+AUTH0_AUDIENCE={{with secret "prod/auth0/api"}}{{.Data.audience}}{{end}}
 COOKIE_SECRET={{with secret "prod/cookies"}}{{.Data.secret}}{{end}}
 API_ADDRESS=https://api.perfol.io
         EOF

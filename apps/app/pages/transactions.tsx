@@ -31,7 +31,7 @@ const TransactionTable = (
     const url = `${apiAddr}/v1/transaction?token=${accessToken}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setTransactions(data.Transactions));
+      .then((data) => setTransactions(data));
   }, [accessToken, apiAddr]);
 
   const columnNames = [

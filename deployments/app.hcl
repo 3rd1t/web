@@ -48,7 +48,7 @@ AUTH0_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.redirectUri}}
 AUTH0_POST_LOGOUT_REDIRECT_URI={{with secret "prod/auth0/application"}}{{.Data.postLogoutRedirectUri}}{{end}}
 AUTH0_AUDIENCE={{with secret "prod/auth0/api"}}{{.Data.audience}}{{end}}
 COOKIE_SECRET={{with secret "prod/cookies"}}{{.Data.secret}}{{end}}
-API_ADDRESS=https://api.perfol.io
+API_ADDR=https://api.perfol.io
         EOF
         destination = "secrets/.env"
         env = true

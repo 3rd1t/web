@@ -11,7 +11,8 @@ import aapl from "@perfolio/charts/data";
 import getConfig from "next/config";
 import { DonutChart } from "@perfolio/charts/donut-chart";
 import axios from "axios";
-import { getAPI, ApiProps } from "@perfolio/backend/api"
+import { requireUser } from "@perfolio/backend/api";
+import { User } from "@perfolio/backend/user";
 
 interface StatsProps {
   label: string;
@@ -93,28 +94,28 @@ const intervalNameState = selector({
     switch (label) {
       case "1W":
         return "Last Week";
-        case "1M":
-          return "Last Month";
-          case "3M":
-            return "Three Months";
-            case "1Y":
-              return "Last Year";
-              case "YTD":
-                return "Current Year";
-                case "MAX":
-                  return "All time";
-                }
-              },
-            });
-            const totalChangeState = selector({
-              key: "totalChangeState",
-              get: ({ get }) => {
-                const series = get(seriesState);
-                
-                if (series.length === 0) {
-                  return { absolute: 0, relative: 0 };
-                }
-                
+      case "1M":
+        return "Last Month";
+      case "3M":
+        return "Three Months";
+      case "1Y":
+        return "Last Year";
+      case "YTD":
+        return "Current Year";
+      case "MAX":
+        return "All time";
+    }
+  },
+});
+const totalChangeState = selector({
+  key: "totalChangeState",
+  get: ({ get }) => {
+    const series = get(seriesState);
+
+    if (series.length === 0) {
+      return { absolute: 0, relative: 0 };
+    }
+
     return {
       absolute: series[series.length - 1].value - series[0].value,
       relative: series[series.length - 1].value / series[0].value - 1,
@@ -135,7 +136,9 @@ const localChangeState = selector({
     };
   },
 });
-export type IndexProps = ApiProps
+export interface IndexProps {
+  user: User;
+}
 export const Index = ({ user }: IndexProps) => {
   const [_, setSeries] = useRecoilState(seriesState);
   useEffect(() => {
@@ -143,7 +146,7 @@ export const Index = ({ user }: IndexProps) => {
       aapl.map((d) => {
         return { time: new Date(d.date), value: d.close };
       })
-      );
+    );
   }, [setSeries]);
   const selectedSeries = useRecoilValue(selectedSeriesState);
 
@@ -193,36 +196,62 @@ export const Index = ({ user }: IndexProps) => {
 
         <Table
           columnNames={["Stock", "Shares", "Since Buy (relative)"]}
-          cells={[
-            [
-              <Multiline title="MSFT" content="Microsoft Corporation" />,
-              <Multiline title={4} content="@240.11" />,
-
-              <Tag label="-0.2%" color="orange" />,
-            ],
-            [
-              <Multiline title="TSLA" content="Tesla" />,
-              <Multiline title={1} content="@9000.1" />,
-              <Tag label="+2.1%" color="emerald" />,
-            ],
-            [
-              <Multiline title="PRFL" content="Perfolio" />,
-              <Multiline title={3} content="@9000.1" />,
-
-              <Tag label="+9999%" color="purple" />,
-            ],
-            [
-              <Multiline title="PRFL" content="Perfolio" />,
-              <Multiline title={1} content="@9000.1" />,
-
-              <Tag label="+9999%" color="purple" />,
-            ],
-            [
-              <Multiline title="PRFL" content="Perfolio" />,
-              <Multiline title={1} content="@9000.1" />,
-
-              <Tag label="+9999%" color="purple" />,
-            ],
+          rows={[
+            <tr>
+              <td className="text-left">
+                <Multiline title="MSFT" content="Microsoft Corporation" />
+              </td>
+              <td className="text-right">
+                <Multiline title={4} content="@240.11" />
+              </td>
+              <td className="text-right">
+                <Tag label="-0.2%" color="orange" />
+              </td>
+            </tr>,
+            <tr>
+              <td className="text-left">
+                <Multiline title="TSLA" content="Tesla" />
+              </td>
+              <td className="text-right">
+                <Multiline title={1} content="@9000.1" />
+              </td>
+              <td className="text-right">
+                <Tag label="+2.1%" color="emerald" />
+              </td>
+            </tr>,
+            <tr>
+              <td className="text-left">
+                <Multiline title="PRFL" content="Perfolio" />
+              </td>
+              <td className="text-right">
+                <Multiline title={3} content="@9000.1" />
+              </td>
+              <td className="text-right">
+                <Tag label="+9999%" color="purple" />
+              </td>
+            </tr>,
+            <tr>
+              <td className="text-left">
+                <Multiline title="PRFL" content="Perfolio" />
+              </td>
+              <td className="text-right">
+                <Multiline title={1} content="@9000.1" />
+              </td>
+              <td className="text-right">
+                <Tag label="+9999%" color="purple" />
+              </td>
+            </tr>,
+            <tr>
+              <td className="text-left">
+                <Multiline title="PRFL" content="Perfolio" />
+              </td>
+              <td className="text-right">
+                <Multiline title={1} content="@9000.1" />
+              </td>
+              <td className="text-right">
+                <Tag label="+9999%" color="purple" />
+              </td>
+            </tr>,
           ]}
         />
       </div>
@@ -232,9 +261,10 @@ export const Index = ({ user }: IndexProps) => {
 
 export default Index;
 
-
 export async function getServerSideProps(ctx: NextPageContext) {
   return {
-    props: await getAPI(ctx.req, ctx.res),
+    props: {
+      user: await requireUser(ctx),
+    },
   };
 }

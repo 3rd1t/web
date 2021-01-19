@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { NextPageContext } from "next";
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout";
-import { requireUser, getAccessToken } from "@perfolio/auth/auth0";
 import { Table } from "@perfolio/components/table/table";
 import { Tag } from "@perfolio/components/table/cells/tag/tag";
 import { Multiline } from "@perfolio/components/table/cells/multiline/multiline";
@@ -12,6 +11,7 @@ import aapl from "@perfolio/charts/data";
 import getConfig from "next/config";
 import { DonutChart } from "@perfolio/charts/donut-chart";
 import axios from "axios";
+import { getAPI, ApiProps } from "@perfolio/backend/api"
 
 interface StatsProps {
   label: string;
@@ -53,13 +53,6 @@ const formatValue = (v: number): string => {
   });
 };
 
-export interface IndexProps {
-  user: {
-    nickname: string;
-  };
-  history: any;
-  iexToken: string;
-}
 interface Datum {
   time: Date;
   value: number;
@@ -100,28 +93,28 @@ const intervalNameState = selector({
     switch (label) {
       case "1W":
         return "Last Week";
-      case "1M":
-        return "Last Month";
-      case "3M":
-        return "Three Months";
-      case "1Y":
-        return "Last Year";
-      case "YTD":
-        return "Current Year";
-      case "MAX":
-        return "All time";
-    }
-  },
-});
-const totalChangeState = selector({
-  key: "totalChangeState",
-  get: ({ get }) => {
-    const series = get(seriesState);
-
-    if (series.length === 0) {
-      return { absolute: 0, relative: 0 };
-    }
-
+        case "1M":
+          return "Last Month";
+          case "3M":
+            return "Three Months";
+            case "1Y":
+              return "Last Year";
+              case "YTD":
+                return "Current Year";
+                case "MAX":
+                  return "All time";
+                }
+              },
+            });
+            const totalChangeState = selector({
+              key: "totalChangeState",
+              get: ({ get }) => {
+                const series = get(seriesState);
+                
+                if (series.length === 0) {
+                  return { absolute: 0, relative: 0 };
+                }
+                
     return {
       absolute: series[series.length - 1].value - series[0].value,
       relative: series[series.length - 1].value / series[0].value - 1,
@@ -142,15 +135,15 @@ const localChangeState = selector({
     };
   },
 });
-export const Index = ({ user, history }: IndexProps) => {
+export type IndexProps = ApiProps
+export const Index = ({ user }: IndexProps) => {
   const [_, setSeries] = useRecoilState(seriesState);
-  console.log(history);
   useEffect(() => {
     setSeries(
       aapl.map((d) => {
         return { time: new Date(d.date), value: d.close };
       })
-    );
+      );
   }, [setSeries]);
   const selectedSeries = useRecoilValue(selectedSeriesState);
 
@@ -239,20 +232,9 @@ export const Index = ({ user, history }: IndexProps) => {
 
 export default Index;
 
+
 export async function getServerSideProps(ctx: NextPageContext) {
-
-const {apiAddr} = getConfig().serverRuntimeConfig;
-  const user = await requireUser(ctx);
-
-  const accessToken = await getAccessToken(ctx.req, ctx.res);
-  const historyResponse = await axios.get(
-    `${apiAddr}/v1/history?token=${accessToken}`
-  );
-  const history = historyResponse.data || [];
   return {
-    props: {
-      user,
-      history ,
-    },
+    props: await getAPI(ctx),
   };
 }

@@ -4,16 +4,23 @@ import { Preview } from "./cells/preview/preview";
 
 export interface TableProps {
   columnNames: string[];
-  cells: React.ReactNode[][];
+  rows: React.ReactNode[];
 }
 
-export const Table = ({ columnNames, cells }: TableProps) => {
-  
-
-  const usedCells =
-    cells.length > 0
-      ? cells
-      : [1, 2, 3].map((_) => columnNames.map((_) => <Preview />));
+export const Table = ({ columnNames, rows }: TableProps) => {
+  console.log({rows})
+  const usedRows =
+    rows.length > 0
+      ? rows
+      : [1, 2, 3].map((_) => {
+          return (
+            <tr>
+              {columnNames.map((_) => (
+                <Preview />
+              ))}
+            </tr>
+          );
+        });
   return (
     <div className="flex flex-col ">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -22,22 +29,7 @@ export const Table = ({ columnNames, cells }: TableProps) => {
             <table className="min-w-full ">
               {<Header labels={columnNames} />}
               <tbody className="bg-white divide-y divide-gray-200">
-                {usedCells.map((row, rowID) => {
-                  return (
-                    <tr key={rowID}>
-                      {row.map((cell, colID) => {
-                        return (
-                          <td
-                            key={colID}
-                            className={colID === 0 ? "text-left" : "text-right"}
-                          >
-                            {cell}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  );
-                })}
+                {usedRows}
               </tbody>
             </table>
           </div>

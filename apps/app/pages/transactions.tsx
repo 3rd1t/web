@@ -1,76 +1,73 @@
 import React, { useEffect, useState } from "react";
 import { NextPageContext } from "next";
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout";
-import { Title } from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/title/title";
-import { Item } from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/item/item";
-import { useRouter } from "next/router";
-import axios from "axios";
-import { Button } from "@perfolio/components/clickable/button/button";
-import getConfig from "next/config";
-import { requireUser, getAccessToken } from "@perfolio/auth/auth0";
-import { SimpleTable } from "@perfolio/components/table/builder/builder";
+import { requireUser } from "@perfolio/backend/api";
+import { User } from "@perfolio/backend/user";
 import { Table } from "@perfolio/components/table/table";
 import { Simple } from "@perfolio/components/table/cells/simple/simple";
 import { Icon } from "@perfolio/components/table/cells/icon/icon";
-import Image from "next/image";
-import useSWR from "swr";
-async function GET(url: string): Promise<any> {
-  return await fetch(url, { mode: "no-cors" })
-    .then((r) => {
-      return r.json();
-    })
-    .catch((err) => console.error(err));
-}
 
-const TransactionTable = (
-  apiAddr: string,
-  accessToken: string
-): React.ReactNode => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+const Row = ({ tx }: { tx: Transaction }) => {
+  console.log({ tx });
+  const [symbol, setSymbol] = useState<string>("");
+  const [sector, setSector] = useState<string>("");
   useEffect(() => {
-    const url = `${apiAddr}/v1/transaction?token=${accessToken}`;
-    fetch(url)
+    fetch(`/api/get-company?isin=${tx.asset.id}`)
       .then((res) => res.json())
-      .then((data) => setTransactions(data));
-  }, [accessToken, apiAddr]);
+      .then((json) => {
+        console.log({ json });
+        setSector(json.sector)
+        setSymbol(json.symbol.toUpperCase());
+      });
+  }, [tx.asset.id]);
+  return (
+    <tr key={tx.asset.id}>
+      <td className="text-left">
+        <Icon
+          label={symbol}
+          content={sector}
+          align="justify-start"
+          icon={
+            <img
+              src={`https://storage.googleapis.com/iex/api/logos/${symbol}.png`}
+              alt={`${symbol} logo`}
+              width="64"
+              height="64"
+            />
+          }
+        />
+      </td>
+      <td className="text-right">
+        <Simple label={tx.quantity} />
+      </td>
+      <td className="text-right">
+        <Simple label={tx.value} />
+      </td>
+      <td className="text-right">
+        <Simple label={tx.executedAt} />
+      </td>
+    </tr>
+  );
+};
 
+const TransactionTable = ({
+  transactions,
+}: {
+  transactions: Transaction[];
+}) => {
   const columnNames = [
     "Asset",
     "Quantity",
     "Price per share",
     "Execution Time",
   ];
-
-  const cells = transactions.map((row) => {
-    return [
-      <Icon
-        label={row.asset.id.toUpperCase()}
-        content="description"
-        icon={
-          <img
-            src={`https://storage.googleapis.com/iex/api/logos/${row.asset.id.toUpperCase()}.png`}
-            alt={`${row.asset.id} logo`}
-            width="64"
-            height="64"
-          />
-        }
-      />,
-      <Simple label={row.quantity} />,
-      <Simple label={row.value} />,
-      <Simple label={row.executedAt} />,
-    ];
+  const rows = transactions.map((tx) => {
+    return <Row tx={tx} />;
   });
-
-  return <Table columnNames={columnNames} cells={cells} />;
+  console.log({ rows });
+  return <Table columnNames={columnNames} rows={rows} />;
 };
 
-export interface TransactionsProps {
-  user: {
-    nickname: string;
-  };
-  apiAddr: string;
-  accessToken: string;
-}
 interface Transaction {
   id: string;
   userID: string;
@@ -83,11 +80,18 @@ interface Transaction {
   executedAt: string;
 }
 
-export const Transactions = ({
-  user,
-  apiAddr,
-  accessToken,
-}: TransactionsProps) => {
+export interface TransactionsProps {
+  user: User;
+}
+export const Transactions = ({ user }: TransactionsProps) => {
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  useEffect(() => {
+    const url = "/api/transactions";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setTransactions(data));
+  }, []);
+
   return (
     <SidebarLayout
       breadcrumbs={[
@@ -102,7 +106,7 @@ export const Transactions = ({
           Your Transactions
         </h1>
 
-        {TransactionTable(apiAddr, accessToken)}
+        <TransactionTable transactions={transactions} />
       </div>
     </SidebarLayout>
   );
@@ -111,16 +115,9 @@ export const Transactions = ({
 export default Transactions;
 
 export async function getServerSideProps(ctx: NextPageContext) {
-  const { apiAddr } = getConfig().serverRuntimeConfig;
-  const user = await requireUser(ctx);
-
-  const accessToken = await getAccessToken(ctx.req, ctx.res);
-
   return {
     props: {
-      user,
-      accessToken,
-      apiAddr,
+      user: await requireUser(ctx),
     },
   };
 }

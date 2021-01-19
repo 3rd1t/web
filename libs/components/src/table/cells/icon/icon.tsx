@@ -7,14 +7,16 @@ export interface IconProps {
   color?: string;
   label?: string;
   content?:string
+  align?: string
 }
 
-export const Icon = ({ icon, color, label, content }: IconProps) => {
+export const Icon = ({ icon, color, label, content, align }: IconProps) => {
+  align = align ?? "justify-center"
   const colors = color ? `text-${color}-800 bg-${color}-200` : "";
 
   return (
     <Wrapper>
-      <div className="flex items-center justify-center">
+      <div className={`flex items-center ${align}`}>
 
       <div className="flex-shrink-0 w-10 h-10">
         <div className={colors}>

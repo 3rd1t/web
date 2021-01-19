@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { NextPageContext } from "next";
 import { SidebarLayout } from "@perfolio/components/nav/layout/sidebar-layout/sidebar-layout";
-import { requireUser } from "@perfolio/auth/auth0";
-import { Title } from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/title/title";
-import { Item } from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/item/item";
+import { requireUser } from "@perfolio/backend/api";
+import { User } from "@perfolio/backend/user";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { Button } from "@perfolio/components/clickable/button/button";
 
-export interface AddTransactionProps {
-  user: {
-    nickname: string;
-  };
-}
 const Question = ({ label }: { label: string }) => {
   return <label className="text-lg font-medium text-gray-800">{label}</label>;
 };
@@ -61,6 +55,9 @@ interface Transaction {
   executedAt: string;
 }
 
+export interface AddTransactionProps {
+  user: User;
+}
 export const AddTransaction = ({ user }: AddTransactionProps) => {
   const router = useRouter();
   const [createAnother, setCreateAnother] = useState(false);
@@ -79,16 +76,19 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
     });
   };
 
-
-  const submit = () => {
-    axios.post("/api/add-transaction", {
-      asset: {
-        id: transaction.assetID,
-        type: "SHARE",
-      },
-      quantity: transaction.quantity,
-      value: transaction.value,
-      executedAt: Date.parse(transaction.executedAt) / 1000,
+  const submit = async () => {
+    const url = "/api/add-transaction";
+    await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        asset: {
+          id: transaction.assetID,
+          type: "SHARE",
+        },
+        quantity: transaction.quantity,
+        value: transaction.value,
+        executedAt: Date.parse(transaction.executedAt) / 1000,
+      }),
     });
 
     if (!createAnother) {
@@ -144,8 +144,16 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
                             : "border border-gray-300"
                         } rounded-full w-4 h-4 `}
                       ></span>
-                      <span className={`text-gray-900 capitalize ${(t === "buy" && transaction.quantity >= 0) ||
-                          (t === "sell" && transaction.quantity < 0) ? "font-semibold": ""}`}>{t}</span>
+                      <span
+                        className={`text-gray-900 capitalize ${
+                          (t === "buy" && transaction.quantity >= 0) ||
+                          (t === "sell" && transaction.quantity < 0)
+                            ? "font-semibold"
+                            : ""
+                        }`}
+                      >
+                        {t}
+                      </span>
                     </button>
                   );
                 })}
@@ -159,7 +167,7 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
               />
               <Input
                 type="text"
-                label="Stock"
+                label="ISIN"
                 value={transaction.assetID}
                 onChange={(e) =>
                   setTransaction({
@@ -223,12 +231,7 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
                   Create another
                 </label>
               </div>
-              <Button
-               textColor="text-white"
-              label="Add"
-              onClick={submit}
-              
-              />
+              <Button textColor="text-white" label="Add" onClick={submit} />
             </div>
           </div>
         </div>
@@ -240,11 +243,9 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
 export default AddTransaction;
 
 export async function getServerSideProps(ctx: NextPageContext) {
-  const user = await requireUser(ctx);
-
   return {
     props: {
-      user,
+      user: await requireUser(ctx),
     },
   };
 }

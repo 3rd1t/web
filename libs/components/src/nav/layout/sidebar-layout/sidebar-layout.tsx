@@ -3,14 +3,13 @@ import { Header } from "../../top/header/header";
 import TieredSidebar from "../../sidebar/tiered-sidebar/tiered-sidebar";
 import {Title} from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/title/title"
 import {Item} from "@perfolio/components/nav/sidebar/tiered-sidebar/menu/item/item"
+import { User } from "@perfolio/backend/user";
 
 /* eslint-disable-next-line */
 export interface SidebarLayoutProps {
   children: React.ReactNode;
   breadcrumbs?: {label: string, href: string}[];
-  user: {
-    nickname: string;
-  };
+  user: User;
 }
 const menuContent: {
   title: React.ReactNode;

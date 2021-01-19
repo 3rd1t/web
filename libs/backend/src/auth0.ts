@@ -1,6 +1,5 @@
 import { initAuth0 } from "@auth0/nextjs-auth0";
-import { IClaims } from "@auth0/nextjs-auth0/dist/session/session";
-import { NextPageContext } from "next";
+
 import getConfig from "next/config";
 
 export function auth0() {
@@ -45,25 +44,4 @@ export function auth0() {
       clockTolerance: 10000,
     },
   });
-}
-
-export async function requireUser(ctx: NextPageContext): Promise<IClaims> {
-  if (!ctx.req || !ctx.res) {
-    throw new Error("req and res must be defined");
-  }
-  const session = await auth0().getSession(ctx.req);
-  if (!session?.user) {
-    ctx.res.writeHead(302, {
-      Location: "/api/signin",
-    });
-    ctx.res.end();
-    return {};
-  }
-  return session.user;
-}
-
-export async function getAccessToken(req, res): Promise<string>{
-  const tokenCache = auth0().tokenCache(req, res);
-  const {accessToken} = await tokenCache.getAccessToken();
-  return accessToken
 }

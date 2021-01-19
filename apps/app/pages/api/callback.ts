@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { auth0 } from "@perfolio/auth/auth0";
+import { auth0 } from "@perfolio/backend/auth0";
 export default async function callback(
   req: NextApiRequest,
   res: NextApiResponse

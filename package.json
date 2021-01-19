@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "license": "MIT",
   "scripts": {
-    "fmt": "nx workspace-lint && yarn nx lint && yarn lint",
+    "fmt": "yarn nx workspace-lint && yarn nx lint && yarn lint && yarn nx format:write",
     "nx": "nx",
     "start": "nx serve",
     "build": "nx run-many --target=build --all",

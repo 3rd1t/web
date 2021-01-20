@@ -1,14 +1,14 @@
-import React from "react";
-import { Header } from "./header/header";
-import { Preview } from "./cells/preview/preview";
+import React from "react"
+import { Header } from "./header/header"
+import { Preview } from "./cells/preview/preview"
 
 export interface TableProps {
-  columnNames: string[];
-  rows: React.ReactNode[];
+  columnNames: string[]
+  rows: React.ReactNode[]
 }
 
 export const Table = ({ columnNames, rows }: TableProps) => {
-  console.log({rows})
+  console.log({ rows })
   const usedRows =
     rows.length > 0
       ? rows
@@ -16,11 +16,13 @@ export const Table = ({ columnNames, rows }: TableProps) => {
           return (
             <tr>
               {columnNames.map((_) => (
-                <Preview />
+                <td>
+                  <Preview />
+                </td>
               ))}
             </tr>
-          );
-        });
+          )
+        })
   return (
     <div className="flex flex-col ">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -36,7 +38,7 @@ export const Table = ({ columnNames, rows }: TableProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Table;
+export default Table

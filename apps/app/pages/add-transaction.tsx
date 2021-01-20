@@ -15,15 +15,18 @@ const GET = async (url: string) => {
   // If the status code is not in the range 200-299,
   // we still try to parse and throw it.
   if (!res.ok) {
-    const error = new Error("An error occurred while fetching the data.")
-    // Attach extra info to the error object.
-    error.message = await res.json()
-    throw error
+    throw new Error("An error occurred while fetching the data.")
   }
   return res.json()
 }
 const Company = ({ isin }: { isin: string }) => {
-  const { data, error } = useSWR(`/api/get-company?isin=${isin}`, GET)
+  const regex = new RegExp("([A-Z]{2}[a-zA-Z0-9]{10})")
+  const isValid = regex.test(isin)
+
+  const { data, error } = useSWR(
+    isValid ? `/api/company/read?isin=${isin}` : null,
+    GET,
+  )
   console.log(data)
 
   if (error) {
@@ -54,19 +57,25 @@ const Company = ({ isin }: { isin: string }) => {
     )
   }
   return (
-    <Icon
-      label={data.symbol.toUpperCase()}
-      content={data.name}
-      align="justify-start"
-      icon={
-        <img
-          src={`https://storage.googleapis.com/iex/api/logos/${data.symbol.toUpperCase()}.png`}
-          alt={`${data.symbol} logo`}
-          width="64"
-          height="64"
-        />
-      }
-    />
+    <div className="flex items-center justify-start p-2">
+      <div className="flex-shrink-0 w-10 h-10">
+        <span>
+          <img
+            className="rounded-sm"
+            src={`https://storage.googleapis.com/iex/api/logos/${data.symbol.toUpperCase()}.png`}
+            alt={`${data.symbol} logo`}
+            width="64"
+            height="64"
+          />
+        </span>
+      </div>
+      <div className="flex flex-col items-start pl-2">
+        <span className="text-sm text-gray-900 uppercase">{data.symbol}</span>
+        <span className="text-xs text-gray-500 whitespace-nowrap">
+          {data.name}
+        </span>
+      </div>
+    </div>
   )
 }
 
@@ -78,24 +87,73 @@ const Question = ({ label }: { label: string }) => {
   return <label className="text-lg font-medium text-gray-800">{label}</label>
 }
 
+interface IsinInput {
+  label: string
+  value: string
+  onChange: (e: React.FormEvent<HTMLInputElement>) => void
+  reset: () => void
+  validate: (value: string) => boolean
+}
+const IsinInput = ({ label, value, onChange, validate, reset }: IsinInput) => {
+  const classes =
+    "border border-gray300 flex items-center justify-between w-full space-x-8 text-lg text-gray-900 rounded-sm bg-gray-50 focus:bg-white ring-purple-700 focus:ring-1 focus:outline-none"
+
+  const isValid = validate(value)
+  return (
+    <div>
+      {isValid ? (
+        <div className={classes}>
+          <Company isin={value} />
+          <button
+            onClick={reset}
+            className="pr-4 text-gray-900 hover:text-violet-800"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+      ) : (
+        <div className="relative">
+          <span className="absolute top-0 left-0 pt-2 pl-6 text-xs text-gray-600 ">
+            {label}
+          </span>
+          <input
+            type="string"
+            placeholder="US88160R1014"
+            value={value}
+            onChange={onChange}
+            className={[
+              "px-6 pt-5 pb-2",
+              classes,
+              isValid ? "" : " border-purple-300 border-2",
+            ].join(" ")}
+          />
+        </div>
+      )}
+    </div>
+  )
+}
+
 interface InputProps {
   type: string
   label: string
-  placeholder?: string
-  value?: string | number
-  disabled?: boolean
+  value?: number | string
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void
   validate: (value: string | number) => boolean
 }
-const Input = ({
-  type,
-  label,
-  placeholder,
-  value,
-  disabled,
-  onChange,
-  validate,
-}: InputProps) => {
+const Input = ({ type, label, value, onChange, validate }: InputProps) => {
   const isValid = validate(value)
   return (
     <div className="">
@@ -105,9 +163,7 @@ const Input = ({
             {label}
           </span>
           <input
-            disabled={disabled}
             type={type}
-            placeholder={placeholder}
             value={value}
             onChange={onChange}
             className={`flex items-center justify-between w-full px-6 pt-5 pb-2 space-x-8 text-lg text-gray-900  ${
@@ -119,7 +175,6 @@ const Input = ({
     </div>
   )
 }
-
 interface Transaction {
   assetID: string
   quantity: number
@@ -133,26 +188,12 @@ export interface AddTransactionProps {
 export const AddTransaction = ({ user }: AddTransactionProps) => {
   const router = useRouter()
   const [createAnother, setCreateAnother] = useState(false)
-  const [company, setCompany] = useState<ICompany>(null)
   const [transaction, setTransaction] = useState<Transaction>({
     assetID: "",
     quantity: 1,
     value: 0,
     executedAt: new Date().toISOString().split(".")[0],
   })
-  useEffect(() => {
-    const regex = new RegExp("([A-Z]{2}[a-zA-Z0-9]{10})")
-    const isValid = regex.test(transaction.assetID)
-    if (!isValid) {
-      setCompany(null)
-      return
-    }
-    fetch(`/api/get-company?isin=${transaction.assetID}`)
-      .then((res) => res.json())
-      .then((json) => {
-        setCompany(json)
-      })
-  }, [transaction.assetID])
 
   const updateTransaction = (key: string, value: number | string) => {
     setTransaction({
@@ -162,8 +203,7 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
   }
 
   const submit = async () => {
-    const url = "/api/add-transaction"
-    await fetch(url, {
+    await fetch("/api/transaction/create", {
       method: "POST",
       body: JSON.stringify({
         asset: {
@@ -177,7 +217,7 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
     })
 
     if (!createAnother) {
-      router.push("/transactions")
+      router.back()
     }
   }
 
@@ -247,29 +287,25 @@ export const AddTransaction = ({ user }: AddTransactionProps) => {
                   transaction.quantity > 0 ? "buy" : "sell"
                 }?`}
               />
-              <div className="flex items-center w-full space-x-4">
-                <div className={company == null ? "w-full" : "w-1/2"}>
-                  <Input
-                    type="text"
-                    label="ISIN"
-                    value={transaction.assetID}
-                    onChange={(e) =>
-                      setTransaction({
-                        ...transaction,
-                        assetID: e.currentTarget.value,
-                      })
-                    }
-                    validate={(value: string) =>
-                      RegExp("[A-Z]{2}[a-zA-Z0-9]{10}").test(value)
-                    }
-                  />
-                </div>
-                {company != null ? (
-                  <div className="w-1/2 border border-gray-300 rounded-sm bg-gray-50">
-                    <Company isin={transaction.assetID} />
-                  </div>
-                ) : null}
-              </div>
+              <IsinInput
+                label="ISIN"
+                value={transaction.assetID}
+                onChange={(e) =>
+                  setTransaction({
+                    ...transaction,
+                    assetID: e.currentTarget.value,
+                  })
+                }
+                reset={() =>
+                  setTransaction({
+                    ...transaction,
+                    assetID: "",
+                  })
+                }
+                validate={(value: string) =>
+                  RegExp("[A-Z]{2}[a-zA-Z0-9]{10}").test(value)
+                }
+              />
               <div className="flex items-center justify-center pt-3 space-x-4">
                 <Input
                   type="number"

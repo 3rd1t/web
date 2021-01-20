@@ -18,7 +18,10 @@ export default auth0().requireAuthentication(
         token: token,
         ...JSON.parse(req.body),
       }
-      const apiResponse = await axios.post(`${apiAddr}/v1/transaction`, payload)
+      const apiResponse = await axios.post(
+        `${apiAddr}/v1/transaction/create`,
+        payload,
+      )
       res.send(apiResponse.data)
       res.end()
     } catch (error) {

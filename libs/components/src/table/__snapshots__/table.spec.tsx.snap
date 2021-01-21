@@ -391,9 +391,14 @@ exports[`Table Stories onDarkshould match snapshot 1`] = `
                       class="px-3 py-2 whitespace-no-wrap"
                     >
                       <button
-                        class="text-sm font-medium leading-5 text-indigo-600 hover:text-indigo-900"
+                        class="focus:outline-none undefined"
                       >
-                        Click me
+                        <span />
+                        <span
+                          class="text-sm"
+                        >
+                          Click me
+                        </span>
                       </button>
                     </div>
                     ,

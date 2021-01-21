@@ -8,27 +8,15 @@ import axios from "axios"
 import { Button } from "@perfolio/components/clickable/button/button"
 import { Transition } from "@headlessui/react"
 import { Icon } from "@perfolio/components/table/cells/icon/icon"
-import useSWR from "swr"
+import { useSWR } from "@perfolio/util/swr"
 
-const GET = async (url: string) => {
-  const res = await fetch(url)
-  // If the status code is not in the range 200-299,
-  // we still try to parse and throw it.
-  if (!res.ok) {
-    throw new Error("An error occurred while fetching the data.")
-  }
-  return res.json()
-}
 const Company = ({ isin }: { isin: string }) => {
   const regex = new RegExp("([A-Z]{2}[a-zA-Z0-9]{10})")
   const isValid = regex.test(isin)
 
   const { data, error } = useSWR(
-    isValid ? `/api/company/read?isin=${isin}` : null,
-    GET,
+    isValid ? `/api/companies/read?isin=${isin}` : null,
   )
-  console.log(data)
-
   if (error) {
     return null
   }
@@ -79,10 +67,6 @@ const Company = ({ isin }: { isin: string }) => {
   )
 }
 
-interface ICompany {
-  symbol: string
-  sector: string
-}
 const Question = ({ label }: { label: string }) => {
   return <label className="text-lg font-medium text-gray-800">{label}</label>
 }

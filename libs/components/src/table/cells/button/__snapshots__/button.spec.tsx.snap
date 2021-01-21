@@ -7,9 +7,14 @@ exports[`Button Stories primaryshould match snapshot 1`] = `
       class="px-3 py-2 whitespace-no-wrap"
     >
       <button
-        class="text-sm font-medium leading-5 text-indigo-600 hover:text-indigo-900"
+        class="focus:outline-none undefined"
       >
-        Label
+        <span />
+        <span
+          class="text-sm"
+        >
+          Label
+        </span>
       </button>
     </div>
   </div>

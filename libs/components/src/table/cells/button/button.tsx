@@ -1,23 +1,23 @@
-import React from "react";
-import Wrapper from "../wrapper/wrapper";
+import React from "react"
+import Wrapper from "../wrapper/wrapper"
 
 /* eslint-disable-next-line */
 export interface ButtonProps {
-  label: string;
-  onClick: () => void;
+  color: string
+  label?: string
+  icon: React.ReactNode
+  onClick: () => void
 }
 
-export const Button = ({ label, onClick }: ButtonProps) => {
+export const Button = ({ color, label, icon, onClick }: ButtonProps) => {
   return (
     <Wrapper>
-      <button
-        onClick={onClick}
-        className="text-sm font-medium leading-5 text-indigo-600 hover:text-indigo-900"
-      >
-        {label}
+      <button onClick={onClick} className={`focus:outline-none ${color}`}>
+        <span>{icon}</span>
+        {label ? <span className="text-sm">{label}</span> : null}
       </button>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button

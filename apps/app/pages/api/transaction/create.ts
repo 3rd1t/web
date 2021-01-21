@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next"
 import axios from "axios"
 import { getAPI } from "@perfolio/backend/api"
 import { auth0 } from "@perfolio/backend/auth0"
-import getConfig from "next/config"
 
 export default auth0().requireAuthentication(
   async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {

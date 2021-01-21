@@ -17,14 +17,14 @@
  * @returns Name and render function for each component
  */
 export function generateTestCasesFromStories(
-    stories: Record<string, any>,
-  ): { name: string; component: () => HTMLElement }[] {
-    return Object.entries(stories)
-      .filter((s) => s[0] !== "default")
-      .map((s) => {
-        return {
-          name: s[0],
-          component: s[1],
-        }
-      })
-  }
+  stories: Record<string, any>, // eslint-disable-line
+): { name: string; component: () => HTMLElement }[] {
+  return Object.entries(stories)
+    .filter((s) => s[0] !== "default")
+    .map((s) => {
+      return {
+        name: s[0],
+        component: s[1],
+      }
+    })
+}

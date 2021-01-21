@@ -7,11 +7,9 @@ import { Table } from "@perfolio/components/table/table"
 import { Simple } from "@perfolio/components/table/cells/simple/simple"
 import { Icon } from "@perfolio/components/table/cells/icon/icon"
 import { Button } from "@perfolio/components/table/cells/button/button"
-
+import { useSWR } from "@perfolio/util/swr"
 const Row = ({ tx }: { tx: Transaction }) => {
   console.log({ tx })
-  const [symbol, setSymbol] = useState<string>("")
-  const [sector, setSector] = useState<string>("")
 
   const deleteTX = async (id: string): Promise<void> => {
     fetch("/api/transaction/delete", {
@@ -21,26 +19,47 @@ const Row = ({ tx }: { tx: Transaction }) => {
       }),
     })
   }
-
-  useEffect(() => {
-    fetch(`/api/company/read?isin=${tx.asset.id}`)
-      .then((res) => res.json())
-      .then((json) => {
-        setSector(json.sector)
-        setSymbol(json.symbol.toUpperCase())
-      })
-  }, [tx.asset.id])
+  const { data: company, error } = useSWR(
+    `/api/companies/read?isin=${tx.asset.id}`,
+  )
+  if (error) {
+    return null
+  }
+  if (!company) {
+    return (
+      <svg
+        className="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          strokeWidth="4"
+        ></circle>
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+    )
+  }
   return (
     <tr key={tx.asset.id}>
       <td className="text-left">
         <Icon
-          label={symbol}
-          content={sector}
+          label={company.symbol.toUpperCase()}
+          content={company.name}
           align="justify-start"
           icon={
             <img
-              src={`https://storage.googleapis.com/iex/api/logos/${symbol}.png`}
-              alt={`${symbol} logo`}
+              src={`https://storage.googleapis.com/iex/api/logos/${company.symbol.toUpperCase()}.png`}
+              alt={`${company.symbol} logo`}
               width="64"
               height="64"
             />
@@ -56,8 +75,27 @@ const Row = ({ tx }: { tx: Transaction }) => {
       <td className="text-right">
         <Simple label={tx.executedAt} />
       </td>
-      <td>
-        <Button label="Delete" onClick={() => deleteTX(tx.id)} />
+      <td className="text-right">
+        <Button
+          icon={
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          }
+          color="text-pink-500 hover:text-pink-300"
+          onClick={() => deleteTX(tx.id)}
+        />
       </td>
     </tr>
   )
@@ -100,7 +138,7 @@ export interface TransactionsProps {
 export const Transactions = ({ user }: TransactionsProps) => {
   const [transactions, setTransactions] = useState<Transaction[]>([])
   useEffect(() => {
-    const url = "/api/transaction/read"
+    const url = "/api/transactions/read"
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTransactions(data))

@@ -8,15 +8,14 @@ export interface TableProps {
 }
 
 export const Table = ({ columnNames, rows }: TableProps) => {
-  console.log({ rows })
   const usedRows =
     rows.length > 0
       ? rows
-      : [1, 2, 3].map((_) => {
+      : [1, 2, 3].map((key) => {
           return (
-            <tr>
-              {columnNames.map((_) => (
-                <td>
+            <tr key={key}>
+              {columnNames.map((key) => (
+                <td key={key}>
                   <Preview />
                 </td>
               ))}

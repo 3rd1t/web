@@ -2799,10 +2799,15 @@
     mini-svg-data-uri "^1.0.3"
     traverse "^0.6.6"
 
-"@tailwindcss/typography@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.3.1.tgz#253ce580c8e06b6163d9a288edd24f25e1d0dfee"
-  integrity sha512-HyZ+3Eay8SGaPq7kcFoANZLr4EjeXQ19yjjb9fp6B0PHHpvZoe00jdsnpnooMEbx9J5rQ93nxPUG3MQmXVxGMQ==
+"@tailwindcss/typography@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.4.0.tgz#b80974ad6af93df7b06e1981cb4d79698b6ad5c7"
+  integrity sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
+  dependencies:
+    lodash.castarray "^4.4.0"
+    lodash.isplainobject "^4.0.6"
+    lodash.merge "^4.6.2"
+    lodash.uniq "^4.5.0"
 
 "@testing-library/dom@^7.28.1":
   version "7.29.2"
@@ -3339,14 +3344,14 @@
     "@types/react-dom" "*"
     prop-types "^15.5.10"
 
-"@visx/brush@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@visx/brush/-/brush-1.3.0.tgz#3f5fd7d7eadc702efdac0bf327630d482de4f1c4"
-  integrity sha512-TBW2XZLzsqp+A04EaU8z96MzI8KptWWfEFx3xui0iW6p6GHsB46R3CjA7jX4qD3FuhhiMX0766elcE8lvxq4qA==
+"@visx/brush@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@visx/brush/-/brush-1.4.0.tgz#7d7fa03ae1e6d8f4dd63de9baf50c7f387227104"
+  integrity sha512-Hg+J45rj3csXT98/DTyzigxPFndlJ65vdR7O+JdefQ5i3XJGK6vp/HDILthG5pdyCxqyYoCtfsy+u4bqzR1nrQ==
   dependencies:
     "@visx/drag" "1.3.0"
     "@visx/group" "1.0.0"
-    "@visx/shape" "1.3.0"
+    "@visx/shape" "1.4.0"
     classnames "^2.2.5"
     prop-types "^15.6.1"
 
@@ -3468,18 +3473,6 @@
     prop-types "^15.6.1"
     resize-observer-polyfill "1.5.1"
 
-"@visx/scale@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@visx/scale/-/scale-1.3.0.tgz#6b48537d4ee29a4a565de5a85d39b7ca1f89b572"
-  integrity sha512-u7ksnRs4UE0Q0sydTCcK4SYX+X9deQoAQ9wc6tYUKBspzFeYejIP+NO4fRTtjLsKpYFXad34HKW7vErL7f8FZg==
-  dependencies:
-    "@types/d3-interpolate" "^1.3.1"
-    "@types/d3-scale" "^3.2.1"
-    "@types/d3-time" "^1.0.10"
-    d3-interpolate "^1.4.0"
-    d3-scale "^3.2.3"
-    d3-time "^1.1.0"
-
 "@visx/scale@1.4.0", "@visx/scale@^1.3.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@visx/scale/-/scale-1.4.0.tgz#16cf4ba63dbc595e446397f5bf262591ffe9efd6"
@@ -3491,25 +3484,6 @@
     d3-interpolate "^1.4.0"
     d3-scale "^3.2.3"
     d3-time "^1.1.0"
-
-"@visx/shape@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@visx/shape/-/shape-1.3.0.tgz#fab11b683a4d3d648ce76da5372a8bd75031eae2"
-  integrity sha512-cysfz1VghSOlhYYR6n3hOKdm1xihmiZJjC5E43eZwnWQGjmqvdlwy+6Cxq4sn1wQwaxj6UD4QfLzxiPSlAQeqg==
-  dependencies:
-    "@types/classnames" "^2.2.9"
-    "@types/d3-path" "^1.0.8"
-    "@types/d3-shape" "^1.3.1"
-    "@types/lodash" "^4.14.146"
-    "@types/react" "*"
-    "@visx/curve" "1.0.0"
-    "@visx/group" "1.0.0"
-    "@visx/scale" "1.3.0"
-    classnames "^2.2.5"
-    d3-path "^1.0.5"
-    d3-shape "^1.2.0"
-    lodash "^4.17.15"
-    prop-types "^15.5.10"
 
 "@visx/shape@1.4.0", "@visx/shape@^1.3.0":
   version "1.4.0"
@@ -10205,15 +10179,30 @@ lodash.camelcase@^4.3.0:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
   integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
 
+lodash.castarray@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
+  integrity sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=
+
 lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
+lodash.isplainobject@^4.0.6:
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
+  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
 lodash.memoize@4.x, lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.once@^4.1.1:
   version "4.1.1"

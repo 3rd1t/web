@@ -46,7 +46,7 @@ jobs:
           cd levant
           make build
       - name: Import Secrets
-        uses: hashicorp/vault-action@v2.1.1
+        uses: hashicorp/vault-action@v2.1.2
         with:
           url: ${{secrets.VAULT_ADDR}}
           token: ${{ secrets.VAULT_TOKEN }}
